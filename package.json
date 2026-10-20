@@ -2,9 +2,26 @@
   "name": "@project-cuoio/core",
   "version": "0.0.1",
   "type": "module",
+  "files": [
+    "lib"
+  ],
+  "module": "./lib/esm/index.js",
+  "main": "./lib/cjs/index.js",
+  "types": "./lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "import": "./lib/esm/index.js",
+      "require": "./lib/cjs/index.js"
+    },
+    "./lib/globals.css": {
+      "default": "./lib/globals.css"
+    }
+  },
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "tsc -b && vite build && yarn build:styles",
+    "build:styles": "yarn dlx @tailwindcss/cli -i ./src/styles/globals.css  -o ./lib/globals.css --postcss --minify",
     "lint": "eslint .",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "typecheck": "tsc --noEmit",
