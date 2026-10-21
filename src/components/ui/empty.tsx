@@ -6,7 +6,7 @@ function Empty({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="empty"
       className={cn(
-        "pttrn:flex pttrn:w-full pttrn:min-w-0 pttrn:flex-1 pttrn:flex-col pttrn:items-center pttrn:justify-center pttrn:gap-4 pttrn:rounded-xl pttrn:border-dashed pttrn:p-6 pttrn:text-center pttrn:text-balance",
+        "cuoio:flex cuoio:w-full cuoio:min-w-0 cuoio:flex-1 cuoio:flex-col cuoio:items-center cuoio:justify-center cuoio:gap-4 cuoio:rounded-xl cuoio:border-dashed cuoio:p-6 cuoio:text-center cuoio:text-balance",
         className
       )}
       {...props}
@@ -18,19 +18,19 @@ function EmptyHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="empty-header"
-      className={cn("pttrn:flex pttrn:max-w-sm pttrn:flex-col pttrn:items-center pttrn:gap-1", className)}
+      className={cn("cuoio:flex cuoio:max-w-sm cuoio:flex-col cuoio:items-center cuoio:gap-1", className)}
       {...props}
     />
   )
 }
 
 const emptyMediaVariants = cva(
-  "pttrn:mb-2 pttrn:flex pttrn:shrink-0 pttrn:items-center pttrn:justify-center pttrn:[&_svg]:pointer-events-none pttrn:[&_svg]:shrink-0",
+  "cuoio:mb-2 cuoio:flex cuoio:shrink-0 cuoio:items-center cuoio:justify-center cuoio:[&_svg]:pointer-events-none cuoio:[&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "pttrn:bg-transparent",
-        icon: "pttrn:flex pttrn:size-8 pttrn:shrink-0 pttrn:items-center pttrn:justify-center pttrn:rounded-md pttrn:bg-muted pttrn:text-foreground pttrn:[&_svg:not([class*=size-])]:size-4",
+        default: "cuoio:bg-transparent",
+        icon: "cuoio:flex cuoio:size-8 cuoio:shrink-0 cuoio:items-center cuoio:justify-center cuoio:rounded-md cuoio:bg-muted cuoio:text-foreground cuoio:[&_svg:not([class*=size-])]:size-4",
       },
     },
     defaultVariants: {
@@ -59,7 +59,7 @@ function EmptyTitle({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="empty-title"
       className={cn(
-        "pttrn:font-heading pttrn:text-sm pttrn:font-medium pttrn:tracking-tight",
+        "cuoio:font-heading cuoio:text-sm cuoio:font-medium cuoio:tracking-tight",
         className
       )}
       {...props}
@@ -72,7 +72,7 @@ function EmptyDescription({ className, ...props }: React.ComponentProps<"p">) {
     <div
       data-slot="empty-description"
       className={cn(
-        "pttrn:text-xs/relaxed pttrn:text-muted-foreground pttrn:[&>a]:underline pttrn:[&>a]:underline-offset-4 pttrn:[&>a:hover]:text-primary",
+        "cuoio:text-xs/relaxed cuoio:text-muted-foreground cuoio:[&>a]:underline cuoio:[&>a]:underline-offset-4 cuoio:[&>a:hover]:text-primary",
         className
       )}
       {...props}
@@ -85,7 +85,7 @@ function EmptyContent({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="empty-content"
       className={cn(
-        "pttrn:flex pttrn:w-full pttrn:max-w-sm pttrn:min-w-0 pttrn:flex-col pttrn:items-center pttrn:gap-2 pttrn:text-xs/relaxed pttrn:text-balance",
+        "cuoio:flex cuoio:w-full cuoio:max-w-sm cuoio:min-w-0 cuoio:flex-col cuoio:items-center cuoio:gap-2 cuoio:text-xs/relaxed cuoio:text-balance",
         className
       )}
       {...props}

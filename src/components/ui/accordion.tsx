@@ -7,7 +7,7 @@ function Accordion({ className, ...props }: AccordionPrimitive.Root.Props) {
     <AccordionPrimitive.Root
       data-slot="accordion"
       className={cn(
-        "pttrn:flex pttrn:w-full pttrn:flex-col pttrn:overflow-hidden pttrn:rounded-md pttrn:border",
+        "cuoio:flex cuoio:w-full cuoio:flex-col cuoio:overflow-hidden cuoio:rounded-md cuoio:border",
         className
       )}
       {...props}
@@ -19,7 +19,7 @@ function AccordionItem({ className, ...props }: AccordionPrimitive.Item.Props) {
   return (
     <AccordionPrimitive.Item
       data-slot="accordion-item"
-      className={cn("pttrn:not-last:border-b pttrn:data-open:bg-muted/50", className)}
+      className={cn("cuoio:not-last:border-b cuoio:data-open:bg-muted/50", className)}
       {...props}
     />
   )
@@ -31,18 +31,18 @@ function AccordionTrigger({
   ...props
 }: AccordionPrimitive.Trigger.Props) {
   return (
-    <AccordionPrimitive.Header className="pttrn:flex">
+    <AccordionPrimitive.Header className="cuoio:flex">
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          "pttrn:group/accordion-trigger pttrn:relative pttrn:flex pttrn:flex-1 pttrn:items-start pttrn:justify-between pttrn:gap-6 pttrn:border pttrn:border-transparent pttrn:p-2 pttrn:text-start pttrn:text-xs/relaxed pttrn:font-medium pttrn:transition-all pttrn:outline-none pttrn:hover:underline pttrn:aria-disabled:pointer-events-none pttrn:aria-disabled:opacity-50 pttrn:**:data-[slot=accordion-trigger-icon]:ms-auto pttrn:**:data-[slot=accordion-trigger-icon]:size-4 pttrn:**:data-[slot=accordion-trigger-icon]:text-muted-foreground",
+          "cuoio:group/accordion-trigger cuoio:relative cuoio:flex cuoio:flex-1 cuoio:items-start cuoio:justify-between cuoio:gap-6 cuoio:border cuoio:border-transparent cuoio:p-2 cuoio:text-start cuoio:text-xs/relaxed cuoio:font-medium cuoio:transition-all cuoio:outline-none cuoio:hover:underline cuoio:aria-disabled:pointer-events-none cuoio:aria-disabled:opacity-50 cuoio:**:data-[slot=accordion-trigger-icon]:ms-auto cuoio:**:data-[slot=accordion-trigger-icon]:size-4 cuoio:**:data-[slot=accordion-trigger-icon]:text-muted-foreground",
           className
         )}
         {...props}
       >
         {children}
-        <ChevronDownIcon data-slot="accordion-trigger-icon" className="pttrn:pointer-events-none pttrn:shrink-0 pttrn:group-aria-expanded/accordion-trigger:hidden" />
-        <ChevronUpIcon data-slot="accordion-trigger-icon" className="pttrn:pointer-events-none pttrn:hidden pttrn:shrink-0 pttrn:group-aria-expanded/accordion-trigger:inline" />
+        <ChevronDownIcon data-slot="accordion-trigger-icon" className="cuoio:pointer-events-none cuoio:shrink-0 cuoio:group-aria-expanded/accordion-trigger:hidden" />
+        <ChevronUpIcon data-slot="accordion-trigger-icon" className="cuoio:pointer-events-none cuoio:hidden cuoio:shrink-0 cuoio:group-aria-expanded/accordion-trigger:inline" />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   )
@@ -56,12 +56,12 @@ function AccordionContent({
   return (
     <AccordionPrimitive.Panel
       data-slot="accordion-content"
-      className="pttrn:overflow-hidden pttrn:px-2 pttrn:text-xs/relaxed pttrn:data-open:animate-accordion-down pttrn:data-closed:animate-accordion-up"
+      className="cuoio:overflow-hidden cuoio:px-2 cuoio:text-xs/relaxed cuoio:data-open:animate-accordion-down cuoio:data-closed:animate-accordion-up"
       {...props}
     >
       <div
         className={cn(
-          "pttrn:h-(--accordion-panel-height) pttrn:pt-0 pttrn:pb-4 pttrn:data-ending-style:h-0 pttrn:data-starting-style:h-0 pttrn:[&_a]:underline pttrn:[&_a]:underline-offset-3 pttrn:[&_a]:hover:text-foreground pttrn:[&_p:not(:last-child)]:mb-4",
+          "cuoio:h-(--accordion-panel-height) cuoio:pt-0 cuoio:pb-4 cuoio:data-ending-style:h-0 cuoio:data-starting-style:h-0 cuoio:[&_a]:underline cuoio:[&_a]:underline-offset-3 cuoio:[&_a]:hover:text-foreground cuoio:[&_p:not(:last-child)]:mb-4",
           className
         )}
       >

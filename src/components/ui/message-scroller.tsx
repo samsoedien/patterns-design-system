@@ -26,7 +26,7 @@ function MessageScroller({
     <MessageScrollerPrimitive.Root
       data-slot="message-scroller"
       className={cn(
-        "pttrn:group/message-scroller pttrn:relative pttrn:flex pttrn:size-full pttrn:min-h-0 pttrn:flex-col pttrn:overflow-hidden",
+        "cuoio:group/message-scroller cuoio:relative cuoio:flex cuoio:size-full cuoio:min-h-0 cuoio:flex-col cuoio:overflow-hidden",
         className
       )}
       {...props}
@@ -42,7 +42,7 @@ function MessageScrollerViewport({
     <MessageScrollerPrimitive.Viewport
       data-slot="message-scroller-viewport"
       className={cn(
-        "pttrn:size-full pttrn:min-h-0 pttrn:min-w-0 pttrn:scroll-fade-b pttrn:scrollbar-thin pttrn:scrollbar-gutter-stable pttrn:overflow-y-auto pttrn:overscroll-contain pttrn:contain-content pttrn:data-autoscrolling:scrollbar-thumb-transparent pttrn:data-autoscrolling:scrollbar-track-transparent pttrn:data-pending-scroll:invisible",
+        "cuoio:size-full cuoio:min-h-0 cuoio:min-w-0 cuoio:scroll-fade-b cuoio:scrollbar-thin cuoio:scrollbar-gutter-stable cuoio:overflow-y-auto cuoio:overscroll-contain cuoio:contain-content cuoio:data-autoscrolling:scrollbar-thumb-transparent cuoio:data-autoscrolling:scrollbar-track-transparent cuoio:data-pending-scroll:invisible",
         className
       )}
       {...props}
@@ -57,7 +57,7 @@ function MessageScrollerContent({
   return (
     <MessageScrollerPrimitive.Content
       data-slot="message-scroller-content"
-      className={cn("pttrn:flex pttrn:h-max pttrn:min-h-full pttrn:flex-col pttrn:gap-6", className)}
+      className={cn("cuoio:flex cuoio:h-max cuoio:min-h-full cuoio:flex-col cuoio:gap-6", className)}
       {...props}
     />
   )
@@ -73,7 +73,7 @@ function MessageScrollerItem({
       data-slot="message-scroller-item"
       scrollAnchor={scrollAnchor}
       className={cn(
-        "pttrn:min-w-0 pttrn:shrink-0 pttrn:[contain-intrinsic-size:auto_10rem] pttrn:[content-visibility:auto]",
+        "cuoio:min-w-0 cuoio:shrink-0 cuoio:[contain-intrinsic-size:auto_10rem] cuoio:[content-visibility:auto]",
         className
       )}
       {...props}
@@ -99,7 +99,7 @@ function MessageScrollerButton({
       data-size={size}
       direction={direction}
       className={cn(
-        "pttrn:absolute pttrn:inset-s-1/2 pttrn:-translate-x-1/2 rtl:pttrn:translate-x-1/2 pttrn:border-border pttrn:bg-background pttrn:text-foreground pttrn:transition-[translate,scale,opacity] pttrn:duration-200 pttrn:hover:bg-muted pttrn:hover:text-foreground pttrn:data-[active=false]:pointer-events-none pttrn:data-[active=false]:scale-95 pttrn:data-[active=false]:opacity-0 pttrn:data-[active=false]:duration-400 pttrn:data-[active=false]:ease-[cubic-bezier(0.7,0,0.84,0)] pttrn:data-[active=true]:translate-y-0 pttrn:data-[active=true]:scale-100 pttrn:data-[active=true]:opacity-100 pttrn:data-[active=true]:ease-[cubic-bezier(0.23,1,0.32,1)] pttrn:data-[direction=end]:bottom-4 pttrn:data-[direction=end]:data-[active=false]:translate-y-full pttrn:data-[direction=start]:top-4 pttrn:data-[direction=start]:data-[active=false]:-translate-y-full pttrn:rtl:translate-x-1/2 rtl:pttrn:rtl:-translate-x-1/2 pttrn:data-[direction=start]:[&_svg]:rotate-180",
+        "cuoio:absolute cuoio:inset-s-1/2 cuoio:-translate-x-1/2 rtl:cuoio:translate-x-1/2 cuoio:border-border cuoio:bg-background cuoio:text-foreground cuoio:transition-[translate,scale,opacity] cuoio:duration-200 cuoio:hover:bg-muted cuoio:hover:text-foreground cuoio:data-[active=false]:pointer-events-none cuoio:data-[active=false]:scale-95 cuoio:data-[active=false]:opacity-0 cuoio:data-[active=false]:duration-400 cuoio:data-[active=false]:ease-[cubic-bezier(0.7,0,0.84,0)] cuoio:data-[active=true]:translate-y-0 cuoio:data-[active=true]:scale-100 cuoio:data-[active=true]:opacity-100 cuoio:data-[active=true]:ease-[cubic-bezier(0.23,1,0.32,1)] cuoio:data-[direction=end]:bottom-4 cuoio:data-[direction=end]:data-[active=false]:translate-y-full cuoio:data-[direction=start]:top-4 cuoio:data-[direction=start]:data-[active=false]:-translate-y-full cuoio:rtl:translate-x-1/2 rtl:cuoio:rtl:-translate-x-1/2 cuoio:data-[direction=start]:[&_svg]:rotate-180",
         className
       )}
       render={render ?? <Button variant={variant} size={size} />}
@@ -109,7 +109,7 @@ function MessageScrollerButton({
         <>
           <ArrowDownIcon
           />
-          <span className="pttrn:sr-only">
+          <span className="cuoio:sr-only">
             {direction === "end" ? "Scroll to end" : "Scroll to start"}
           </span>
         </>

@@ -6,7 +6,7 @@ function Textarea({ className, ...props }: React.ComponentProps<"textarea">) {
     <textarea
       data-slot="textarea"
       className={cn(
-        "pttrn:flex pttrn:field-sizing-content pttrn:min-h-16 pttrn:w-full pttrn:resize-none pttrn:rounded-md pttrn:border pttrn:border-input pttrn:bg-input/20 pttrn:px-2 pttrn:py-2 pttrn:text-sm pttrn:transition-colors pttrn:outline-none pttrn:placeholder:text-muted-foreground pttrn:focus-visible:border-ring pttrn:focus-visible:ring-2 pttrn:focus-visible:ring-ring/30 pttrn:disabled:cursor-not-allowed pttrn:disabled:opacity-50 pttrn:aria-invalid:border-destructive pttrn:aria-invalid:ring-2 pttrn:aria-invalid:ring-destructive/20 pttrn:md:text-xs/relaxed pttrn:dark:bg-input/30 pttrn:dark:aria-invalid:border-destructive/50 pttrn:dark:aria-invalid:ring-destructive/40",
+        "cuoio:flex cuoio:field-sizing-content cuoio:min-h-16 cuoio:w-full cuoio:resize-none cuoio:rounded-md cuoio:border cuoio:border-input cuoio:bg-input/20 cuoio:px-2 cuoio:py-2 cuoio:text-sm cuoio:transition-colors cuoio:outline-none cuoio:placeholder:text-muted-foreground cuoio:focus-visible:border-ring cuoio:focus-visible:ring-2 cuoio:focus-visible:ring-ring/30 cuoio:disabled:cursor-not-allowed cuoio:disabled:opacity-50 cuoio:aria-invalid:border-destructive cuoio:aria-invalid:ring-2 cuoio:aria-invalid:ring-destructive/20 cuoio:md:text-xs/relaxed cuoio:dark:bg-input/30 cuoio:dark:aria-invalid:border-destructive/50 cuoio:dark:aria-invalid:ring-destructive/40",
         className
       )}
       {...props}

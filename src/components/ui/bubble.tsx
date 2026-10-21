@@ -8,31 +8,31 @@ function BubbleGroup({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="bubble-group"
-      className={cn("pttrn:flex pttrn:min-w-0 pttrn:flex-col pttrn:gap-2", className)}
+      className={cn("cuoio:flex cuoio:min-w-0 cuoio:flex-col cuoio:gap-2", className)}
       {...props}
     />
   )
 }
 
 const bubbleVariants = cva(
-  "pttrn:group/bubble pttrn:relative pttrn:flex pttrn:w-fit pttrn:max-w-[80%] pttrn:min-w-0 pttrn:flex-col pttrn:gap-1 pttrn:group-data-[align=end]/message:self-end pttrn:data-[align=end]:self-end pttrn:data-[variant=ghost]:max-w-full",
+  "cuoio:group/bubble cuoio:relative cuoio:flex cuoio:w-fit cuoio:max-w-[80%] cuoio:min-w-0 cuoio:flex-col cuoio:gap-1 cuoio:group-data-[align=end]/message:self-end cuoio:data-[align=end]:self-end cuoio:data-[variant=ghost]:max-w-full",
   {
     variants: {
       variant: {
         default:
-          "pttrn:*:data-[slot=bubble-content]:bg-primary pttrn:*:data-[slot=bubble-content]:text-primary-foreground pttrn:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-primary/80",
+          "cuoio:*:data-[slot=bubble-content]:bg-primary cuoio:*:data-[slot=bubble-content]:text-primary-foreground cuoio:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-primary/80",
         secondary:
-          "pttrn:*:data-[slot=bubble-content]:bg-secondary pttrn:*:data-[slot=bubble-content]:text-secondary-foreground pttrn:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)]",
+          "cuoio:*:data-[slot=bubble-content]:bg-secondary cuoio:*:data-[slot=bubble-content]:text-secondary-foreground cuoio:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-[color-mix(in_oklch,var(--secondary),var(--foreground)_5%)]",
         muted:
-          "pttrn:*:data-[slot=bubble-content]:bg-muted pttrn:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-[color-mix(in_oklch,var(--muted),var(--foreground)_5%)]",
+          "cuoio:*:data-[slot=bubble-content]:bg-muted cuoio:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-[color-mix(in_oklch,var(--muted),var(--foreground)_5%)]",
         tinted:
-          "pttrn:*:data-[slot=bubble-content]:bg-[oklch(from_var(--primary)_0.93_calc(c*0.4)_h)] pttrn:*:data-[slot=bubble-content]:text-foreground pttrn:dark:*:data-[slot=bubble-content]:bg-[oklch(from_var(--primary)_0.3_calc(c*0.4)_h)] pttrn:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-[oklch(from_var(--primary)_0.88_calc(c*0.5)_h)] pttrn:dark:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-[oklch(from_var(--primary)_0.35_calc(c*0.5)_h)]",
+          "cuoio:*:data-[slot=bubble-content]:bg-[oklch(from_var(--primary)_0.93_calc(c*0.4)_h)] cuoio:*:data-[slot=bubble-content]:text-foreground cuoio:dark:*:data-[slot=bubble-content]:bg-[oklch(from_var(--primary)_0.3_calc(c*0.4)_h)] cuoio:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-[oklch(from_var(--primary)_0.88_calc(c*0.5)_h)] cuoio:dark:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-[oklch(from_var(--primary)_0.35_calc(c*0.5)_h)]",
         outline:
-          "pttrn:*:data-[slot=bubble-content]:border-border pttrn:*:data-[slot=bubble-content]:bg-background pttrn:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-muted pttrn:[&>[data-slot=bubble-content]:is(button,a):hover]:text-foreground pttrn:dark:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-input/30",
+          "cuoio:*:data-[slot=bubble-content]:border-border cuoio:*:data-[slot=bubble-content]:bg-background cuoio:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-muted cuoio:[&>[data-slot=bubble-content]:is(button,a):hover]:text-foreground cuoio:dark:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-input/30",
         ghost:
-          "pttrn:border-none pttrn:*:data-[slot=bubble-content]:rounded-none pttrn:*:data-[slot=bubble-content]:bg-transparent pttrn:*:data-[slot=bubble-content]:p-0 pttrn:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-muted pttrn:[&>[data-slot=bubble-content]:is(button,a):hover]:text-foreground pttrn:dark:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-muted/50",
+          "cuoio:border-none cuoio:*:data-[slot=bubble-content]:rounded-none cuoio:*:data-[slot=bubble-content]:bg-transparent cuoio:*:data-[slot=bubble-content]:p-0 cuoio:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-muted cuoio:[&>[data-slot=bubble-content]:is(button,a):hover]:text-foreground cuoio:dark:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-muted/50",
         destructive:
-          "pttrn:*:data-[slot=bubble-content]:bg-destructive/10 pttrn:*:data-[slot=bubble-content]:text-destructive pttrn:dark:*:data-[slot=bubble-content]:bg-destructive/20 pttrn:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-destructive/20 pttrn:dark:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-destructive/30",
+          "cuoio:*:data-[slot=bubble-content]:bg-destructive/10 cuoio:*:data-[slot=bubble-content]:text-destructive cuoio:dark:*:data-[slot=bubble-content]:bg-destructive/20 cuoio:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-destructive/20 cuoio:dark:[&>[data-slot=bubble-content]:is(button,a):hover]:bg-destructive/30",
       },
     },
     defaultVariants: {
@@ -85,16 +85,16 @@ function BubbleContent({
 }
 
 const bubbleReactionsVariants = cva(
-  "pttrn:absolute pttrn:z-10 pttrn:flex pttrn:w-fit pttrn:shrink-0 pttrn:items-center pttrn:justify-center pttrn:gap-1 pttrn:rounded-full pttrn:bg-muted pttrn:px-1.5 pttrn:py-0.5 pttrn:text-xs pttrn:ring-2 pttrn:ring-card pttrn:has-[button]:p-0",
+  "cuoio:absolute cuoio:z-10 cuoio:flex cuoio:w-fit cuoio:shrink-0 cuoio:items-center cuoio:justify-center cuoio:gap-1 cuoio:rounded-full cuoio:bg-muted cuoio:px-1.5 cuoio:py-0.5 cuoio:text-xs cuoio:ring-2 cuoio:ring-card cuoio:has-[button]:p-0",
   {
     variants: {
       side: {
-        top: "pttrn:top-0 pttrn:-translate-y-3/4",
-        bottom: "pttrn:bottom-0 pttrn:translate-y-3/4",
+        top: "cuoio:top-0 cuoio:-translate-y-3/4",
+        bottom: "cuoio:bottom-0 cuoio:translate-y-3/4",
       },
       align: {
-        start: "pttrn:start-3",
-        end: "pttrn:end-3",
+        start: "cuoio:start-3",
+        end: "cuoio:end-3",
       },
     },
     defaultVariants: {

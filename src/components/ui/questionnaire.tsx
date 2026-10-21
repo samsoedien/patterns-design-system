@@ -14,7 +14,7 @@ function Questionnaire({
   return (
     <QuestionnairePrimitive.Root
       data-slot="questionnaire"
-      className={cn("pttrn:flex pttrn:w-full pttrn:min-w-0 pttrn:flex-col pttrn:gap-4", className)}
+      className={cn("cuoio:flex cuoio:w-full cuoio:min-w-0 cuoio:flex-col cuoio:gap-4", className)}
       {...props}
     />
   )
@@ -28,7 +28,7 @@ function QuestionnaireProgress({
     <QuestionnairePrimitive.Progress
       data-slot="questionnaire-progress"
       className={cn(
-        "pttrn:min-h-[1lh] pttrn:w-fit pttrn:min-w-[14ch] pttrn:text-[0.625rem] pttrn:font-medium pttrn:text-muted-foreground pttrn:tabular-nums",
+        "cuoio:min-h-[1lh] cuoio:w-fit cuoio:min-w-[14ch] cuoio:text-[0.625rem] cuoio:font-medium cuoio:text-muted-foreground cuoio:tabular-nums",
         className
       )}
       {...props}
@@ -44,7 +44,7 @@ function QuestionnaireItem({
     <QuestionnairePrimitive.Item
       data-slot="questionnaire-item"
       className={cn(
-        "pttrn:flex pttrn:min-w-0 pttrn:flex-col pttrn:gap-3 pttrn:border-0 pttrn:p-0 pttrn:outline-none",
+        "cuoio:flex cuoio:min-w-0 cuoio:flex-col cuoio:gap-3 cuoio:border-0 cuoio:p-0 cuoio:outline-none",
         className
       )}
       {...props}
@@ -60,7 +60,7 @@ function QuestionnaireTitle({
     <QuestionnairePrimitive.Title
       data-slot="questionnaire-title"
       className={cn(
-        "pttrn:font-heading pttrn:text-sm pttrn:font-semibold pttrn:text-pretty pttrn:[&:not(:has(~[data-slot=questionnaire-description]))]:mb-3",
+        "cuoio:font-heading cuoio:text-sm cuoio:font-semibold cuoio:text-pretty cuoio:[&:not(:has(~[data-slot=questionnaire-description]))]:mb-3",
         className
       )}
       {...props}
@@ -76,7 +76,7 @@ function QuestionnaireDescription({
     <QuestionnairePrimitive.Description
       data-slot="questionnaire-description"
       className={cn(
-        "pttrn:text-xs/relaxed pttrn:text-pretty pttrn:text-muted-foreground",
+        "cuoio:text-xs/relaxed cuoio:text-pretty cuoio:text-muted-foreground",
         className
       )}
       {...props}
@@ -92,7 +92,7 @@ function QuestionnaireChoices({
     <QuestionnairePrimitive.Choices
       data-slot="questionnaire-choices"
       className={cn(
-        "pttrn:group/questionnaire-choices pttrn:grid pttrn:min-w-0 pttrn:gap-1.5",
+        "cuoio:group/questionnaire-choices cuoio:grid cuoio:min-w-0 cuoio:gap-1.5",
         className
       )}
       {...props}
@@ -109,36 +109,36 @@ function QuestionnaireChoice({
     <QuestionnairePrimitive.Choice
       data-slot="questionnaire-choice"
       className={cn(
-        "pttrn:group/questionnaire-choice pttrn:relative pttrn:flex pttrn:min-h-11 pttrn:cursor-pointer pttrn:items-start pttrn:gap-2.5 pttrn:rounded-xl pttrn:border pttrn:border-input pttrn:px-3 pttrn:py-2.5 pttrn:text-start pttrn:text-xs/relaxed pttrn:transition-colors pttrn:outline-none pttrn:select-none pttrn:hover:bg-input/40 pttrn:has-[>input:focus-visible]:border-ring pttrn:has-[>input:focus-visible]:ring-2 pttrn:has-[>input:focus-visible]:ring-ring/30 pttrn:data-invalid:border-destructive pttrn:data-checked:border-primary/40 pttrn:data-checked:bg-primary/10",
-        "pttrn:data-disabled:pointer-events-none pttrn:data-disabled:cursor-not-allowed pttrn:data-disabled:opacity-50",
+        "cuoio:group/questionnaire-choice cuoio:relative cuoio:flex cuoio:min-h-11 cuoio:cursor-pointer cuoio:items-start cuoio:gap-2.5 cuoio:rounded-xl cuoio:border cuoio:border-input cuoio:px-3 cuoio:py-2.5 cuoio:text-start cuoio:text-xs/relaxed cuoio:transition-colors cuoio:outline-none cuoio:select-none cuoio:hover:bg-input/40 cuoio:has-[>input:focus-visible]:border-ring cuoio:has-[>input:focus-visible]:ring-2 cuoio:has-[>input:focus-visible]:ring-ring/30 cuoio:data-invalid:border-destructive cuoio:data-checked:border-primary/40 cuoio:data-checked:bg-primary/10",
+        "cuoio:data-disabled:pointer-events-none cuoio:data-disabled:cursor-not-allowed cuoio:data-disabled:opacity-50",
         className
       )}
       {...props}
     >
       <QuestionnairePrimitive.ChoiceInput
         data-slot="questionnaire-choice-input"
-        className="pttrn:absolute pttrn:inset-0 pttrn:z-10 pttrn:size-full pttrn:cursor-pointer pttrn:opacity-0"
+        className="cuoio:absolute cuoio:inset-0 cuoio:z-10 cuoio:size-full cuoio:cursor-pointer cuoio:opacity-0"
       />
       <span
         aria-hidden="true"
         data-slot="questionnaire-choice-indicator"
-        className="pttrn:pointer-events-none pttrn:relative pttrn:flex pttrn:size-4 pttrn:shrink-0 pttrn:translate-y-[--spacing(0.45)] pttrn:items-center pttrn:justify-center pttrn:rounded-[4px] pttrn:border pttrn:border-input pttrn:group-has-data-[slot=questionnaire-choice-description]/questionnaire-choice:translate-y-0.5 pttrn:group-data-[type=radio]/questionnaire-choice:rounded-full pttrn:group-data-checked/questionnaire-choice:border-primary pttrn:group-data-checked/questionnaire-choice:bg-primary pttrn:group-data-checked/questionnaire-choice:text-primary-foreground pttrn:dark:bg-input/30 pttrn:dark:group-data-checked/questionnaire-choice:bg-primary"
+        className="cuoio:pointer-events-none cuoio:relative cuoio:flex cuoio:size-4 cuoio:shrink-0 cuoio:translate-y-[--spacing(0.45)] cuoio:items-center cuoio:justify-center cuoio:rounded-[4px] cuoio:border cuoio:border-input cuoio:group-has-data-[slot=questionnaire-choice-description]/questionnaire-choice:translate-y-0.5 cuoio:group-data-[type=radio]/questionnaire-choice:rounded-full cuoio:group-data-checked/questionnaire-choice:border-primary cuoio:group-data-checked/questionnaire-choice:bg-primary cuoio:group-data-checked/questionnaire-choice:text-primary-foreground cuoio:dark:bg-input/30 cuoio:dark:group-data-checked/questionnaire-choice:bg-primary"
       >
         <span
           data-slot="questionnaire-choice-indicator-dot"
-          className="pttrn:hidden pttrn:size-2 pttrn:rounded-full pttrn:bg-primary-foreground pttrn:group-data-[type=checkbox]/questionnaire-choice:hidden pttrn:group-data-checked/questionnaire-choice:block"
+          className="cuoio:hidden cuoio:size-2 cuoio:rounded-full cuoio:bg-primary-foreground cuoio:group-data-[type=checkbox]/questionnaire-choice:hidden cuoio:group-data-checked/questionnaire-choice:block"
         />
-        <CheckIcon data-slot="questionnaire-choice-indicator-check" className="pttrn:hidden pttrn:size-3.5 pttrn:group-data-[type=radio]/questionnaire-choice:hidden pttrn:group-data-checked/questionnaire-choice:block" />
+        <CheckIcon data-slot="questionnaire-choice-indicator-check" className="cuoio:hidden cuoio:size-3.5 cuoio:group-data-[type=radio]/questionnaire-choice:hidden cuoio:group-data-checked/questionnaire-choice:block" />
       </span>
       <QuestionnairePrimitive.ChoiceLabel
         data-slot="questionnaire-choice-label"
-        className="pttrn:flex pttrn:min-w-0 pttrn:flex-1 pttrn:flex-col pttrn:gap-0.5 pttrn:leading-snug"
+        className="cuoio:flex cuoio:min-w-0 cuoio:flex-1 cuoio:flex-col cuoio:gap-0.5 cuoio:leading-snug"
       >
         {children}
       </QuestionnairePrimitive.ChoiceLabel>
       <QuestionnairePrimitive.ChoiceShortcut
         data-slot="questionnaire-choice-shortcut"
-        className="pttrn:pointer-events-none pttrn:ms-auto pttrn:hidden pttrn:size-4 pttrn:shrink-0 pttrn:translate-y-[--spacing(0.45)] pttrn:items-center pttrn:justify-center pttrn:rounded-sm pttrn:border pttrn:border-input pttrn:bg-background/80 pttrn:font-mono pttrn:text-[0.5625rem] pttrn:leading-none pttrn:font-medium pttrn:text-muted-foreground pttrn:group-has-data-[slot=questionnaire-choice-description]/questionnaire-choice:translate-y-0.5 pttrn:group-data-[shortcut]/questionnaire-choice:inline-flex"
+        className="cuoio:pointer-events-none cuoio:ms-auto cuoio:hidden cuoio:size-4 cuoio:shrink-0 cuoio:translate-y-[--spacing(0.45)] cuoio:items-center cuoio:justify-center cuoio:rounded-sm cuoio:border cuoio:border-input cuoio:bg-background/80 cuoio:font-mono cuoio:text-[0.5625rem] cuoio:leading-none cuoio:font-medium cuoio:text-muted-foreground cuoio:group-has-data-[slot=questionnaire-choice-description]/questionnaire-choice:translate-y-0.5 cuoio:group-data-[shortcut]/questionnaire-choice:inline-flex"
       />
     </QuestionnairePrimitive.Choice>
   )
@@ -151,7 +151,7 @@ function QuestionnaireChoiceDescription({
   return (
     <span
       data-slot="questionnaire-choice-description"
-      className={cn("pttrn:text-muted-foreground", className)}
+      className={cn("cuoio:text-muted-foreground", className)}
       {...props}
     />
   )
@@ -164,13 +164,13 @@ function QuestionnaireInput({
   return (
     <div
       data-slot="questionnaire-input-wrapper"
-      className="pttrn:group/questionnaire-input pttrn:relative pttrn:w-full pttrn:min-w-0"
+      className="cuoio:group/questionnaire-input cuoio:relative cuoio:w-full cuoio:min-w-0"
     >
       <QuestionnairePrimitive.Input
         data-slot="questionnaire-input"
         className={cn(
-          "pttrn:h-7 pttrn:min-h-11 pttrn:w-full pttrn:min-w-0 pttrn:rounded-md pttrn:border pttrn:border-input pttrn:bg-input/20 pttrn:px-2 pttrn:py-0.5 pttrn:text-sm pttrn:transition-[color,box-shadow,background-color] pttrn:outline-none pttrn:focus-visible:border-ring pttrn:focus-visible:ring-2 pttrn:focus-visible:ring-ring/30 pttrn:disabled:pointer-events-none pttrn:disabled:cursor-not-allowed pttrn:disabled:opacity-50 pttrn:aria-invalid:border-destructive pttrn:aria-invalid:ring-2 pttrn:aria-invalid:ring-destructive/20 pttrn:sm:min-h-0 pttrn:md:text-xs/relaxed pttrn:dark:bg-input/30 pttrn:dark:aria-invalid:border-destructive/50 pttrn:dark:aria-invalid:ring-destructive/40",
-          "pttrn:selection:bg-primary pttrn:selection:text-primary-foreground pttrn:placeholder:text-muted-foreground",
+          "cuoio:h-7 cuoio:min-h-11 cuoio:w-full cuoio:min-w-0 cuoio:rounded-md cuoio:border cuoio:border-input cuoio:bg-input/20 cuoio:px-2 cuoio:py-0.5 cuoio:text-sm cuoio:transition-[color,box-shadow,background-color] cuoio:outline-none cuoio:focus-visible:border-ring cuoio:focus-visible:ring-2 cuoio:focus-visible:ring-ring/30 cuoio:disabled:pointer-events-none cuoio:disabled:cursor-not-allowed cuoio:disabled:opacity-50 cuoio:aria-invalid:border-destructive cuoio:aria-invalid:ring-2 cuoio:aria-invalid:ring-destructive/20 cuoio:sm:min-h-0 cuoio:md:text-xs/relaxed cuoio:dark:bg-input/30 cuoio:dark:aria-invalid:border-destructive/50 cuoio:dark:aria-invalid:ring-destructive/40",
+          "cuoio:selection:bg-primary cuoio:selection:text-primary-foreground cuoio:placeholder:text-muted-foreground",
           className
         )}
         {...props}
@@ -186,7 +186,7 @@ function QuestionnaireError({
   return (
     <QuestionnairePrimitive.Error
       data-slot="questionnaire-error"
-      className={cn("pttrn:mt-2 pttrn:text-xs/relaxed pttrn:text-destructive", className)}
+      className={cn("cuoio:mt-2 cuoio:text-xs/relaxed cuoio:text-destructive", className)}
       {...props}
     />
   )
@@ -200,7 +200,7 @@ function QuestionnaireActions({
     <div
       data-slot="questionnaire-actions"
       className={cn(
-        "pttrn:grid pttrn:min-h-11 pttrn:w-full pttrn:grid-cols-[minmax(0,1fr)_auto_auto] pttrn:items-center pttrn:gap-1.5 pttrn:sm:min-h-7",
+        "cuoio:grid cuoio:min-h-11 cuoio:w-full cuoio:grid-cols-[minmax(0,1fr)_auto_auto] cuoio:items-center cuoio:gap-1.5 cuoio:sm:min-h-7",
         className
       )}
       {...props}
@@ -223,7 +223,7 @@ function QuestionnairePrevious({
       data-variant={variant}
       className={cn(
         buttonVariants({ size, variant }),
-        "pttrn:col-start-1 pttrn:row-start-1 pttrn:min-h-11 pttrn:justify-self-start pttrn:sm:min-h-0",
+        "cuoio:col-start-1 cuoio:row-start-1 cuoio:min-h-11 cuoio:justify-self-start cuoio:sm:min-h-0",
         className
       )}
       {...props}
@@ -248,7 +248,7 @@ function QuestionnaireSkip({
       data-variant={variant}
       className={cn(
         buttonVariants({ size, variant }),
-        "pttrn:col-start-2 pttrn:row-start-1 pttrn:min-h-11 pttrn:justify-self-end pttrn:sm:min-h-0",
+        "cuoio:col-start-2 cuoio:row-start-1 cuoio:min-h-11 cuoio:justify-self-end cuoio:sm:min-h-0",
         className
       )}
       {...props}
@@ -273,7 +273,7 @@ function QuestionnaireNext({
       data-variant={variant}
       className={cn(
         buttonVariants({ size, variant }),
-        "pttrn:col-start-3 pttrn:row-start-1 pttrn:min-h-11 pttrn:justify-self-end pttrn:sm:min-h-0",
+        "cuoio:col-start-3 cuoio:row-start-1 cuoio:min-h-11 cuoio:justify-self-end cuoio:sm:min-h-0",
         className
       )}
       {...props}
@@ -298,7 +298,7 @@ function QuestionnaireSubmit({
       data-variant={variant}
       className={cn(
         buttonVariants({ size, variant }),
-        "pttrn:col-start-3 pttrn:row-start-1 pttrn:min-h-11 pttrn:justify-self-end pttrn:sm:min-h-0",
+        "cuoio:col-start-3 cuoio:row-start-1 cuoio:min-h-11 cuoio:justify-self-end cuoio:sm:min-h-0",
         className
       )}
       {...props}

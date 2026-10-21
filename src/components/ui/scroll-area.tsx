@@ -12,12 +12,12 @@ function ScrollArea({
   return (
     <ScrollAreaPrimitive.Root
       data-slot="scroll-area"
-      className={cn("pttrn:relative", className)}
+      className={cn("cuoio:relative", className)}
       {...props}
     >
       <ScrollAreaPrimitive.Viewport
         data-slot="scroll-area-viewport"
-        className="pttrn:size-full pttrn:rounded-[inherit] pttrn:transition-[color,box-shadow] pttrn:outline-none pttrn:focus-visible:ring-[3px] pttrn:focus-visible:ring-ring/50 pttrn:focus-visible:outline-1"
+        className="cuoio:size-full cuoio:rounded-[inherit] cuoio:transition-[color,box-shadow] cuoio:outline-none cuoio:focus-visible:ring-[3px] cuoio:focus-visible:ring-ring/50 cuoio:focus-visible:outline-1"
       >
         {children}
       </ScrollAreaPrimitive.Viewport>
@@ -38,14 +38,14 @@ function ScrollBar({
       data-orientation={orientation}
       orientation={orientation}
       className={cn(
-        "pttrn:flex pttrn:touch-none pttrn:p-px pttrn:transition-colors pttrn:select-none pttrn:data-horizontal:h-2.5 pttrn:data-horizontal:flex-col pttrn:data-horizontal:border-t pttrn:data-horizontal:border-t-transparent pttrn:data-vertical:h-full pttrn:data-vertical:w-2.5 pttrn:data-vertical:border-s pttrn:data-vertical:border-s-transparent",
+        "cuoio:flex cuoio:touch-none cuoio:p-px cuoio:transition-colors cuoio:select-none cuoio:data-horizontal:h-2.5 cuoio:data-horizontal:flex-col cuoio:data-horizontal:border-t cuoio:data-horizontal:border-t-transparent cuoio:data-vertical:h-full cuoio:data-vertical:w-2.5 cuoio:data-vertical:border-s cuoio:data-vertical:border-s-transparent",
         className
       )}
       {...props}
     >
       <ScrollAreaPrimitive.Thumb
         data-slot="scroll-area-thumb"
-        className="pttrn:relative pttrn:flex-1 pttrn:rounded-full pttrn:bg-border"
+        className="cuoio:relative cuoio:flex-1 cuoio:rounded-full cuoio:bg-border"
       />
     </ScrollAreaPrimitive.Scrollbar>
   )

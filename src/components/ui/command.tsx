@@ -25,7 +25,7 @@ function Command({
     <CommandPrimitive
       data-slot="command"
       className={cn(
-        "pttrn:flex pttrn:size-full pttrn:flex-col pttrn:overflow-hidden pttrn:rounded-xl pttrn:bg-popover pttrn:p-1 pttrn:text-popover-foreground",
+        "cuoio:flex cuoio:size-full cuoio:flex-col cuoio:overflow-hidden cuoio:rounded-xl cuoio:bg-popover cuoio:p-1 cuoio:text-popover-foreground",
         className
       )}
       {...props}
@@ -49,13 +49,13 @@ function CommandDialog({
 }) {
   return (
     <Dialog {...props}>
-      <DialogHeader className="pttrn:sr-only">
+      <DialogHeader className="cuoio:sr-only">
         <DialogTitle>{title}</DialogTitle>
         <DialogDescription>{description}</DialogDescription>
       </DialogHeader>
       <DialogContent
         className={cn(
-          "pttrn:top-1/3 pttrn:translate-y-0 pttrn:overflow-hidden pttrn:rounded-xl! pttrn:p-0",
+          "cuoio:top-1/3 cuoio:translate-y-0 cuoio:overflow-hidden cuoio:rounded-xl! cuoio:p-0",
           className
         )}
         showCloseButton={showCloseButton}
@@ -71,18 +71,18 @@ function CommandInput({
   ...props
 }: React.ComponentProps<typeof CommandPrimitive.Input>) {
   return (
-    <div data-slot="command-input-wrapper" className="pttrn:p-1 pttrn:pb-0">
-      <InputGroup className="pttrn:h-8! pttrn:bg-input/20 pttrn:dark:bg-input/30">
+    <div data-slot="command-input-wrapper" className="cuoio:p-1 cuoio:pb-0">
+      <InputGroup className="cuoio:h-8! cuoio:bg-input/20 cuoio:dark:bg-input/30">
         <CommandPrimitive.Input
           data-slot="command-input"
           className={cn(
-            "pttrn:w-full pttrn:text-xs/relaxed pttrn:outline-hidden pttrn:disabled:cursor-not-allowed pttrn:disabled:opacity-50",
+            "cuoio:w-full cuoio:text-xs/relaxed cuoio:outline-hidden cuoio:disabled:cursor-not-allowed cuoio:disabled:opacity-50",
             className
           )}
           {...props}
         />
         <InputGroupAddon>
-          <SearchIcon className="pttrn:size-3.5 pttrn:shrink-0 pttrn:opacity-50" />
+          <SearchIcon className="cuoio:size-3.5 cuoio:shrink-0 cuoio:opacity-50" />
         </InputGroupAddon>
       </InputGroup>
     </div>
@@ -97,7 +97,7 @@ function CommandList({
     <CommandPrimitive.List
       data-slot="command-list"
       className={cn(
-        "pttrn:no-scrollbar pttrn:max-h-72 pttrn:scroll-py-1 pttrn:overflow-x-hidden pttrn:overflow-y-auto pttrn:outline-none",
+        "cuoio:no-scrollbar cuoio:max-h-72 cuoio:scroll-py-1 cuoio:overflow-x-hidden cuoio:overflow-y-auto cuoio:outline-none",
         className
       )}
       {...props}
@@ -112,7 +112,7 @@ function CommandEmpty({
   return (
     <CommandPrimitive.Empty
       data-slot="command-empty"
-      className={cn("pttrn:py-6 pttrn:text-center pttrn:text-xs/relaxed", className)}
+      className={cn("cuoio:py-6 cuoio:text-center cuoio:text-xs/relaxed", className)}
       {...props}
     />
   )
@@ -126,7 +126,7 @@ function CommandGroup({
     <CommandPrimitive.Group
       data-slot="command-group"
       className={cn(
-        "pttrn:overflow-hidden pttrn:p-1 pttrn:text-foreground pttrn:**:[[cmdk-group-heading]]:px-2.5 pttrn:**:[[cmdk-group-heading]]:py-1.5 pttrn:**:[[cmdk-group-heading]]:text-xs pttrn:**:[[cmdk-group-heading]]:font-medium pttrn:**:[[cmdk-group-heading]]:text-muted-foreground",
+        "cuoio:overflow-hidden cuoio:p-1 cuoio:text-foreground cuoio:**:[[cmdk-group-heading]]:px-2.5 cuoio:**:[[cmdk-group-heading]]:py-1.5 cuoio:**:[[cmdk-group-heading]]:text-xs cuoio:**:[[cmdk-group-heading]]:font-medium cuoio:**:[[cmdk-group-heading]]:text-muted-foreground",
         className
       )}
       {...props}
@@ -141,7 +141,7 @@ function CommandSeparator({
   return (
     <CommandPrimitive.Separator
       data-slot="command-separator"
-      className={cn("pttrn:-mx-1 pttrn:my-1 pttrn:h-px pttrn:bg-border/50", className)}
+      className={cn("cuoio:-mx-1 cuoio:my-1 cuoio:h-px cuoio:bg-border/50", className)}
       {...props}
     />
   )
@@ -156,13 +156,13 @@ function CommandItem({
     <CommandPrimitive.Item
       data-slot="command-item"
       className={cn(
-        "pttrn:group/command-item pttrn:relative pttrn:flex pttrn:min-h-7 pttrn:cursor-default pttrn:items-center pttrn:gap-2 pttrn:rounded-md pttrn:px-2.5 pttrn:py-1.5 pttrn:text-xs/relaxed pttrn:outline-hidden pttrn:select-none pttrn:in-data-[slot=dialog-content]:rounded-md pttrn:data-[disabled=true]:pointer-events-none pttrn:data-[disabled=true]:opacity-50 pttrn:data-selected:bg-muted pttrn:data-selected:text-foreground pttrn:[&_svg]:pointer-events-none pttrn:[&_svg]:shrink-0 pttrn:[&_svg:not([class*=size-])]:size-3.5 pttrn:data-selected:*:[svg]:text-foreground",
+        "cuoio:group/command-item cuoio:relative cuoio:flex cuoio:min-h-7 cuoio:cursor-default cuoio:items-center cuoio:gap-2 cuoio:rounded-md cuoio:px-2.5 cuoio:py-1.5 cuoio:text-xs/relaxed cuoio:outline-hidden cuoio:select-none cuoio:in-data-[slot=dialog-content]:rounded-md cuoio:data-[disabled=true]:pointer-events-none cuoio:data-[disabled=true]:opacity-50 cuoio:data-selected:bg-muted cuoio:data-selected:text-foreground cuoio:[&_svg]:pointer-events-none cuoio:[&_svg]:shrink-0 cuoio:[&_svg:not([class*=size-])]:size-3.5 cuoio:data-selected:*:[svg]:text-foreground",
         className
       )}
       {...props}
     >
       {children}
-      <CheckIcon className="pttrn:ms-auto pttrn:opacity-0 pttrn:group-has-data-[slot=command-shortcut]/command-item:hidden pttrn:group-data-[checked=true]/command-item:opacity-100" />
+      <CheckIcon className="cuoio:ms-auto cuoio:opacity-0 cuoio:group-has-data-[slot=command-shortcut]/command-item:hidden cuoio:group-data-[checked=true]/command-item:opacity-100" />
     </CommandPrimitive.Item>
   )
 }
@@ -175,7 +175,7 @@ function CommandShortcut({
     <span
       data-slot="command-shortcut"
       className={cn(
-        "pttrn:ms-auto pttrn:text-[0.625rem] pttrn:tracking-widest pttrn:text-muted-foreground pttrn:group-data-selected/command-item:text-foreground",
+        "cuoio:ms-auto cuoio:text-[0.625rem] cuoio:tracking-widest cuoio:text-muted-foreground cuoio:group-data-selected/command-item:text-foreground",
         className
       )}
       {...props}

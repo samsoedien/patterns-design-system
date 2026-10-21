@@ -30,7 +30,7 @@ function AlertDialogOverlay({
     <AlertDialogPrimitive.Backdrop
       data-slot="alert-dialog-overlay"
       className={cn(
-        "pttrn:fixed pttrn:inset-0 pttrn:isolate pttrn:z-50 pttrn:bg-black/80 pttrn:duration-100 pttrn:supports-backdrop-filter:backdrop-blur-xs pttrn:data-open:animate-in pttrn:data-open:fade-in-0 pttrn:data-closed:animate-out pttrn:data-closed:fade-out-0",
+        "cuoio:fixed cuoio:inset-0 cuoio:isolate cuoio:z-50 cuoio:bg-black/80 cuoio:duration-100 cuoio:supports-backdrop-filter:backdrop-blur-xs cuoio:data-open:animate-in cuoio:data-open:fade-in-0 cuoio:data-closed:animate-out cuoio:data-closed:fade-out-0",
         className
       )}
       {...props}
@@ -52,7 +52,7 @@ function AlertDialogContent({
         data-slot="alert-dialog-content"
         data-size={size}
         className={cn(
-          "pttrn:group/alert-dialog-content pttrn:fixed pttrn:top-1/2 pttrn:start-1/2 pttrn:z-50 pttrn:grid pttrn:w-full pttrn:-translate-x-1/2 rtl:pttrn:translate-x-1/2 pttrn:-translate-y-1/2 pttrn:gap-3 pttrn:rounded-xl pttrn:bg-popover pttrn:p-4 pttrn:text-popover-foreground pttrn:ring-1 pttrn:ring-foreground/10 pttrn:duration-100 pttrn:outline-none pttrn:data-[size=default]:max-w-xs pttrn:data-[size=sm]:max-w-64 pttrn:data-[size=default]:sm:max-w-sm pttrn:data-open:animate-in pttrn:data-open:fade-in-0 pttrn:data-open:zoom-in-95 pttrn:data-closed:animate-out pttrn:data-closed:fade-out-0 pttrn:data-closed:zoom-out-95",
+          "cuoio:group/alert-dialog-content cuoio:fixed cuoio:top-1/2 cuoio:start-1/2 cuoio:z-50 cuoio:grid cuoio:w-full cuoio:-translate-x-1/2 rtl:cuoio:translate-x-1/2 cuoio:-translate-y-1/2 cuoio:gap-3 cuoio:rounded-xl cuoio:bg-popover cuoio:p-4 cuoio:text-popover-foreground cuoio:ring-1 cuoio:ring-foreground/10 cuoio:duration-100 cuoio:outline-none cuoio:data-[size=default]:max-w-xs cuoio:data-[size=sm]:max-w-64 cuoio:data-[size=default]:sm:max-w-sm cuoio:data-open:animate-in cuoio:data-open:fade-in-0 cuoio:data-open:zoom-in-95 cuoio:data-closed:animate-out cuoio:data-closed:fade-out-0 cuoio:data-closed:zoom-out-95",
           className
         )}
         {...props}
@@ -69,7 +69,7 @@ function AlertDialogHeader({
     <div
       data-slot="alert-dialog-header"
       className={cn(
-        "pttrn:grid pttrn:grid-rows-[auto_1fr] pttrn:place-items-center pttrn:gap-1 pttrn:text-center pttrn:has-data-[slot=alert-dialog-media]:grid-rows-[auto_auto_1fr] pttrn:has-data-[slot=alert-dialog-media]:gap-x-4 pttrn:sm:group-data-[size=default]/alert-dialog-content:place-items-start pttrn:sm:group-data-[size=default]/alert-dialog-content:text-start pttrn:sm:group-data-[size=default]/alert-dialog-content:has-data-[slot=alert-dialog-media]:grid-rows-[auto_1fr]",
+        "cuoio:grid cuoio:grid-rows-[auto_1fr] cuoio:place-items-center cuoio:gap-1 cuoio:text-center cuoio:has-data-[slot=alert-dialog-media]:grid-rows-[auto_auto_1fr] cuoio:has-data-[slot=alert-dialog-media]:gap-x-4 cuoio:sm:group-data-[size=default]/alert-dialog-content:place-items-start cuoio:sm:group-data-[size=default]/alert-dialog-content:text-start cuoio:sm:group-data-[size=default]/alert-dialog-content:has-data-[slot=alert-dialog-media]:grid-rows-[auto_1fr]",
         className
       )}
       {...props}
@@ -85,7 +85,7 @@ function AlertDialogFooter({
     <div
       data-slot="alert-dialog-footer"
       className={cn(
-        "pttrn:flex pttrn:flex-col-reverse pttrn:gap-2 pttrn:group-data-[size=sm]/alert-dialog-content:grid pttrn:group-data-[size=sm]/alert-dialog-content:grid-cols-2 pttrn:sm:flex-row pttrn:sm:justify-end",
+        "cuoio:flex cuoio:flex-col-reverse cuoio:gap-2 cuoio:group-data-[size=sm]/alert-dialog-content:grid cuoio:group-data-[size=sm]/alert-dialog-content:grid-cols-2 cuoio:sm:flex-row cuoio:sm:justify-end",
         className
       )}
       {...props}
@@ -101,7 +101,7 @@ function AlertDialogMedia({
     <div
       data-slot="alert-dialog-media"
       className={cn(
-        "pttrn:mb-2 pttrn:inline-flex pttrn:size-8 pttrn:items-center pttrn:justify-center pttrn:rounded-md pttrn:bg-muted pttrn:sm:group-data-[size=default]/alert-dialog-content:row-span-2 pttrn:*:[svg:not([class*=size-])]:size-4",
+        "cuoio:mb-2 cuoio:inline-flex cuoio:size-8 cuoio:items-center cuoio:justify-center cuoio:rounded-md cuoio:bg-muted cuoio:sm:group-data-[size=default]/alert-dialog-content:row-span-2 cuoio:*:[svg:not([class*=size-])]:size-4",
         className
       )}
       {...props}
@@ -117,7 +117,7 @@ function AlertDialogTitle({
     <AlertDialogPrimitive.Title
       data-slot="alert-dialog-title"
       className={cn(
-        "pttrn:font-heading pttrn:text-sm pttrn:font-medium pttrn:sm:group-data-[size=default]/alert-dialog-content:group-has-data-[slot=alert-dialog-media]/alert-dialog-content:col-start-2",
+        "cuoio:font-heading cuoio:text-sm cuoio:font-medium cuoio:sm:group-data-[size=default]/alert-dialog-content:group-has-data-[slot=alert-dialog-media]/alert-dialog-content:col-start-2",
         className
       )}
       {...props}
@@ -133,7 +133,7 @@ function AlertDialogDescription({
     <AlertDialogPrimitive.Description
       data-slot="alert-dialog-description"
       className={cn(
-        "pttrn:text-xs/relaxed pttrn:text-balance pttrn:text-muted-foreground pttrn:md:text-pretty pttrn:*:[a]:underline pttrn:*:[a]:underline-offset-3 pttrn:*:[a]:hover:text-foreground",
+        "cuoio:text-xs/relaxed cuoio:text-balance cuoio:text-muted-foreground cuoio:md:text-pretty cuoio:*:[a]:underline cuoio:*:[a]:underline-offset-3 cuoio:*:[a]:hover:text-foreground",
         className
       )}
       {...props}

@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss' prefix(cuoio);
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/figtree";
@@ -120,16 +120,19 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply cuoio:border-border cuoio:outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply cuoio:bg-background cuoio:text-foreground;
   }
   button:not(:disabled),
   [role="button"]:not(:disabled) {
     cursor: pointer;
   }
   html {
-    @apply font-sans;
+    @apply cuoio:font-sans;
   }
 }
+
+
+

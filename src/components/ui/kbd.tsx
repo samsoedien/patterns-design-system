@@ -5,7 +5,7 @@ function Kbd({ className, ...props }: React.ComponentProps<"kbd">) {
     <kbd
       data-slot="kbd"
       className={cn(
-        "pttrn:pointer-events-none pttrn:inline-flex pttrn:h-5 pttrn:w-fit pttrn:min-w-5 pttrn:items-center pttrn:justify-center pttrn:gap-1 pttrn:rounded-xs pttrn:bg-muted pttrn:px-1 pttrn:font-sans pttrn:text-[0.625rem] pttrn:font-medium pttrn:text-muted-foreground pttrn:select-none pttrn:in-data-[slot=tooltip-content]:bg-background/20 pttrn:in-data-[slot=tooltip-content]:text-background pttrn:dark:in-data-[slot=tooltip-content]:bg-background/10 pttrn:[&_svg:not([class*=size-])]:size-3",
+        "cuoio:pointer-events-none cuoio:inline-flex cuoio:h-5 cuoio:w-fit cuoio:min-w-5 cuoio:items-center cuoio:justify-center cuoio:gap-1 cuoio:rounded-xs cuoio:bg-muted cuoio:px-1 cuoio:font-sans cuoio:text-[0.625rem] cuoio:font-medium cuoio:text-muted-foreground cuoio:select-none cuoio:in-data-[slot=tooltip-content]:bg-background/20 cuoio:in-data-[slot=tooltip-content]:text-background cuoio:dark:in-data-[slot=tooltip-content]:bg-background/10 cuoio:[&_svg:not([class*=size-])]:size-3",
         className
       )}
       {...props}
@@ -17,7 +17,7 @@ function KbdGroup({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <kbd
       data-slot="kbd-group"
-      className={cn("pttrn:inline-flex pttrn:items-center pttrn:gap-1", className)}
+      className={cn("cuoio:inline-flex cuoio:items-center cuoio:gap-1", className)}
       {...props}
     />
   )

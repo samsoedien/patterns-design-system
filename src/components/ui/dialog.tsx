@@ -31,7 +31,7 @@ function DialogOverlay({
     <DialogPrimitive.Backdrop
       data-slot="dialog-overlay"
       className={cn(
-        "pttrn:fixed pttrn:inset-0 pttrn:isolate pttrn:z-50 pttrn:bg-black/80 pttrn:duration-100 pttrn:supports-backdrop-filter:backdrop-blur-xs pttrn:data-open:animate-in pttrn:data-open:fade-in-0 pttrn:data-closed:animate-out pttrn:data-closed:fade-out-0",
+        "cuoio:fixed cuoio:inset-0 cuoio:isolate cuoio:z-50 cuoio:bg-black/80 cuoio:duration-100 cuoio:supports-backdrop-filter:backdrop-blur-xs cuoio:data-open:animate-in cuoio:data-open:fade-in-0 cuoio:data-closed:animate-out cuoio:data-closed:fade-out-0",
         className
       )}
       {...props}
@@ -53,7 +53,7 @@ function DialogContent({
       <DialogPrimitive.Popup
         data-slot="dialog-content"
         className={cn(
-          "pttrn:fixed pttrn:top-1/2 pttrn:start-1/2 pttrn:z-50 pttrn:grid pttrn:w-full pttrn:max-w-[calc(100%-2rem)] pttrn:-translate-x-1/2 rtl:pttrn:translate-x-1/2 pttrn:-translate-y-1/2 pttrn:gap-4 pttrn:rounded-xl pttrn:bg-popover pttrn:p-4 pttrn:text-xs/relaxed pttrn:text-popover-foreground pttrn:ring-1 pttrn:ring-foreground/10 pttrn:duration-100 pttrn:outline-none pttrn:sm:max-w-sm pttrn:data-open:animate-in pttrn:data-open:fade-in-0 pttrn:data-open:zoom-in-95 pttrn:data-closed:animate-out pttrn:data-closed:fade-out-0 pttrn:data-closed:zoom-out-95",
+          "cuoio:fixed cuoio:top-1/2 cuoio:start-1/2 cuoio:z-50 cuoio:grid cuoio:w-full cuoio:max-w-[calc(100%-2rem)] cuoio:-translate-x-1/2 rtl:cuoio:translate-x-1/2 cuoio:-translate-y-1/2 cuoio:gap-4 cuoio:rounded-xl cuoio:bg-popover cuoio:p-4 cuoio:text-xs/relaxed cuoio:text-popover-foreground cuoio:ring-1 cuoio:ring-foreground/10 cuoio:duration-100 cuoio:outline-none cuoio:sm:max-w-sm cuoio:data-open:animate-in cuoio:data-open:fade-in-0 cuoio:data-open:zoom-in-95 cuoio:data-closed:animate-out cuoio:data-closed:fade-out-0 cuoio:data-closed:zoom-out-95",
           className
         )}
         {...props}
@@ -65,14 +65,14 @@ function DialogContent({
             render={
               <Button
                 variant="ghost"
-                className="pttrn:absolute pttrn:top-2 pttrn:end-2"
+                className="cuoio:absolute cuoio:top-2 cuoio:end-2"
                 size="icon-sm"
               />
             }
           >
             <XIcon
             />
-            <span className="pttrn:sr-only">Close</span>
+            <span className="cuoio:sr-only">Close</span>
           </DialogPrimitive.Close>
         )}
       </DialogPrimitive.Popup>
@@ -84,7 +84,7 @@ function DialogHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="dialog-header"
-      className={cn("pttrn:flex pttrn:flex-col pttrn:gap-1", className)}
+      className={cn("cuoio:flex cuoio:flex-col cuoio:gap-1", className)}
       {...props}
     />
   )
@@ -102,7 +102,7 @@ function DialogFooter({
     <div
       data-slot="dialog-footer"
       className={cn(
-        "pttrn:flex pttrn:flex-col-reverse pttrn:gap-2 pttrn:sm:flex-row pttrn:sm:justify-end",
+        "cuoio:flex cuoio:flex-col-reverse cuoio:gap-2 cuoio:sm:flex-row cuoio:sm:justify-end",
         className
       )}
       {...props}
@@ -121,7 +121,7 @@ function DialogTitle({ className, ...props }: DialogPrimitive.Title.Props) {
   return (
     <DialogPrimitive.Title
       data-slot="dialog-title"
-      className={cn("pttrn:font-heading pttrn:text-sm pttrn:font-medium", className)}
+      className={cn("cuoio:font-heading cuoio:text-sm cuoio:font-medium", className)}
       {...props}
     />
   )
@@ -135,7 +135,7 @@ function DialogDescription({
     <DialogPrimitive.Description
       data-slot="dialog-description"
       className={cn(
-        "pttrn:text-xs/relaxed pttrn:text-muted-foreground pttrn:*:[a]:underline pttrn:*:[a]:underline-offset-3 pttrn:*:[a]:hover:text-foreground",
+        "cuoio:text-xs/relaxed cuoio:text-muted-foreground cuoio:*:[a]:underline cuoio:*:[a]:underline-offset-3 cuoio:*:[a]:hover:text-foreground",
         className
       )}
       {...props}

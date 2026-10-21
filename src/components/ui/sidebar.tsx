@@ -138,7 +138,7 @@ function SidebarProvider({
           } as React.CSSProperties
         }
         className={cn(
-          "pttrn:group/sidebar-wrapper pttrn:flex pttrn:min-h-svh pttrn:w-full pttrn:has-data-[variant=inset]:bg-sidebar",
+          "cuoio:group/sidebar-wrapper cuoio:flex cuoio:min-h-svh cuoio:w-full cuoio:has-data-[variant=inset]:bg-sidebar",
           className
         )}
         {...props}
@@ -169,7 +169,7 @@ function Sidebar({
       <div
         data-slot="sidebar"
         className={cn(
-          "pttrn:flex pttrn:h-full pttrn:w-(--sidebar-width) pttrn:flex-col pttrn:bg-sidebar pttrn:text-sidebar-foreground",
+          "cuoio:flex cuoio:h-full cuoio:w-(--sidebar-width) cuoio:flex-col cuoio:bg-sidebar cuoio:text-sidebar-foreground",
           className
         )}
         {...props}
@@ -187,7 +187,7 @@ function Sidebar({
           data-sidebar="sidebar"
           data-slot="sidebar"
           data-mobile="true"
-          className="pttrn:w-(--sidebar-width) pttrn:bg-sidebar pttrn:p-0 pttrn:text-sidebar-foreground pttrn:[&>button]:hidden"
+          className="cuoio:w-(--sidebar-width) cuoio:bg-sidebar cuoio:p-0 cuoio:text-sidebar-foreground cuoio:[&>button]:hidden"
           style={
             {
               "--sidebar-width": SIDEBAR_WIDTH_MOBILE,
@@ -195,11 +195,11 @@ function Sidebar({
           }
           side={side}
         >
-          <SheetHeader className="pttrn:sr-only">
+          <SheetHeader className="cuoio:sr-only">
             <SheetTitle>Sidebar</SheetTitle>
             <SheetDescription>Displays the mobile sidebar.</SheetDescription>
           </SheetHeader>
-          <div className="pttrn:flex pttrn:h-full pttrn:w-full pttrn:flex-col">{children}</div>
+          <div className="cuoio:flex cuoio:h-full cuoio:w-full cuoio:flex-col">{children}</div>
         </SheetContent>
       </Sheet>
     )
@@ -207,7 +207,7 @@ function Sidebar({
 
   return (
     <div
-      className="pttrn:group pttrn:peer pttrn:hidden pttrn:text-sidebar-foreground pttrn:md:block"
+      className="cuoio:group cuoio:peer cuoio:hidden cuoio:text-sidebar-foreground cuoio:md:block"
       data-state={state}
       data-collapsible={state === "collapsed" ? collapsible : ""}
       data-variant={variant}
@@ -218,23 +218,23 @@ function Sidebar({
       <div
         data-slot="sidebar-gap"
         className={cn(
-          "pttrn:relative pttrn:w-(--sidebar-width) pttrn:bg-transparent pttrn:transition-[width] pttrn:duration-200 pttrn:ease-linear",
-          "pttrn:group-data-[collapsible=offcanvas]:w-0",
-          "pttrn:group-data-[side=right]:rotate-180",
+          "cuoio:relative cuoio:w-(--sidebar-width) cuoio:bg-transparent cuoio:transition-[width] cuoio:duration-200 cuoio:ease-linear",
+          "cuoio:group-data-[collapsible=offcanvas]:w-0",
+          "cuoio:group-data-[side=right]:rotate-180",
           variant === "floating" || variant === "inset"
-            ? "pttrn:group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4)))]"
-            : "pttrn:group-data-[collapsible=icon]:w-(--sidebar-width-icon)"
+            ? "cuoio:group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4)))]"
+            : "cuoio:group-data-[collapsible=icon]:w-(--sidebar-width-icon)"
         )}
       />
       <div
         data-slot="sidebar-container"
         data-side={side}
         className={cn(
-          "pttrn:fixed pttrn:inset-y-0 pttrn:z-10 pttrn:hidden pttrn:h-svh pttrn:w-(--sidebar-width) pttrn:transition-[left,right,width] pttrn:duration-200 pttrn:ease-linear pttrn:data-[side=left]:left-0 pttrn:data-[side=left]:group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)] pttrn:data-[side=right]:right-0 pttrn:data-[side=right]:group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)] pttrn:md:flex",
+          "cuoio:fixed cuoio:inset-y-0 cuoio:z-10 cuoio:hidden cuoio:h-svh cuoio:w-(--sidebar-width) cuoio:transition-[left,right,width] cuoio:duration-200 cuoio:ease-linear cuoio:data-[side=left]:left-0 cuoio:data-[side=left]:group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)] cuoio:data-[side=right]:right-0 cuoio:data-[side=right]:group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)] cuoio:md:flex",
           // Adjust the padding for floating and inset variants.
           variant === "floating" || variant === "inset"
-            ? "pttrn:p-2 pttrn:group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]"
-            : "pttrn:group-data-[collapsible=icon]:w-(--sidebar-width-icon) pttrn:group-data-[side=left]:border-e pttrn:group-data-[side=right]:border-s",
+            ? "cuoio:p-2 cuoio:group-data-[collapsible=icon]:w-[calc(var(--sidebar-width-icon)+(--spacing(4))+2px)]"
+            : "cuoio:group-data-[collapsible=icon]:w-(--sidebar-width-icon) cuoio:group-data-[side=left]:border-e cuoio:group-data-[side=right]:border-s",
           className
         )}
         {...props}
@@ -242,7 +242,7 @@ function Sidebar({
         <div
           data-sidebar="sidebar"
           data-slot="sidebar-inner"
-          className="pttrn:flex pttrn:size-full pttrn:flex-col pttrn:bg-sidebar pttrn:group-data-[variant=floating]:rounded-lg pttrn:group-data-[variant=floating]:shadow-sm pttrn:group-data-[variant=floating]:ring-1 pttrn:group-data-[variant=floating]:ring-sidebar-border"
+          className="cuoio:flex cuoio:size-full cuoio:flex-col cuoio:bg-sidebar cuoio:group-data-[variant=floating]:rounded-lg cuoio:group-data-[variant=floating]:shadow-sm cuoio:group-data-[variant=floating]:ring-1 cuoio:group-data-[variant=floating]:ring-sidebar-border"
         >
           {children}
         </div>
@@ -272,7 +272,7 @@ function SidebarTrigger({
       {...props}
     >
       <PanelLeftIcon />
-      <span className="pttrn:sr-only">Toggle Sidebar</span>
+      <span className="cuoio:sr-only">Toggle Sidebar</span>
     </Button>
   )
 }
@@ -289,12 +289,12 @@ function SidebarRail({ className, ...props }: React.ComponentProps<"button">) {
       onClick={toggleSidebar}
       title="Toggle Sidebar"
       className={cn(
-        "pttrn:absolute pttrn:inset-y-0 pttrn:z-20 pttrn:hidden pttrn:w-4 pttrn:transition-all pttrn:ease-linear pttrn:group-data-[side=left]:-right-4 pttrn:group-data-[side=right]:left-0 pttrn:after:absolute pttrn:after:inset-y-0 pttrn:after:start-1/2 pttrn:after:w-[2px] pttrn:hover:after:bg-sidebar-border pttrn:sm:flex pttrn:ltr:-translate-x-1/2 rtl:pttrn:ltr:translate-x-1/2 pttrn:rtl:-translate-x-1/2 rtl:pttrn:rtl:translate-x-1/2",
-        "pttrn:in-data-[side=left]:cursor-w-resize rtl:pttrn:in-data-[side=left]:cursor-e-resize pttrn:in-data-[side=right]:cursor-e-resize rtl:pttrn:in-data-[side=right]:cursor-w-resize",
-        "pttrn:[[data-side=left][data-state=collapsed]_&]:cursor-e-resize rtl:pttrn:[[data-side=left][data-state=collapsed]_&]:cursor-w-resize pttrn:[[data-side=right][data-state=collapsed]_&]:cursor-w-resize rtl:pttrn:[[data-side=right][data-state=collapsed]_&]:cursor-e-resize",
-        "pttrn:group-data-[collapsible=offcanvas]:translate-x-0 rtl:pttrn:group-data-[collapsible=offcanvas]:-translate-x-0 pttrn:group-data-[collapsible=offcanvas]:after:start-full pttrn:hover:group-data-[collapsible=offcanvas]:bg-sidebar",
-        "pttrn:[[data-side=left][data-collapsible=offcanvas]_&]:-end-2",
-        "pttrn:[[data-side=right][data-collapsible=offcanvas]_&]:-start-2",
+        "cuoio:absolute cuoio:inset-y-0 cuoio:z-20 cuoio:hidden cuoio:w-4 cuoio:transition-all cuoio:ease-linear cuoio:group-data-[side=left]:-right-4 cuoio:group-data-[side=right]:left-0 cuoio:after:absolute cuoio:after:inset-y-0 cuoio:after:start-1/2 cuoio:after:w-[2px] cuoio:hover:after:bg-sidebar-border cuoio:sm:flex cuoio:ltr:-translate-x-1/2 rtl:cuoio:ltr:translate-x-1/2 cuoio:rtl:-translate-x-1/2 rtl:cuoio:rtl:translate-x-1/2",
+        "cuoio:in-data-[side=left]:cursor-w-resize rtl:cuoio:in-data-[side=left]:cursor-e-resize cuoio:in-data-[side=right]:cursor-e-resize rtl:cuoio:in-data-[side=right]:cursor-w-resize",
+        "cuoio:[[data-side=left][data-state=collapsed]_&]:cursor-e-resize rtl:cuoio:[[data-side=left][data-state=collapsed]_&]:cursor-w-resize cuoio:[[data-side=right][data-state=collapsed]_&]:cursor-w-resize rtl:cuoio:[[data-side=right][data-state=collapsed]_&]:cursor-e-resize",
+        "cuoio:group-data-[collapsible=offcanvas]:translate-x-0 rtl:cuoio:group-data-[collapsible=offcanvas]:-translate-x-0 cuoio:group-data-[collapsible=offcanvas]:after:start-full cuoio:hover:group-data-[collapsible=offcanvas]:bg-sidebar",
+        "cuoio:[[data-side=left][data-collapsible=offcanvas]_&]:-end-2",
+        "cuoio:[[data-side=right][data-collapsible=offcanvas]_&]:-start-2",
         className
       )}
       {...props}
@@ -307,7 +307,7 @@ function SidebarInset({ className, ...props }: React.ComponentProps<"main">) {
     <main
       data-slot="sidebar-inset"
       className={cn(
-        "pttrn:relative pttrn:flex pttrn:w-full pttrn:flex-1 pttrn:flex-col pttrn:bg-background pttrn:md:peer-data-[variant=inset]:m-2 pttrn:md:peer-data-[variant=inset]:ms-0 pttrn:md:peer-data-[variant=inset]:rounded-xl pttrn:md:peer-data-[variant=inset]:shadow-sm pttrn:md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ms-2",
+        "cuoio:relative cuoio:flex cuoio:w-full cuoio:flex-1 cuoio:flex-col cuoio:bg-background cuoio:md:peer-data-[variant=inset]:m-2 cuoio:md:peer-data-[variant=inset]:ms-0 cuoio:md:peer-data-[variant=inset]:rounded-xl cuoio:md:peer-data-[variant=inset]:shadow-sm cuoio:md:peer-data-[variant=inset]:peer-data-[state=collapsed]:ms-2",
         className
       )}
       {...props}
@@ -324,7 +324,7 @@ function SidebarInput({
       data-slot="sidebar-input"
       data-sidebar="input"
       className={cn(
-        "pttrn:h-8 pttrn:w-full pttrn:border-input pttrn:bg-muted/20 pttrn:dark:bg-muted/30",
+        "cuoio:h-8 cuoio:w-full cuoio:border-input cuoio:bg-muted/20 cuoio:dark:bg-muted/30",
         className
       )}
       {...props}
@@ -337,7 +337,7 @@ function SidebarHeader({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="sidebar-header"
       data-sidebar="header"
-      className={cn("pttrn:flex pttrn:flex-col pttrn:gap-2 pttrn:p-2", className)}
+      className={cn("cuoio:flex cuoio:flex-col cuoio:gap-2 cuoio:p-2", className)}
       {...props}
     />
   )
@@ -348,7 +348,7 @@ function SidebarFooter({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="sidebar-footer"
       data-sidebar="footer"
-      className={cn("pttrn:flex pttrn:flex-col pttrn:gap-2 pttrn:p-2", className)}
+      className={cn("cuoio:flex cuoio:flex-col cuoio:gap-2 cuoio:p-2", className)}
       {...props}
     />
   )
@@ -362,7 +362,7 @@ function SidebarSeparator({
     <Separator
       data-slot="sidebar-separator"
       data-sidebar="separator"
-      className={cn("pttrn:mx-2 pttrn:w-auto pttrn:bg-sidebar-border", className)}
+      className={cn("cuoio:mx-2 cuoio:w-auto cuoio:bg-sidebar-border", className)}
       {...props}
     />
   )
@@ -374,7 +374,7 @@ function SidebarContent({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="sidebar-content"
       data-sidebar="content"
       className={cn(
-        "pttrn:no-scrollbar pttrn:flex pttrn:min-h-0 pttrn:flex-1 pttrn:flex-col pttrn:gap-0 pttrn:overflow-auto pttrn:group-data-[collapsible=icon]:overflow-hidden",
+        "cuoio:no-scrollbar cuoio:flex cuoio:min-h-0 cuoio:flex-1 cuoio:flex-col cuoio:gap-0 cuoio:overflow-auto cuoio:group-data-[collapsible=icon]:overflow-hidden",
         className
       )}
       {...props}
@@ -388,7 +388,7 @@ function SidebarGroup({ className, ...props }: React.ComponentProps<"div">) {
       data-slot="sidebar-group"
       data-sidebar="group"
       className={cn(
-        "pttrn:relative pttrn:flex pttrn:w-full pttrn:min-w-0 pttrn:flex-col pttrn:px-2 pttrn:py-1",
+        "cuoio:relative cuoio:flex cuoio:w-full cuoio:min-w-0 cuoio:flex-col cuoio:px-2 cuoio:py-1",
         className
       )}
       {...props}
@@ -452,7 +452,7 @@ function SidebarGroupContent({
     <div
       data-slot="sidebar-group-content"
       data-sidebar="group-content"
-      className={cn("pttrn:w-full pttrn:text-xs", className)}
+      className={cn("cuoio:w-full cuoio:text-xs", className)}
       {...props}
     />
   )
@@ -463,7 +463,7 @@ function SidebarMenu({ className, ...props }: React.ComponentProps<"ul">) {
     <ul
       data-slot="sidebar-menu"
       data-sidebar="menu"
-      className={cn("pttrn:flex pttrn:w-full pttrn:min-w-0 pttrn:flex-col pttrn:gap-px", className)}
+      className={cn("cuoio:flex cuoio:w-full cuoio:min-w-0 cuoio:flex-col cuoio:gap-px", className)}
       {...props}
     />
   )
@@ -474,25 +474,25 @@ function SidebarMenuItem({ className, ...props }: React.ComponentProps<"li">) {
     <li
       data-slot="sidebar-menu-item"
       data-sidebar="menu-item"
-      className={cn("pttrn:group/menu-item pttrn:relative", className)}
+      className={cn("cuoio:group/menu-item cuoio:relative", className)}
       {...props}
     />
   )
 }
 
 const sidebarMenuButtonVariants = cva(
-  "pttrn:peer/menu-button pttrn:group/menu-button pttrn:flex pttrn:w-full pttrn:items-center pttrn:gap-2 pttrn:overflow-hidden pttrn:rounded-[calc(var(--radius-sm)+2px)] pttrn:p-2 pttrn:text-start pttrn:text-xs pttrn:ring-sidebar-ring pttrn:outline-hidden pttrn:transition-[width,height,padding] pttrn:group-has-data-[sidebar=menu-action]/menu-item:pe-8 pttrn:group-data-[collapsible=icon]:size-8! pttrn:group-data-[collapsible=icon]:p-2! pttrn:hover:bg-sidebar-accent pttrn:hover:text-sidebar-accent-foreground pttrn:focus-visible:ring-2 pttrn:active:bg-sidebar-accent pttrn:active:text-sidebar-accent-foreground pttrn:disabled:pointer-events-none pttrn:disabled:opacity-50 pttrn:aria-disabled:pointer-events-none pttrn:aria-disabled:opacity-50 pttrn:data-open:hover:bg-sidebar-accent pttrn:data-open:hover:text-sidebar-accent-foreground pttrn:data-active:bg-sidebar-accent pttrn:data-active:font-medium pttrn:data-active:text-sidebar-accent-foreground pttrn:[&_svg]:size-4 pttrn:[&_svg]:shrink-0 pttrn:[&>span:last-child]:truncate",
+  "cuoio:peer/menu-button cuoio:group/menu-button cuoio:flex cuoio:w-full cuoio:items-center cuoio:gap-2 cuoio:overflow-hidden cuoio:rounded-[calc(var(--radius-sm)+2px)] cuoio:p-2 cuoio:text-start cuoio:text-xs cuoio:ring-sidebar-ring cuoio:outline-hidden cuoio:transition-[width,height,padding] cuoio:group-has-data-[sidebar=menu-action]/menu-item:pe-8 cuoio:group-data-[collapsible=icon]:size-8! cuoio:group-data-[collapsible=icon]:p-2! cuoio:hover:bg-sidebar-accent cuoio:hover:text-sidebar-accent-foreground cuoio:focus-visible:ring-2 cuoio:active:bg-sidebar-accent cuoio:active:text-sidebar-accent-foreground cuoio:disabled:pointer-events-none cuoio:disabled:opacity-50 cuoio:aria-disabled:pointer-events-none cuoio:aria-disabled:opacity-50 cuoio:data-open:hover:bg-sidebar-accent cuoio:data-open:hover:text-sidebar-accent-foreground cuoio:data-active:bg-sidebar-accent cuoio:data-active:font-medium cuoio:data-active:text-sidebar-accent-foreground cuoio:[&_svg]:size-4 cuoio:[&_svg]:shrink-0 cuoio:[&>span:last-child]:truncate",
   {
     variants: {
       variant: {
-        default: "pttrn:hover:bg-sidebar-accent pttrn:hover:text-sidebar-accent-foreground",
+        default: "cuoio:hover:bg-sidebar-accent cuoio:hover:text-sidebar-accent-foreground",
         outline:
-          "pttrn:bg-background pttrn:shadow-[0_0_0_1px_var(--sidebar-border)] pttrn:hover:bg-sidebar-accent pttrn:hover:text-sidebar-accent-foreground pttrn:hover:shadow-[0_0_0_1px_var(--sidebar-accent)]",
+          "cuoio:bg-background cuoio:shadow-[0_0_0_1px_var(--sidebar-border)] cuoio:hover:bg-sidebar-accent cuoio:hover:text-sidebar-accent-foreground cuoio:hover:shadow-[0_0_0_1px_var(--sidebar-accent)]",
       },
       size: {
-        default: "pttrn:h-8 pttrn:text-xs",
-        sm: "pttrn:h-7 pttrn:text-xs",
-        lg: "pttrn:h-12 pttrn:text-xs pttrn:group-data-[collapsible=icon]:p-0!",
+        default: "cuoio:h-8 cuoio:text-xs",
+        sm: "cuoio:h-7 cuoio:text-xs",
+        lg: "cuoio:h-12 cuoio:text-xs cuoio:group-data-[collapsible=icon]:p-0!",
       },
     },
     defaultVariants: {
@@ -595,7 +595,7 @@ function SidebarMenuBadge({
       data-slot="sidebar-menu-badge"
       data-sidebar="menu-badge"
       className={cn(
-        "pttrn:pointer-events-none pttrn:absolute pttrn:end-1 pttrn:flex pttrn:h-5 pttrn:min-w-5 pttrn:items-center pttrn:justify-center pttrn:rounded-[calc(var(--radius-sm)-2px)] pttrn:px-1 pttrn:text-xs pttrn:font-medium pttrn:text-sidebar-foreground pttrn:tabular-nums pttrn:select-none pttrn:group-data-[collapsible=icon]:hidden pttrn:peer-hover/menu-button:text-sidebar-accent-foreground pttrn:peer-data-[size=default]/menu-button:top-1.5 pttrn:peer-data-[size=lg]/menu-button:top-2.5 pttrn:peer-data-[size=sm]/menu-button:top-1 pttrn:peer-data-active/menu-button:text-sidebar-accent-foreground",
+        "cuoio:pointer-events-none cuoio:absolute cuoio:end-1 cuoio:flex cuoio:h-5 cuoio:min-w-5 cuoio:items-center cuoio:justify-center cuoio:rounded-[calc(var(--radius-sm)-2px)] cuoio:px-1 cuoio:text-xs cuoio:font-medium cuoio:text-sidebar-foreground cuoio:tabular-nums cuoio:select-none cuoio:group-data-[collapsible=icon]:hidden cuoio:peer-hover/menu-button:text-sidebar-accent-foreground cuoio:peer-data-[size=default]/menu-button:top-1.5 cuoio:peer-data-[size=lg]/menu-button:top-2.5 cuoio:peer-data-[size=sm]/menu-button:top-1 cuoio:peer-data-active/menu-button:text-sidebar-accent-foreground",
         className
       )}
       {...props}
@@ -619,17 +619,17 @@ function SidebarMenuSkeleton({
     <div
       data-slot="sidebar-menu-skeleton"
       data-sidebar="menu-skeleton"
-      className={cn("pttrn:flex pttrn:h-8 pttrn:items-center pttrn:gap-2 pttrn:rounded-md pttrn:px-2", className)}
+      className={cn("cuoio:flex cuoio:h-8 cuoio:items-center cuoio:gap-2 cuoio:rounded-md cuoio:px-2", className)}
       {...props}
     >
       {showIcon && (
         <Skeleton
-          className="pttrn:size-4 pttrn:rounded-md"
+          className="cuoio:size-4 cuoio:rounded-md"
           data-sidebar="menu-skeleton-icon"
         />
       )}
       <Skeleton
-        className="pttrn:h-4 pttrn:max-w-(--skeleton-width) pttrn:flex-1"
+        className="cuoio:h-4 cuoio:max-w-(--skeleton-width) cuoio:flex-1"
         data-sidebar="menu-skeleton-text"
         style={
           {
@@ -647,7 +647,7 @@ function SidebarMenuSub({ className, ...props }: React.ComponentProps<"ul">) {
       data-slot="sidebar-menu-sub"
       data-sidebar="menu-sub"
       className={cn(
-        "pttrn:mx-3.5 pttrn:flex pttrn:min-w-0 pttrn:translate-x-px rtl:pttrn:-translate-x-px pttrn:flex-col pttrn:gap-1 pttrn:border-s pttrn:border-sidebar-border pttrn:px-2.5 pttrn:py-0.5 pttrn:group-data-[collapsible=icon]:hidden",
+        "cuoio:mx-3.5 cuoio:flex cuoio:min-w-0 cuoio:translate-x-px rtl:cuoio:-translate-x-px cuoio:flex-col cuoio:gap-1 cuoio:border-s cuoio:border-sidebar-border cuoio:px-2.5 cuoio:py-0.5 cuoio:group-data-[collapsible=icon]:hidden",
         className
       )}
       {...props}
@@ -663,7 +663,7 @@ function SidebarMenuSubItem({
     <li
       data-slot="sidebar-menu-sub-item"
       data-sidebar="menu-sub-item"
-      className={cn("pttrn:group/menu-sub-item pttrn:relative", className)}
+      className={cn("cuoio:group/menu-sub-item cuoio:relative", className)}
       {...props}
     />
   )

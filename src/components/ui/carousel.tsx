@@ -120,7 +120,7 @@ function Carousel({
     >
       <div
         onKeyDownCapture={handleKeyDown}
-        className={cn("pttrn:relative", className)}
+        className={cn("cuoio:relative", className)}
         role="region"
         aria-roledescription="carousel"
         data-slot="carousel"
@@ -138,13 +138,13 @@ function CarouselContent({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       ref={carouselRef}
-      className="pttrn:overflow-hidden"
+      className="cuoio:overflow-hidden"
       data-slot="carousel-content"
     >
       <div
         className={cn(
-          "pttrn:flex",
-          orientation === "horizontal" ? "pttrn:-ms-4" : "pttrn:-mt-4 pttrn:flex-col",
+          "cuoio:flex",
+          orientation === "horizontal" ? "cuoio:-ms-4" : "cuoio:-mt-4 cuoio:flex-col",
           className
         )}
         {...props}
@@ -162,8 +162,8 @@ function CarouselItem({ className, ...props }: React.ComponentProps<"div">) {
       aria-roledescription="slide"
       data-slot="carousel-item"
       className={cn(
-        "pttrn:min-w-0 pttrn:shrink-0 pttrn:grow-0 pttrn:basis-full",
-        orientation === "horizontal" ? "pttrn:ps-4" : "pttrn:pt-4",
+        "cuoio:min-w-0 cuoio:shrink-0 cuoio:grow-0 cuoio:basis-full",
+        orientation === "horizontal" ? "cuoio:ps-4" : "cuoio:pt-4",
         className
       )}
       {...props}
@@ -185,10 +185,10 @@ function CarouselPrevious({
       variant={variant}
       size={size}
       className={cn(
-        "pttrn:absolute pttrn:touch-manipulation pttrn:rounded-full",
+        "cuoio:absolute cuoio:touch-manipulation cuoio:rounded-full",
         orientation === "horizontal"
-          ? "pttrn:inset-y-0 pttrn:-start-12 pttrn:my-auto"
-          : "pttrn:-top-12 pttrn:start-1/2 pttrn:-translate-x-1/2 rtl:pttrn:translate-x-1/2 pttrn:rotate-90",
+          ? "cuoio:inset-y-0 cuoio:-start-12 cuoio:my-auto"
+          : "cuoio:-top-12 cuoio:start-1/2 cuoio:-translate-x-1/2 rtl:cuoio:translate-x-1/2 cuoio:rotate-90",
         className
       )}
       disabled={!canScrollPrev}
@@ -196,7 +196,7 @@ function CarouselPrevious({
       {...props}
     >
       <ChevronLeftIcon />
-      <span className="pttrn:sr-only">Previous slide</span>
+      <span className="cuoio:sr-only">Previous slide</span>
     </Button>
   )
 }
@@ -215,10 +215,10 @@ function CarouselNext({
       variant={variant}
       size={size}
       className={cn(
-        "pttrn:absolute pttrn:touch-manipulation pttrn:rounded-full",
+        "cuoio:absolute cuoio:touch-manipulation cuoio:rounded-full",
         orientation === "horizontal"
-          ? "pttrn:inset-y-0 pttrn:-end-12 pttrn:my-auto"
-          : "pttrn:-bottom-12 pttrn:start-1/2 pttrn:-translate-x-1/2 rtl:pttrn:translate-x-1/2 pttrn:rotate-90",
+          ? "cuoio:inset-y-0 cuoio:-end-12 cuoio:my-auto"
+          : "cuoio:-bottom-12 cuoio:start-1/2 cuoio:-translate-x-1/2 rtl:cuoio:translate-x-1/2 cuoio:rotate-90",
         className
       )}
       disabled={!canScrollNext}
@@ -226,7 +226,7 @@ function CarouselNext({
       {...props}
     >
       <ChevronRightIcon />
-      <span className="pttrn:sr-only">Next slide</span>
+      <span className="cuoio:sr-only">Next slide</span>
     </Button>
   )
 }

@@ -17,7 +17,7 @@ function Slider({
 
   return (
     <SliderPrimitive.Root
-      className={cn("pttrn:data-horizontal:w-full pttrn:data-vertical:h-full", className)}
+      className={cn("cuoio:data-horizontal:w-full cuoio:data-vertical:h-full", className)}
       data-slot="slider"
       defaultValue={defaultValue}
       value={value}
@@ -26,21 +26,21 @@ function Slider({
       thumbAlignment="edge"
       {...props}
     >
-      <SliderPrimitive.Control className="pttrn:relative pttrn:flex pttrn:w-full pttrn:touch-none pttrn:items-center pttrn:select-none pttrn:data-disabled:opacity-50 pttrn:data-vertical:h-full pttrn:data-vertical:min-h-40 pttrn:data-vertical:w-auto pttrn:data-vertical:flex-col">
+      <SliderPrimitive.Control className="cuoio:relative cuoio:flex cuoio:w-full cuoio:touch-none cuoio:items-center cuoio:select-none cuoio:data-disabled:opacity-50 cuoio:data-vertical:h-full cuoio:data-vertical:min-h-40 cuoio:data-vertical:w-auto cuoio:data-vertical:flex-col">
         <SliderPrimitive.Track
           data-slot="slider-track"
-          className="pttrn:relative pttrn:grow pttrn:overflow-hidden pttrn:rounded-md pttrn:bg-muted pttrn:select-none pttrn:data-horizontal:h-1 pttrn:data-horizontal:w-full pttrn:data-vertical:h-full pttrn:data-vertical:w-1"
+          className="cuoio:relative cuoio:grow cuoio:overflow-hidden cuoio:rounded-md cuoio:bg-muted cuoio:select-none cuoio:data-horizontal:h-1 cuoio:data-horizontal:w-full cuoio:data-vertical:h-full cuoio:data-vertical:w-1"
         >
           <SliderPrimitive.Indicator
             data-slot="slider-range"
-            className="pttrn:bg-primary pttrn:select-none pttrn:data-horizontal:h-full pttrn:data-vertical:w-full"
+            className="cuoio:bg-primary cuoio:select-none cuoio:data-horizontal:h-full cuoio:data-vertical:w-full"
           />
         </SliderPrimitive.Track>
         {Array.from({ length: _values.length }, (_, index) => (
           <SliderPrimitive.Thumb
             data-slot="slider-thumb"
             key={index}
-            className="pttrn:relative pttrn:block pttrn:size-3 pttrn:shrink-0 pttrn:rounded-md pttrn:border pttrn:border-ring pttrn:bg-white pttrn:ring-ring/30 pttrn:transition-[color,box-shadow] pttrn:select-none pttrn:after:absolute pttrn:after:-inset-2 pttrn:hover:ring-2 pttrn:focus-visible:ring-2 pttrn:focus-visible:outline-hidden pttrn:active:ring-2 pttrn:disabled:pointer-events-none pttrn:disabled:opacity-50"
+            className="cuoio:relative cuoio:block cuoio:size-3 cuoio:shrink-0 cuoio:rounded-md cuoio:border cuoio:border-ring cuoio:bg-white cuoio:ring-ring/30 cuoio:transition-[color,box-shadow] cuoio:select-none cuoio:after:absolute cuoio:after:-inset-2 cuoio:hover:ring-2 cuoio:focus-visible:ring-2 cuoio:focus-visible:outline-hidden cuoio:active:ring-2 cuoio:disabled:pointer-events-none cuoio:disabled:opacity-50"
           />
         ))}
       </SliderPrimitive.Control>

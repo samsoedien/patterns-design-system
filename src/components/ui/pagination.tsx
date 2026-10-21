@@ -10,7 +10,7 @@ function Pagination({ className, ...props }: React.ComponentProps<"nav">) {
       role="navigation"
       aria-label="pagination"
       data-slot="pagination"
-      className={cn("pttrn:mx-auto pttrn:flex pttrn:w-full pttrn:justify-center", className)}
+      className={cn("cuoio:mx-auto cuoio:flex cuoio:w-full cuoio:justify-center", className)}
       {...props}
     />
   )
@@ -23,7 +23,7 @@ function PaginationContent({
   return (
     <ul
       data-slot="pagination-content"
-      className={cn("pttrn:flex pttrn:items-center pttrn:gap-0.5", className)}
+      className={cn("cuoio:flex cuoio:items-center cuoio:gap-0.5", className)}
       {...props}
     />
   )
@@ -71,11 +71,11 @@ function PaginationPrevious({
     <PaginationLink
       aria-label="Go to previous page"
       size="default"
-      className={cn("pttrn:ps-2!", className)}
+      className={cn("cuoio:ps-2!", className)}
       {...props}
     >
       <ChevronLeftIcon data-icon="inline-start" />
-      <span className="pttrn:hidden pttrn:sm:block">{text}</span>
+      <span className="cuoio:hidden cuoio:sm:block">{text}</span>
     </PaginationLink>
   )
 }
@@ -89,10 +89,10 @@ function PaginationNext({
     <PaginationLink
       aria-label="Go to next page"
       size="default"
-      className={cn("pttrn:pe-2!", className)}
+      className={cn("cuoio:pe-2!", className)}
       {...props}
     >
-      <span className="pttrn:hidden pttrn:sm:block">{text}</span>
+      <span className="cuoio:hidden cuoio:sm:block">{text}</span>
       <ChevronRightIcon data-icon="inline-end" />
     </PaginationLink>
   )
@@ -107,14 +107,14 @@ function PaginationEllipsis({
       aria-hidden
       data-slot="pagination-ellipsis"
       className={cn(
-        "pttrn:flex pttrn:size-7 pttrn:items-center pttrn:justify-center pttrn:[&_svg:not([class*=size-])]:size-3.5",
+        "cuoio:flex cuoio:size-7 cuoio:items-center cuoio:justify-center cuoio:[&_svg:not([class*=size-])]:size-3.5",
         className
       )}
       {...props}
     >
       <MoreHorizontalIcon
       />
-      <span className="pttrn:sr-only">More pages</span>
+      <span className="cuoio:sr-only">More pages</span>
     </span>
   )
 }

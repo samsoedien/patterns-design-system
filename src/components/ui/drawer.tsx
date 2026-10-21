@@ -71,7 +71,7 @@ function DrawerOverlay({
     <DrawerPrimitive.Backdrop
       data-slot="drawer-overlay"
       className={cn(
-        "pttrn:fixed pttrn:inset-0 pttrn:z-50 pttrn:min-h-dvh pttrn:bg-black/80 pttrn:opacity-[max(var(--drawer-overlay-min-opacity,0),calc(1-var(--drawer-swipe-progress)))] pttrn:transition-opacity pttrn:duration-450 pttrn:ease-[cubic-bezier(0.32,0.72,0,1)] pttrn:select-none pttrn:data-ending-style:pointer-events-none pttrn:data-ending-style:opacity-0 pttrn:data-ending-style:duration-[calc(var(--drawer-swipe-strength)*400ms)] pttrn:data-snap-points:[--drawer-overlay-min-opacity:0.5] pttrn:data-starting-style:opacity-0 pttrn:data-swiping:duration-0 pttrn:supports-backdrop-filter:backdrop-blur-xs pttrn:supports-[-webkit-touch-callout:none]:absolute",
+        "cuoio:fixed cuoio:inset-0 cuoio:z-50 cuoio:min-h-dvh cuoio:bg-black/80 cuoio:opacity-[max(var(--drawer-overlay-min-opacity,0),calc(1-var(--drawer-swipe-progress)))] cuoio:transition-opacity cuoio:duration-450 cuoio:ease-[cubic-bezier(0.32,0.72,0,1)] cuoio:select-none cuoio:data-ending-style:pointer-events-none cuoio:data-ending-style:opacity-0 cuoio:data-ending-style:duration-[calc(var(--drawer-swipe-strength)*400ms)] cuoio:data-snap-points:[--drawer-overlay-min-opacity:0.5] cuoio:data-starting-style:opacity-0 cuoio:data-swiping:duration-0 cuoio:supports-backdrop-filter:backdrop-blur-xs cuoio:supports-[-webkit-touch-callout:none]:absolute",
         className
       )}
       {...props}
@@ -88,7 +88,7 @@ function DrawerSwipeHandle({
       data-slot="drawer-swipe-handle"
       aria-hidden="true"
       className={cn(
-        "pttrn:relative pttrn:z-10 pttrn:flex pttrn:shrink-0 pttrn:cursor-grab pttrn:transition-opacity pttrn:duration-200 pttrn:group-data-nested-drawer-open/drawer-popup:opacity-0 pttrn:group-data-nested-drawer-swiping/drawer-popup:opacity-100 pttrn:group-data-[swipe-axis=x]/drawer-popup:h-full pttrn:group-data-[swipe-axis=x]/drawer-popup:w-3 pttrn:group-data-[swipe-axis=x]/drawer-popup:items-center pttrn:group-data-[swipe-axis=y]/drawer-popup:h-3 pttrn:group-data-[swipe-axis=y]/drawer-popup:w-full pttrn:group-data-[swipe-axis=y]/drawer-popup:justify-center pttrn:group-data-[swipe-direction=down]/drawer-popup:items-end pttrn:group-data-[swipe-direction=left]/drawer-popup:order-last pttrn:group-data-[swipe-direction=left]/drawer-popup:justify-start pttrn:group-data-[swipe-direction=right]/drawer-popup:justify-end pttrn:group-data-[swipe-direction=up]/drawer-popup:order-last pttrn:group-data-[swipe-direction=up]/drawer-popup:items-start pttrn:after:block pttrn:after:shrink-0 pttrn:after:rounded-full pttrn:after:bg-muted pttrn:group-data-[swipe-axis=x]/drawer-popup:after:h-12 pttrn:group-data-[swipe-axis=x]/drawer-popup:after:w-1 pttrn:group-data-[swipe-axis=y]/drawer-popup:after:h-1 pttrn:group-data-[swipe-axis=y]/drawer-popup:after:w-12 pttrn:active:cursor-grabbing",
+        "cuoio:relative cuoio:z-10 cuoio:flex cuoio:shrink-0 cuoio:cursor-grab cuoio:transition-opacity cuoio:duration-200 cuoio:group-data-nested-drawer-open/drawer-popup:opacity-0 cuoio:group-data-nested-drawer-swiping/drawer-popup:opacity-100 cuoio:group-data-[swipe-axis=x]/drawer-popup:h-full cuoio:group-data-[swipe-axis=x]/drawer-popup:w-3 cuoio:group-data-[swipe-axis=x]/drawer-popup:items-center cuoio:group-data-[swipe-axis=y]/drawer-popup:h-3 cuoio:group-data-[swipe-axis=y]/drawer-popup:w-full cuoio:group-data-[swipe-axis=y]/drawer-popup:justify-center cuoio:group-data-[swipe-direction=down]/drawer-popup:items-end cuoio:group-data-[swipe-direction=left]/drawer-popup:order-last cuoio:group-data-[swipe-direction=left]/drawer-popup:justify-start cuoio:group-data-[swipe-direction=right]/drawer-popup:justify-end cuoio:group-data-[swipe-direction=up]/drawer-popup:order-last cuoio:group-data-[swipe-direction=up]/drawer-popup:items-start cuoio:after:block cuoio:after:shrink-0 cuoio:after:rounded-full cuoio:after:bg-muted cuoio:group-data-[swipe-axis=x]/drawer-popup:after:h-12 cuoio:group-data-[swipe-axis=x]/drawer-popup:after:w-1 cuoio:group-data-[swipe-axis=y]/drawer-popup:after:h-1 cuoio:group-data-[swipe-axis=y]/drawer-popup:after:w-12 cuoio:active:cursor-grabbing",
         className
       )}
       {...props}
@@ -113,7 +113,7 @@ function DrawerContent({
       <DrawerPrimitive.Viewport
         data-slot="drawer-viewport"
         data-modal={modal}
-        className="pttrn:pointer-events-none pttrn:fixed pttrn:inset-0 pttrn:z-50 pttrn:select-none pttrn:data-[modal=true]:pointer-events-auto"
+        className="cuoio:pointer-events-none cuoio:fixed cuoio:inset-0 cuoio:z-50 cuoio:select-none cuoio:data-[modal=true]:pointer-events-auto"
       >
         <DrawerPrimitive.Popup
           data-slot="drawer-popup"
@@ -121,29 +121,29 @@ function DrawerContent({
           data-snap-points={hasSnapPoints ? "" : undefined}
           className={cn(
             // Base.
-            "pttrn:group/drawer-popup pttrn:pointer-events-auto pttrn:fixed pttrn:z-50 pttrn:m-(--drawer-inset,0px) pttrn:flex pttrn:h-(--drawer-content-height) pttrn:max-h-(--drawer-content-max-height,none) pttrn:min-h-0 pttrn:w-(--drawer-content-width,auto) pttrn:transform-[translate3d(var(--translate-x,0px),var(--translate-y,0px),0)_scale(var(--stack-scale))] pttrn:flex-col pttrn:rounded-xl pttrn:border pttrn:border-popover pttrn:bg-popover pttrn:text-xs/relaxed pttrn:text-popover-foreground pttrn:transition-[transform,height,opacity,filter] pttrn:duration-450 pttrn:ease-[cubic-bezier(0.22,1,0.36,1)] pttrn:will-change-transform pttrn:outline-none pttrn:select-none pttrn:[--drawer-bleed-background:transparent] pttrn:[--drawer-inset:--spacing(2)] pttrn:[interpolate-size:allow-keywords] pttrn:dark:border-border",
+            "cuoio:group/drawer-popup cuoio:pointer-events-auto cuoio:fixed cuoio:z-50 cuoio:m-(--drawer-inset,0px) cuoio:flex cuoio:h-(--drawer-content-height) cuoio:max-h-(--drawer-content-max-height,none) cuoio:min-h-0 cuoio:w-(--drawer-content-width,auto) cuoio:transform-[translate3d(var(--translate-x,0px),var(--translate-y,0px),0)_scale(var(--stack-scale))] cuoio:flex-col cuoio:rounded-xl cuoio:border cuoio:border-popover cuoio:bg-popover cuoio:text-xs/relaxed cuoio:text-popover-foreground cuoio:transition-[transform,height,opacity,filter] cuoio:duration-450 cuoio:ease-[cubic-bezier(0.22,1,0.36,1)] cuoio:will-change-transform cuoio:outline-none cuoio:select-none cuoio:[--drawer-bleed-background:transparent] cuoio:[--drawer-inset:--spacing(2)] cuoio:[interpolate-size:allow-keywords] cuoio:dark:border-border",
             // Nested.
-            "pttrn:data-nested-drawer-open:overflow-hidden pttrn:data-nested-drawer-open:brightness-95",
+            "cuoio:data-nested-drawer-open:overflow-hidden cuoio:data-nested-drawer-open:brightness-95",
             // Bleed.
-            "pttrn:after:pointer-events-none pttrn:after:absolute pttrn:after:bg-(--drawer-bleed-background,var(--color-popover)) pttrn:data-[swipe-axis=x]:after:inset-y-0 pttrn:data-[swipe-axis=x]:after:w-(--bleed) pttrn:data-[swipe-axis=y]:after:inset-x-0 pttrn:data-[swipe-axis=y]:after:h-(--bleed) pttrn:data-[swipe-direction=down]:after:top-full pttrn:data-[swipe-direction=left]:after:end-full pttrn:data-[swipe-direction=right]:after:start-full pttrn:data-[swipe-direction=up]:after:bottom-full",
+            "cuoio:after:pointer-events-none cuoio:after:absolute cuoio:after:bg-(--drawer-bleed-background,var(--color-popover)) cuoio:data-[swipe-axis=x]:after:inset-y-0 cuoio:data-[swipe-axis=x]:after:w-(--bleed) cuoio:data-[swipe-axis=y]:after:inset-x-0 cuoio:data-[swipe-axis=y]:after:h-(--bleed) cuoio:data-[swipe-direction=down]:after:top-full cuoio:data-[swipe-direction=left]:after:end-full cuoio:data-[swipe-direction=right]:after:start-full cuoio:data-[swipe-direction=up]:after:bottom-full",
             // Sizing.
-            "pttrn:[--drawer-content-height:var(--drawer-height,auto)] pttrn:data-[swipe-axis=x]:[--drawer-content-width:75%] pttrn:data-[swipe-axis=y]:[--drawer-content-max-height:calc(100dvh-6rem)] pttrn:data-[swipe-axis=y]:data-snap-points:[--drawer-content-height:100dvh] pttrn:data-[swipe-axis=x]:sm:[--drawer-content-width:24rem]",
+            "cuoio:[--drawer-content-height:var(--drawer-height,auto)] cuoio:data-[swipe-axis=x]:[--drawer-content-width:75%] cuoio:data-[swipe-axis=y]:[--drawer-content-max-height:calc(100dvh-6rem)] cuoio:data-[swipe-axis=y]:data-snap-points:[--drawer-content-height:100dvh] cuoio:data-[swipe-axis=x]:sm:[--drawer-content-width:24rem]",
             // Stack.
-            "pttrn:[--bleed:3rem] pttrn:[--peek:1rem] pttrn:[--stack-height:var(--drawer-frontmost-height,var(--drawer-height,0px))] pttrn:[--stack-peek-offset:max(0px,calc((var(--nested-drawers)-var(--stack-progress))*var(--peek)))] pttrn:[--stack-progress:clamp(0,var(--drawer-swipe-progress),1)] pttrn:[--stack-scale-base:max(0,calc(1-(var(--nested-drawers)*var(--stack-step))))] pttrn:[--stack-scale:clamp(0,calc(var(--stack-scale-base)+(var(--stack-step)*var(--stack-progress))),1)] pttrn:[--stack-shrink:calc(1-var(--stack-scale))] pttrn:[--stack-step:0.05]",
+            "cuoio:[--bleed:3rem] cuoio:[--peek:1rem] cuoio:[--stack-height:var(--drawer-frontmost-height,var(--drawer-height,0px))] cuoio:[--stack-peek-offset:max(0px,calc((var(--nested-drawers)-var(--stack-progress))*var(--peek)))] cuoio:[--stack-progress:clamp(0,var(--drawer-swipe-progress),1)] cuoio:[--stack-scale-base:max(0,calc(1-(var(--nested-drawers)*var(--stack-step))))] cuoio:[--stack-scale:clamp(0,calc(var(--stack-scale-base)+(var(--stack-step)*var(--stack-progress))),1)] cuoio:[--stack-shrink:calc(1-var(--stack-scale))] cuoio:[--stack-step:0.05]",
             // Transitions.
-            "pttrn:data-ending-style:transform-(--closed-transform) pttrn:data-ending-style:opacity-[0.9999] pttrn:data-ending-style:duration-[calc(var(--drawer-swipe-strength)*400ms)] pttrn:data-nested-drawer-swiping:duration-0 pttrn:data-ending-style:data-nested-drawer-swiping:duration-[calc(var(--drawer-swipe-strength)*400ms)] pttrn:data-starting-style:transform-(--closed-transform) pttrn:data-swiping:duration-0 pttrn:data-ending-style:data-swiping:duration-[calc(var(--drawer-swipe-strength)*400ms)]",
+            "cuoio:data-ending-style:transform-(--closed-transform) cuoio:data-ending-style:opacity-[0.9999] cuoio:data-ending-style:duration-[calc(var(--drawer-swipe-strength)*400ms)] cuoio:data-nested-drawer-swiping:duration-0 cuoio:data-ending-style:data-nested-drawer-swiping:duration-[calc(var(--drawer-swipe-strength)*400ms)] cuoio:data-starting-style:transform-(--closed-transform) cuoio:data-swiping:duration-0 cuoio:data-ending-style:data-swiping:duration-[calc(var(--drawer-swipe-strength)*400ms)]",
             // Axis: y.
-            "pttrn:data-[swipe-axis=y]:inset-x-0 pttrn:data-[swipe-axis=y]:data-nested-drawer-open:h-(--stack-height)",
+            "cuoio:data-[swipe-axis=y]:inset-x-0 cuoio:data-[swipe-axis=y]:data-nested-drawer-open:h-(--stack-height)",
             // Axis: x.
-            "pttrn:data-[swipe-axis=x]:inset-y-0 pttrn:data-[swipe-axis=x]:flex-row",
+            "cuoio:data-[swipe-axis=x]:inset-y-0 cuoio:data-[swipe-axis=x]:flex-row",
             // Direction: down.
-            "pttrn:data-[swipe-direction=down]:bottom-0 pttrn:data-[swipe-direction=down]:origin-bottom pttrn:data-[swipe-direction=down]:[--closed-transform:translate3d(0,calc(100%+var(--drawer-inset,0px)+2px),0)] pttrn:data-[swipe-direction=down]:[--translate-y:calc(var(--drawer-snap-point-offset,0px)+var(--drawer-swipe-movement-y)-var(--stack-peek-offset)-(var(--stack-shrink)*var(--stack-height)))]",
+            "cuoio:data-[swipe-direction=down]:bottom-0 cuoio:data-[swipe-direction=down]:origin-bottom cuoio:data-[swipe-direction=down]:[--closed-transform:translate3d(0,calc(100%+var(--drawer-inset,0px)+2px),0)] cuoio:data-[swipe-direction=down]:[--translate-y:calc(var(--drawer-snap-point-offset,0px)+var(--drawer-swipe-movement-y)-var(--stack-peek-offset)-(var(--stack-shrink)*var(--stack-height)))]",
             // Direction: up.
-            "pttrn:data-[swipe-direction=up]:top-0 pttrn:data-[swipe-direction=up]:origin-top pttrn:data-[swipe-direction=up]:[--closed-transform:translate3d(0,calc(-100%-var(--drawer-inset,0px)-2px),0)] pttrn:data-[swipe-direction=up]:[--translate-y:calc(var(--drawer-snap-point-offset,0px)+var(--drawer-swipe-movement-y)+var(--stack-peek-offset)+(var(--stack-shrink)*var(--stack-height)))]",
+            "cuoio:data-[swipe-direction=up]:top-0 cuoio:data-[swipe-direction=up]:origin-top cuoio:data-[swipe-direction=up]:[--closed-transform:translate3d(0,calc(-100%-var(--drawer-inset,0px)-2px),0)] cuoio:data-[swipe-direction=up]:[--translate-y:calc(var(--drawer-snap-point-offset,0px)+var(--drawer-swipe-movement-y)+var(--stack-peek-offset)+(var(--stack-shrink)*var(--stack-height)))]",
             // Direction: left.
-            "pttrn:data-[swipe-direction=left]:start-0 pttrn:data-[swipe-direction=left]:origin-start pttrn:data-[swipe-direction=left]:[--closed-transform:translate3d(calc(-100%-var(--drawer-inset,0px)-2px),0,0)] pttrn:data-[swipe-direction=left]:[--translate-x:calc(var(--drawer-swipe-movement-x)+var(--stack-peek-offset)+(var(--stack-shrink)*100%))]",
+            "cuoio:data-[swipe-direction=left]:start-0 cuoio:data-[swipe-direction=left]:origin-start cuoio:data-[swipe-direction=left]:[--closed-transform:translate3d(calc(-100%-var(--drawer-inset,0px)-2px),0,0)] cuoio:data-[swipe-direction=left]:[--translate-x:calc(var(--drawer-swipe-movement-x)+var(--stack-peek-offset)+(var(--stack-shrink)*100%))]",
             // Direction: right.
-            "pttrn:data-[swipe-direction=right]:end-0 pttrn:data-[swipe-direction=right]:origin-end pttrn:data-[swipe-direction=right]:[--closed-transform:translate3d(calc(100%+var(--drawer-inset,0px)+2px),0,0)] pttrn:data-[swipe-direction=right]:[--translate-x:calc(var(--drawer-swipe-movement-x)-var(--stack-peek-offset)-(var(--stack-shrink)*100%))]",
+            "cuoio:data-[swipe-direction=right]:end-0 cuoio:data-[swipe-direction=right]:origin-end cuoio:data-[swipe-direction=right]:[--closed-transform:translate3d(calc(100%+var(--drawer-inset,0px)+2px),0,0)] cuoio:data-[swipe-direction=right]:[--translate-x:calc(var(--drawer-swipe-movement-x)-var(--stack-peek-offset)-(var(--stack-shrink)*100%))]",
             className
           )}
           {...props}
@@ -152,7 +152,7 @@ function DrawerContent({
           <DrawerPrimitive.Content
             data-slot="drawer-content"
             className={cn(
-              "pttrn:flex pttrn:min-h-0 pttrn:flex-1 pttrn:flex-col pttrn:overflow-hidden pttrn:overscroll-contain pttrn:rounded-[inherit] pttrn:transition-opacity pttrn:duration-300 pttrn:ease-[cubic-bezier(0.45,1.005,0,1.005)] pttrn:select-text pttrn:group-data-nested-drawer-open/drawer-popup:opacity-0 pttrn:group-data-nested-drawer-swiping/drawer-popup:opacity-100 pttrn:group-data-swiping/drawer-popup:select-none"
+              "cuoio:flex cuoio:min-h-0 cuoio:flex-1 cuoio:flex-col cuoio:overflow-hidden cuoio:overscroll-contain cuoio:rounded-[inherit] cuoio:transition-opacity cuoio:duration-300 cuoio:ease-[cubic-bezier(0.45,1.005,0,1.005)] cuoio:select-text cuoio:group-data-nested-drawer-open/drawer-popup:opacity-0 cuoio:group-data-nested-drawer-swiping/drawer-popup:opacity-100 cuoio:group-data-swiping/drawer-popup:select-none"
             )}
           >
             {children}
@@ -168,7 +168,7 @@ function DrawerHeader({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="drawer-header"
       className={cn(
-        "pttrn:flex pttrn:shrink-0 pttrn:flex-col pttrn:gap-1 pttrn:p-4 pttrn:pb-0 pttrn:group-data-[swipe-axis=y]/drawer-popup:text-center pttrn:md:text-start",
+        "cuoio:flex cuoio:shrink-0 cuoio:flex-col cuoio:gap-1 cuoio:p-4 cuoio:pb-0 cuoio:group-data-[swipe-axis=y]/drawer-popup:text-center cuoio:md:text-start",
         className
       )}
       {...props}
@@ -180,7 +180,7 @@ function DrawerFooter({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="drawer-footer"
-      className={cn("pttrn:mt-auto pttrn:flex pttrn:shrink-0 pttrn:flex-col pttrn:gap-2 pttrn:p-4 pttrn:pt-0", className)}
+      className={cn("cuoio:mt-auto cuoio:flex cuoio:shrink-0 cuoio:flex-col cuoio:gap-2 cuoio:p-4 cuoio:pt-0", className)}
       {...props}
     />
   )
@@ -191,7 +191,7 @@ function DrawerTitle({ className, ...props }: DrawerPrimitive.Title.Props) {
     <DrawerPrimitive.Title
       data-slot="drawer-title"
       className={cn(
-        "pttrn:font-heading pttrn:text-sm pttrn:font-medium pttrn:text-foreground",
+        "cuoio:font-heading cuoio:text-sm cuoio:font-medium cuoio:text-foreground",
         className
       )}
       {...props}
@@ -207,7 +207,7 @@ function DrawerDescription({
     <DrawerPrimitive.Description
       data-slot="drawer-description"
       className={cn(
-        "pttrn:text-xs/relaxed pttrn:text-balance pttrn:text-muted-foreground",
+        "cuoio:text-xs/relaxed cuoio:text-balance cuoio:text-muted-foreground",
         className
       )}
       {...props}

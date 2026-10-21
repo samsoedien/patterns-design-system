@@ -12,7 +12,7 @@ function ItemGroup({ className, ...props }: React.ComponentProps<"div">) {
       role="list"
       data-slot="item-group"
       className={cn(
-        "pttrn:group/item-group pttrn:flex pttrn:w-full pttrn:flex-col pttrn:gap-4 pttrn:has-data-[size=sm]:gap-2.5 pttrn:has-data-[size=xs]:gap-2",
+        "cuoio:group/item-group cuoio:flex cuoio:w-full cuoio:flex-col cuoio:gap-4 cuoio:has-data-[size=sm]:gap-2.5 cuoio:has-data-[size=xs]:gap-2",
         className
       )}
       {...props}
@@ -28,25 +28,25 @@ function ItemSeparator({
     <Separator
       data-slot="item-separator"
       orientation="horizontal"
-      className={cn("pttrn:my-2", className)}
+      className={cn("cuoio:my-2", className)}
       {...props}
     />
   )
 }
 
 const itemVariants = cva(
-  "pttrn:group/item pttrn:flex pttrn:w-full pttrn:flex-wrap pttrn:items-center pttrn:rounded-md pttrn:border pttrn:text-xs/relaxed pttrn:transition-colors pttrn:duration-100 pttrn:outline-none pttrn:focus-visible:border-ring pttrn:focus-visible:ring-[3px] pttrn:focus-visible:ring-ring/50 pttrn:[a]:transition-colors pttrn:[a]:hover:bg-muted",
+  "cuoio:group/item cuoio:flex cuoio:w-full cuoio:flex-wrap cuoio:items-center cuoio:rounded-md cuoio:border cuoio:text-xs/relaxed cuoio:transition-colors cuoio:duration-100 cuoio:outline-none cuoio:focus-visible:border-ring cuoio:focus-visible:ring-[3px] cuoio:focus-visible:ring-ring/50 cuoio:[a]:transition-colors cuoio:[a]:hover:bg-muted",
   {
     variants: {
       variant: {
-        default: "pttrn:border-transparent",
-        outline: "pttrn:border-border",
-        muted: "pttrn:border-transparent pttrn:bg-muted/50",
+        default: "cuoio:border-transparent",
+        outline: "cuoio:border-border",
+        muted: "cuoio:border-transparent cuoio:bg-muted/50",
       },
       size: {
-        default: "pttrn:gap-2.5 pttrn:px-3 pttrn:py-2.5",
-        sm: "pttrn:gap-2.5 pttrn:px-3 pttrn:py-2.5",
-        xs: "pttrn:gap-2.5 pttrn:px-2.5 pttrn:py-2 pttrn:in-data-[slot=dropdown-menu-content]:p-0",
+        default: "cuoio:gap-2.5 cuoio:px-3 cuoio:py-2.5",
+        sm: "cuoio:gap-2.5 cuoio:px-3 cuoio:py-2.5",
+        xs: "cuoio:gap-2.5 cuoio:px-2.5 cuoio:py-2 cuoio:in-data-[slot=dropdown-menu-content]:p-0",
       },
     },
     defaultVariants: {
@@ -81,14 +81,14 @@ function Item({
 }
 
 const itemMediaVariants = cva(
-  "pttrn:flex pttrn:shrink-0 pttrn:items-center pttrn:justify-center pttrn:gap-2 pttrn:group-has-data-[slot=item-description]/item:translate-y-0.5 pttrn:group-has-data-[slot=item-description]/item:self-start pttrn:[&_svg]:pointer-events-none",
+  "cuoio:flex cuoio:shrink-0 cuoio:items-center cuoio:justify-center cuoio:gap-2 cuoio:group-has-data-[slot=item-description]/item:translate-y-0.5 cuoio:group-has-data-[slot=item-description]/item:self-start cuoio:[&_svg]:pointer-events-none",
   {
     variants: {
       variant: {
-        default: "pttrn:bg-transparent",
-        icon: "pttrn:[&_svg:not([class*=size-])]:size-4",
+        default: "cuoio:bg-transparent",
+        icon: "cuoio:[&_svg:not([class*=size-])]:size-4",
         image:
-          "pttrn:size-8 pttrn:overflow-hidden pttrn:rounded-sm pttrn:group-data-[size=sm]/item:size-8 pttrn:group-data-[size=xs]/item:size-6 pttrn:[&_img]:size-full pttrn:[&_img]:object-cover",
+          "cuoio:size-8 cuoio:overflow-hidden cuoio:rounded-sm cuoio:group-data-[size=sm]/item:size-8 cuoio:group-data-[size=xs]/item:size-6 cuoio:[&_img]:size-full cuoio:[&_img]:object-cover",
       },
     },
     defaultVariants: {
@@ -117,7 +117,7 @@ function ItemContent({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="item-content"
       className={cn(
-        "pttrn:flex pttrn:flex-1 pttrn:flex-col pttrn:gap-1 pttrn:group-data-[size=xs]/item:gap-0.5 pttrn:[&+[data-slot=item-content]]:flex-none",
+        "cuoio:flex cuoio:flex-1 cuoio:flex-col cuoio:gap-1 cuoio:group-data-[size=xs]/item:gap-0.5 cuoio:[&+[data-slot=item-content]]:flex-none",
         className
       )}
       {...props}
@@ -130,7 +130,7 @@ function ItemTitle({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="item-title"
       className={cn(
-        "pttrn:line-clamp-1 pttrn:flex pttrn:w-fit pttrn:items-center pttrn:gap-2 pttrn:text-xs/relaxed pttrn:leading-snug pttrn:font-medium pttrn:underline-offset-4",
+        "cuoio:line-clamp-1 cuoio:flex cuoio:w-fit cuoio:items-center cuoio:gap-2 cuoio:text-xs/relaxed cuoio:leading-snug cuoio:font-medium cuoio:underline-offset-4",
         className
       )}
       {...props}
@@ -143,7 +143,7 @@ function ItemDescription({ className, ...props }: React.ComponentProps<"p">) {
     <p
       data-slot="item-description"
       className={cn(
-        "pttrn:line-clamp-2 pttrn:text-start pttrn:text-xs/relaxed pttrn:font-normal pttrn:text-muted-foreground pttrn:[&>a]:underline pttrn:[&>a]:underline-offset-4 pttrn:[&>a:hover]:text-primary",
+        "cuoio:line-clamp-2 cuoio:text-start cuoio:text-xs/relaxed cuoio:font-normal cuoio:text-muted-foreground cuoio:[&>a]:underline cuoio:[&>a]:underline-offset-4 cuoio:[&>a:hover]:text-primary",
         className
       )}
       {...props}
@@ -155,7 +155,7 @@ function ItemActions({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="item-actions"
-      className={cn("pttrn:flex pttrn:items-center pttrn:gap-2", className)}
+      className={cn("cuoio:flex cuoio:items-center cuoio:gap-2", className)}
       {...props}
     />
   )
@@ -166,7 +166,7 @@ function ItemHeader({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="item-header"
       className={cn(
-        "pttrn:flex pttrn:basis-full pttrn:items-center pttrn:justify-between pttrn:gap-2",
+        "cuoio:flex cuoio:basis-full cuoio:items-center cuoio:justify-between cuoio:gap-2",
         className
       )}
       {...props}
@@ -179,7 +179,7 @@ function ItemFooter({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="item-footer"
       className={cn(
-        "pttrn:flex pttrn:basis-full pttrn:items-center pttrn:justify-between pttrn:gap-2",
+        "cuoio:flex cuoio:basis-full cuoio:items-center cuoio:justify-between cuoio:gap-2",
         className
       )}
       {...props}

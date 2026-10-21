@@ -8,7 +8,7 @@ function RadioGroup({ className, ...props }: RadioGroupPrimitive.Props) {
   return (
     <RadioGroupPrimitive
       data-slot="radio-group"
-      className={cn("pttrn:grid pttrn:w-full pttrn:gap-3", className)}
+      className={cn("cuoio:grid cuoio:w-full cuoio:gap-3", className)}
       {...props}
     />
   )
@@ -19,16 +19,16 @@ function RadioGroupItem({ className, ...props }: RadioPrimitive.Root.Props) {
     <RadioPrimitive.Root
       data-slot="radio-group-item"
       className={cn(
-        "pttrn:group/radio-group-item pttrn:peer pttrn:relative pttrn:flex pttrn:aspect-square pttrn:size-4 pttrn:shrink-0 pttrn:rounded-full pttrn:border pttrn:border-input pttrn:outline-none pttrn:group-has-[:focus-visible]/field-label:ring-0 pttrn:group-has-[:focus-visible]/field-label:not-data-checked:border-input pttrn:after:absolute pttrn:after:-inset-x-3 pttrn:after:-inset-y-2 pttrn:focus-visible:border-ring pttrn:focus-visible:ring-3 pttrn:focus-visible:ring-ring/50 pttrn:disabled:cursor-not-allowed pttrn:disabled:opacity-50 pttrn:aria-invalid:border-destructive pttrn:aria-invalid:ring-3 pttrn:aria-invalid:ring-destructive/20 pttrn:aria-invalid:aria-checked:border-primary pttrn:dark:bg-input/30 pttrn:dark:aria-invalid:border-destructive/50 pttrn:dark:aria-invalid:ring-destructive/40 pttrn:data-checked:border-primary pttrn:data-checked:bg-primary pttrn:data-checked:text-primary-foreground pttrn:group-has-[:focus-visible]/field-label:data-checked:border-primary pttrn:dark:data-checked:bg-primary",
+        "cuoio:group/radio-group-item cuoio:peer cuoio:relative cuoio:flex cuoio:aspect-square cuoio:size-4 cuoio:shrink-0 cuoio:rounded-full cuoio:border cuoio:border-input cuoio:outline-none cuoio:group-has-[:focus-visible]/field-label:ring-0 cuoio:group-has-[:focus-visible]/field-label:not-data-checked:border-input cuoio:after:absolute cuoio:after:-inset-x-3 cuoio:after:-inset-y-2 cuoio:focus-visible:border-ring cuoio:focus-visible:ring-3 cuoio:focus-visible:ring-ring/50 cuoio:disabled:cursor-not-allowed cuoio:disabled:opacity-50 cuoio:aria-invalid:border-destructive cuoio:aria-invalid:ring-3 cuoio:aria-invalid:ring-destructive/20 cuoio:aria-invalid:aria-checked:border-primary cuoio:dark:bg-input/30 cuoio:dark:aria-invalid:border-destructive/50 cuoio:dark:aria-invalid:ring-destructive/40 cuoio:data-checked:border-primary cuoio:data-checked:bg-primary cuoio:data-checked:text-primary-foreground cuoio:group-has-[:focus-visible]/field-label:data-checked:border-primary cuoio:dark:data-checked:bg-primary",
         className
       )}
       {...props}
     >
       <RadioPrimitive.Indicator
         data-slot="radio-group-indicator"
-        className="pttrn:flex pttrn:size-4 pttrn:items-center pttrn:justify-center"
+        className="cuoio:flex cuoio:size-4 cuoio:items-center cuoio:justify-center"
       >
-        <span className="pttrn:absolute pttrn:top-1/2 pttrn:start-1/2 pttrn:size-2 pttrn:-translate-x-1/2 rtl:pttrn:translate-x-1/2 pttrn:-translate-y-1/2 pttrn:rounded-full pttrn:bg-primary-foreground" />
+        <span className="cuoio:absolute cuoio:top-1/2 cuoio:start-1/2 cuoio:size-2 cuoio:-translate-x-1/2 rtl:cuoio:translate-x-1/2 cuoio:-translate-y-1/2 cuoio:rounded-full cuoio:bg-primary-foreground" />
       </RadioPrimitive.Indicator>
     </RadioPrimitive.Root>
   )

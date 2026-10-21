@@ -5,14 +5,14 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "cn"
 
 const markerVariants = cva(
-  "pttrn:group/marker pttrn:relative pttrn:flex pttrn:min-h-4 pttrn:w-full pttrn:items-center pttrn:gap-2 pttrn:text-start pttrn:text-xs/relaxed pttrn:text-muted-foreground pttrn:[&_svg:not([class*=size-])]:size-3.5 pttrn:[a]:underline pttrn:[a]:underline-offset-3 pttrn:[a]:hover:text-foreground",
+  "cuoio:group/marker cuoio:relative cuoio:flex cuoio:min-h-4 cuoio:w-full cuoio:items-center cuoio:gap-2 cuoio:text-start cuoio:text-xs/relaxed cuoio:text-muted-foreground cuoio:[&_svg:not([class*=size-])]:size-3.5 cuoio:[a]:underline cuoio:[a]:underline-offset-3 cuoio:[a]:hover:text-foreground",
   {
     variants: {
       variant: {
-        default: "pttrn:",
+        default: "cuoio:",
         separator:
-          "pttrn:before:me-1 pttrn:before:h-px pttrn:before:min-w-0 pttrn:before:flex-1 pttrn:before:bg-border pttrn:after:ms-1 pttrn:after:h-px pttrn:after:min-w-0 pttrn:after:flex-1 pttrn:after:bg-border",
-        border: "pttrn:border-b pttrn:border-border pttrn:pb-2",
+          "cuoio:before:me-1 cuoio:before:h-px cuoio:before:min-w-0 cuoio:before:flex-1 cuoio:before:bg-border cuoio:after:ms-1 cuoio:after:h-px cuoio:after:min-w-0 cuoio:after:flex-1 cuoio:after:bg-border",
+        border: "cuoio:border-b cuoio:border-border cuoio:pb-2",
       },
     },
   }
@@ -46,7 +46,7 @@ function MarkerIcon({ className, ...props }: React.ComponentProps<"span">) {
       data-slot="marker-icon"
       aria-hidden="true"
       className={cn(
-        "pttrn:size-3.5 pttrn:shrink-0 pttrn:[&_svg:not([class*=size-])]:size-3.5",
+        "cuoio:size-3.5 cuoio:shrink-0 cuoio:[&_svg:not([class*=size-])]:size-3.5",
         className
       )}
       {...props}
@@ -59,7 +59,7 @@ function MarkerContent({ className, ...props }: React.ComponentProps<"span">) {
     <span
       data-slot="marker-content"
       className={cn(
-        "pttrn:min-w-0 pttrn:wrap-break-word pttrn:group-data-[variant=separator]/marker:flex-none pttrn:group-data-[variant=separator]/marker:text-center pttrn:*:[a]:underline pttrn:*:[a]:underline-offset-3 pttrn:*:[a]:hover:text-foreground",
+        "cuoio:min-w-0 cuoio:wrap-break-word cuoio:group-data-[variant=separator]/marker:flex-none cuoio:group-data-[variant=separator]/marker:text-center cuoio:*:[a]:underline cuoio:*:[a]:underline-offset-3 cuoio:*:[a]:hover:text-foreground",
         className
       )}
       {...props}

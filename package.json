@@ -26,7 +26,11 @@
     "lint": "eslint .",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
     "check-types": "tsc -b",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "ui:init": "yarn dlx shadcn@latest init",
+    "ui:add": "yarn dlx shadcn@latest add",
+    "ui:build": "yarn dlx shadcn@latest build",
+    "ui:diff": "yarn dlx shadcn@latest diff"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",

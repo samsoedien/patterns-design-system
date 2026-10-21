@@ -5,18 +5,18 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "cn"
 
 const toggleVariants = cva(
-  "pttrn:group/toggle pttrn:inline-flex pttrn:items-center pttrn:justify-center pttrn:gap-1 pttrn:rounded-md pttrn:text-xs pttrn:font-medium pttrn:whitespace-nowrap pttrn:transition-all pttrn:outline-none pttrn:hover:bg-muted pttrn:hover:text-foreground pttrn:focus-visible:border-ring pttrn:focus-visible:ring-[3px] pttrn:focus-visible:ring-ring/50 pttrn:disabled:pointer-events-none pttrn:disabled:opacity-50 pttrn:aria-invalid:border-destructive pttrn:aria-invalid:ring-destructive/20 pttrn:aria-pressed:bg-muted pttrn:data-[state=on]:bg-muted pttrn:dark:aria-invalid:ring-destructive/40 pttrn:[&_svg]:pointer-events-none pttrn:[&_svg]:shrink-0 pttrn:[&_svg:not([class*=size-])]:size-4",
+  "cuoio:group/toggle cuoio:inline-flex cuoio:items-center cuoio:justify-center cuoio:gap-1 cuoio:rounded-md cuoio:text-xs cuoio:font-medium cuoio:whitespace-nowrap cuoio:transition-all cuoio:outline-none cuoio:hover:bg-muted cuoio:hover:text-foreground cuoio:focus-visible:border-ring cuoio:focus-visible:ring-[3px] cuoio:focus-visible:ring-ring/50 cuoio:disabled:pointer-events-none cuoio:disabled:opacity-50 cuoio:aria-invalid:border-destructive cuoio:aria-invalid:ring-destructive/20 cuoio:aria-pressed:bg-muted cuoio:data-[state=on]:bg-muted cuoio:dark:aria-invalid:ring-destructive/40 cuoio:[&_svg]:pointer-events-none cuoio:[&_svg]:shrink-0 cuoio:[&_svg:not([class*=size-])]:size-4",
   {
     variants: {
       variant: {
-        default: "pttrn:bg-transparent",
-        outline: "pttrn:border pttrn:border-input pttrn:bg-transparent pttrn:hover:bg-muted",
+        default: "cuoio:bg-transparent",
+        outline: "cuoio:border cuoio:border-input cuoio:bg-transparent cuoio:hover:bg-muted",
       },
       size: {
         default:
-          "pttrn:h-7 pttrn:min-w-7 pttrn:px-2 pttrn:has-data-[icon=inline-end]:pe-1.5 pttrn:has-data-[icon=inline-start]:ps-1.5",
-        sm: "pttrn:h-6 pttrn:min-w-6 pttrn:rounded-[min(var(--radius-md),8px)] pttrn:px-2 pttrn:text-[0.625rem] pttrn:has-data-[icon=inline-end]:pe-1.5 pttrn:has-data-[icon=inline-start]:ps-1.5 pttrn:[&_svg:not([class*=size-])]:size-3",
-        lg: "pttrn:h-8 pttrn:min-w-8 pttrn:px-2.5 pttrn:has-data-[icon=inline-end]:pe-2 pttrn:has-data-[icon=inline-start]:ps-2",
+          "cuoio:h-7 cuoio:min-w-7 cuoio:px-2 cuoio:has-data-[icon=inline-end]:pe-1.5 cuoio:has-data-[icon=inline-start]:ps-1.5",
+        sm: "cuoio:h-6 cuoio:min-w-6 cuoio:rounded-[min(var(--radius-md),8px)] cuoio:px-2 cuoio:text-[0.625rem] cuoio:has-data-[icon=inline-end]:pe-1.5 cuoio:has-data-[icon=inline-start]:ps-1.5 cuoio:[&_svg:not([class*=size-])]:size-3",
+        lg: "cuoio:h-8 cuoio:min-w-8 cuoio:px-2.5 cuoio:has-data-[icon=inline-end]:pe-2 cuoio:has-data-[icon=inline-start]:ps-2",
       },
     },
     defaultVariants: {

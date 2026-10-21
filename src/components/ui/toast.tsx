@@ -22,7 +22,7 @@ function ToastViewport({ className, ...props }: ToastPrimitive.Viewport.Props) {
     <ToastPrimitive.Viewport
       data-slot="toast-viewport"
       className={cn(
-        "pttrn:pointer-events-none pttrn:fixed pttrn:inset-x-4 pttrn:bottom-4 pttrn:z-50 pttrn:mx-auto pttrn:w-auto pttrn:max-w-sm pttrn:outline-none pttrn:sm:end-4 pttrn:sm:start-auto pttrn:sm:mx-0 pttrn:sm:w-full",
+        "cuoio:pointer-events-none cuoio:fixed cuoio:inset-x-4 cuoio:bottom-4 cuoio:z-50 cuoio:mx-auto cuoio:w-auto cuoio:max-w-sm cuoio:outline-none cuoio:sm:end-4 cuoio:sm:start-auto cuoio:sm:mx-0 cuoio:sm:w-full",
         className
       )}
       {...props}
@@ -35,21 +35,21 @@ function Toast({ className, ...props }: ToastPrimitive.Root.Props) {
     <ToastPrimitive.Root
       data-slot="toast"
       className={cn(
-        "pttrn:group/toast pttrn:pointer-events-auto pttrn:absolute pttrn:end-0 pttrn:bottom-0 pttrn:z-[calc(1000-var(--toast-index))] pttrn:w-full pttrn:origin-bottom pttrn:rounded-md pttrn:border pttrn:bg-popover pttrn:text-popover-foreground pttrn:shadow-lg pttrn:will-change-transform pttrn:outline-none pttrn:select-none pttrn:focus-visible:border-ring pttrn:focus-visible:ring-[3px] pttrn:focus-visible:ring-ring/50",
-        "pttrn:[--gap:0.75rem] pttrn:[--height:var(--toast-frontmost-height,var(--toast-height))] pttrn:[--offset-y:calc(var(--toast-offset-y)*-1+calc(var(--toast-index)*var(--gap)*-1)+var(--toast-swipe-movement-y))] pttrn:[--peek:0.75rem] pttrn:[--scale:calc(max(0,1-(var(--toast-index)*0.1)))] pttrn:[--shrink:calc(1-var(--scale))]",
-        "pttrn:h-(--height) pttrn:[transform:translateX(var(--toast-swipe-movement-x))_translateY(calc(var(--toast-swipe-movement-y)-(var(--toast-index)*var(--peek))-(var(--shrink)*var(--height))))_scale(var(--scale))] pttrn:[transition:transform_500ms_cubic-bezier(0.22,1,0.36,1),opacity_500ms,height_150ms]",
-        "pttrn:after:absolute pttrn:after:top-full pttrn:after:start-0 pttrn:after:h-[calc(var(--gap)+1px)] pttrn:after:w-full pttrn:after:content-[]",
-        "pttrn:data-expanded:h-(--toast-height) pttrn:data-expanded:[transform:translateX(var(--toast-swipe-movement-x))_translateY(var(--offset-y))]",
-        "pttrn:data-limited:opacity-0 pttrn:data-starting-style:[transform:translateY(150%)]",
-        "pttrn:[&[data-ending-style]:not([data-limited]):not([data-swipe-direction])]:[transform:translateY(150%)]",
-        "pttrn:data-ending-style:data-[swipe-direction=down]:[transform:translateY(calc(var(--toast-swipe-movement-y)+150%))]",
-        "pttrn:data-ending-style:data-[swipe-direction=left]:[transform:translateX(calc(var(--toast-swipe-movement-x)-150%))_translateY(var(--offset-y))]",
-        "pttrn:data-ending-style:data-[swipe-direction=right]:[transform:translateX(calc(var(--toast-swipe-movement-x)+150%))_translateY(var(--offset-y))]",
-        "pttrn:data-ending-style:data-[swipe-direction=up]:[transform:translateY(calc(var(--toast-swipe-movement-y)-150%))]",
-        "pttrn:data-expanded:data-ending-style:data-[swipe-direction=down]:[transform:translateY(calc(var(--toast-swipe-movement-y)+150%))]",
-        "pttrn:data-expanded:data-ending-style:data-[swipe-direction=left]:[transform:translateX(calc(var(--toast-swipe-movement-x)-150%))_translateY(var(--offset-y))]",
-        "pttrn:data-expanded:data-ending-style:data-[swipe-direction=right]:[transform:translateX(calc(var(--toast-swipe-movement-x)+150%))_translateY(var(--offset-y))]",
-        "pttrn:data-expanded:data-ending-style:data-[swipe-direction=up]:[transform:translateY(calc(var(--toast-swipe-movement-y)-150%))]",
+        "cuoio:group/toast cuoio:pointer-events-auto cuoio:absolute cuoio:end-0 cuoio:bottom-0 cuoio:z-[calc(1000-var(--toast-index))] cuoio:w-full cuoio:origin-bottom cuoio:rounded-md cuoio:border cuoio:bg-popover cuoio:text-popover-foreground cuoio:shadow-lg cuoio:will-change-transform cuoio:outline-none cuoio:select-none cuoio:focus-visible:border-ring cuoio:focus-visible:ring-[3px] cuoio:focus-visible:ring-ring/50",
+        "cuoio:[--gap:0.75rem] cuoio:[--height:var(--toast-frontmost-height,var(--toast-height))] cuoio:[--offset-y:calc(var(--toast-offset-y)*-1+calc(var(--toast-index)*var(--gap)*-1)+var(--toast-swipe-movement-y))] cuoio:[--peek:0.75rem] cuoio:[--scale:calc(max(0,1-(var(--toast-index)*0.1)))] cuoio:[--shrink:calc(1-var(--scale))]",
+        "cuoio:h-(--height) cuoio:[transform:translateX(var(--toast-swipe-movement-x))_translateY(calc(var(--toast-swipe-movement-y)-(var(--toast-index)*var(--peek))-(var(--shrink)*var(--height))))_scale(var(--scale))] cuoio:[transition:transform_500ms_cubic-bezier(0.22,1,0.36,1),opacity_500ms,height_150ms]",
+        "cuoio:after:absolute cuoio:after:top-full cuoio:after:start-0 cuoio:after:h-[calc(var(--gap)+1px)] cuoio:after:w-full cuoio:after:content-[]",
+        "cuoio:data-expanded:h-(--toast-height) cuoio:data-expanded:[transform:translateX(var(--toast-swipe-movement-x))_translateY(var(--offset-y))]",
+        "cuoio:data-limited:opacity-0 cuoio:data-starting-style:[transform:translateY(150%)]",
+        "cuoio:[&[data-ending-style]:not([data-limited]):not([data-swipe-direction])]:[transform:translateY(150%)]",
+        "cuoio:data-ending-style:data-[swipe-direction=down]:[transform:translateY(calc(var(--toast-swipe-movement-y)+150%))]",
+        "cuoio:data-ending-style:data-[swipe-direction=left]:[transform:translateX(calc(var(--toast-swipe-movement-x)-150%))_translateY(var(--offset-y))]",
+        "cuoio:data-ending-style:data-[swipe-direction=right]:[transform:translateX(calc(var(--toast-swipe-movement-x)+150%))_translateY(var(--offset-y))]",
+        "cuoio:data-ending-style:data-[swipe-direction=up]:[transform:translateY(calc(var(--toast-swipe-movement-y)-150%))]",
+        "cuoio:data-expanded:data-ending-style:data-[swipe-direction=down]:[transform:translateY(calc(var(--toast-swipe-movement-y)+150%))]",
+        "cuoio:data-expanded:data-ending-style:data-[swipe-direction=left]:[transform:translateX(calc(var(--toast-swipe-movement-x)-150%))_translateY(var(--offset-y))]",
+        "cuoio:data-expanded:data-ending-style:data-[swipe-direction=right]:[transform:translateX(calc(var(--toast-swipe-movement-x)+150%))_translateY(var(--offset-y))]",
+        "cuoio:data-expanded:data-ending-style:data-[swipe-direction=up]:[transform:translateY(calc(var(--toast-swipe-movement-y)-150%))]",
         className
       )}
       {...props}
@@ -62,7 +62,7 @@ function ToastContent({ className, ...props }: ToastPrimitive.Content.Props) {
     <ToastPrimitive.Content
       data-slot="toast-content"
       className={cn(
-        "pttrn:flex pttrn:h-full pttrn:items-center pttrn:gap-3 pttrn:overflow-hidden pttrn:p-4 pttrn:transition-opacity pttrn:duration-250 pttrn:ease-[cubic-bezier(0.22,1,0.36,1)] pttrn:data-behind:opacity-0 pttrn:data-expanded:opacity-100",
+        "cuoio:flex cuoio:h-full cuoio:items-center cuoio:gap-3 cuoio:overflow-hidden cuoio:p-4 cuoio:transition-opacity cuoio:duration-250 cuoio:ease-[cubic-bezier(0.22,1,0.36,1)] cuoio:data-behind:opacity-0 cuoio:data-expanded:opacity-100",
         className
       )}
       {...props}
@@ -74,7 +74,7 @@ function ToastTitle({ className, ...props }: ToastPrimitive.Title.Props) {
   return (
     <ToastPrimitive.Title
       data-slot="toast-title"
-      className={cn("pttrn:text-sm pttrn:font-medium", className)}
+      className={cn("cuoio:text-sm cuoio:font-medium", className)}
       {...props}
     />
   )
@@ -87,7 +87,7 @@ function ToastDescription({
   return (
     <ToastPrimitive.Description
       data-slot="toast-description"
-      className={cn("pttrn:text-sm pttrn:text-muted-foreground", className)}
+      className={cn("cuoio:text-sm cuoio:text-muted-foreground", className)}
       {...props}
     />
   )
@@ -102,7 +102,7 @@ function ToastAction({
     <ToastPrimitive.Action
       data-slot="toast-action"
       render={render}
-      className={cn("pttrn:shrink-0", className)}
+      className={cn("cuoio:shrink-0", className)}
       {...props}
     />
   )
@@ -120,7 +120,7 @@ function ToastClose({
       aria-label="Close toast"
       render={render}
       className={cn(
-        "pttrn:relative pttrn:shrink-0 pttrn:text-muted-foreground pttrn:after:absolute pttrn:after:-inset-2 pttrn:after:content-[] pttrn:hover:text-foreground",
+        "cuoio:relative cuoio:shrink-0 cuoio:text-muted-foreground cuoio:after:absolute cuoio:after:-inset-2 cuoio:after:content-[] cuoio:hover:text-foreground",
         className
       )}
       {...props}
@@ -155,13 +155,13 @@ function ToastIcon({ type }: { type: string | undefined }) {
 
   if (type === "error") {
     icon = (
-      <OctagonXIcon className="pttrn:text-destructive" aria-hidden="true" />
+      <OctagonXIcon className="cuoio:text-destructive" aria-hidden="true" />
     )
   }
 
   if (type === "loading") {
     icon = (
-      <Loader2Icon className="pttrn:animate-spin" aria-hidden="true" />
+      <Loader2Icon className="cuoio:animate-spin" aria-hidden="true" />
     )
   }
 
@@ -172,7 +172,7 @@ function ToastIcon({ type }: { type: string | undefined }) {
   return (
     <span
       data-slot="toast-icon"
-      className="pttrn:shrink-0 pttrn:[&_svg]:pointer-events-none pttrn:[&_svg:not([class*=size-])]:size-4"
+      className="cuoio:shrink-0 cuoio:[&_svg]:pointer-events-none cuoio:[&_svg:not([class*=size-])]:size-4"
     >
       {icon}
     </span>
@@ -186,7 +186,7 @@ function ToastList() {
     <Toast key={toastItem.id} toast={toastItem}>
       <ToastContent>
         <ToastIcon type={toastItem.type} />
-        <div className="pttrn:flex pttrn:min-w-0 pttrn:flex-1 pttrn:flex-col pttrn:gap-1">
+        <div className="cuoio:flex cuoio:min-w-0 cuoio:flex-1 cuoio:flex-col cuoio:gap-1">
           <ToastTitle />
           <ToastDescription />
         </div>

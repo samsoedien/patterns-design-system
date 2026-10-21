@@ -20,7 +20,7 @@ function BreadcrumbList({ className, ...props }: React.ComponentProps<"ol">) {
     <ol
       data-slot="breadcrumb-list"
       className={cn(
-        "pttrn:flex pttrn:flex-wrap pttrn:items-center pttrn:gap-1.5 pttrn:text-xs/relaxed pttrn:wrap-break-word pttrn:text-muted-foreground",
+        "cuoio:flex cuoio:flex-wrap cuoio:items-center cuoio:gap-1.5 cuoio:text-xs/relaxed cuoio:wrap-break-word cuoio:text-muted-foreground",
         className
       )}
       {...props}
@@ -32,7 +32,7 @@ function BreadcrumbItem({ className, ...props }: React.ComponentProps<"li">) {
   return (
     <li
       data-slot="breadcrumb-item"
-      className={cn("pttrn:inline-flex pttrn:items-center pttrn:gap-1", className)}
+      className={cn("cuoio:inline-flex cuoio:items-center cuoio:gap-1", className)}
       {...props}
     />
   )
@@ -65,7 +65,7 @@ function BreadcrumbPage({ className, ...props }: React.ComponentProps<"span">) {
       role="link"
       aria-disabled="true"
       aria-current="page"
-      className={cn("pttrn:font-normal pttrn:text-foreground", className)}
+      className={cn("cuoio:font-normal cuoio:text-foreground", className)}
       {...props}
     />
   )
@@ -81,7 +81,7 @@ function BreadcrumbSeparator({
       data-slot="breadcrumb-separator"
       role="presentation"
       aria-hidden="true"
-      className={cn("pttrn:[&>svg]:size-3.5", className)}
+      className={cn("cuoio:[&>svg]:size-3.5", className)}
       {...props}
     >
       {children ?? (
@@ -101,14 +101,14 @@ function BreadcrumbEllipsis({
       role="presentation"
       aria-hidden="true"
       className={cn(
-        "pttrn:flex pttrn:size-4 pttrn:items-center pttrn:justify-center pttrn:[&>svg]:size-3.5",
+        "cuoio:flex cuoio:size-4 cuoio:items-center cuoio:justify-center cuoio:[&>svg]:size-3.5",
         className
       )}
       {...props}
     >
       <MoreHorizontalIcon
       />
-      <span className="pttrn:sr-only">More</span>
+      <span className="cuoio:sr-only">More</span>
     </span>
   )
 }

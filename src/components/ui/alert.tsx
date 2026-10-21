@@ -3,13 +3,13 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "cn"
 
 const alertVariants = cva(
-  "pttrn:group/alert pttrn:relative pttrn:grid pttrn:w-full pttrn:gap-0.5 pttrn:rounded-lg pttrn:border pttrn:px-2 pttrn:py-1.5 pttrn:text-start pttrn:text-xs/relaxed pttrn:has-data-[slot=alert-action]:relative pttrn:has-data-[slot=alert-action]:pe-18 pttrn:has-[>svg]:grid-cols-[auto_1fr] pttrn:has-[>svg]:gap-x-1.5 pttrn:*:[svg]:row-span-2 pttrn:*:[svg]:translate-y-0.5 pttrn:*:[svg]:text-current pttrn:*:[svg:not([class*=size-])]:size-3.5",
+  "cuoio:group/alert cuoio:relative cuoio:grid cuoio:w-full cuoio:gap-0.5 cuoio:rounded-lg cuoio:border cuoio:px-2 cuoio:py-1.5 cuoio:text-start cuoio:text-xs/relaxed cuoio:has-data-[slot=alert-action]:relative cuoio:has-data-[slot=alert-action]:pe-18 cuoio:has-[>svg]:grid-cols-[auto_1fr] cuoio:has-[>svg]:gap-x-1.5 cuoio:*:[svg]:row-span-2 cuoio:*:[svg]:translate-y-0.5 cuoio:*:[svg]:text-current cuoio:*:[svg:not([class*=size-])]:size-3.5",
   {
     variants: {
       variant: {
-        default: "pttrn:bg-card pttrn:text-card-foreground",
+        default: "cuoio:bg-card cuoio:text-card-foreground",
         destructive:
-          "pttrn:bg-card pttrn:text-destructive pttrn:*:data-[slot=alert-description]:text-destructive/90 pttrn:*:[svg]:text-current",
+          "cuoio:bg-card cuoio:text-destructive cuoio:*:data-[slot=alert-description]:text-destructive/90 cuoio:*:[svg]:text-current",
       },
     },
     defaultVariants: {
@@ -38,7 +38,7 @@ function AlertTitle({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="alert-title"
       className={cn(
-        "pttrn:font-medium pttrn:group-has-[>svg]/alert:col-start-2 pttrn:[&_a]:underline pttrn:[&_a]:underline-offset-3 pttrn:[&_a]:hover:text-foreground",
+        "cuoio:font-medium cuoio:group-has-[>svg]/alert:col-start-2 cuoio:[&_a]:underline cuoio:[&_a]:underline-offset-3 cuoio:[&_a]:hover:text-foreground",
         className
       )}
       {...props}
@@ -54,7 +54,7 @@ function AlertDescription({
     <div
       data-slot="alert-description"
       className={cn(
-        "pttrn:text-xs/relaxed pttrn:text-balance pttrn:text-muted-foreground pttrn:md:text-pretty pttrn:[&_a]:underline pttrn:[&_a]:underline-offset-3 pttrn:[&_a]:hover:text-foreground pttrn:[&_p:not(:last-child)]:mb-4",
+        "cuoio:text-xs/relaxed cuoio:text-balance cuoio:text-muted-foreground cuoio:md:text-pretty cuoio:[&_a]:underline cuoio:[&_a]:underline-offset-3 cuoio:[&_a]:hover:text-foreground cuoio:[&_p:not(:last-child)]:mb-4",
         className
       )}
       {...props}
@@ -66,7 +66,7 @@ function AlertAction({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="alert-action"
-      className={cn("pttrn:absolute pttrn:top-1.5 pttrn:end-2", className)}
+      className={cn("cuoio:absolute cuoio:top-1.5 cuoio:end-2", className)}
       {...props}
     />
   )

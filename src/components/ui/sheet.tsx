@@ -28,7 +28,7 @@ function SheetOverlay({ className, ...props }: SheetPrimitive.Backdrop.Props) {
     <SheetPrimitive.Backdrop
       data-slot="sheet-overlay"
       className={cn(
-        "pttrn:fixed pttrn:inset-0 pttrn:z-50 pttrn:bg-black/80 pttrn:transition-opacity pttrn:duration-150 pttrn:data-ending-style:opacity-0 pttrn:data-starting-style:opacity-0 pttrn:supports-backdrop-filter:backdrop-blur-xs",
+        "cuoio:fixed cuoio:inset-0 cuoio:z-50 cuoio:bg-black/80 cuoio:transition-opacity cuoio:duration-150 cuoio:data-ending-style:opacity-0 cuoio:data-starting-style:opacity-0 cuoio:supports-backdrop-filter:backdrop-blur-xs",
         className
       )}
       {...props}
@@ -53,7 +53,7 @@ function SheetContent({
         data-slot="sheet-content"
         data-side={side}
         className={cn(
-          "pttrn:fixed pttrn:z-50 pttrn:flex pttrn:flex-col pttrn:bg-popover pttrn:bg-clip-padding pttrn:text-xs/relaxed pttrn:text-popover-foreground pttrn:shadow-lg pttrn:transition pttrn:duration-200 pttrn:ease-in-out pttrn:data-ending-style:opacity-0 pttrn:data-starting-style:opacity-0 pttrn:data-[side=bottom]:inset-x-0 pttrn:data-[side=bottom]:bottom-0 pttrn:data-[side=bottom]:h-auto pttrn:data-[side=bottom]:border-t pttrn:data-[side=bottom]:data-ending-style:translate-y-[2.5rem] pttrn:data-[side=bottom]:data-starting-style:translate-y-[2.5rem] pttrn:data-[side=left]:inset-y-0 pttrn:data-[side=left]:left-0 pttrn:data-[side=left]:h-full pttrn:data-[side=left]:w-3/4 pttrn:data-[side=left]:border-e pttrn:data-[side=left]:data-ending-style:translate-x-[-2.5rem] rtl:pttrn:data-[side=left]:data-ending-style:-translate-x-[-2.5rem] pttrn:data-[side=left]:data-starting-style:translate-x-[-2.5rem] rtl:pttrn:data-[side=left]:data-starting-style:-translate-x-[-2.5rem] pttrn:data-[side=right]:inset-y-0 pttrn:data-[side=right]:right-0 pttrn:data-[side=right]:h-full pttrn:data-[side=right]:w-3/4 pttrn:data-[side=right]:border-s pttrn:data-[side=right]:data-ending-style:translate-x-[2.5rem] rtl:pttrn:data-[side=right]:data-ending-style:-translate-x-[2.5rem] pttrn:data-[side=right]:data-starting-style:translate-x-[2.5rem] rtl:pttrn:data-[side=right]:data-starting-style:-translate-x-[2.5rem] pttrn:data-[side=top]:inset-x-0 pttrn:data-[side=top]:top-0 pttrn:data-[side=top]:h-auto pttrn:data-[side=top]:border-b pttrn:data-[side=top]:data-ending-style:translate-y-[-2.5rem] pttrn:data-[side=top]:data-starting-style:translate-y-[-2.5rem] pttrn:data-[side=left]:sm:max-w-sm pttrn:data-[side=right]:sm:max-w-sm",
+          "cuoio:fixed cuoio:z-50 cuoio:flex cuoio:flex-col cuoio:bg-popover cuoio:bg-clip-padding cuoio:text-xs/relaxed cuoio:text-popover-foreground cuoio:shadow-lg cuoio:transition cuoio:duration-200 cuoio:ease-in-out cuoio:data-ending-style:opacity-0 cuoio:data-starting-style:opacity-0 cuoio:data-[side=bottom]:inset-x-0 cuoio:data-[side=bottom]:bottom-0 cuoio:data-[side=bottom]:h-auto cuoio:data-[side=bottom]:border-t cuoio:data-[side=bottom]:data-ending-style:translate-y-[2.5rem] cuoio:data-[side=bottom]:data-starting-style:translate-y-[2.5rem] cuoio:data-[side=left]:inset-y-0 cuoio:data-[side=left]:left-0 cuoio:data-[side=left]:h-full cuoio:data-[side=left]:w-3/4 cuoio:data-[side=left]:border-e cuoio:data-[side=left]:data-ending-style:translate-x-[-2.5rem] rtl:cuoio:data-[side=left]:data-ending-style:-translate-x-[-2.5rem] cuoio:data-[side=left]:data-starting-style:translate-x-[-2.5rem] rtl:cuoio:data-[side=left]:data-starting-style:-translate-x-[-2.5rem] cuoio:data-[side=right]:inset-y-0 cuoio:data-[side=right]:right-0 cuoio:data-[side=right]:h-full cuoio:data-[side=right]:w-3/4 cuoio:data-[side=right]:border-s cuoio:data-[side=right]:data-ending-style:translate-x-[2.5rem] rtl:cuoio:data-[side=right]:data-ending-style:-translate-x-[2.5rem] cuoio:data-[side=right]:data-starting-style:translate-x-[2.5rem] rtl:cuoio:data-[side=right]:data-starting-style:-translate-x-[2.5rem] cuoio:data-[side=top]:inset-x-0 cuoio:data-[side=top]:top-0 cuoio:data-[side=top]:h-auto cuoio:data-[side=top]:border-b cuoio:data-[side=top]:data-ending-style:translate-y-[-2.5rem] cuoio:data-[side=top]:data-starting-style:translate-y-[-2.5rem] cuoio:data-[side=left]:sm:max-w-sm cuoio:data-[side=right]:sm:max-w-sm",
           className
         )}
         {...props}
@@ -65,14 +65,14 @@ function SheetContent({
             render={
               <Button
                 variant="ghost"
-                className="pttrn:absolute pttrn:top-4 pttrn:end-4"
+                className="cuoio:absolute cuoio:top-4 cuoio:end-4"
                 size="icon-sm"
               />
             }
           >
             <XIcon
             />
-            <span className="pttrn:sr-only">Close</span>
+            <span className="cuoio:sr-only">Close</span>
           </SheetPrimitive.Close>
         )}
       </SheetPrimitive.Popup>
@@ -84,7 +84,7 @@ function SheetHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="sheet-header"
-      className={cn("pttrn:flex pttrn:flex-col pttrn:gap-1.5 pttrn:p-6", className)}
+      className={cn("cuoio:flex cuoio:flex-col cuoio:gap-1.5 cuoio:p-6", className)}
       {...props}
     />
   )
@@ -94,7 +94,7 @@ function SheetFooter({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="sheet-footer"
-      className={cn("pttrn:mt-auto pttrn:flex pttrn:flex-col pttrn:gap-2 pttrn:p-6", className)}
+      className={cn("cuoio:mt-auto cuoio:flex cuoio:flex-col cuoio:gap-2 cuoio:p-6", className)}
       {...props}
     />
   )
@@ -105,7 +105,7 @@ function SheetTitle({ className, ...props }: SheetPrimitive.Title.Props) {
     <SheetPrimitive.Title
       data-slot="sheet-title"
       className={cn(
-        "pttrn:font-heading pttrn:text-sm pttrn:font-medium pttrn:text-foreground",
+        "cuoio:font-heading cuoio:text-sm cuoio:font-medium cuoio:text-foreground",
         className
       )}
       {...props}
@@ -120,7 +120,7 @@ function SheetDescription({
   return (
     <SheetPrimitive.Description
       data-slot="sheet-description"
-      className={cn("pttrn:text-xs/relaxed pttrn:text-muted-foreground", className)}
+      className={cn("cuoio:text-xs/relaxed cuoio:text-muted-foreground", className)}
       {...props}
     />
   )

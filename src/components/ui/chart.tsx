@@ -64,7 +64,7 @@ function ChartContainer({
         data-slot="chart"
         data-chart={chartId}
         className={cn(
-          "pttrn:flex pttrn:aspect-video pttrn:justify-center pttrn:text-xs pttrn:[&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground pttrn:[&_.recharts-cartesian-grid_line[stroke=#ccc]]:stroke-border/50 pttrn:[&_.recharts-curve.recharts-tooltip-cursor]:stroke-border pttrn:[&_.recharts-dot[stroke=#fff]]:stroke-transparent pttrn:[&_.recharts-layer]:outline-hidden pttrn:[&_.recharts-polar-grid_[stroke=#ccc]]:stroke-border pttrn:[&_.recharts-radial-bar-background-sector]:fill-muted pttrn:[&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted pttrn:[&_.recharts-reference-line_[stroke=#ccc]]:stroke-border pttrn:[&_.recharts-sector]:outline-hidden pttrn:[&_.recharts-sector[stroke=#fff]]:stroke-transparent pttrn:[&_.recharts-surface]:outline-hidden",
+          "cuoio:flex cuoio:aspect-video cuoio:justify-center cuoio:text-xs cuoio:[&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground cuoio:[&_.recharts-cartesian-grid_line[stroke=#ccc]]:stroke-border/50 cuoio:[&_.recharts-curve.recharts-tooltip-cursor]:stroke-border cuoio:[&_.recharts-dot[stroke=#fff]]:stroke-transparent cuoio:[&_.recharts-layer]:outline-hidden cuoio:[&_.recharts-polar-grid_[stroke=#ccc]]:stroke-border cuoio:[&_.recharts-radial-bar-background-sector]:fill-muted cuoio:[&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted cuoio:[&_.recharts-reference-line_[stroke=#ccc]]:stroke-border cuoio:[&_.recharts-sector]:outline-hidden cuoio:[&_.recharts-sector[stroke=#fff]]:stroke-transparent cuoio:[&_.recharts-surface]:outline-hidden",
           className
         )}
         {...props}
@@ -160,7 +160,7 @@ function ChartTooltipContent({
 
     if (labelFormatter) {
       return (
-        <div className={cn("pttrn:font-medium", labelClassName)}>
+        <div className={cn("cuoio:font-medium", labelClassName)}>
           {labelFormatter(value, payload)}
         </div>
       )
@@ -170,7 +170,7 @@ function ChartTooltipContent({
       return null
     }
 
-    return <div className={cn("pttrn:font-medium", labelClassName)}>{value}</div>
+    return <div className={cn("cuoio:font-medium", labelClassName)}>{value}</div>
   }, [
     label,
     labelFormatter,
@@ -190,12 +190,12 @@ function ChartTooltipContent({
   return (
     <div
       className={cn(
-        "pttrn:grid pttrn:min-w-32 pttrn:items-start pttrn:gap-1.5 pttrn:rounded-lg pttrn:border pttrn:border-border/50 pttrn:bg-background pttrn:px-2.5 pttrn:py-1.5 pttrn:text-xs/relaxed pttrn:shadow-xl",
+        "cuoio:grid cuoio:min-w-32 cuoio:items-start cuoio:gap-1.5 cuoio:rounded-lg cuoio:border cuoio:border-border/50 cuoio:bg-background cuoio:px-2.5 cuoio:py-1.5 cuoio:text-xs/relaxed cuoio:shadow-xl",
         className
       )}
     >
       {!nestLabel ? tooltipLabel : null}
-      <div className="pttrn:grid pttrn:gap-1.5">
+      <div className="cuoio:grid cuoio:gap-1.5">
         {payload
           .filter((item) => item.type !== "none")
           .map((item, index) => {
@@ -207,8 +207,8 @@ function ChartTooltipContent({
               <div
                 key={index}
                 className={cn(
-                  "pttrn:flex pttrn:w-full pttrn:flex-wrap pttrn:items-stretch pttrn:gap-2 pttrn:[&>svg]:h-2.5 pttrn:[&>svg]:w-2.5 pttrn:[&>svg]:text-muted-foreground",
-                  indicator === "dot" && "pttrn:items-center"
+                  "cuoio:flex cuoio:w-full cuoio:flex-wrap cuoio:items-stretch cuoio:gap-2 cuoio:[&>svg]:h-2.5 cuoio:[&>svg]:w-2.5 cuoio:[&>svg]:text-muted-foreground",
+                  indicator === "dot" && "cuoio:items-center"
                 )}
               >
                 {formatter && item?.value !== undefined && item.name ? (
@@ -221,7 +221,7 @@ function ChartTooltipContent({
                       !hideIndicator && (
                         <div
                           className={cn(
-                            "pttrn:shrink-0 pttrn:rounded-[2px] pttrn:border-(--color-border) pttrn:bg-(--color-bg)",
+                            "cuoio:shrink-0 cuoio:rounded-[2px] cuoio:border-(--color-border) cuoio:bg-(--color-bg)",
                             {
                               "h-2.5 w-2.5": indicator === "dot",
                               "w-1": indicator === "line",
@@ -241,18 +241,18 @@ function ChartTooltipContent({
                     )}
                     <div
                       className={cn(
-                        "pttrn:flex pttrn:flex-1 pttrn:justify-between pttrn:leading-none",
-                        nestLabel ? "pttrn:items-end" : "pttrn:items-center"
+                        "cuoio:flex cuoio:flex-1 cuoio:justify-between cuoio:leading-none",
+                        nestLabel ? "cuoio:items-end" : "cuoio:items-center"
                       )}
                     >
-                      <div className="pttrn:grid pttrn:gap-1.5">
+                      <div className="cuoio:grid cuoio:gap-1.5">
                         {nestLabel ? tooltipLabel : null}
-                        <span className="pttrn:text-muted-foreground">
+                        <span className="cuoio:text-muted-foreground">
                           {itemConfig?.label ?? item.name}
                         </span>
                       </div>
                       {item.value != null && (
-                        <span className="pttrn:font-mono pttrn:font-medium pttrn:text-foreground pttrn:tabular-nums">
+                        <span className="cuoio:font-mono cuoio:font-medium cuoio:text-foreground cuoio:tabular-nums">
                           {typeof item.value === "number"
                             ? item.value.toLocaleString()
                             : String(item.value)}
@@ -290,8 +290,8 @@ function ChartLegendContent({
   return (
     <div
       className={cn(
-        "pttrn:flex pttrn:items-center pttrn:justify-center pttrn:gap-4",
-        verticalAlign === "top" ? "pttrn:pb-3" : "pttrn:pt-3",
+        "cuoio:flex cuoio:items-center cuoio:justify-center cuoio:gap-4",
+        verticalAlign === "top" ? "cuoio:pb-3" : "cuoio:pt-3",
         className
       )}
     >
@@ -305,14 +305,14 @@ function ChartLegendContent({
             <div
               key={index}
               className={cn(
-                "pttrn:flex pttrn:items-center pttrn:gap-1.5 pttrn:[&>svg]:h-3 pttrn:[&>svg]:w-3 pttrn:[&>svg]:text-muted-foreground"
+                "cuoio:flex cuoio:items-center cuoio:gap-1.5 cuoio:[&>svg]:h-3 cuoio:[&>svg]:w-3 cuoio:[&>svg]:text-muted-foreground"
               )}
             >
               {itemConfig?.icon && !hideIcon ? (
                 <itemConfig.icon />
               ) : (
                 <div
-                  className="pttrn:h-2 pttrn:w-2 pttrn:shrink-0 pttrn:rounded-[2px]"
+                  className="cuoio:h-2 cuoio:w-2 cuoio:shrink-0 cuoio:rounded-[2px]"
                   style={{
                     backgroundColor: item.color,
                   }}

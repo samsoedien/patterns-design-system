@@ -20,7 +20,7 @@ function InputOTP({
         containerClassName
       )}
       spellCheck={false}
-      className={cn("pttrn:disabled:cursor-not-allowed", className)}
+      className={cn("cuoio:disabled:cursor-not-allowed", className)}
       {...props}
     />
   )
@@ -31,7 +31,7 @@ function InputOTPGroup({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="input-otp-group"
       className={cn(
-        "pttrn:flex pttrn:items-center pttrn:rounded-md pttrn:has-aria-invalid:border-destructive pttrn:has-aria-invalid:ring-2 pttrn:has-aria-invalid:ring-destructive/20 pttrn:dark:has-aria-invalid:ring-destructive/40",
+        "cuoio:flex cuoio:items-center cuoio:rounded-md cuoio:has-aria-invalid:border-destructive cuoio:has-aria-invalid:ring-2 cuoio:has-aria-invalid:ring-destructive/20 cuoio:dark:has-aria-invalid:ring-destructive/40",
         className
       )}
       {...props}
@@ -54,15 +54,15 @@ function InputOTPSlot({
       data-slot="input-otp-slot"
       data-active={isActive}
       className={cn(
-        "pttrn:relative pttrn:flex pttrn:size-7 pttrn:items-center pttrn:justify-center pttrn:border-y pttrn:border-e pttrn:border-input pttrn:bg-input/20 pttrn:text-xs/relaxed pttrn:transition-all pttrn:outline-none pttrn:first:rounded-s-md pttrn:first:border-s pttrn:last:rounded-e-md pttrn:aria-invalid:border-destructive pttrn:data-[active=true]:z-10 pttrn:data-[active=true]:border-ring pttrn:data-[active=true]:ring-2 pttrn:data-[active=true]:ring-ring/30 pttrn:data-[active=true]:aria-invalid:border-destructive pttrn:data-[active=true]:aria-invalid:ring-destructive/20 pttrn:dark:bg-input/30 pttrn:dark:data-[active=true]:aria-invalid:ring-destructive/40",
+        "cuoio:relative cuoio:flex cuoio:size-7 cuoio:items-center cuoio:justify-center cuoio:border-y cuoio:border-e cuoio:border-input cuoio:bg-input/20 cuoio:text-xs/relaxed cuoio:transition-all cuoio:outline-none cuoio:first:rounded-s-md cuoio:first:border-s cuoio:last:rounded-e-md cuoio:aria-invalid:border-destructive cuoio:data-[active=true]:z-10 cuoio:data-[active=true]:border-ring cuoio:data-[active=true]:ring-2 cuoio:data-[active=true]:ring-ring/30 cuoio:data-[active=true]:aria-invalid:border-destructive cuoio:data-[active=true]:aria-invalid:ring-destructive/20 cuoio:dark:bg-input/30 cuoio:dark:data-[active=true]:aria-invalid:ring-destructive/40",
         className
       )}
       {...props}
     >
       {char}
       {hasFakeCaret && (
-        <div className="pttrn:pointer-events-none pttrn:absolute pttrn:inset-0 pttrn:flex pttrn:items-center pttrn:justify-center">
-          <div className="pttrn:h-4 pttrn:w-px pttrn:animate-caret-blink pttrn:bg-foreground pttrn:duration-1000" />
+        <div className="cuoio:pointer-events-none cuoio:absolute cuoio:inset-0 cuoio:flex cuoio:items-center cuoio:justify-center">
+          <div className="cuoio:h-4 cuoio:w-px cuoio:animate-caret-blink cuoio:bg-foreground cuoio:duration-1000" />
         </div>
       )}
     </div>
@@ -73,7 +73,7 @@ function InputOTPSeparator({ ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="input-otp-separator"
-      className="pttrn:flex pttrn:items-center pttrn:[&_svg:not([class*=size-])]:size-4"
+      className="cuoio:flex cuoio:items-center cuoio:[&_svg:not([class*=size-])]:size-4"
       role="separator"
       {...props}
     >

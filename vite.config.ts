@@ -4,6 +4,8 @@ import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
 import dts from "vite-plugin-dts"
 
+import pkg from "./package.json" with { type: "json" }
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
@@ -32,6 +34,10 @@ export default defineConfig({
     sourcemap: true,
     cssCodeSplit: true,
     rollupOptions: {
+      external: (id: string) =>
+        Object.keys(pkg.dependencies).some(
+          (dep) => id === dep || id.startsWith(`${dep}/`)
+        ),
       output: [
         {
           format: "es",

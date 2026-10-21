@@ -12,7 +12,7 @@ function FieldSet({ className, ...props }: React.ComponentProps<"fieldset">) {
     <fieldset
       data-slot="field-set"
       className={cn(
-        "pttrn:flex pttrn:flex-col pttrn:gap-4 pttrn:has-[>[data-slot=checkbox-group]]:gap-3 pttrn:has-[>[data-slot=radio-group]]:gap-3",
+        "cuoio:flex cuoio:flex-col cuoio:gap-4 cuoio:has-[>[data-slot=checkbox-group]]:gap-3 cuoio:has-[>[data-slot=radio-group]]:gap-3",
         className
       )}
       {...props}
@@ -30,7 +30,7 @@ function FieldLegend({
       data-slot="field-legend"
       data-variant={variant}
       className={cn(
-        "pttrn:mb-2 pttrn:font-medium pttrn:data-[variant=label]:text-xs/relaxed pttrn:data-[variant=legend]:text-sm",
+        "cuoio:mb-2 cuoio:font-medium cuoio:data-[variant=label]:text-xs/relaxed cuoio:data-[variant=legend]:text-sm",
         className
       )}
       {...props}
@@ -43,7 +43,7 @@ function FieldGroup({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="field-group"
       className={cn(
-        "pttrn:group/field-group pttrn:@container/field-group pttrn:flex pttrn:w-full pttrn:flex-col pttrn:gap-4 pttrn:data-[slot=checkbox-group]:gap-3 pttrn:*:data-[slot=field-group]:gap-4",
+        "cuoio:group/field-group cuoio:@container/field-group cuoio:flex cuoio:w-full cuoio:flex-col cuoio:gap-4 cuoio:data-[slot=checkbox-group]:gap-3 cuoio:*:data-[slot=field-group]:gap-4",
         className
       )}
       {...props}
@@ -52,15 +52,15 @@ function FieldGroup({ className, ...props }: React.ComponentProps<"div">) {
 }
 
 const fieldVariants = cva(
-  "pttrn:group/field pttrn:flex pttrn:w-full pttrn:gap-2 pttrn:data-[invalid=true]:text-destructive",
+  "cuoio:group/field cuoio:flex cuoio:w-full cuoio:gap-2 cuoio:data-[invalid=true]:text-destructive",
   {
     variants: {
       orientation: {
-        vertical: "pttrn:flex-col pttrn:*:w-full pttrn:[&>.sr-only]:w-auto",
+        vertical: "cuoio:flex-col cuoio:*:w-full cuoio:[&>.sr-only]:w-auto",
         horizontal:
-          "pttrn:flex-row pttrn:items-center pttrn:has-[>[data-slot=field-content]]:items-start pttrn:*:data-[slot=field-label]:flex-auto pttrn:has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px",
+          "cuoio:flex-row cuoio:items-center cuoio:has-[>[data-slot=field-content]]:items-start cuoio:*:data-[slot=field-label]:flex-auto cuoio:has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px",
         responsive:
-          "pttrn:flex-col pttrn:*:w-full pttrn:@md/field-group:flex-row pttrn:@md/field-group:items-center pttrn:@md/field-group:*:w-auto pttrn:@md/field-group:has-[>[data-slot=field-content]]:items-start pttrn:@md/field-group:*:data-[slot=field-label]:flex-auto pttrn:[&>.sr-only]:w-auto pttrn:@md/field-group:has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px",
+          "cuoio:flex-col cuoio:*:w-full cuoio:@md/field-group:flex-row cuoio:@md/field-group:items-center cuoio:@md/field-group:*:w-auto cuoio:@md/field-group:has-[>[data-slot=field-content]]:items-start cuoio:@md/field-group:*:data-[slot=field-label]:flex-auto cuoio:[&>.sr-only]:w-auto cuoio:@md/field-group:has-[>[data-slot=field-content]]:[&>[role=checkbox],[role=radio]]:mt-px",
       },
     },
     defaultVariants: {
@@ -90,7 +90,7 @@ function FieldContent({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="field-content"
       className={cn(
-        "pttrn:group/field-content pttrn:flex pttrn:flex-1 pttrn:flex-col pttrn:gap-0.5 pttrn:leading-snug",
+        "cuoio:group/field-content cuoio:flex cuoio:flex-1 cuoio:flex-col cuoio:gap-0.5 cuoio:leading-snug",
         className
       )}
       {...props}
@@ -106,8 +106,8 @@ function FieldLabel({
     <Label
       data-slot="field-label"
       className={cn(
-        "pttrn:group/field-label pttrn:peer/field-label pttrn:flex pttrn:w-fit pttrn:gap-2 pttrn:leading-snug pttrn:group-data-[disabled=true]/field:opacity-50 pttrn:has-data-checked:bg-primary/5 pttrn:has-[>[data-slot=field]]:rounded-md pttrn:has-[>[data-slot=field]]:border pttrn:has-[>[data-slot=field]]:not-has-[:disabled,[data-disabled]]:hover:bg-input/40 pttrn:has-[>[data-slot=field]]:has-[:focus-visible]:border-ring pttrn:has-[>[data-slot=field]]:has-[:focus-visible]:ring-2 pttrn:has-[>[data-slot=field]]:has-[:focus-visible]:ring-ring/30 pttrn:*:data-[slot=field]:p-2 pttrn:dark:has-data-checked:bg-primary/10",
-        "pttrn:has-[>[data-slot=field]]:w-full pttrn:has-[>[data-slot=field]]:flex-col",
+        "cuoio:group/field-label cuoio:peer/field-label cuoio:flex cuoio:w-fit cuoio:gap-2 cuoio:leading-snug cuoio:group-data-[disabled=true]/field:opacity-50 cuoio:has-data-checked:bg-primary/5 cuoio:has-[>[data-slot=field]]:rounded-md cuoio:has-[>[data-slot=field]]:border cuoio:has-[>[data-slot=field]]:not-has-[:disabled,[data-disabled]]:hover:bg-input/40 cuoio:has-[>[data-slot=field]]:has-[:focus-visible]:border-ring cuoio:has-[>[data-slot=field]]:has-[:focus-visible]:ring-2 cuoio:has-[>[data-slot=field]]:has-[:focus-visible]:ring-ring/30 cuoio:*:data-[slot=field]:p-2 cuoio:dark:has-data-checked:bg-primary/10",
+        "cuoio:has-[>[data-slot=field]]:w-full cuoio:has-[>[data-slot=field]]:flex-col",
         className
       )}
       {...props}
@@ -120,7 +120,7 @@ function FieldTitle({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="field-label"
       className={cn(
-        "pttrn:flex pttrn:w-fit pttrn:items-center pttrn:gap-2 pttrn:text-xs/relaxed pttrn:font-medium pttrn:group-data-[disabled=true]/field:opacity-50",
+        "cuoio:flex cuoio:w-fit cuoio:items-center cuoio:gap-2 cuoio:text-xs/relaxed cuoio:font-medium cuoio:group-data-[disabled=true]/field:opacity-50",
         className
       )}
       {...props}
@@ -133,9 +133,9 @@ function FieldDescription({ className, ...props }: React.ComponentProps<"p">) {
     <p
       data-slot="field-description"
       className={cn(
-        "pttrn:text-start pttrn:text-xs/relaxed pttrn:leading-normal pttrn:font-normal pttrn:text-muted-foreground pttrn:group-has-data-horizontal/field:text-balance pttrn:[[data-variant=legend]+&]:-mt-1.5",
-        "pttrn:last:mt-0 pttrn:nth-last-2:-mt-1",
-        "pttrn:[&>a]:underline pttrn:[&>a]:underline-offset-4 pttrn:[&>a:hover]:text-primary",
+        "cuoio:text-start cuoio:text-xs/relaxed cuoio:leading-normal cuoio:font-normal cuoio:text-muted-foreground cuoio:group-has-data-horizontal/field:text-balance cuoio:[[data-variant=legend]+&]:-mt-1.5",
+        "cuoio:last:mt-0 cuoio:nth-last-2:-mt-1",
+        "cuoio:[&>a]:underline cuoio:[&>a]:underline-offset-4 cuoio:[&>a:hover]:text-primary",
         className
       )}
       {...props}
@@ -155,15 +155,15 @@ function FieldSeparator({
       data-slot="field-separator"
       data-content={!!children}
       className={cn(
-        "pttrn:relative pttrn:-my-2 pttrn:h-5 pttrn:text-xs/relaxed pttrn:group-data-[variant=outline]/field-group:-mb-2",
+        "cuoio:relative cuoio:-my-2 cuoio:h-5 cuoio:text-xs/relaxed cuoio:group-data-[variant=outline]/field-group:-mb-2",
         className
       )}
       {...props}
     >
-      <Separator className="pttrn:absolute pttrn:inset-0 pttrn:top-1/2" />
+      <Separator className="cuoio:absolute cuoio:inset-0 cuoio:top-1/2" />
       {children && (
         <span
-          className="pttrn:relative pttrn:mx-auto pttrn:block pttrn:w-fit pttrn:bg-background pttrn:px-2 pttrn:text-muted-foreground"
+          className="cuoio:relative cuoio:mx-auto cuoio:block cuoio:w-fit cuoio:bg-background cuoio:px-2 cuoio:text-muted-foreground"
           data-slot="field-separator-content"
         >
           {children}
@@ -199,7 +199,7 @@ function FieldError({
     }
 
     return (
-      <ul className="pttrn:ms-4 pttrn:flex pttrn:list-disc pttrn:flex-col pttrn:gap-1">
+      <ul className="cuoio:ms-4 cuoio:flex cuoio:list-disc cuoio:flex-col cuoio:gap-1">
         {uniqueErrors.map(
           (error, index) =>
             error?.message && <li key={index}>{error.message}</li>
@@ -216,7 +216,7 @@ function FieldError({
     <div
       role="alert"
       data-slot="field-error"
-      className={cn("pttrn:text-xs/relaxed pttrn:font-normal pttrn:text-destructive", className)}
+      className={cn("cuoio:text-xs/relaxed cuoio:font-normal cuoio:text-destructive", className)}
       {...props}
     >
       {content}

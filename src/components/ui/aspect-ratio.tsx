@@ -13,7 +13,7 @@ function AspectRatio({
           "--ratio": ratio,
         } as React.CSSProperties
       }
-      className={cn("pttrn:relative pttrn:aspect-(--ratio)", className)}
+      className={cn("cuoio:relative cuoio:aspect-(--ratio)", className)}
       {...props}
     />
   )
