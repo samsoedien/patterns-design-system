@@ -1,4 +1,4 @@
-@import 'tailwindcss' prefix(cuoio);
+@import "tailwindcss" prefix(cuoio);
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 @import "@fontsource-variable/figtree";
@@ -133,6 +133,3 @@
     @apply cuoio:font-sans;
   }
 }
-
-
-

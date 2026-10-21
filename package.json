@@ -20,17 +20,19 @@
     }
   },
   "scripts": {
-    "dev": "vite",
+    "compile": "vite",
     "build": "tsc -b && vite build && yarn build:styles",
     "build:styles": "yarn dlx @tailwindcss/cli -i ./src/styles/globals.css  -o ./lib/globals.css --postcss --minify",
-    "lint": "eslint .",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
+    "lint": "eslint .",
     "check-types": "tsc -b",
     "preview": "vite preview",
     "ui:init": "yarn dlx shadcn@latest init",
     "ui:add": "yarn dlx shadcn@latest add",
     "ui:build": "yarn dlx shadcn@latest build",
-    "ui:diff": "yarn dlx shadcn@latest diff"
+    "ui:diff": "yarn dlx shadcn@latest diff",
+    "registry:build": "shadcn build",
+    "publish": "yarn registry:build && yarn compile"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
