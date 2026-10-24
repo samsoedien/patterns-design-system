@@ -110,13 +110,50 @@ const meta = {
   title: 'UI/Toast',
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['type', 'title', 'description'],
+    },
   },
   tags: ['autodocs'],
+  argTypes: {
+    type: {
+      control: 'select',
+      options: ['default', 'success', 'info', 'warning', 'error'],
+    },
+    title: {
+      control: 'text',
+    },
+    description: {
+      control: 'text',
+    },
+  },
+  args: {
+    type: 'default',
+    title: 'Event created',
+    description: 'Sunday, December 3 at 9:00 AM',
+  },
 } satisfies Meta
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Button
+      variant="outline"
+      onClick={() =>
+        toast.add({
+          ...(args.type === 'default' ? {} : { type: args.type }),
+          title: args.title,
+          description: args.description,
+        })
+      }
+    >
+      Show Toast
+    </Button>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

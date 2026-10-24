@@ -253,15 +253,50 @@ function ImageExample() {
 
 const meta = {
   title: 'UI/Card',
+  component: Card,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['size', 'title', 'description'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    size: {
+      control: 'inline-radio',
+      options: ['default', 'sm'],
+    },
+    title: {
+      control: 'text',
+    },
+    description: {
+      control: 'text',
+    },
+  },
+  args: {
+    size: 'default',
+    title: 'Login to your account',
+    description: 'Enter your email below to login to your account',
+  },
+} satisfies Meta<typeof Card>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Card size={args.size} className="cuoio:w-80">
+      <CardHeader>
+        <CardTitle>{args.title}</CardTitle>
+        <CardDescription>{args.description}</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p>Card content</p>
+      </CardContent>
+    </Card>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

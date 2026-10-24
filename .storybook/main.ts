@@ -1,4 +1,11 @@
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+
 import type { StorybookConfig } from '@storybook/react-vite'
+import { mergeConfig } from 'vite'
+
+const storybookDir = path.dirname(fileURLToPath(import.meta.url))
+const packageRoot = path.resolve(storybookDir, '..')
 
 const config: StorybookConfig = {
   stories: [
@@ -20,6 +27,16 @@ const config: StorybookConfig = {
   framework: '@storybook/react-vite',
   core: {
     disableTelemetry: true,
+  },
+  async viteFinal(viteConfig) {
+    return mergeConfig(viteConfig, {
+      resolve: {
+        alias: {
+          '@project-cuoio/core': path.resolve(packageRoot, 'src/index.ts'),
+          '@project-cuoio/icons': path.resolve(packageRoot, '../icons/src/index.ts'),
+        },
+      },
+    })
   },
 }
 export default config

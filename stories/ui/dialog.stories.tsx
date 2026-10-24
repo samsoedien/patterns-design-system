@@ -148,15 +148,43 @@ function ScrollableContentExample() {
 
 const meta = {
   title: 'UI/Dialog',
+  component: Dialog,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['showCloseButton'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    showCloseButton: {
+      control: 'boolean',
+    },
+  },
+  args: {
+    showCloseButton: true,
+  },
+} satisfies Meta<typeof Dialog>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Dialog>
+      <DialogTrigger render={<Button variant="outline" />}>Open Dialog</DialogTrigger>
+      <DialogContent showCloseButton={args.showCloseButton}>
+        <DialogHeader>
+          <DialogTitle>Edit profile</DialogTitle>
+          <DialogDescription>
+            Make changes to your profile here. Click save when you&apos;re done.
+          </DialogDescription>
+        </DialogHeader>
+      </DialogContent>
+    </Dialog>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

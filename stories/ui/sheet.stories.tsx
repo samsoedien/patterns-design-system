@@ -107,15 +107,46 @@ function NoCloseButtonExample() {
 
 const meta = {
   title: 'UI/Sheet',
+  component: Sheet,
   parameters: {
     layout: 'fullscreen',
+    controls: {
+      include: ['side', 'showCloseButton'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    side: {
+      control: 'select',
+      options: ['top', 'right', 'bottom', 'left'],
+    },
+    showCloseButton: {
+      control: 'boolean',
+    },
+  },
+  args: {
+    side: 'right',
+    showCloseButton: true,
+  },
+} satisfies Meta<typeof Sheet>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Sheet>
+      <SheetTrigger render={<Button variant="outline" />}>Open</SheetTrigger>
+      <SheetContent side={args.side} showCloseButton={args.showCloseButton}>
+        <SheetHeader>
+          <SheetTitle>Edit profile</SheetTitle>
+          <SheetDescription>Make changes to your profile here.</SheetDescription>
+        </SheetHeader>
+      </SheetContent>
+    </Sheet>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

@@ -321,15 +321,44 @@ function AttachmentExample() {
 
 const meta = {
   title: 'UI/Message',
+  component: Message,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['align', 'children'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    align: {
+      control: 'inline-radio',
+      options: ['start', 'end'],
+    },
+    children: {
+      control: 'text',
+    },
+  },
+  args: {
+    align: 'start',
+    children: 'This is a playground message.',
+  },
+} satisfies Meta<typeof Message>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <div className="cuoio:w-80">
+      <Message align={args.align}>
+        <MessageContent>
+          <p>{args.children}</p>
+        </MessageContent>
+      </Message>
+    </div>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

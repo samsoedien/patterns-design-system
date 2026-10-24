@@ -213,15 +213,45 @@ function PopoverExample() {
 
 const meta = {
   title: 'UI/Bubble',
+  component: Bubble,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['variant', 'align', 'children'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['default', 'secondary', 'muted', 'tinted', 'outline', 'ghost', 'destructive'],
+    },
+    align: {
+      control: 'inline-radio',
+      options: ['start', 'end'],
+    },
+    children: {
+      control: 'text',
+    },
+  },
+  args: {
+    variant: 'default',
+    align: 'start',
+    children: "Hey there! what's up?",
+  },
+} satisfies Meta<typeof Bubble>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Bubble variant={args.variant} align={args.align}>
+      <BubbleContent>{args.children}</BubbleContent>
+    </Bubble>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

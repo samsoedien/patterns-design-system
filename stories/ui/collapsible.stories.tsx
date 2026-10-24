@@ -218,15 +218,49 @@ function FileTreeExample() {
 
 const meta = {
   title: 'UI/Collapsible',
+  component: Collapsible,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['defaultOpen', 'disabled'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    defaultOpen: {
+      control: 'boolean',
+    },
+    disabled: {
+      control: 'boolean',
+    },
+  },
+  args: {
+    defaultOpen: false,
+    disabled: false,
+  },
+} satisfies Meta<typeof Collapsible>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Collapsible
+      defaultOpen={args.defaultOpen}
+      disabled={args.disabled}
+      className="cuoio:flex cuoio:w-64 cuoio:flex-col cuoio:gap-2"
+      key={String(args.defaultOpen)}
+    >
+      <CollapsibleTrigger render={<Button variant="outline" />}>
+        Can I use this in my project?
+      </CollapsibleTrigger>
+      <CollapsibleContent>
+        Yes. Free to use for personal and commercial projects. No attribution required.
+      </CollapsibleContent>
+    </Collapsible>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

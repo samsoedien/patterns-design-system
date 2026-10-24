@@ -242,15 +242,48 @@ function WeekNumbersExample() {
 
 const meta = {
   title: 'UI/Calendar',
+  component: Calendar,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['showOutsideDays', 'captionLayout', 'buttonVariant'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    showOutsideDays: {
+      control: 'boolean',
+    },
+    captionLayout: {
+      control: 'select',
+      options: ['label', 'dropdown', 'dropdown-months', 'dropdown-years'],
+    },
+    buttonVariant: {
+      control: 'select',
+      options: ['default', 'outline', 'secondary', 'ghost', 'destructive', 'link'],
+    },
+  },
+  args: {
+    showOutsideDays: true,
+    captionLayout: 'label',
+    buttonVariant: 'ghost',
+  },
+} satisfies Meta<typeof Calendar>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Calendar
+      mode="single"
+      showOutsideDays={args.showOutsideDays}
+      captionLayout={args.captionLayout}
+      buttonVariant={args.buttonVariant}
+    />
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

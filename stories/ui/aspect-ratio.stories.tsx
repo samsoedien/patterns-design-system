@@ -55,15 +55,44 @@ function PortraitExample() {
 
 const meta = {
   title: 'UI/Aspect Ratio',
+  component: AspectRatio,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['ratio'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    ratio: {
+      control: 'select',
+      options: ['16/9', '4/3', '1/1', '3/4'],
+    },
+  },
+  args: {
+    ratio: '16/9',
+  },
+} satisfies Meta<typeof AspectRatio>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <AspectRatio
+      ratio={{ '16/9': 16 / 9, '4/3': 4 / 3, '1/1': 1, '3/4': 3 / 4 }[args.ratio]}
+      className="cuoio:w-full cuoio:max-w-sm cuoio:rounded-lg cuoio:bg-muted"
+    >
+      <Image
+        src="https://avatar.vercel.sh/shadcn1"
+        alt="Photo"
+        fill
+        className="cuoio:rounded-lg cuoio:object-cover cuoio:grayscale cuoio:dark:brightness-20"
+      />
+    </AspectRatio>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

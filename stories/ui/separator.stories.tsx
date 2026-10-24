@@ -74,15 +74,44 @@ function ListExample() {
 
 const meta = {
   title: 'UI/Separator',
+  component: Separator,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['orientation'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    orientation: {
+      control: 'inline-radio',
+      options: ['horizontal', 'vertical'],
+    },
+  },
+  args: {
+    orientation: 'horizontal',
+  },
+} satisfies Meta<typeof Separator>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <div
+      className={
+        args.orientation === 'vertical'
+          ? 'cuoio:flex cuoio:h-10 cuoio:items-center cuoio:gap-4'
+          : 'cuoio:w-64'
+      }
+    >
+      {args.orientation === 'vertical' ? <span>Blog</span> : null}
+      <Separator orientation={args.orientation} />
+      {args.orientation === 'vertical' ? <span>Docs</span> : null}
+    </div>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

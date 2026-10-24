@@ -96,15 +96,31 @@ function InputGroupExample() {
 
 const meta = {
   title: 'UI/Kbd',
+  component: Kbd,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['children'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    children: {
+      control: 'text',
+    },
+  },
+  args: {
+    children: '⌘K',
+  },
+} satisfies Meta<typeof Kbd>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => <Kbd>{args.children}</Kbd>,
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

@@ -179,15 +179,46 @@ function InvalidExample() {
 
 const meta = {
   title: 'UI/Radio Group',
+  component: RadioGroup,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['disabled'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    disabled: {
+      control: 'boolean',
+    },
+  },
+  args: {
+    disabled: false,
+  },
+} satisfies Meta<typeof RadioGroup>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <RadioGroup defaultValue="comfortable" disabled={args.disabled} className="cuoio:w-fit">
+      <div className="cuoio:flex cuoio:items-center cuoio:gap-3">
+        <RadioGroupItem value="default" id="playground-r1" />
+        <Label htmlFor="playground-r1">Default</Label>
+      </div>
+      <div className="cuoio:flex cuoio:items-center cuoio:gap-3">
+        <RadioGroupItem value="comfortable" id="playground-r2" />
+        <Label htmlFor="playground-r2">Comfortable</Label>
+      </div>
+      <div className="cuoio:flex cuoio:items-center cuoio:gap-3">
+        <RadioGroupItem value="compact" id="playground-r3" />
+        <Label htmlFor="playground-r3">Compact</Label>
+      </div>
+    </RadioGroup>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

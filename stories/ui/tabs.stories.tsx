@@ -130,15 +130,46 @@ function IconsExample() {
 
 const meta = {
   title: 'UI/Tabs',
+  component: Tabs,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['orientation', 'variant'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    orientation: {
+      control: 'inline-radio',
+      options: ['horizontal', 'vertical'],
+    },
+    variant: {
+      control: 'inline-radio',
+      options: ['default', 'line'],
+    },
+  },
+  args: {
+    orientation: 'horizontal',
+    variant: 'default',
+  },
+} satisfies Meta<typeof Tabs>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Tabs defaultValue="account" orientation={args.orientation} className="cuoio:w-80">
+      <TabsList variant={args.variant}>
+        <TabsTrigger value="account">Account</TabsTrigger>
+        <TabsTrigger value="password">Password</TabsTrigger>
+      </TabsList>
+      <TabsContent value="account">Make changes to your account here.</TabsContent>
+      <TabsContent value="password">Change your password here.</TabsContent>
+    </Tabs>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

@@ -63,7 +63,7 @@ function DemoExample() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger render={<Button variant="outline" />}>Open</DropdownMenuTrigger>
-      <DropdownMenuContent className="cuoio:w-40" align="start">
+      <DropdownMenuContent side={args.side} align={args.align} className="cuoio:w-40">
         <DropdownMenuGroup>
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
           <DropdownMenuItem>
@@ -660,15 +660,46 @@ function ComplexExample() {
 
 const meta = {
   title: 'UI/Dropdown Menu',
+  component: DropdownMenu,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['side', 'align'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    side: {
+      control: 'select',
+      options: ['top', 'right', 'bottom', 'left'],
+    },
+    align: {
+      control: 'select',
+      options: ['start', 'center', 'end'],
+    },
+  },
+  args: {
+    side: 'bottom',
+    align: 'start',
+  },
+} satisfies Meta<typeof DropdownMenu>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <DropdownMenu>
+      <DropdownMenuTrigger render={<Button variant="outline" />}>Open</DropdownMenuTrigger>
+      <DropdownMenuContent side={args.side} align={args.align} className="cuoio:w-40">
+        <DropdownMenuItem>Profile</DropdownMenuItem>
+        <DropdownMenuItem>Settings</DropdownMenuItem>
+        <DropdownMenuItem>Log out</DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

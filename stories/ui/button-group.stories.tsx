@@ -419,15 +419,38 @@ function PopoverExample() {
 
 const meta = {
   title: 'UI/Button Group',
+  component: ButtonGroup,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['orientation'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    orientation: {
+      control: 'inline-radio',
+      options: ['horizontal', 'vertical'],
+    },
+  },
+  args: {
+    orientation: 'horizontal',
+  },
+} satisfies Meta<typeof ButtonGroup>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <ButtonGroup orientation={args.orientation}>
+      <Button variant="outline">Archive</Button>
+      <Button variant="outline">Report</Button>
+      <Button variant="outline">Snooze</Button>
+    </ButtonGroup>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

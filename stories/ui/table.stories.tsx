@@ -143,10 +143,10 @@ const Footer_invoices = [
   },
 ]
 
-function FooterExample() {
+function FooterExample(args) {
   return (
     <Table>
-      <TableCaption>A list of your recent Footer_invoices.</TableCaption>
+      <TableCaption>{args.caption}</TableCaption>
       <TableHeader>
         <TableRow>
           <TableHead className="cuoio:w-[100px]">Invoice</TableHead>
@@ -253,15 +253,54 @@ function ActionsExample() {
 
 const meta = {
   title: 'UI/Table',
+  component: Table,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['caption'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    caption: {
+      control: 'text',
+    },
+  },
+  args: {
+    caption: 'A list of recent invoices.',
+  },
+} satisfies Meta<typeof Table>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Table>
+      <TableCaption>{args.caption}</TableCaption>
+      <TableHeader>
+        <TableRow>
+          <TableHead>Invoice</TableHead>
+          <TableHead>Status</TableHead>
+          <TableHead className="cuoio:text-right">Amount</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        <TableRow>
+          <TableCell>INV001</TableCell>
+          <TableCell>Paid</TableCell>
+          <TableCell className="cuoio:text-right">centered50.00</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>INV002</TableCell>
+          <TableCell>Pending</TableCell>
+          <TableCell className="cuoio:text-right">UI/Table50.00</TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

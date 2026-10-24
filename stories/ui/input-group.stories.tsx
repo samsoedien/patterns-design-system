@@ -350,15 +350,47 @@ function TextareaExample() {
 
 const meta = {
   title: 'UI/Input Group',
+  component: InputGroup,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['align', 'disabled', 'placeholder'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    align: {
+      control: 'select',
+      options: ['inline-start', 'inline-end', 'block-start', 'block-end'],
+    },
+    disabled: {
+      control: 'boolean',
+    },
+    placeholder: {
+      control: 'text',
+    },
+  },
+  args: {
+    align: 'inline-start',
+    disabled: false,
+    placeholder: 'Search',
+  },
+} satisfies Meta<typeof InputGroup>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <InputGroup className="cuoio:w-64">
+      <InputGroupInput placeholder={args.placeholder} disabled={args.disabled} />
+      <InputGroupAddon align={args.align}>
+        <SearchIcon />
+      </InputGroupAddon>
+    </InputGroup>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

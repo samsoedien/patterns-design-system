@@ -74,15 +74,60 @@ function HorizontalDemoExample() {
 
 const meta = {
   title: 'UI/Scroll Area',
+  component: ScrollArea,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['orientation'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    orientation: {
+      control: 'inline-radio',
+      options: ['vertical', 'horizontal'],
+    },
+  },
+  args: {
+    orientation: 'vertical',
+  },
+} satisfies Meta<typeof ScrollArea>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <ScrollArea
+      className={
+        args.orientation === 'horizontal'
+          ? 'cuoio:w-80 cuoio:rounded-md cuoio:border cuoio:whitespace-nowrap'
+          : 'cuoio:h-48 cuoio:w-48 cuoio:rounded-md cuoio:border'
+      }
+    >
+      {args.orientation === 'horizontal' ? (
+        <div className="cuoio:flex cuoio:w-max cuoio:gap-4 cuoio:p-4">
+          {Array.from({ length: 8 }, (_, index) => (
+            <div
+              key={index}
+              className="cuoio:size-24 cuoio:shrink-0 cuoio:rounded-md cuoio:bg-muted"
+            />
+          ))}
+        </div>
+      ) : (
+        <div className="cuoio:space-y-2 cuoio:p-4">
+          {Array.from({ length: 12 }, (_, index) => (
+            <div key={index} className="cuoio:text-sm">
+              Item {index + 1}
+            </div>
+          ))}
+        </div>
+      )}
+      <ScrollBar orientation={args.orientation} />
+    </ScrollArea>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

@@ -186,15 +186,43 @@ function LinkExample() {
 
 const meta = {
   title: 'UI/Breadcrumb',
+  component: Breadcrumb,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['page'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    page: {
+      control: 'text',
+    },
+  },
+  args: {
+    page: 'Data Fetching',
+  },
+} satisfies Meta<typeof Breadcrumb>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Breadcrumb>
+      <BreadcrumbList>
+        <BreadcrumbItem>
+          <BreadcrumbLink href="#">Home</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <BreadcrumbPage>{args.page}</BreadcrumbPage>
+        </BreadcrumbItem>
+      </BreadcrumbList>
+    </Breadcrumb>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

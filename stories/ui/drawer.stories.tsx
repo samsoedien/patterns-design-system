@@ -180,15 +180,59 @@ function SnapPointsExample() {
 
 const meta = {
   title: 'UI/Drawer',
+  component: Drawer,
   parameters: {
     layout: 'fullscreen',
+    controls: {
+      include: ['swipeDirection', 'modal', 'showSwipeHandle'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    swipeDirection: {
+      control: 'select',
+      options: ['down', 'up', 'left', 'right'],
+    },
+    modal: {
+      control: 'boolean',
+    },
+    showSwipeHandle: {
+      control: 'boolean',
+    },
+  },
+  args: {
+    swipeDirection: 'down',
+    modal: true,
+    showSwipeHandle: false,
+  },
+} satisfies Meta<typeof Drawer>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Drawer
+      swipeDirection={args.swipeDirection}
+      modal={args.modal}
+      showSwipeHandle={args.showSwipeHandle}
+    >
+      <DrawerTrigger render={<Button variant="outline" />}>Open Drawer</DrawerTrigger>
+      <DrawerContent>
+        <DrawerHeader>
+          <DrawerTitle>Drawer</DrawerTitle>
+          <DrawerDescription>
+            Adjust the controls to change how this drawer behaves.
+          </DrawerDescription>
+        </DrawerHeader>
+        <DrawerFooter>
+          <DrawerClose render={<Button variant="outline" />}>Close</DrawerClose>
+        </DrawerFooter>
+      </DrawerContent>
+    </Drawer>
+  ),
+}
 
 export const SidesStory: Story = {
   name: 'Sides',

@@ -196,15 +196,37 @@ function DropdownExample() {
 
 const meta = {
   title: 'UI/Avatar',
+  component: Avatar,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['size'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    size: {
+      control: 'select',
+      options: ['sm', 'default', 'lg'],
+    },
+  },
+  args: {
+    size: 'default',
+  },
+} satisfies Meta<typeof Avatar>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Avatar size={args.size}>
+      <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+      <AvatarFallback>CN</AvatarFallback>
+    </Avatar>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

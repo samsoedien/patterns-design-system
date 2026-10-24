@@ -167,15 +167,31 @@ function FieldDemoExample() {
 
 const meta = {
   title: 'UI/Label',
+  component: Label,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['children'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    children: {
+      control: 'text',
+    },
+  },
+  args: {
+    children: 'Email',
+  },
+} satisfies Meta<typeof Label>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => <Label>{args.children}</Label>,
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

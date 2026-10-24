@@ -68,15 +68,43 @@ function DisabledExample() {
 
 const meta = {
   title: 'UI/Tooltip',
+  component: Tooltip,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['side', 'label'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    side: {
+      control: 'select',
+      options: ['top', 'right', 'bottom', 'left'],
+    },
+    label: {
+      control: 'text',
+    },
+  },
+  args: {
+    side: 'top',
+    label: 'Add to library',
+  },
+} satisfies Meta<typeof Tooltip>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Tooltip>
+      <TooltipTrigger render={<Button variant="outline" />}>Hover</TooltipTrigger>
+      <TooltipContent side={args.side}>
+        <p>{args.label}</p>
+      </TooltipContent>
+    </Tooltip>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

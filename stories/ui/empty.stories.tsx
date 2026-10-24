@@ -180,15 +180,50 @@ function InputGroupExample() {
 
 const meta = {
   title: 'UI/Empty',
+  component: Empty,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['mediaVariant', 'title', 'description'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    mediaVariant: {
+      control: 'inline-radio',
+      options: ['default', 'icon'],
+    },
+    title: {
+      control: 'text',
+    },
+    description: {
+      control: 'text',
+    },
+  },
+  args: {
+    mediaVariant: 'icon',
+    title: 'No projects yet',
+    description: 'Create a project to get started.',
+  },
+} satisfies Meta<typeof Empty>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Empty className="cuoio:border">
+      <EmptyHeader>
+        <EmptyMedia variant={args.mediaVariant}>
+          <FolderCodeIcon />
+        </EmptyMedia>
+        <EmptyTitle>{args.title}</EmptyTitle>
+        <EmptyDescription>{args.description}</EmptyDescription>
+      </EmptyHeader>
+    </Empty>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

@@ -151,15 +151,49 @@ function DestructiveExample() {
 
 const meta = {
   title: 'UI/Alert Dialog',
+  component: AlertDialog,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['size'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    size: {
+      control: 'select',
+      options: ['default', 'sm'],
+    },
+  },
+  args: {
+    size: 'default',
+  },
+} satisfies Meta<typeof AlertDialog>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <AlertDialog>
+      <AlertDialogTrigger render={<Button variant="outline" />}>Show Dialog</AlertDialogTrigger>
+      <AlertDialogContent size={args.size}>
+        <AlertDialogHeader>
+          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+          <AlertDialogDescription>
+            This action cannot be undone. This will permanently delete your account from our
+            servers.
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogAction>Continue</AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

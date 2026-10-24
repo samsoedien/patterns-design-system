@@ -50,10 +50,10 @@ function DemoExample() {
 
 const Basic_frameworks = ['Next.js', 'SvelteKit', 'Nuxt.js', 'Remix', 'Astro'] as const
 
-function BasicExample() {
+function BasicExample(args) {
   return (
-    <Combobox items={Basic_frameworks}>
-      <ComboboxInput placeholder="Select a framework" />
+    <Combobox disabled={args.disabled} items={Basic_frameworks}>
+      <ComboboxInput placeholder={args.placeholder} disabled={args.disabled} />
       <ComboboxContent>
         <ComboboxEmpty>No items found.</ComboboxEmpty>
         <ComboboxList>
@@ -479,15 +479,52 @@ function InputGroupExample() {
 
 const meta = {
   title: 'UI/Combobox',
+  component: Combobox,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['disabled', 'placeholder'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    disabled: {
+      control: 'boolean',
+    },
+    placeholder: {
+      control: 'text',
+    },
+  },
+  args: {
+    disabled: false,
+    placeholder: 'Select a framework',
+  },
+} satisfies Meta<typeof Combobox>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Combobox
+      items={['Next.js', 'SvelteKit', 'Nuxt.js', 'Remix', 'Astro']}
+      disabled={args.disabled}
+    >
+      <ComboboxInput placeholder={args.placeholder} disabled={args.disabled} />
+      <ComboboxContent>
+        <ComboboxEmpty>No items found.</ComboboxEmpty>
+        <ComboboxList>
+          {(item) => (
+            <ComboboxItem key={item} value={item}>
+              {item}
+            </ComboboxItem>
+          )}
+        </ComboboxList>
+      </ComboboxContent>
+    </Combobox>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

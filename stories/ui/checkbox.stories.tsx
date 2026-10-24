@@ -256,15 +256,45 @@ function TableExample() {
 
 const meta = {
   title: 'UI/Checkbox',
+  component: Checkbox,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['disabled', 'defaultChecked'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    disabled: {
+      control: 'boolean',
+    },
+    defaultChecked: {
+      control: 'boolean',
+    },
+  },
+  args: {
+    disabled: false,
+    defaultChecked: false,
+  },
+} satisfies Meta<typeof Checkbox>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <div className="cuoio:flex cuoio:items-center cuoio:gap-2">
+      <Checkbox
+        id="playground-checkbox"
+        disabled={args.disabled}
+        defaultChecked={args.defaultChecked}
+        key={String(args.defaultChecked)}
+      />
+      <Label htmlFor="playground-checkbox">Accept terms and conditions</Label>
+    </div>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

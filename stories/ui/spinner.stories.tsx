@@ -155,15 +155,36 @@ function EmptyExample() {
 
 const meta = {
   title: 'UI/Spinner',
+  component: Spinner,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['size'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    size: {
+      control: 'select',
+      options: ['sm', 'default', 'lg'],
+    },
+  },
+  args: {
+    size: 'default',
+  },
+} satisfies Meta<typeof Spinner>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Spinner
+      className={{ sm: 'cuoio:size-3', default: 'cuoio:size-4', lg: 'cuoio:size-8' }[args.size]}
+    />
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

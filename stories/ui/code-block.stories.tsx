@@ -774,15 +774,52 @@ function StreamingExample() {
 
 const meta = {
   title: 'UI/Code Block',
+  component: CodeBlock,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['variant', 'size', 'lineNumbers', 'wrap'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    variant: {
+      control: 'inline-radio',
+      options: ['default', 'destructive'],
+    },
+    size: {
+      control: 'inline-radio',
+      options: ['default', 'sm'],
+    },
+    lineNumbers: {
+      control: 'boolean',
+    },
+    wrap: {
+      control: 'boolean',
+    },
+  },
+  args: {
+    variant: 'default',
+    size: 'default',
+    lineNumbers: true,
+    wrap: false,
+  },
+} satisfies Meta<typeof CodeBlock>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <CodeBlock variant={args.variant} size={args.size} className="cuoio:w-full cuoio:max-w-md">
+      <CodeBlockContent wrap={args.wrap} lineNumbers={args.lineNumbers}>
+        <CodeBlockLine>const greeting = &quot;hello&quot;</CodeBlockLine>
+        <CodeBlockLine>console.log(greeting)</CodeBlockLine>
+      </CodeBlockContent>
+    </CodeBlock>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

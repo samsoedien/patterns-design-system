@@ -481,15 +481,38 @@ function ResponsiveExample() {
 
 const meta = {
   title: 'UI/Field',
+  component: Field,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['orientation'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    orientation: {
+      control: 'select',
+      options: ['vertical', 'horizontal', 'responsive'],
+    },
+  },
+  args: {
+    orientation: 'vertical',
+  },
+} satisfies Meta<typeof Field>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Field orientation={args.orientation} className="cuoio:w-80">
+      <FieldLabel htmlFor="playground-field">Username</FieldLabel>
+      <Input id="playground-field" placeholder="Enter your username" />
+      <FieldDescription>Choose a unique username for your account.</FieldDescription>
+    </Field>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

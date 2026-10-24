@@ -182,15 +182,70 @@ function FontWeightSelectorExample() {
 
 const meta = {
   title: 'UI/Toggle Group',
+  component: ToggleGroup,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['variant', 'size', 'orientation', 'spacing', 'multiple'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    variant: {
+      control: 'inline-radio',
+      options: ['default', 'outline'],
+    },
+    size: {
+      control: 'select',
+      options: ['default', 'sm', 'lg'],
+    },
+    orientation: {
+      control: 'inline-radio',
+      options: ['horizontal', 'vertical'],
+    },
+    spacing: {
+      control: { type: 'range', min: 0, max: 8, step: 1 },
+    },
+    multiple: {
+      control: 'boolean',
+    },
+  },
+  args: {
+    variant: 'outline',
+    size: 'default',
+    orientation: 'horizontal',
+    spacing: 2,
+    multiple: false,
+  },
+} satisfies Meta<typeof ToggleGroup>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <ToggleGroup
+      variant={args.variant}
+      size={args.size}
+      orientation={args.orientation}
+      spacing={args.spacing}
+      multiple={args.multiple}
+      defaultValue={['bold']}
+      key={`${args.multiple}-${args.spacing}`}
+    >
+      <ToggleGroupItem value="bold" aria-label="Toggle bold">
+        <BoldIcon />
+      </ToggleGroupItem>
+      <ToggleGroupItem value="italic" aria-label="Toggle italic">
+        <ItalicIcon />
+      </ToggleGroupItem>
+      <ToggleGroupItem value="underline" aria-label="Toggle underline">
+        <UnderlineIcon />
+      </ToggleGroupItem>
+    </ToggleGroup>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

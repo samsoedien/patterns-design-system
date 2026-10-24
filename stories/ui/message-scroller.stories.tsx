@@ -380,15 +380,53 @@ function OpeningPosition_OpeningPositionScroller({
 
 const meta = {
   title: 'UI/Message Scroller',
+  component: MessageScroller,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['scrollAnchor'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    scrollAnchor: {
+      control: 'boolean',
+    },
+  },
+  args: {
+    scrollAnchor: true,
+  },
+} satisfies Meta<typeof MessageScroller>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <MessageScrollerProvider>
+      <MessageScroller className="cuoio:h-64 cuoio:w-80 cuoio:rounded-lg cuoio:border">
+        <MessageScrollerViewport>
+          <MessageScrollerContent className="cuoio:gap-3 cuoio:p-4">
+            {['Hey', 'How are you?', 'All good here.'].map((text) => (
+              <MessageScrollerItem key={text}>
+                <Message align="start">
+                  <MessageContent>{text}</MessageContent>
+                </Message>
+              </MessageScrollerItem>
+            ))}
+            <MessageScrollerItem scrollAnchor={args.scrollAnchor}>
+              <Marker>
+                <MarkerContent>New messages</MarkerContent>
+              </Marker>
+            </MessageScrollerItem>
+          </MessageScrollerContent>
+        </MessageScrollerViewport>
+        <MessageScrollerButton />
+      </MessageScroller>
+    </MessageScrollerProvider>
+  ),
+}
 
 export const GroupChatStory: Story = {
   name: 'Group Chat',

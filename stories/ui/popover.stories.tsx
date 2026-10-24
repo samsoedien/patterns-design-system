@@ -127,15 +127,47 @@ function FormExample() {
 
 const meta = {
   title: 'UI/Popover',
+  component: Popover,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['side', 'align'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    side: {
+      control: 'select',
+      options: ['top', 'right', 'bottom', 'left'],
+    },
+    align: {
+      control: 'select',
+      options: ['start', 'center', 'end'],
+    },
+  },
+  args: {
+    side: 'bottom',
+    align: 'center',
+  },
+} satisfies Meta<typeof Popover>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Popover>
+      <PopoverTrigger render={<Button variant="outline" />}>Open popover</PopoverTrigger>
+      <PopoverContent side={args.side} align={args.align} className="cuoio:w-64">
+        <PopoverHeader>
+          <PopoverTitle>Dimensions</PopoverTitle>
+          <PopoverDescription>Set the dimensions for the layer.</PopoverDescription>
+        </PopoverHeader>
+      </PopoverContent>
+    </Popover>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

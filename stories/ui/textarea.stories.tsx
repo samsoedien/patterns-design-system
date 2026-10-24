@@ -49,15 +49,46 @@ function ButtonExample() {
 
 const meta = {
   title: 'UI/Textarea',
+  component: Textarea,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['placeholder', 'disabled', 'rows'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    placeholder: {
+      control: 'text',
+    },
+    disabled: {
+      control: 'boolean',
+    },
+    rows: {
+      control: { type: 'number', min: 2, max: 12 },
+    },
+  },
+  args: {
+    placeholder: 'Type your message here.',
+    disabled: false,
+    rows: 4,
+  },
+} satisfies Meta<typeof Textarea>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Textarea
+      placeholder={args.placeholder}
+      disabled={args.disabled}
+      rows={args.rows}
+      className="cuoio:w-80"
+    />
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

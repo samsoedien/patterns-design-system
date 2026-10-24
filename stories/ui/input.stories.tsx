@@ -235,15 +235,47 @@ function FormExample() {
 
 const meta = {
   title: 'UI/Input',
+  component: Input,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['type', 'placeholder', 'disabled'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    type: {
+      control: 'select',
+      options: ['text', 'password', 'email', 'search', 'number', 'url', 'tel', 'file'],
+    },
+    placeholder: {
+      control: 'text',
+    },
+    disabled: {
+      control: 'boolean',
+    },
+  },
+  args: {
+    type: 'text',
+    placeholder: 'Enter text',
+    disabled: false,
+  },
+} satisfies Meta<typeof Input>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Input
+      type={args.type}
+      placeholder={args.placeholder}
+      disabled={args.disabled}
+      className="cuoio:w-64"
+    />
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

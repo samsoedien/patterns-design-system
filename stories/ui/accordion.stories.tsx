@@ -216,15 +216,42 @@ function CardExample() {
 
 const meta = {
   title: 'UI/Accordion',
+  component: Accordion,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['multiple'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    multiple: {
+      control: 'boolean',
+    },
+  },
+  args: {
+    multiple: false,
+  },
+} satisfies Meta<typeof Accordion>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Accordion multiple={args.multiple} className="cuoio:w-80" defaultValue={['item-1']}>
+      <AccordionItem value="item-1">
+        <AccordionTrigger>Shipping</AccordionTrigger>
+        <AccordionContent>Standard shipping arrives in 5-7 days.</AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionTrigger>Returns</AccordionTrigger>
+        <AccordionContent>Returns are accepted within 30 days.</AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

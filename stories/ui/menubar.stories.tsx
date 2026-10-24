@@ -307,15 +307,51 @@ function IconsExample() {
 
 const meta = {
   title: 'UI/Menubar',
+  component: Menubar,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['align'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    align: {
+      control: 'select',
+      options: ['start', 'center', 'end'],
+    },
+  },
+  args: {
+    align: 'start',
+  },
+} satisfies Meta<typeof Menubar>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Menubar>
+      <MenubarMenu>
+        <MenubarTrigger>File</MenubarTrigger>
+        <MenubarContent align={args.align}>
+          <MenubarItem>New Tab</MenubarItem>
+          <MenubarItem>New Window</MenubarItem>
+          <MenubarSeparator />
+          <MenubarItem>Share</MenubarItem>
+        </MenubarContent>
+      </MenubarMenu>
+      <MenubarMenu>
+        <MenubarTrigger>Edit</MenubarTrigger>
+        <MenubarContent align={args.align}>
+          <MenubarItem>Undo</MenubarItem>
+          <MenubarItem>Redo</MenubarItem>
+        </MenubarContent>
+      </MenubarMenu>
+    </Menubar>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

@@ -364,15 +364,52 @@ function TriggerExample() {
 
 const meta = {
   title: 'UI/Attachment',
+  component: Attachment,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['size', 'orientation', 'state'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    size: {
+      control: 'select',
+      options: ['default', 'sm', 'xs'],
+    },
+    orientation: {
+      control: 'select',
+      options: ['horizontal', 'vertical'],
+    },
+    state: {
+      control: 'select',
+      options: ['idle', 'uploading', 'processing', 'error', 'done'],
+    },
+  },
+  args: {
+    size: 'default',
+    orientation: 'horizontal',
+    state: 'done',
+  },
+} satisfies Meta<typeof Attachment>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Attachment size={args.size} orientation={args.orientation} state={args.state}>
+      <AttachmentMedia>
+        <FileTextIcon />
+      </AttachmentMedia>
+      <AttachmentContent>
+        <AttachmentTitle>notes.pdf</AttachmentTitle>
+        <AttachmentDescription>120 KB</AttachmentDescription>
+      </AttachmentContent>
+    </Attachment>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

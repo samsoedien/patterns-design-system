@@ -302,15 +302,57 @@ function InvalidExample() {
 
 const meta = {
   title: 'UI/Select',
+  component: Select,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['size', 'disabled'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    size: {
+      control: 'inline-radio',
+      options: ['default', 'sm'],
+    },
+    disabled: {
+      control: 'boolean',
+    },
+  },
+  args: {
+    size: 'default',
+    disabled: false,
+  },
+} satisfies Meta<typeof Select>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Select
+      items={[
+        { label: 'Apple', value: 'apple' },
+        { label: 'Banana', value: 'banana' },
+        { label: 'Blueberry', value: 'blueberry' },
+      ]}
+      defaultValue="apple"
+      disabled={args.disabled}
+    >
+      <SelectTrigger size={args.size} disabled={args.disabled} className="cuoio:w-48">
+        <SelectValue />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          <SelectItem value="apple">Apple</SelectItem>
+          <SelectItem value="banana">Banana</SelectItem>
+          <SelectItem value="blueberry">Blueberry</SelectItem>
+        </SelectGroup>
+      </SelectContent>
+    </Select>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

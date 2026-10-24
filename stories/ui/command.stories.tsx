@@ -350,15 +350,43 @@ function ScrollableExample() {
 
 const meta = {
   title: 'UI/Command',
+  component: Command,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['placeholder'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    placeholder: {
+      control: 'text',
+    },
+  },
+  args: {
+    placeholder: 'Type a command or search...',
+  },
+} satisfies Meta<typeof Command>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Command className="cuoio:max-w-sm cuoio:rounded-lg cuoio:border">
+      <CommandInput placeholder={args.placeholder} />
+      <CommandList>
+        <CommandEmpty>No results found.</CommandEmpty>
+        <CommandGroup heading="Suggestions">
+          <CommandItem>Calendar</CommandItem>
+          <CommandItem>Search Emoji</CommandItem>
+          <CommandItem>Calculator</CommandItem>
+        </CommandGroup>
+      </CommandList>
+    </Command>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

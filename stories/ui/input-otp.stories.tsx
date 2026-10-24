@@ -226,15 +226,43 @@ function FormExample() {
 
 const meta = {
   title: 'UI/Input Otp',
+  component: InputOTP,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['maxLength', 'disabled'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    maxLength: {
+      control: { type: 'range', min: 4, max: 8, step: 1 },
+    },
+    disabled: {
+      control: 'boolean',
+    },
+  },
+  args: {
+    maxLength: 6,
+    disabled: false,
+  },
+} satisfies Meta<typeof InputOTP>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <InputOTP maxLength={args.maxLength} disabled={args.disabled} key={args.maxLength}>
+      <InputOTPGroup>
+        {Array.from({ length: args.maxLength }, (_, index) => (
+          <InputOTPSlot key={index} index={index} />
+        ))}
+      </InputOTPGroup>
+    </InputOTP>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

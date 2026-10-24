@@ -149,15 +149,43 @@ function IconExample() {
 
 const meta = {
   title: 'UI/Marker',
+  component: Marker,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['variant', 'label'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['default', 'separator', 'border'],
+    },
+    label: {
+      control: 'text',
+    },
+  },
+  args: {
+    variant: 'default',
+    label: 'Switched to a new branch',
+  },
+} satisfies Meta<typeof Marker>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Marker variant={args.variant} className="cuoio:w-80">
+      <MarkerIcon>
+        <GitBranchIcon />
+      </MarkerIcon>
+      <MarkerContent>{args.label}</MarkerContent>
+    </Marker>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

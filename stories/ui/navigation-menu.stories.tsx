@@ -152,17 +152,50 @@ function Demo_ListItem({
 
 const meta = {
   title: 'UI/Navigation Menu',
+  component: NavigationMenu,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['align'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    align: {
+      control: 'select',
+      options: ['start', 'center', 'end'],
+    },
+  },
+  args: {
+    align: 'start',
+  },
+} satisfies Meta<typeof NavigationMenu>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
 
+export const Playground: Story = {
+  render: (args) => (
+    <NavigationMenu align={args.align}>
+      <NavigationMenuList>
+        <NavigationMenuItem>
+          <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+          <NavigationMenuContent>
+            <div className="cuoio:w-48 cuoio:p-3">Documentation</div>
+          </NavigationMenuContent>
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()} href="#">
+            Documentation
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+    </NavigationMenu>
+  ),
+}
+
 export const DemoStory: Story = {
   name: 'Demo',
-  render: () => <DemoExample />,
+  render: (args) => <DemoExample {...args} />,
 }

@@ -1,7 +1,8 @@
-import React from 'react'
+'use client'
 
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 
+import { AppSidebar } from '@/registry/app-sidebar/app-sidebar'
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -11,8 +12,11 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb'
 import { Separator } from '@/components/ui/separator'
-import { SidebarInset, SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
-import { AppSidebar } from '@/registry/app-sidebar/app-sidebar'
+import {
+  SidebarInset,
+  SidebarProvider,
+  SidebarTrigger,
+} from '@/components/ui/sidebar'
 
 const meta = {
   title: 'Registry/AppSidebar',
@@ -31,16 +35,19 @@ export const Default: Story = {
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
-        <header className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
-          <div className="flex items-center gap-2 px-4">
-            <SidebarTrigger className="-ml-1" />
-            <Separator orientation="vertical" className="mr-2 data-[orientation=vertical]:h-4" />
+        <header className="cuoio:group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 cuoio:flex cuoio:h-16 cuoio:shrink-0 cuoio:items-center cuoio:gap-2 cuoio:transition-[width,height] cuoio:ease-linear">
+          <div className="cuoio:flex cuoio:items-center cuoio:gap-2 cuoio:px-4">
+            <SidebarTrigger className="cuoio:-ml-1" />
+            <Separator
+              orientation="vertical"
+              className="cuoio:mr-2 cuoio:data-[orientation=vertical]:h-4"
+            />
             <Breadcrumb>
               <BreadcrumbList>
-                <BreadcrumbItem className="hidden md:block">
-                  <BreadcrumbLink href="#">Building Your Application</BreadcrumbLink>
+                <BreadcrumbItem className="cuoio:hidden cuoio:md:block">
+                  <BreadcrumbLink href="#">Build Your Application</BreadcrumbLink>
                 </BreadcrumbItem>
-                <BreadcrumbSeparator className="hidden md:block" />
+                <BreadcrumbSeparator className="cuoio:hidden cuoio:md:block" />
                 <BreadcrumbItem>
                   <BreadcrumbPage>Data Fetching</BreadcrumbPage>
                 </BreadcrumbItem>
@@ -48,13 +55,13 @@ export const Default: Story = {
             </Breadcrumb>
           </div>
         </header>
-        <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-          <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-            <div className="bg-muted/50 aspect-video rounded-xl" />
-            <div className="bg-muted/50 aspect-video rounded-xl" />
-            <div className="bg-muted/50 aspect-video rounded-xl" />
+        <div className="cuoio:flex cuoio:flex-1 cuoio:flex-col cuoio:gap-4 cuoio:p-4 cuoio:pt-0">
+          <div className="cuoio:grid cuoio:auto-rows-min cuoio:gap-4 cuoio:md:grid-cols-3">
+            <div className="cuoio:aspect-video cuoio:rounded-xl cuoio:bg-muted/50" />
+            <div className="cuoio:aspect-video cuoio:rounded-xl cuoio:bg-muted/50" />
+            <div className="cuoio:aspect-video cuoio:rounded-xl cuoio:bg-muted/50" />
           </div>
-          <div className="bg-muted/50 min-h-[100vh] flex-1 rounded-xl md:min-h-min" />
+          <div className="cuoio:min-h-[100vh] cuoio:flex-1 cuoio:rounded-xl cuoio:bg-muted/50 cuoio:md:min-h-min" />
         </div>
       </SidebarInset>
     </SidebarProvider>

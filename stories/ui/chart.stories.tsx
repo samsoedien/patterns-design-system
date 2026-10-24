@@ -550,15 +550,46 @@ function TooltipExample({
 
 const meta = {
   title: 'UI/Chart',
+  component: ChartContainer,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['radius', 'showGrid'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    radius: {
+      control: { type: 'range', min: 0, max: 16, step: 1 },
+    },
+    showGrid: {
+      control: 'boolean',
+    },
+  },
+  args: {
+    radius: 4,
+    showGrid: true,
+  },
+} satisfies Meta<typeof ChartContainer>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <ChartContainer
+      config={Example_chartConfig}
+      className="cuoio:min-h-[200px] cuoio:w-full cuoio:min-w-80"
+    >
+      <BarChart accessibilityLayer data={Example_chartData}>
+        {args.showGrid ? <CartesianGrid vertical={false} /> : null}
+        <Bar dataKey="desktop" fill="var(--color-desktop)" radius={args.radius} />
+        <Bar dataKey="mobile" fill="var(--color-mobile)" radius={args.radius} />
+      </BarChart>
+    </ChartContainer>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

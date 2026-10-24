@@ -62,8 +62,8 @@ import {
   useSidebar,
 } from '@/components/ui/sidebar'
 
-// This is sample Demo_data.
-const Demo_data = {
+// This is sample demo data.
+const demoData = {
   user: {
     name: 'shadcn',
     email: 'm@example.com',
@@ -216,7 +216,7 @@ function Demo_TeamSwitcher({
             render={
               <SidebarMenuButton
                 size="lg"
-                className="cuoio:Demo_data-[state=open]:bg-sidebar-accent cuoio:Demo_data-[state=open]:text-sidebar-accent-foreground"
+                className="cuoio:data-[state=open]:bg-sidebar-accent cuoio:data-[state=open]:text-sidebar-accent-foreground"
               />
             }
           >
@@ -297,7 +297,7 @@ function Demo_NavMain({
               <CollapsibleTrigger render={<SidebarMenuButton tooltip={item.title} />}>
                 {item.icon && <item.icon />}
                 <span>{item.title}</span>
-                <ChevronRight className="cuoio:group-Demo_data-[state=open]/collapsible:rotate-90 cuoio:ml-auto cuoio:transition-transform cuoio:duration-200" />
+                <ChevronRight className="cuoio:group-data-[state=open]/collapsible:rotate-90 cuoio:ml-auto cuoio:transition-transform cuoio:duration-200" />
               </CollapsibleTrigger>
               <CollapsibleContent>
                 <SidebarMenuSub>
@@ -330,7 +330,7 @@ function Demo_NavProjects({
   const { isMobile } = useSidebar()
 
   return (
-    <SidebarGroup className="cuoio:group-Demo_data-[collapsible=icon]:hidden">
+    <SidebarGroup className="cuoio:group-data-[collapsible=icon]:hidden">
       <SidebarGroupLabel>Projects</SidebarGroupLabel>
       <SidebarMenu>
         {projects.map((item) => (
@@ -396,7 +396,7 @@ function Demo_NavUser({
             render={
               <SidebarMenuButton
                 size="lg"
-                className="cuoio:Demo_data-[state=open]:bg-sidebar-accent cuoio:Demo_data-[state=open]:text-sidebar-accent-foreground"
+                className="cuoio:data-[state=open]:bg-sidebar-accent cuoio:data-[state=open]:text-sidebar-accent-foreground"
               />
             }
           >
@@ -471,19 +471,19 @@ function DemoExample({ ...props }: React.ComponentProps<typeof Sidebar>) {
     <SidebarProvider>
       <Sidebar collapsible="icon" {...props}>
         <SidebarHeader>
-          <Demo_TeamSwitcher teams={Demo_data.teams} />
+          <Demo_TeamSwitcher teams={demoData.teams} />
         </SidebarHeader>
         <SidebarContent>
-          <Demo_NavMain items={Demo_data.navMain} />
-          <Demo_NavProjects projects={Demo_data.projects} />
+          <Demo_NavMain items={demoData.navMain} />
+          <Demo_NavProjects projects={demoData.projects} />
         </SidebarContent>
         <SidebarFooter>
-          <Demo_NavUser user={Demo_data.user} />
+          <Demo_NavUser user={demoData.user} />
         </SidebarFooter>
         <SidebarRail />
       </Sidebar>
       <SidebarInset>
-        <header className="cuoio:group-has-Demo_data-[collapsible=icon]/sidebar-wrapper:h-12 cuoio:flex cuoio:h-16 cuoio:shrink-0 cuoio:items-center cuoio:gap-2 cuoio:transition-[width,height] cuoio:ease-linear">
+        <header className="cuoio:group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 cuoio:flex cuoio:h-16 cuoio:shrink-0 cuoio:items-center cuoio:gap-2 cuoio:transition-[width,height] cuoio:ease-linear">
           <div className="cuoio:flex cuoio:items-center cuoio:gap-2 cuoio:px-4">
             <SidebarTrigger className="cuoio:-ml-1" />
           </div>
@@ -495,15 +495,42 @@ function DemoExample({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
 const meta = {
   title: 'UI/Sidebar',
+  component: Sidebar,
   parameters: {
     layout: 'fullscreen',
+    controls: {
+      include: ['side', 'variant', 'collapsible'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    side: {
+      control: 'inline-radio',
+      options: ['left', 'right'],
+    },
+    variant: {
+      control: 'select',
+      options: ['sidebar', 'floating', 'inset'],
+    },
+    collapsible: {
+      control: 'select',
+      options: ['offcanvas', 'icon', 'none'],
+    },
+  },
+  args: {
+    side: 'left',
+    variant: 'sidebar',
+    collapsible: 'icon',
+  },
+} satisfies Meta<typeof Sidebar>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => <DemoExample {...args} />,
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

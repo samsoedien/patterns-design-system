@@ -78,15 +78,53 @@ function HandleExample() {
 
 const meta = {
   title: 'UI/Resizable',
+  component: ResizablePanelGroup,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['orientation', 'withHandle'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    orientation: {
+      control: 'inline-radio',
+      options: ['horizontal', 'vertical'],
+    },
+    withHandle: {
+      control: 'boolean',
+    },
+  },
+  args: {
+    orientation: 'horizontal',
+    withHandle: true,
+  },
+} satisfies Meta<typeof ResizablePanelGroup>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <ResizablePanelGroup
+      orientation={args.orientation}
+      className="cuoio:min-h-48 cuoio:max-w-sm cuoio:rounded-lg cuoio:border"
+    >
+      <ResizablePanel defaultSize="50%">
+        <div className="cuoio:flex cuoio:h-48 cuoio:items-center cuoio:justify-center cuoio:p-6">
+          <span className="cuoio:font-semibold">One</span>
+        </div>
+      </ResizablePanel>
+      <ResizableHandle withHandle={args.withHandle} />
+      <ResizablePanel defaultSize="50%">
+        <div className="cuoio:flex cuoio:h-48 cuoio:items-center cuoio:justify-center cuoio:p-6">
+          <span className="cuoio:font-semibold">Two</span>
+        </div>
+      </ResizablePanel>
+    </ResizablePanelGroup>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

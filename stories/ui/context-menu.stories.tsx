@@ -425,15 +425,48 @@ function SidesExample() {
 
 const meta = {
   title: 'UI/Context Menu',
+  component: ContextMenu,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['side', 'align'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    side: {
+      control: 'select',
+      options: ['top', 'right', 'bottom', 'left', 'inline-start', 'inline-end'],
+    },
+    align: {
+      control: 'select',
+      options: ['start', 'center', 'end'],
+    },
+  },
+  args: {
+    side: 'inline-end',
+    align: 'start',
+  },
+} satisfies Meta<typeof ContextMenu>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <ContextMenu>
+      <ContextMenuTrigger className="cuoio:flex cuoio:aspect-video cuoio:w-full cuoio:max-w-xs cuoio:items-center cuoio:justify-center cuoio:rounded-xl cuoio:border cuoio:border-dashed cuoio:text-sm">
+        Right click here
+      </ContextMenuTrigger>
+      <ContextMenuContent className="cuoio:w-48" side={args.side} align={args.align}>
+        <ContextMenuItem>Back</ContextMenuItem>
+        <ContextMenuItem>Forward</ContextMenuItem>
+        <ContextMenuItem>Reload</ContextMenuItem>
+      </ContextMenuContent>
+    </ContextMenu>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',
