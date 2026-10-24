@@ -2,7 +2,6 @@
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
-import { AppSidebar } from '@/registry/app-sidebar/app-sidebar'
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -12,11 +11,8 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb'
 import { Separator } from '@/components/ui/separator'
-import {
-  SidebarInset,
-  SidebarProvider,
-  SidebarTrigger,
-} from '@/components/ui/sidebar'
+import { SidebarInset, SidebarProvider, SidebarTrigger } from '@/components/ui/sidebar'
+import { AppSidebar } from '@/registry/app-sidebar/app-sidebar'
 
 const meta = {
   title: 'Registry/AppSidebar',
@@ -35,7 +31,7 @@ export const Default: Story = {
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
-        <header className="cuoio:group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 cuoio:flex cuoio:h-16 cuoio:shrink-0 cuoio:items-center cuoio:gap-2 cuoio:transition-[width,height] cuoio:ease-linear">
+        <header className="cuoio:flex cuoio:h-16 cuoio:shrink-0 cuoio:items-center cuoio:gap-2 cuoio:transition-[width,height] cuoio:ease-linear cuoio:group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
           <div className="cuoio:flex cuoio:items-center cuoio:gap-2 cuoio:px-4">
             <SidebarTrigger className="cuoio:-ml-1" />
             <Separator

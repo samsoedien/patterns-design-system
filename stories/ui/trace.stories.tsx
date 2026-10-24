@@ -112,7 +112,9 @@ function DescriptionExample(args) {
         <TraceIcon>
           <FilePenIcon />
         </TraceIcon>
-        <TraceTitle>{traceTitle(args, 'Edited components/settings/notification-preferences-form.tsx')}</TraceTitle>
+        <TraceTitle>
+          {traceTitle(args, 'Edited components/settings/notification-preferences-form.tsx')}
+        </TraceTitle>
         <TraceDescription className="cuoio:font-mono">+48 −12</TraceDescription>
       </TraceLine>
       <TraceLine status={traceStatus(args, undefined)}>

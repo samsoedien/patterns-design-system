@@ -297,7 +297,7 @@ function Demo_NavMain({
               <CollapsibleTrigger render={<SidebarMenuButton tooltip={item.title} />}>
                 {item.icon && <item.icon />}
                 <span>{item.title}</span>
-                <ChevronRight className="cuoio:group-data-[state=open]/collapsible:rotate-90 cuoio:ml-auto cuoio:transition-transform cuoio:duration-200" />
+                <ChevronRight className="cuoio:ml-auto cuoio:transition-transform cuoio:duration-200 cuoio:group-data-[state=open]/collapsible:rotate-90" />
               </CollapsibleTrigger>
               <CollapsibleContent>
                 <SidebarMenuSub>
@@ -483,7 +483,7 @@ function DemoExample({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarRail />
       </Sidebar>
       <SidebarInset>
-        <header className="cuoio:group-has-data-[collapsible=icon]/sidebar-wrapper:h-12 cuoio:flex cuoio:h-16 cuoio:shrink-0 cuoio:items-center cuoio:gap-2 cuoio:transition-[width,height] cuoio:ease-linear">
+        <header className="cuoio:flex cuoio:h-16 cuoio:shrink-0 cuoio:items-center cuoio:gap-2 cuoio:transition-[width,height] cuoio:ease-linear cuoio:group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
           <div className="cuoio:flex cuoio:items-center cuoio:gap-2 cuoio:px-4">
             <SidebarTrigger className="cuoio:-ml-1" />
           </div>
