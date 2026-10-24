@@ -1,8 +1,18 @@
 import type { Preview } from "@storybook/react-vite"
 
+import { Toaster } from "@/components/ui/toast"
+
 import "../src/styles/globals.css"
 
 const preview: Preview = {
+  decorators: [
+    (Story) => (
+      <>
+        <Story />
+        <Toaster />
+      </>
+    ),
+  ],
   parameters: {
     controls: {
       matchers: {
