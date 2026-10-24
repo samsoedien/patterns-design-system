@@ -1,6 +1,7 @@
 // @ts-nocheck
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Field, FieldLabel } from "@/components/ui/field"
+
+import { Field, FieldLabel } from '@/components/ui/field'
 import {
   Pagination,
   PaginationContent,
@@ -9,7 +10,7 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/components/ui/pagination"
+} from '@/components/ui/pagination'
 import {
   Select,
   SelectContent,
@@ -17,7 +18,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from '@/components/ui/select'
 
 function DemoExample() {
   return (

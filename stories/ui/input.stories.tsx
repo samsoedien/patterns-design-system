@@ -1,12 +1,18 @@
 // @ts-nocheck
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { InfoIcon } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { ButtonGroup } from "@/components/ui/button-group"
-import { Field, FieldDescription, FieldGroup, FieldLabel } from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
-import { InputGroup, InputGroupAddon, InputGroupInput, InputGroupText } from "@/components/ui/input-group"
+import { InfoIcon } from 'lucide-react'
+
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { ButtonGroup } from '@/components/ui/button-group'
+import { Field, FieldDescription, FieldGroup, FieldLabel } from '@/components/ui/field'
+import { Input } from '@/components/ui/input'
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+  InputGroupText,
+} from '@/components/ui/input-group'
 import {
   Select,
   SelectContent,
@@ -14,16 +20,14 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from '@/components/ui/select'
 
 function DemoExample() {
   return (
     <Field>
       <FieldLabel htmlFor="input-demo-api-key">API Key</FieldLabel>
       <Input id="input-demo-api-key" type="password" placeholder="sk-..." />
-      <FieldDescription>
-        Your API key is encrypted and stored securely.
-      </FieldDescription>
+      <FieldDescription>Your API key is encrypted and stored securely.</FieldDescription>
     </Field>
   )
 }
@@ -36,14 +40,8 @@ function FieldExample() {
   return (
     <Field>
       <FieldLabel htmlFor="input-field-username">Username</FieldLabel>
-      <Input
-        id="input-field-username"
-        type="text"
-        placeholder="Enter your username"
-      />
-      <FieldDescription>
-        Choose a unique username for your account.
-      </FieldDescription>
+      <Input id="input-field-username" type="text" placeholder="Enter your username" />
+      <FieldDescription>Choose a unique username for your account.</FieldDescription>
     </Field>
   )
 }
@@ -57,14 +55,8 @@ function FieldgroupExample() {
       </Field>
       <Field>
         <FieldLabel htmlFor="fieldgroup-email">Email</FieldLabel>
-        <Input
-          id="fieldgroup-email"
-          type="email"
-          placeholder="name@example.com"
-        />
-        <FieldDescription>
-          We&apos;ll send updates to this address.
-        </FieldDescription>
+        <Input id="fieldgroup-email" type="email" placeholder="name@example.com" />
+        <FieldDescription>We&apos;ll send updates to this address.</FieldDescription>
       </Field>
       <Field orientation="horizontal">
         <Button type="reset" variant="outline">
@@ -80,12 +72,7 @@ function DisabledExample() {
   return (
     <Field data-disabled>
       <FieldLabel htmlFor="input-demo-disabled">Email</FieldLabel>
-      <Input
-        id="input-demo-disabled"
-        type="email"
-        placeholder="Email"
-        disabled
-      />
+      <Input id="input-demo-disabled" type="email" placeholder="Email" disabled />
       <FieldDescription>This field is currently disabled.</FieldDescription>
     </Field>
   )
@@ -96,9 +83,7 @@ function InvalidExample() {
     <Field data-invalid>
       <FieldLabel htmlFor="input-invalid">Invalid Input</FieldLabel>
       <Input id="input-invalid" placeholder="Error" aria-invalid />
-      <FieldDescription>
-        This field contains validation errors.
-      </FieldDescription>
+      <FieldDescription>This field contains validation errors.</FieldDescription>
     </Field>
   )
 }
@@ -143,11 +128,7 @@ function RequiredExample() {
       <FieldLabel htmlFor="input-required">
         Required Field <span className="cuoio:text-destructive">*</span>
       </FieldLabel>
-      <Input
-        id="input-required"
-        placeholder="This field is required"
-        required
-      />
+      <Input id="input-required" placeholder="This field is required" required />
       <FieldDescription>This field must be filled out.</FieldDescription>
     </Field>
   )
@@ -157,16 +138,12 @@ function BadgeExample() {
   return (
     <Field>
       <FieldLabel htmlFor="input-badge">
-        Webhook URL{" "}
+        Webhook URL{' '}
         <Badge variant="secondary" className="cuoio:ml-auto">
           Beta
         </Badge>
       </FieldLabel>
-      <Input
-        id="input-badge"
-        type="url"
-        placeholder="https://api.example.com/webhook"
-      />
+      <Input id="input-badge" type="url" placeholder="https://api.example.com/webhook" />
     </Field>
   )
 }
@@ -202,28 +179,21 @@ function ButtonGroupExample() {
 
 function FormExample() {
   const countries = [
-    { label: "United States", value: "us" },
-    { label: "United Kingdom", value: "uk" },
-    { label: "Canada", value: "ca" },
+    { label: 'United States', value: 'us' },
+    { label: 'United Kingdom', value: 'uk' },
+    { label: 'Canada', value: 'ca' },
   ]
   return (
     <form className="cuoio:w-full cuoio:max-w-sm">
       <FieldGroup>
         <Field>
           <FieldLabel htmlFor="form-name">Name</FieldLabel>
-          <Input
-            id="form-name"
-            type="text"
-            placeholder="Evil Rabbit"
-            required
-          />
+          <Input id="form-name" type="text" placeholder="Evil Rabbit" required />
         </Field>
         <Field>
           <FieldLabel htmlFor="form-email">Email</FieldLabel>
           <Input id="form-email" type="email" placeholder="john@example.com" />
-          <FieldDescription>
-            We&apos;ll never share your email with anyone.
-          </FieldDescription>
+          <FieldDescription>We&apos;ll never share your email with anyone.</FieldDescription>
         </Field>
         <div className="cuoio:grid cuoio:grid-cols-2 cuoio:gap-4">
           <Field>

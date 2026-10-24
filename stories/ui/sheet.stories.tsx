@@ -1,8 +1,9 @@
 // @ts-nocheck
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
 import {
   Sheet,
   SheetClose,
@@ -12,7 +13,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet"
+} from '@/components/ui/sheet'
 
 function DemoExample() {
   return (
@@ -44,16 +45,14 @@ function DemoExample() {
   )
 }
 
-const Side_SHEET_SIDES = ["top", "right", "bottom", "left"] as const
+const Side_SHEET_SIDES = ['top', 'right', 'bottom', 'left'] as const
 
 function SideExample() {
   return (
     <div className="cuoio:flex cuoio:flex-wrap cuoio:gap-2">
       {Side_SHEET_SIDES.map((side) => (
         <Sheet key={side}>
-          <SheetTrigger
-            render={<Button variant="outline" className="cuoio:capitalize" />}
-          >
+          <SheetTrigger render={<Button variant="outline" className="cuoio:capitalize" />}>
             {side}
           </SheetTrigger>
           <SheetContent
@@ -63,29 +62,24 @@ function SideExample() {
             <SheetHeader>
               <SheetTitle>Edit profile</SheetTitle>
               <SheetDescription>
-                Make changes to your profile here. Click save when you&apos;re
-                done.
+                Make changes to your profile here. Click save when you&apos;re done.
               </SheetDescription>
             </SheetHeader>
             <div className="cuoio:no-scrollbar cuoio:overflow-y-auto cuoio:px-4">
               {Array.from({ length: 10 }).map((_, index) => (
                 <p key={index} className="cuoio:mb-2 cuoio:leading-relaxed">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                  irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                  officia deserunt mollit anim id est laborum.
                 </p>
               ))}
             </div>
             <SheetFooter>
               <Button type="submit">Save changes</Button>
-              <SheetClose render={<Button variant="outline" />}>
-                Cancel
-              </SheetClose>
+              <SheetClose render={<Button variant="outline" />}>Cancel</SheetClose>
             </SheetFooter>
           </SheetContent>
         </Sheet>
@@ -97,15 +91,13 @@ function SideExample() {
 function NoCloseButtonExample() {
   return (
     <Sheet>
-      <SheetTrigger render={<Button variant="outline" />}>
-        Open Sheet
-      </SheetTrigger>
+      <SheetTrigger render={<Button variant="outline" />}>Open Sheet</SheetTrigger>
       <SheetContent showCloseButton={false}>
         <SheetHeader>
           <SheetTitle>No Close Button</SheetTitle>
           <SheetDescription>
-            This sheet doesn&apos;t have a close button in the top-right corner.
-            Click outside to close.
+            This sheet doesn&apos;t have a close button in the top-right corner. Click outside to
+            close.
           </SheetDescription>
         </SheetHeader>
       </SheetContent>

@@ -1,10 +1,12 @@
 // @ts-nocheck
-"use client"
+'use client'
+
+import * as React from 'react'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { GlobeIcon } from "lucide-react"
-import * as React from "react"
-import { Button } from "@/components/ui/button"
+import { GlobeIcon } from 'lucide-react'
+
+import { Button } from '@/components/ui/button'
 import {
   Combobox,
   ComboboxChip,
@@ -22,17 +24,11 @@ import {
   ComboboxTrigger,
   ComboboxValue,
   useComboboxAnchor,
-} from "@/components/ui/combobox"
-import { InputGroupAddon } from "@/components/ui/input-group"
-import { Item, ItemContent, ItemDescription, ItemTitle } from "@/components/ui/item"
+} from '@/components/ui/combobox'
+import { InputGroupAddon } from '@/components/ui/input-group'
+import { Item, ItemContent, ItemDescription, ItemTitle } from '@/components/ui/item'
 
-const Demo_frameworks = [
-  "Next.js",
-  "SvelteKit",
-  "Nuxt.js",
-  "Remix",
-  "Astro",
-] as const
+const Demo_frameworks = ['Next.js', 'SvelteKit', 'Nuxt.js', 'Remix', 'Astro'] as const
 
 function DemoExample() {
   return (
@@ -52,13 +48,7 @@ function DemoExample() {
   )
 }
 
-const Basic_frameworks = [
-  "Next.js",
-  "SvelteKit",
-  "Nuxt.js",
-  "Remix",
-  "Astro",
-] as const
+const Basic_frameworks = ['Next.js', 'SvelteKit', 'Nuxt.js', 'Remix', 'Astro'] as const
 
 function BasicExample() {
   return (
@@ -78,13 +68,7 @@ function BasicExample() {
   )
 }
 
-const Multiple_frameworks = [
-  "Next.js",
-  "SvelteKit",
-  "Nuxt.js",
-  "Remix",
-  "Astro",
-] as const
+const Multiple_frameworks = ['Next.js', 'SvelteKit', 'Nuxt.js', 'Remix', 'Astro'] as const
 
 function MultipleExample() {
   const anchor = useComboboxAnchor()
@@ -122,13 +106,7 @@ function MultipleExample() {
   )
 }
 
-const Clear_frameworks = [
-  "Next.js",
-  "SvelteKit",
-  "Nuxt.js",
-  "Remix",
-  "Astro",
-] as const
+const Clear_frameworks = ['Next.js', 'SvelteKit', 'Nuxt.js', 'Remix', 'Astro'] as const
 
 function ClearExample() {
   return (
@@ -150,36 +128,36 @@ function ClearExample() {
 
 const Groups_timezones = [
   {
-    value: "Americas",
+    value: 'Americas',
     items: [
-      "(GMT-5) New York",
-      "(GMT-8) Los Angeles",
-      "(GMT-6) Chicago",
-      "(GMT-5) Toronto",
-      "(GMT-8) Vancouver",
-      "(GMT-3) São Paulo",
+      '(GMT-5) New York',
+      '(GMT-8) Los Angeles',
+      '(GMT-6) Chicago',
+      '(GMT-5) Toronto',
+      '(GMT-8) Vancouver',
+      '(GMT-3) São Paulo',
     ],
   },
   {
-    value: "Europe",
+    value: 'Europe',
     items: [
-      "(GMT+0) London",
-      "(GMT+1) Paris",
-      "(GMT+1) Berlin",
-      "(GMT+1) Rome",
-      "(GMT+1) Madrid",
-      "(GMT+1) Amsterdam",
+      '(GMT+0) London',
+      '(GMT+1) Paris',
+      '(GMT+1) Berlin',
+      '(GMT+1) Rome',
+      '(GMT+1) Madrid',
+      '(GMT+1) Amsterdam',
     ],
   },
   {
-    value: "Asia/Pacific",
+    value: 'Asia/Pacific',
     items: [
-      "(GMT+9) Tokyo",
-      "(GMT+8) Shanghai",
-      "(GMT+8) Singapore",
-      "(GMT+4) Dubai",
-      "(GMT+11) Sydney",
-      "(GMT+9) Seoul",
+      '(GMT+9) Tokyo',
+      '(GMT+8) Shanghai',
+      '(GMT+8) Singapore',
+      '(GMT+4) Dubai',
+      '(GMT+11) Sydney',
+      '(GMT+9) Seoul',
     ],
   },
 ] as const
@@ -211,62 +189,62 @@ function GroupsExample() {
 }
 
 const Custom_countries = [
-  { code: "", value: "", continent: "", label: "Select country" },
+  { code: '', value: '', continent: '', label: 'Select country' },
   {
-    code: "ar",
-    value: "argentina",
-    label: "Argentina",
-    continent: "South America",
+    code: 'ar',
+    value: 'argentina',
+    label: 'Argentina',
+    continent: 'South America',
   },
-  { code: "au", value: "australia", label: "Australia", continent: "Oceania" },
-  { code: "br", value: "brazil", label: "Brazil", continent: "South America" },
-  { code: "ca", value: "canada", label: "Canada", continent: "North America" },
-  { code: "cn", value: "china", label: "China", continent: "Asia" },
+  { code: 'au', value: 'australia', label: 'Australia', continent: 'Oceania' },
+  { code: 'br', value: 'brazil', label: 'Brazil', continent: 'South America' },
+  { code: 'ca', value: 'canada', label: 'Canada', continent: 'North America' },
+  { code: 'cn', value: 'china', label: 'China', continent: 'Asia' },
   {
-    code: "co",
-    value: "colombia",
-    label: "Colombia",
-    continent: "South America",
+    code: 'co',
+    value: 'colombia',
+    label: 'Colombia',
+    continent: 'South America',
   },
-  { code: "eg", value: "egypt", label: "Egypt", continent: "Africa" },
-  { code: "fr", value: "france", label: "France", continent: "Europe" },
-  { code: "de", value: "germany", label: "Germany", continent: "Europe" },
-  { code: "it", value: "italy", label: "Italy", continent: "Europe" },
-  { code: "jp", value: "japan", label: "Japan", continent: "Asia" },
-  { code: "ke", value: "kenya", label: "Kenya", continent: "Africa" },
-  { code: "mx", value: "mexico", label: "Mexico", continent: "North America" },
+  { code: 'eg', value: 'egypt', label: 'Egypt', continent: 'Africa' },
+  { code: 'fr', value: 'france', label: 'France', continent: 'Europe' },
+  { code: 'de', value: 'germany', label: 'Germany', continent: 'Europe' },
+  { code: 'it', value: 'italy', label: 'Italy', continent: 'Europe' },
+  { code: 'jp', value: 'japan', label: 'Japan', continent: 'Asia' },
+  { code: 'ke', value: 'kenya', label: 'Kenya', continent: 'Africa' },
+  { code: 'mx', value: 'mexico', label: 'Mexico', continent: 'North America' },
   {
-    code: "nz",
-    value: "new-zealand",
-    label: "New Zealand",
-    continent: "Oceania",
+    code: 'nz',
+    value: 'new-zealand',
+    label: 'New Zealand',
+    continent: 'Oceania',
   },
-  { code: "ng", value: "nigeria", label: "Nigeria", continent: "Africa" },
+  { code: 'ng', value: 'nigeria', label: 'Nigeria', continent: 'Africa' },
   {
-    code: "za",
-    value: "south-africa",
-    label: "South Africa",
-    continent: "Africa",
+    code: 'za',
+    value: 'south-africa',
+    label: 'South Africa',
+    continent: 'Africa',
   },
-  { code: "kr", value: "south-korea", label: "South Korea", continent: "Asia" },
+  { code: 'kr', value: 'south-korea', label: 'South Korea', continent: 'Asia' },
   {
-    code: "gb",
-    value: "united-kingdom",
-    label: "United Kingdom",
-    continent: "Europe",
+    code: 'gb',
+    value: 'united-kingdom',
+    label: 'United Kingdom',
+    continent: 'Europe',
   },
   {
-    code: "us",
-    value: "united-states",
-    label: "United States",
-    continent: "North America",
+    code: 'us',
+    value: 'united-states',
+    label: 'United States',
+    continent: 'North America',
   },
 ]
 
 function CustomExample() {
   return (
     <Combobox
-      items={Custom_countries.filter((country) => country.code !== "")}
+      items={Custom_countries.filter((country) => country.code !== '')}
       itemToStringValue={(country: (typeof Custom_countries)[number]) => country.label}
     >
       <ComboboxInput placeholder="Search Custom_countries..." />
@@ -277,9 +255,7 @@ function CustomExample() {
             <ComboboxItem key={country.code} value={country}>
               <Item size="xs" className="cuoio:p-0">
                 <ItemContent>
-                  <ItemTitle className="cuoio:whitespace-nowrap">
-                    {country.label}
-                  </ItemTitle>
+                  <ItemTitle className="cuoio:whitespace-nowrap">{country.label}</ItemTitle>
                   <ItemDescription>
                     {country.continent} ({country.code})
                   </ItemDescription>
@@ -293,13 +269,7 @@ function CustomExample() {
   )
 }
 
-const Invalid_frameworks = [
-  "Next.js",
-  "SvelteKit",
-  "Nuxt.js",
-  "Remix",
-  "Astro",
-] as const
+const Invalid_frameworks = ['Next.js', 'SvelteKit', 'Nuxt.js', 'Remix', 'Astro'] as const
 
 function InvalidExample() {
   return (
@@ -319,13 +289,7 @@ function InvalidExample() {
   )
 }
 
-const Disabled_frameworks = [
-  "Next.js",
-  "SvelteKit",
-  "Nuxt.js",
-  "Remix",
-  "Astro",
-] as const
+const Disabled_frameworks = ['Next.js', 'SvelteKit', 'Nuxt.js', 'Remix', 'Astro'] as const
 
 function DisabledExample() {
   return (
@@ -345,13 +309,7 @@ function DisabledExample() {
   )
 }
 
-const AutoHighlight_frameworks = [
-  "Next.js",
-  "SvelteKit",
-  "Nuxt.js",
-  "Remix",
-  "Astro",
-] as const
+const AutoHighlight_frameworks = ['Next.js', 'SvelteKit', 'Nuxt.js', 'Remix', 'Astro'] as const
 
 function AutoHighlightExample() {
   return (
@@ -372,55 +330,55 @@ function AutoHighlightExample() {
 }
 
 const Popup_countries = [
-  { code: "", value: "", continent: "", label: "Select country" },
+  { code: '', value: '', continent: '', label: 'Select country' },
   {
-    code: "ar",
-    value: "argentina",
-    label: "Argentina",
-    continent: "South America",
+    code: 'ar',
+    value: 'argentina',
+    label: 'Argentina',
+    continent: 'South America',
   },
-  { code: "au", value: "australia", label: "Australia", continent: "Oceania" },
-  { code: "br", value: "brazil", label: "Brazil", continent: "South America" },
-  { code: "ca", value: "canada", label: "Canada", continent: "North America" },
-  { code: "cn", value: "china", label: "China", continent: "Asia" },
+  { code: 'au', value: 'australia', label: 'Australia', continent: 'Oceania' },
+  { code: 'br', value: 'brazil', label: 'Brazil', continent: 'South America' },
+  { code: 'ca', value: 'canada', label: 'Canada', continent: 'North America' },
+  { code: 'cn', value: 'china', label: 'China', continent: 'Asia' },
   {
-    code: "co",
-    value: "colombia",
-    label: "Colombia",
-    continent: "South America",
+    code: 'co',
+    value: 'colombia',
+    label: 'Colombia',
+    continent: 'South America',
   },
-  { code: "eg", value: "egypt", label: "Egypt", continent: "Africa" },
-  { code: "fr", value: "france", label: "France", continent: "Europe" },
-  { code: "de", value: "germany", label: "Germany", continent: "Europe" },
-  { code: "it", value: "italy", label: "Italy", continent: "Europe" },
-  { code: "jp", value: "japan", label: "Japan", continent: "Asia" },
-  { code: "ke", value: "kenya", label: "Kenya", continent: "Africa" },
-  { code: "mx", value: "mexico", label: "Mexico", continent: "North America" },
+  { code: 'eg', value: 'egypt', label: 'Egypt', continent: 'Africa' },
+  { code: 'fr', value: 'france', label: 'France', continent: 'Europe' },
+  { code: 'de', value: 'germany', label: 'Germany', continent: 'Europe' },
+  { code: 'it', value: 'italy', label: 'Italy', continent: 'Europe' },
+  { code: 'jp', value: 'japan', label: 'Japan', continent: 'Asia' },
+  { code: 'ke', value: 'kenya', label: 'Kenya', continent: 'Africa' },
+  { code: 'mx', value: 'mexico', label: 'Mexico', continent: 'North America' },
   {
-    code: "nz",
-    value: "new-zealand",
-    label: "New Zealand",
-    continent: "Oceania",
+    code: 'nz',
+    value: 'new-zealand',
+    label: 'New Zealand',
+    continent: 'Oceania',
   },
-  { code: "ng", value: "nigeria", label: "Nigeria", continent: "Africa" },
+  { code: 'ng', value: 'nigeria', label: 'Nigeria', continent: 'Africa' },
   {
-    code: "za",
-    value: "south-africa",
-    label: "South Africa",
-    continent: "Africa",
+    code: 'za',
+    value: 'south-africa',
+    label: 'South Africa',
+    continent: 'Africa',
   },
-  { code: "kr", value: "south-korea", label: "South Korea", continent: "Asia" },
+  { code: 'kr', value: 'south-korea', label: 'South Korea', continent: 'Asia' },
   {
-    code: "gb",
-    value: "united-kingdom",
-    label: "United Kingdom",
-    continent: "Europe",
+    code: 'gb',
+    value: 'united-kingdom',
+    label: 'United Kingdom',
+    continent: 'Europe',
   },
   {
-    code: "us",
-    value: "united-states",
-    label: "United States",
-    continent: "North America",
+    code: 'us',
+    value: 'united-states',
+    label: 'United States',
+    continent: 'North America',
   },
 ]
 
@@ -456,36 +414,36 @@ function PopupExample() {
 
 const InputGroup_timezones = [
   {
-    value: "Americas",
+    value: 'Americas',
     items: [
-      "(GMT-5) New York",
-      "(GMT-8) Los Angeles",
-      "(GMT-6) Chicago",
-      "(GMT-5) Toronto",
-      "(GMT-8) Vancouver",
-      "(GMT-3) São Paulo",
+      '(GMT-5) New York',
+      '(GMT-8) Los Angeles',
+      '(GMT-6) Chicago',
+      '(GMT-5) Toronto',
+      '(GMT-8) Vancouver',
+      '(GMT-3) São Paulo',
     ],
   },
   {
-    value: "Europe",
+    value: 'Europe',
     items: [
-      "(GMT+0) London",
-      "(GMT+1) Paris",
-      "(GMT+1) Berlin",
-      "(GMT+1) Rome",
-      "(GMT+1) Madrid",
-      "(GMT+1) Amsterdam",
+      '(GMT+0) London',
+      '(GMT+1) Paris',
+      '(GMT+1) Berlin',
+      '(GMT+1) Rome',
+      '(GMT+1) Madrid',
+      '(GMT+1) Amsterdam',
     ],
   },
   {
-    value: "Asia/Pacific",
+    value: 'Asia/Pacific',
     items: [
-      "(GMT+9) Tokyo",
-      "(GMT+8) Shanghai",
-      "(GMT+8) Singapore",
-      "(GMT+4) Dubai",
-      "(GMT+11) Sydney",
-      "(GMT+9) Seoul",
+      '(GMT+9) Tokyo',
+      '(GMT+8) Shanghai',
+      '(GMT+8) Singapore',
+      '(GMT+4) Dubai',
+      '(GMT+11) Sydney',
+      '(GMT+9) Seoul',
     ],
   },
 ] as const

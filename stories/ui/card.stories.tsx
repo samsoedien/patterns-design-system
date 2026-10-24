@@ -1,11 +1,13 @@
 // @ts-nocheck
-"use client"
+'use client'
+
+import * as React from 'react'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { ChevronRightIcon } from "lucide-react"
-import * as React from "react"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { ChevronRightIcon } from 'lucide-react'
+
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 import {
   Card,
   CardAction,
@@ -14,19 +16,17 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+} from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 
 function DemoExample() {
   return (
     <Card className="cuoio:w-full cuoio:max-w-sm">
       <CardHeader>
         <CardTitle>Login to your account</CardTitle>
-        <CardDescription>
-          Enter your email below to login to your account
-        </CardDescription>
+        <CardDescription>Enter your email below to login to your account</CardDescription>
         <CardAction>
           <Button variant="link">Sign Up</Button>
         </CardAction>
@@ -36,12 +36,7 @@ function DemoExample() {
           <div className="cuoio:flex cuoio:flex-col cuoio:gap-6">
             <div className="cuoio:grid cuoio:gap-2">
               <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="m@example.com"
-                required
-              />
+              <Input id="email" type="email" placeholder="m@example.com" required />
             </div>
             <div className="cuoio:grid cuoio:gap-2">
               <div className="cuoio:flex cuoio:items-center">
@@ -71,15 +66,13 @@ function DemoExample() {
 }
 
 function SmallExample() {
-  const featureName = "Scheduled reports"
+  const featureName = 'Scheduled reports'
 
   return (
     <Card size="sm" className="cuoio:mx-auto cuoio:w-full cuoio:max-w-xs">
       <CardHeader>
         <CardTitle>{featureName}</CardTitle>
-        <CardDescription>
-          Weekly snapshots. No more manual exports.
-        </CardDescription>
+        <CardDescription>Weekly snapshots. No more manual exports.</CardDescription>
       </CardHeader>
       <CardContent>
         <ul className="cuoio:grid cuoio:gap-2 cuoio:py-2 cuoio:text-sm">
@@ -111,32 +104,30 @@ function SmallExample() {
 
 const Spacing_spacingOptions = [
   {
-    className: "[--card-spacing:--spacing(4)]",
-    label: "16px",
-    value: "4",
+    className: '[--card-spacing:--spacing(4)]',
+    label: '16px',
+    value: '4',
   },
   {
-    className: "[--card-spacing:--spacing(5)]",
-    label: "20px",
-    value: "5",
+    className: '[--card-spacing:--spacing(5)]',
+    label: '20px',
+    value: '5',
   },
   {
-    className: "[--card-spacing:--spacing(6)]",
-    label: "24px",
-    value: "6",
+    className: '[--card-spacing:--spacing(6)]',
+    label: '24px',
+    value: '6',
   },
   {
-    className: "[--card-spacing:--spacing(8)]",
-    label: "32px",
-    value: "8",
+    className: '[--card-spacing:--spacing(8)]',
+    label: '32px',
+    value: '8',
   },
 ]
 
 function SpacingExample() {
-  const [spacing, setSpacing] = React.useState("4")
-  const selectedSpacing = Spacing_spacingOptions.find(
-    (option) => option.value === spacing
-  )
+  const [spacing, setSpacing] = React.useState('4')
+  const selectedSpacing = Spacing_spacingOptions.find((option) => option.value === spacing)
 
   return (
     <div className="cuoio:mx-auto cuoio:grid cuoio:w-full cuoio:max-w-sm cuoio:gap-4">
@@ -160,9 +151,7 @@ function SpacingExample() {
       <Card className={selectedSpacing?.className}>
         <CardHeader>
           <CardTitle>Login to your account</CardTitle>
-          <CardDescription>
-            Enter your email below to login to your account
-          </CardDescription>
+          <CardDescription>Enter your email below to login to your account</CardDescription>
           <CardAction>
             <Button variant="link">Sign Up</Button>
           </CardAction>
@@ -172,12 +161,7 @@ function SpacingExample() {
             <div className="cuoio:flex cuoio:flex-col cuoio:gap-6">
               <div className="cuoio:grid cuoio:gap-2">
                 <Label htmlFor="email-spacing">Email</Label>
-                <Input
-                  id="email-spacing"
-                  type="email"
-                  placeholder="m@example.com"
-                  required
-                />
+                <Input id="email-spacing" type="email" placeholder="m@example.com" required />
               </div>
               <div className="cuoio:grid cuoio:gap-2">
                 <div className="cuoio:flex cuoio:items-center">
@@ -212,28 +196,25 @@ function EdgeToEdgeExample() {
     <Card className="cuoio:mx-auto cuoio:w-full cuoio:max-w-sm">
       <CardHeader>
         <CardTitle>Terms of Service</CardTitle>
-        <CardDescription>
-          Review the terms before accepting the agreement.
-        </CardDescription>
+        <CardDescription>Review the terms before accepting the agreement.</CardDescription>
       </CardHeader>
       <CardContent className="cuoio:-mb-(--card-spacing)">
         <div className="cuoio:-mx-(--card-spacing) cuoio:max-h-48 cuoio:space-y-4 cuoio:overflow-y-scroll cuoio:border-t cuoio:bg-muted/50 cuoio:px-(--card-spacing) cuoio:py-4 cuoio:text-sm cuoio:leading-relaxed">
           <p>
-            These terms govern your use of the workspace, including access to
-            shared documents, project files, and collaboration tools.
+            These terms govern your use of the workspace, including access to shared documents,
+            project files, and collaboration tools.
           </p>
           <p>
-            You are responsible for the content you upload and for ensuring that
-            your team has the appropriate permissions to view or edit it.
+            You are responsible for the content you upload and for ensuring that your team has the
+            appropriate permissions to view or edit it.
           </p>
           <p>
-            We may update features or limits as the service evolves. When those
-            changes materially affect your workflow, we will notify your
-            workspace administrators.
+            We may update features or limits as the service evolves. When those changes materially
+            affect your workflow, we will notify your workspace administrators.
           </p>
           <p>
-            By continuing, you agree to keep your account credentials secure and
-            to follow your organization&apos;s acceptable use policies.
+            By continuing, you agree to keep your account credentials secure and to follow your
+            organization&apos;s acceptable use policies.
           </p>
         </div>
       </CardContent>
@@ -260,8 +241,7 @@ function ImageExample() {
         </CardAction>
         <CardTitle>Design systems meetup</CardTitle>
         <CardDescription>
-          A practical talk on component APIs, accessibility, and shipping
-          faster.
+          A practical talk on component APIs, accessibility, and shipping faster.
         </CardDescription>
       </CardHeader>
       <CardFooter>

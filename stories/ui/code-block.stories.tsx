@@ -1,17 +1,13 @@
 // @ts-nocheck
-"use client"
+'use client'
+
+import * as React from 'react'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import {
-  DownloadIcon,
-  FileCodeIcon,
-  RotateCcwIcon,
-  TerminalIcon,
-  WrapTextIcon,
-} from "lucide-react"
-import * as React from "react"
-import { Bubble, BubbleContent } from "@/components/ui/bubble"
-import { Button } from "@/components/ui/button"
+import { DownloadIcon, FileCodeIcon, RotateCcwIcon, TerminalIcon, WrapTextIcon } from 'lucide-react'
+
+import { Bubble, BubbleContent } from '@/components/ui/bubble'
+import { Button } from '@/components/ui/button'
 import {
   CodeBlock,
   CodeBlockActions,
@@ -20,8 +16,8 @@ import {
   CodeBlockHeader,
   CodeBlockLine,
   CodeBlockTitle,
-} from "@/components/ui/code-block"
-import { Message, MessageContent } from "@/components/ui/message"
+} from '@/components/ui/code-block'
+import { Message, MessageContent } from '@/components/ui/message'
 import {
   Trace,
   TraceCollapsible,
@@ -30,8 +26,8 @@ import {
   TraceIcon,
   TraceLine,
   TraceTitle,
-} from "@/components/ui/trace"
-import { useHighlightedCode } from "@/hooks/use-highlighted-code"
+} from '@/components/ui/trace'
+import { useHighlightedCode } from '@/hooks/use-highlighted-code'
 
 const Demo_code = `import { streamText } from "ai"
 
@@ -48,8 +44,8 @@ export async function POST(request: Request) {
 }`
 
 function Demo_download(value: string, filename: string) {
-  const url = URL.createObjectURL(new Blob([value], { type: "text/plain" }))
-  const link = document.createElement("a")
+  const url = URL.createObjectURL(new Blob([value], { type: 'text/plain' }))
+  const link = document.createElement('a')
   link.href = url
   link.download = filename
   link.click()
@@ -58,7 +54,7 @@ function Demo_download(value: string, filename: string) {
 
 function DemoExample() {
   const [wrap, setWrap] = React.useState(false)
-  const lines = useHighlightedCode(Demo_code, "ts")
+  const lines = useHighlightedCode(Demo_code, 'ts')
 
   return (
     <div className="cuoio:w-full cuoio:max-w-lg">
@@ -83,7 +79,7 @@ function DemoExample() {
               variant="ghost"
               size="icon-xs"
               aria-label="Download"
-              onClick={() => Demo_download(Demo_code, "route.ts")}
+              onClick={() => Demo_download(Demo_code, 'route.ts')}
             >
               <DownloadIcon />
             </Button>
@@ -94,7 +90,7 @@ function DemoExample() {
           {lines.map((line, index) => (
             <CodeBlockLine
               key={index}
-              variant={index >= 5 && index <= 9 ? "highlighted" : "default"}
+              variant={index >= 5 && index <= 9 ? 'highlighted' : 'default'}
             >
               {line}
             </CodeBlockLine>
@@ -134,8 +130,8 @@ apps/web/components/message-list.tsx
 ✖ 2 problems (1 error, 1 warning)`
 
 function Actions_download(value: string, filename: string) {
-  const url = URL.createObjectURL(new Blob([value], { type: "text/plain" }))
-  const link = document.createElement("a")
+  const url = URL.createObjectURL(new Blob([value], { type: 'text/plain' }))
+  const link = document.createElement('a')
   link.href = url
   link.download = filename
   link.click()
@@ -168,7 +164,7 @@ function ActionsExample() {
               variant="ghost"
               size="icon-xs"
               aria-label="Download"
-              onClick={() => Actions_download(Actions_output, "lint.log")}
+              onClick={() => Actions_download(Actions_output, 'lint.log')}
             >
               <DownloadIcon />
             </Button>
@@ -213,7 +209,7 @@ const StartLine_code = `  if (!session) {
 }`
 
 function StartLineExample() {
-  const lines = useHighlightedCode(StartLine_code, "tsx")
+  const lines = useHighlightedCode(StartLine_code, 'tsx')
 
   return (
     <div className="cuoio:w-full cuoio:max-w-md">
@@ -263,10 +259,14 @@ function HighlightedLinesExample() {
     <div className="cuoio:w-full cuoio:max-w-md">
       <CodeBlock>
         <CodeBlockContent lineNumbers>
-          {HighlightedLines_code.split("\n").map((line, index) => (
+          {HighlightedLines_code.split('\n').map((line, index) => (
             <CodeBlockLine
               key={index}
-              variant={HighlightedLines_highlighted.includes(index) ? "HighlightedLines_highlighted" : "default"}
+              variant={
+                HighlightedLines_highlighted.includes(index)
+                  ? 'HighlightedLines_highlighted'
+                  : 'default'
+              }
             >
               {line}
             </CodeBlockLine>
@@ -285,15 +285,15 @@ const Diff_patch = ` export function Greeting({ name }: { name: string }) {
  }`
 
 function Diff_getVariant(line: string) {
-  if (line.startsWith("+")) {
-    return "added"
+  if (line.startsWith('+')) {
+    return 'added'
   }
 
-  if (line.startsWith("-")) {
-    return "removed"
+  if (line.startsWith('-')) {
+    return 'removed'
   }
 
-  return "default"
+  return 'default'
 }
 
 function DiffExample() {
@@ -307,7 +307,7 @@ function DiffExample() {
           </CodeBlockActions>
         </CodeBlockHeader>
         <CodeBlockContent>
-          {Diff_patch.split("\n").map((line, index) => (
+          {Diff_patch.split('\n').map((line, index) => (
             <CodeBlockLine key={index} variant={Diff_getVariant(line)}>
               {line.slice(1)}
             </CodeBlockLine>
@@ -321,8 +321,8 @@ function DiffExample() {
 const Height_logs = Array.from(
   { length: 40 },
   (_, index) =>
-    `[${String(index + 1).padStart(2, "0")}] GET /api/chat 200 in ${12 + ((index * 7) % 40)}ms`
-).join("\n")
+    `[${String(index + 1).padStart(2, '0')}] GET /api/chat 200 in ${12 + ((index * 7) % 40)}ms`,
+).join('\n')
 
 function HeightExample() {
   return (
@@ -426,7 +426,7 @@ export async function POST(request: Request) {
 }`
 
 function ChatExample() {
-  const lines = useHighlightedCode(Chat_code, "ts")
+  const lines = useHighlightedCode(Chat_code, 'ts')
 
   return (
     <div className="cuoio:flex cuoio:w-full cuoio:max-w-md cuoio:flex-col cuoio:gap-4 cuoio:text-sm">
@@ -470,14 +470,14 @@ export async function POST(request: Request) {
 }`
 
 function TypesetExample() {
-  const lines = useHighlightedCode(Typeset_code, "ts")
+  const lines = useHighlightedCode(Typeset_code, 'ts')
 
   return (
     <div className="cuoio:typeset cuoio:w-full cuoio:max-w-md">
       <h3>Stream a response</h3>
       <p>
-        Create a route handler that calls <Typeset_code>streamText</Typeset_code> and returns
-        the stream to the client.
+        Create a route handler that calls <Typeset_code>streamText</Typeset_code> and returns the
+        stream to the client.
       </p>
       <CodeBlock>
         <CodeBlockHeader>
@@ -496,8 +496,8 @@ function TypesetExample() {
         </CodeBlockContent>
       </CodeBlock>
       <p>
-        The <Typeset_code>useChat</Typeset_code> hook reads the stream on the client and renders
-        the answer while it is written.
+        The <Typeset_code>useChat</Typeset_code> hook reads the stream on the client and renders the
+        answer while it is written.
       </p>
     </div>
   )
@@ -511,7 +511,7 @@ const Highlighting_code = `{
 }`
 
 function HighlightingExample() {
-  const lines = useHighlightedCode(Highlighting_code, "json")
+  const lines = useHighlightedCode(Highlighting_code, 'json')
 
   return (
     <div className="cuoio:w-full cuoio:max-w-md">
@@ -531,8 +531,8 @@ function HighlightingExample() {
 
 const Languages_samples = [
   {
-    language: "css",
-    title: "app/globals.css",
+    language: 'css',
+    title: 'app/globals.css',
     code: `@import "tailwindcss";
 
 :root {
@@ -540,15 +540,15 @@ const Languages_samples = [
 }`,
   },
   {
-    language: "python",
-    title: "main.py",
+    language: 'python',
+    title: 'main.py',
     code: `def greet(name: str) -> str:
     return f"Hello, {name}!"`,
   },
   {
-    language: "text",
-    title: "notes.txt",
-    code: "A language that is not in the list renders as plain text.",
+    language: 'text',
+    title: 'notes.txt',
+    code: 'A language that is not in the list renders as plain text.',
   },
 ]
 
@@ -589,7 +589,7 @@ const Ansi_output = `$ pnpm test
 Tests  \x1b[31m1 failed\x1b[39m | \x1b[32m13 passed\x1b[39m (14)`
 
 function AnsiExample() {
-  const lines = useHighlightedCode(Ansi_output, "ansi")
+  const lines = useHighlightedCode(Ansi_output, 'ansi')
 
   return (
     <div className="cuoio:w-full cuoio:max-w-md">
@@ -600,7 +600,7 @@ function AnsiExample() {
             Terminal
           </CodeBlockTitle>
           <CodeBlockActions>
-            <CodeBlockCopyButton value={Ansi_output.replace(/\x1b\[[\d;]*m/g, "")} />
+            <CodeBlockCopyButton value={Ansi_output.replace(/\x1b\[[\d;]*m/g, '')} />
           </CodeBlockActions>
         </CodeBlockHeader>
         <CodeBlockContent wrap>
@@ -622,8 +622,8 @@ const Streaming_blocks: {
   diff?: boolean
 }[] = [
   {
-    title: "hooks/use-debounce.ts",
-    language: "ts",
+    title: 'hooks/use-debounce.ts',
+    language: 'ts',
     lineNumbers: true,
     code: `export function useDebounce<T>(value: T, delay = 300) {
   const [debounced, setDebounced] = React.useState(value)
@@ -637,12 +637,12 @@ const Streaming_blocks: {
 }`,
   },
   {
-    language: "bash",
-    code: "pnpm dlx shadcn@latest add code-block",
+    language: 'bash',
+    code: 'pnpm dlx shadcn@latest add code-block',
   },
   {
-    title: "components/search.tsx",
-    language: "tsx",
+    title: 'components/search.tsx',
+    language: 'tsx',
     lineNumbers: true,
     diff: true,
     code: ` export function Search() {
@@ -655,8 +655,8 @@ const Streaming_blocks: {
  }`,
   },
   {
-    title: "app/api/chat/route.ts",
-    language: "ts",
+    title: 'app/api/chat/route.ts',
+    language: 'ts',
     lineNumbers: true,
     highlight: [5, 6, 7, 8],
     code: `import { streamText } from "ai"
@@ -673,15 +673,18 @@ export async function POST(request: Request) {
 }`,
   },
   {
-    title: ".env.local",
-    language: "bash",
-    code: "AI_GATEWAY_API_KEY=your-api-key",
+    title: '.env.local',
+    language: 'bash',
+    code: 'AI_GATEWAY_API_KEY=your-api-key',
   },
 ]
 
 // Where each block starts in the stream.
 const Streaming_offsets = Streaming_blocks.map((_, index) =>
-  Streaming_blocks.slice(0, index).reduce((Streaming_total, block) => Streaming_total + block.code.length, 0)
+  Streaming_blocks.slice(0, index).reduce(
+    (Streaming_total, block) => Streaming_total + block.code.length,
+    0,
+  ),
 )
 const Streaming_total = Streaming_blocks.reduce((sum, block) => sum + block.code.length, 0)
 
@@ -692,9 +695,9 @@ function Streaming_StreamingBlock({
   block: (typeof Streaming_blocks)[number]
   code: string
 }) {
-  const rows = code.split("\n")
+  const rows = code.split('\n')
   // A diff row starts with +, - or a space. The marker is not part of the code.
-  const source = block.diff ? rows.map((row) => row.slice(1)).join("\n") : code
+  const source = block.diff ? rows.map((row) => row.slice(1)).join('\n') : code
   const lines = useHighlightedCode(source, block.language)
 
   return (
@@ -703,10 +706,7 @@ function Streaming_StreamingBlock({
         <CodeBlockHeader>
           <CodeBlockTitle>{block.title}</CodeBlockTitle>
           <CodeBlockActions>
-            <CodeBlockCopyButton
-              value={source}
-              disabled={code.length < block.code.length}
-            />
+            <CodeBlockCopyButton value={source} disabled={code.length < block.code.length} />
           </CodeBlockActions>
         </CodeBlockHeader>
       )}
@@ -716,14 +716,14 @@ function Streaming_StreamingBlock({
             key={index}
             variant={
               block.diff
-                ? rows[index]?.startsWith("+")
-                  ? "added"
-                  : rows[index]?.startsWith("-")
-                    ? "removed"
-                    : "default"
+                ? rows[index]?.startsWith('+')
+                  ? 'added'
+                  : rows[index]?.startsWith('-')
+                    ? 'removed'
+                    : 'default'
                 : block.highlight?.includes(index)
-                  ? "highlighted"
-                  : "default"
+                  ? 'highlighted'
+                  : 'default'
             }
           >
             {line}
@@ -756,7 +756,7 @@ function StreamingExample() {
               block={block}
               code={block.code.slice(0, length - Streaming_offsets[index])}
             />
-          )
+          ),
       )}
       <Button
         variant="outline"

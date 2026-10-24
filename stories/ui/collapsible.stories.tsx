@@ -1,5 +1,7 @@
 // @ts-nocheck
-"use client"
+'use client'
+
+import * as React from 'react'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import {
@@ -9,20 +11,14 @@ import {
   FolderIcon,
   MaximizeIcon,
   MinimizeIcon,
-} from "lucide-react"
-import * as React from "react"
-import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
-import { Field, FieldGroup, FieldLabel } from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+} from 'lucide-react'
+
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible'
+import { Field, FieldGroup, FieldLabel } from '@/components/ui/field'
+import { Input } from '@/components/ui/input'
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
 function DemoExample() {
   const [isOpen, setIsOpen] = React.useState(false)
@@ -117,58 +113,54 @@ type FileTreeItem = { name: string } | { name: string; items: FileTreeItem[] }
 function FileTreeExample() {
   const fileTree: FileTreeItem[] = [
     {
-      name: "components",
+      name: 'components',
       items: [
         {
-          name: "ui",
+          name: 'ui',
           items: [
-            { name: "button.tsx" },
-            { name: "card.tsx" },
-            { name: "dialog.tsx" },
-            { name: "input.tsx" },
-            { name: "select.tsx" },
-            { name: "table.tsx" },
+            { name: 'button.tsx' },
+            { name: 'card.tsx' },
+            { name: 'dialog.tsx' },
+            { name: 'input.tsx' },
+            { name: 'select.tsx' },
+            { name: 'table.tsx' },
           ],
         },
-        { name: "login-form.tsx" },
-        { name: "register-form.tsx" },
+        { name: 'login-form.tsx' },
+        { name: 'register-form.tsx' },
       ],
     },
     {
-      name: "lib",
-      items: [{ name: "utils.ts" }, { name: "cn.ts" }, { name: "api.ts" }],
+      name: 'lib',
+      items: [{ name: 'utils.ts' }, { name: 'cn.ts' }, { name: 'api.ts' }],
     },
     {
-      name: "hooks",
+      name: 'hooks',
       items: [
-        { name: "use-media-query.ts" },
-        { name: "use-debounce.ts" },
-        { name: "use-local-storage.ts" },
+        { name: 'use-media-query.ts' },
+        { name: 'use-debounce.ts' },
+        { name: 'use-local-storage.ts' },
       ],
     },
     {
-      name: "types",
-      items: [{ name: "index.d.ts" }, { name: "api.d.ts" }],
+      name: 'types',
+      items: [{ name: 'index.d.ts' }, { name: 'api.d.ts' }],
     },
     {
-      name: "public",
-      items: [
-        { name: "favicon.ico" },
-        { name: "logo.svg" },
-        { name: "images" },
-      ],
+      name: 'public',
+      items: [{ name: 'favicon.ico' }, { name: 'logo.svg' }, { name: 'images' }],
     },
-    { name: "app.tsx" },
-    { name: "layout.tsx" },
-    { name: "globals.css" },
-    { name: "package.json" },
-    { name: "tsconfig.json" },
-    { name: "README.md" },
-    { name: ".gitignore" },
+    { name: 'app.tsx' },
+    { name: 'layout.tsx' },
+    { name: 'globals.css' },
+    { name: 'package.json' },
+    { name: 'tsconfig.json' },
+    { name: 'README.md' },
+    { name: '.gitignore' },
   ]
 
   const renderItem = (fileItem: FileTreeItem) => {
-    if ("items" in fileItem) {
+    if ('items' in fileItem) {
       return (
         <Collapsible key={fileItem.name}>
           <CollapsibleTrigger
@@ -184,7 +176,7 @@ function FileTreeExample() {
             <FolderIcon />
             {fileItem.name}
           </CollapsibleTrigger>
-          <CollapsibleContent className="cuoio:mt-1 cuoio:ml-5 cuoio:style-lyra:ml-4">
+          <CollapsibleContent className="cuoio:style-lyra:ml-4 cuoio:mt-1 cuoio:ml-5">
             <div className="cuoio:flex cuoio:flex-col cuoio:gap-1">
               {fileItem.items.map((child) => renderItem(child))}
             </div>

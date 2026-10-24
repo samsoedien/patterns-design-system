@@ -1,18 +1,18 @@
-import type { Preview } from "@storybook/react-vite"
-import { withThemeByClassName } from "@storybook/addon-themes"
+import { withThemeByClassName } from '@storybook/addon-themes'
+import type { Preview } from '@storybook/react-vite'
 
-import { Toaster } from "@/components/ui/toast"
+import { Toaster } from '@/components/ui/toast'
 
-import "../src/styles/globals.css"
+import '../src/styles/globals.css'
 
 const preview: Preview = {
   decorators: [
     withThemeByClassName({
       themes: {
-        light: "",
-        dark: "dark",
+        light: '',
+        dark: 'dark',
       },
-      defaultTheme: "light",
+      defaultTheme: 'light',
     }),
     (Story) => (
       <>
@@ -33,7 +33,7 @@ const preview: Preview = {
       // 'todo' - show a11y violations in the test UI only
       // 'error' - fail CI on a11y violations
       // 'off' - skip a11y checks entirely
-      test: "todo",
+      test: 'todo',
     },
   },
 }

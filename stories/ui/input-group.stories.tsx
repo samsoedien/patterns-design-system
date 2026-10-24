@@ -1,5 +1,5 @@
 // @ts-nocheck
-"use client"
+'use client'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import {
@@ -19,15 +19,16 @@ import {
   Search,
   SearchIcon,
   StarIcon,
-} from "lucide-react"
+} from 'lucide-react'
+
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Field, FieldDescription, FieldGroup, FieldLabel } from "@/components/ui/field"
+} from '@/components/ui/dropdown-menu'
+import { Field, FieldDescription, FieldGroup, FieldLabel } from '@/components/ui/field'
 import {
   InputGroup,
   InputGroupAddon,
@@ -35,9 +36,9 @@ import {
   InputGroupInput,
   InputGroupText,
   InputGroupTextarea,
-} from "@/components/ui/input-group"
-import { Kbd } from "@/components/ui/kbd"
-import { Spinner } from "@/components/ui/spinner"
+} from '@/components/ui/input-group'
+import { Kbd } from '@/components/ui/kbd'
+import { Spinner } from '@/components/ui/spinner'
 
 function DemoExample() {
   return (
@@ -71,11 +72,7 @@ function InlineEndExample() {
     <Field className="cuoio:max-w-sm">
       <FieldLabel htmlFor="inline-end-input">Input</FieldLabel>
       <InputGroup>
-        <InputGroupInput
-          id="inline-end-input"
-          type="password"
-          placeholder="Enter password"
-        />
+        <InputGroupInput id="inline-end-input" type="password" placeholder="Enter password" />
         <InputGroupAddon align="inline-end">
           <EyeOffIcon />
         </InputGroupAddon>
@@ -91,10 +88,7 @@ function BlockStartExample() {
       <Field>
         <FieldLabel htmlFor="block-start-input">Input</FieldLabel>
         <InputGroup className="cuoio:h-auto">
-          <InputGroupInput
-            id="block-start-input"
-            placeholder="Enter your name"
-          />
+          <InputGroupInput id="block-start-input" placeholder="Enter your name" />
           <InputGroupAddon align="block-start">
             <InputGroupText>Full Name</InputGroupText>
           </InputGroupAddon>
@@ -118,9 +112,7 @@ function BlockStartExample() {
             </InputGroupButton>
           </InputGroupAddon>
         </InputGroup>
-        <FieldDescription>
-          Header positioned above the textarea.
-        </FieldDescription>
+        <FieldDescription>Header positioned above the textarea.</FieldDescription>
       </Field>
     </FieldGroup>
   )
@@ -142,10 +134,7 @@ function BlockEndExample() {
       <Field>
         <FieldLabel htmlFor="block-end-textarea">Textarea</FieldLabel>
         <InputGroup>
-          <InputGroupTextarea
-            id="block-end-textarea"
-            placeholder="Write a comment..."
-          />
+          <InputGroupTextarea id="block-end-textarea" placeholder="Write a comment..." />
           <InputGroupAddon align="block-end">
             <InputGroupText>0/280</InputGroupText>
             <InputGroupButton variant="default" size="sm" className="cuoio:ml-auto">
@@ -153,9 +142,7 @@ function BlockEndExample() {
             </InputGroupButton>
           </InputGroupAddon>
         </InputGroup>
-        <FieldDescription>
-          Footer positioned below the textarea.
-        </FieldDescription>
+        <FieldDescription>Footer positioned below the textarea.</FieldDescription>
       </Field>
     </FieldGroup>
   )
@@ -257,13 +244,7 @@ function DropdownExample() {
         <InputGroupAddon align="inline-end">
           <DropdownMenu>
             <DropdownMenuTrigger
-              render={
-                <InputGroupButton
-                  variant="ghost"
-                  aria-label="More"
-                  size="icon-xs"
-                />
-              }
+              render={<InputGroupButton variant="ghost" aria-label="More" size="icon-xs" />}
             >
               <MoreHorizontal />
             </DropdownMenuTrigger>
@@ -282,9 +263,7 @@ function DropdownExample() {
         <InputGroupAddon align="inline-end">
           <DropdownMenu>
             <DropdownMenuTrigger
-              render={
-                <InputGroupButton variant="ghost" className="cuoio:pr-1.5! cuoio:text-xs" />
-              }
+              render={<InputGroupButton variant="ghost" className="cuoio:pr-1.5! cuoio:text-xs" />}
             >
               Search In... <ChevronDownIcon className="cuoio:size-3" />
             </DropdownMenuTrigger>
@@ -330,9 +309,7 @@ function SpinnerExample() {
           <LoaderIcon className="cuoio:animate-spin" />
         </InputGroupAddon>
         <InputGroupAddon align="inline-end">
-          <InputGroupText className="cuoio:text-muted-foreground">
-            Please wait...
-          </InputGroupText>
+          <InputGroupText className="cuoio:text-muted-foreground">Please wait...</InputGroupText>
         </InputGroupAddon>
       </InputGroup>
     </div>

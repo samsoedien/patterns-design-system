@@ -1,8 +1,9 @@
 // @ts-nocheck
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { AlertCircleIcon, AlertTriangleIcon, CheckCircle2Icon, InfoIcon } from "lucide-react"
-import { Alert, AlertAction, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import { Button } from "@/components/ui/button"
+import { AlertCircleIcon, AlertTriangleIcon, CheckCircle2Icon, InfoIcon } from 'lucide-react'
+
+import { Alert, AlertAction, AlertDescription, AlertTitle } from '@/components/ui/alert'
+import { Button } from '@/components/ui/button'
 
 function DemoExample() {
   return (
@@ -11,16 +12,14 @@ function DemoExample() {
         <CheckCircle2Icon />
         <AlertTitle>Payment successful</AlertTitle>
         <AlertDescription>
-          Your payment of $29.99 has been processed. A receipt has been sent to
-          your email address.
+          Your payment of $29.99 has been processed. A receipt has been sent to your email address.
         </AlertDescription>
       </Alert>
       <Alert>
         <InfoIcon />
         <AlertTitle>New feature available</AlertTitle>
         <AlertDescription>
-          We&apos;ve added dark mode support. You can enable it in your account
-          settings.
+          We&apos;ve added dark mode support. You can enable it in your account settings.
         </AlertDescription>
       </Alert>
     </div>
@@ -33,8 +32,7 @@ function BasicExample() {
       <CheckCircle2Icon />
       <AlertTitle>Account updated successfully</AlertTitle>
       <AlertDescription>
-        Your profile information has been saved. Changes will be reflected
-        immediately.
+        Your profile information has been saved. Changes will be reflected immediately.
       </AlertDescription>
     </Alert>
   )
@@ -46,8 +44,7 @@ function DestructiveExample() {
       <AlertCircleIcon />
       <AlertTitle>Payment failed</AlertTitle>
       <AlertDescription>
-        Your payment could not be processed. Please check your payment method
-        and try again.
+        Your payment could not be processed. Please check your payment method and try again.
       </AlertDescription>
     </Alert>
   )
@@ -57,9 +54,7 @@ function ActionExample() {
   return (
     <Alert className="cuoio:max-w-md">
       <AlertTitle>Dark mode is now available</AlertTitle>
-      <AlertDescription>
-        Enable it under your profile settings to get started.
-      </AlertDescription>
+      <AlertDescription>Enable it under your profile settings to get started.</AlertDescription>
       <AlertAction>
         <Button size="xs" variant="default">
           Enable
@@ -75,8 +70,8 @@ function ColorsExample() {
       <AlertTriangleIcon />
       <AlertTitle>Your subscription will expire in 3 days.</AlertTitle>
       <AlertDescription>
-        Renew now to avoid service interruption or upgrade to a paid plan to
-        continue using the service.
+        Renew now to avoid service interruption or upgrade to a paid plan to continue using the
+        service.
       </AlertDescription>
     </Alert>
   )

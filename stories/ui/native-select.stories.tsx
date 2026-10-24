@@ -1,6 +1,11 @@
 // @ts-nocheck
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { NativeSelect, NativeSelectOptGroup, NativeSelectOption } from "@/components/ui/native-select"
+
+import {
+  NativeSelect,
+  NativeSelectOptGroup,
+  NativeSelectOption,
+} from '@/components/ui/native-select'
 
 function DemoExample() {
   return (
@@ -25,23 +30,13 @@ function GroupsExample() {
       </NativeSelectOptGroup>
       <NativeSelectOptGroup label="Sales">
         <NativeSelectOption value="sales-rep">Sales Rep</NativeSelectOption>
-        <NativeSelectOption value="account-manager">
-          Account Manager
-        </NativeSelectOption>
-        <NativeSelectOption value="sales-director">
-          Sales Director
-        </NativeSelectOption>
+        <NativeSelectOption value="account-manager">Account Manager</NativeSelectOption>
+        <NativeSelectOption value="sales-director">Sales Director</NativeSelectOption>
       </NativeSelectOptGroup>
       <NativeSelectOptGroup label="Operations">
-        <NativeSelectOption value="support">
-          Customer Support
-        </NativeSelectOption>
-        <NativeSelectOption value="product-manager">
-          Product Manager
-        </NativeSelectOption>
-        <NativeSelectOption value="ops-manager">
-          Operations Manager
-        </NativeSelectOption>
+        <NativeSelectOption value="support">Customer Support</NativeSelectOption>
+        <NativeSelectOption value="product-manager">Product Manager</NativeSelectOption>
+        <NativeSelectOption value="ops-manager">Operations Manager</NativeSelectOption>
       </NativeSelectOptGroup>
     </NativeSelect>
   )

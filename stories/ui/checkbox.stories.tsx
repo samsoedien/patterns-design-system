@@ -1,9 +1,11 @@
 // @ts-nocheck
-"use client"
+'use client'
+
+import * as React from 'react'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import * as React from "react"
-import { Checkbox } from "@/components/ui/checkbox"
+
+import { Checkbox } from '@/components/ui/checkbox'
 import {
   Field,
   FieldContent,
@@ -13,8 +15,8 @@ import {
   FieldLegend,
   FieldSet,
   FieldTitle,
-} from "@/components/ui/field"
-import { Label } from "@/components/ui/label"
+} from '@/components/ui/field'
+import { Label } from '@/components/ui/label'
 import {
   Table,
   TableBody,
@@ -22,7 +24,7 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
+} from '@/components/ui/table'
 
 function DemoExample() {
   return (
@@ -32,18 +34,10 @@ function DemoExample() {
         <Label htmlFor="terms-checkbox">Accept terms and conditions</Label>
       </Field>
       <Field orientation="horizontal">
-        <Checkbox
-          id="terms-checkbox-2"
-          name="terms-checkbox-2"
-          defaultChecked
-        />
+        <Checkbox id="terms-checkbox-2" name="terms-checkbox-2" defaultChecked />
         <FieldContent>
-          <FieldLabel htmlFor="terms-checkbox-2">
-            Accept terms and conditions
-          </FieldLabel>
-          <FieldDescription>
-            By clicking this checkbox, you agree to the terms.
-          </FieldDescription>
+          <FieldLabel htmlFor="terms-checkbox-2">Accept terms and conditions</FieldLabel>
+          <FieldDescription>By clicking this checkbox, you agree to the terms.</FieldDescription>
         </FieldContent>
       </Field>
       <Field orientation="horizontal" data-disabled>
@@ -69,14 +63,8 @@ function InvalidExample() {
   return (
     <FieldGroup className="cuoio:mx-auto cuoio:w-56">
       <Field orientation="horizontal" data-invalid>
-        <Checkbox
-          id="terms-checkbox-invalid"
-          name="terms-checkbox-invalid"
-          aria-invalid
-        />
-        <FieldLabel htmlFor="terms-checkbox-invalid">
-          Accept terms and conditions
-        </FieldLabel>
+        <Checkbox id="terms-checkbox-invalid" name="terms-checkbox-invalid" aria-invalid />
+        <FieldLabel htmlFor="terms-checkbox-invalid">Accept terms and conditions</FieldLabel>
       </Field>
     </FieldGroup>
   )
@@ -87,9 +75,7 @@ function BasicExample() {
     <FieldGroup className="cuoio:mx-auto cuoio:w-56">
       <Field orientation="horizontal">
         <Checkbox id="terms-checkbox-basic" name="terms-checkbox-basic" />
-        <FieldLabel htmlFor="terms-checkbox-basic">
-          Accept terms and conditions
-        </FieldLabel>
+        <FieldLabel htmlFor="terms-checkbox-basic">Accept terms and conditions</FieldLabel>
       </Field>
     </FieldGroup>
   )
@@ -99,15 +85,9 @@ function DescriptionExample() {
   return (
     <FieldGroup className="cuoio:mx-auto cuoio:w-72">
       <Field orientation="horizontal">
-        <Checkbox
-          id="terms-checkbox-desc"
-          name="terms-checkbox-desc"
-          defaultChecked
-        />
+        <Checkbox id="terms-checkbox-desc" name="terms-checkbox-desc" defaultChecked />
         <FieldContent>
-          <FieldLabel htmlFor="terms-checkbox-desc">
-            Accept terms and conditions
-          </FieldLabel>
+          <FieldLabel htmlFor="terms-checkbox-desc">Accept terms and conditions</FieldLabel>
           <FieldDescription>
             By clicking this checkbox, you agree to the terms and conditions.
           </FieldDescription>
@@ -121,14 +101,8 @@ function DisabledExample() {
   return (
     <FieldGroup className="cuoio:mx-auto cuoio:w-56">
       <Field orientation="horizontal" data-disabled>
-        <Checkbox
-          id="toggle-checkbox-disabled"
-          name="toggle-checkbox-disabled"
-          disabled
-        />
-        <FieldLabel htmlFor="toggle-checkbox-disabled">
-          Enable notifications
-        </FieldLabel>
+        <Checkbox id="toggle-checkbox-disabled" name="toggle-checkbox-disabled" disabled />
+        <FieldLabel htmlFor="toggle-checkbox-disabled">Enable notifications</FieldLabel>
       </Field>
     </FieldGroup>
   )
@@ -137,12 +111,8 @@ function DisabledExample() {
 function GroupExample() {
   return (
     <FieldSet>
-      <FieldLegend variant="label">
-        Show these items on the desktop:
-      </FieldLegend>
-      <FieldDescription>
-        Select the items you want to show on the desktop.
-      </FieldDescription>
+      <FieldLegend variant="label">Show these items on the desktop:</FieldLegend>
+      <FieldDescription>Select the items you want to show on the desktop.</FieldDescription>
       <FieldGroup className="cuoio:gap-3">
         <Field orientation="horizontal">
           <Checkbox
@@ -175,10 +145,7 @@ function GroupExample() {
             id="finder-pref-9k2-cds-dvds-fzt-checkbox"
             name="finder-pref-9k2-cds-dvds-fzt-checkbox"
           />
-          <FieldLabel
-            htmlFor="finder-pref-9k2-cds-dvds-fzt-checkbox"
-            className="cuoio:font-normal"
-          >
+          <FieldLabel htmlFor="finder-pref-9k2-cds-dvds-fzt-checkbox" className="cuoio:font-normal">
             CDs, DVDs, and iPods
           </FieldLabel>
         </Field>
@@ -201,35 +168,33 @@ function GroupExample() {
 
 const Table_tableData = [
   {
-    id: "1",
-    name: "Sarah Chen",
-    email: "sarah.chen@example.com",
-    role: "Admin",
+    id: '1',
+    name: 'Sarah Chen',
+    email: 'sarah.chen@example.com',
+    role: 'Admin',
   },
   {
-    id: "2",
-    name: "Marcus Rodriguez",
-    email: "marcus.rodriguez@example.com",
-    role: "User",
+    id: '2',
+    name: 'Marcus Rodriguez',
+    email: 'marcus.rodriguez@example.com',
+    role: 'User',
   },
   {
-    id: "3",
-    name: "Priya Patel",
-    email: "priya.patel@example.com",
-    role: "User",
+    id: '3',
+    name: 'Priya Patel',
+    email: 'priya.patel@example.com',
+    role: 'User',
   },
   {
-    id: "4",
-    name: "David Kim",
-    email: "david.kim@example.com",
-    role: "Editor",
+    id: '4',
+    name: 'David Kim',
+    email: 'david.kim@example.com',
+    role: 'Editor',
   },
 ]
 
 function TableExample() {
-  const [selectedRows, setSelectedRows] = React.useState<Set<string>>(
-    new Set(["1"])
-  )
+  const [selectedRows, setSelectedRows] = React.useState<Set<string>>(new Set(['1']))
 
   const selectAll = selectedRows.size === Table_tableData.length
 
@@ -270,18 +235,13 @@ function TableExample() {
       </TableHeader>
       <TableBody>
         {Table_tableData.map((row) => (
-          <TableRow
-            key={row.id}
-            data-state={selectedRows.has(row.id) ? "selected" : undefined}
-          >
+          <TableRow key={row.id} data-state={selectedRows.has(row.id) ? 'selected' : undefined}>
             <TableCell>
               <Checkbox
                 id={`row-${row.id}-checkbox`}
                 name={`row-${row.id}-checkbox`}
                 checked={selectedRows.has(row.id)}
-                onCheckedChange={(checked) =>
-                  handleSelectRow(row.id, checked === true)
-                }
+                onCheckedChange={(checked) => handleSelectRow(row.id, checked === true)}
               />
             </TableCell>
             <TableCell className="cuoio:font-medium">{row.name}</TableCell>

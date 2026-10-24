@@ -1,5 +1,7 @@
 // @ts-nocheck
-"use client"
+'use client'
+
+import * as React from 'react'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import {
@@ -9,8 +11,8 @@ import {
   SaveIcon,
   SettingsIcon,
   TrashIcon,
-} from "lucide-react"
-import * as React from "react"
+} from 'lucide-react'
+
 import {
   Menubar,
   MenubarCheckboxItem,
@@ -26,7 +28,7 @@ import {
   MenubarSubContent,
   MenubarSubTrigger,
   MenubarTrigger,
-} from "@/components/ui/menubar"
+} from '@/components/ui/menubar'
 
 function DemoExample() {
   return (
@@ -155,9 +157,7 @@ function CheckboxExample() {
         <MenubarTrigger>View</MenubarTrigger>
         <MenubarContent className="cuoio:w-64">
           <MenubarCheckboxItem>Always Show Bookmarks Bar</MenubarCheckboxItem>
-          <MenubarCheckboxItem checked>
-            Always Show Full URLs
-          </MenubarCheckboxItem>
+          <MenubarCheckboxItem checked>Always Show Full URLs</MenubarCheckboxItem>
           <MenubarSeparator />
           <MenubarItem inset>
             Reload <MenubarShortcut>⌘R</MenubarShortcut>
@@ -180,8 +180,8 @@ function CheckboxExample() {
 }
 
 function RadioExample() {
-  const [user, setUser] = React.useState("benoit")
-  const [theme, setTheme] = React.useState("system")
+  const [user, setUser] = React.useState('benoit')
+  const [theme, setTheme] = React.useState('system')
 
   return (
     <Menubar className="cuoio:w-72">

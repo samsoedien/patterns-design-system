@@ -1,17 +1,19 @@
 // @ts-nocheck
-"use client"
+'use client'
+
+import * as React from 'react'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import * as React from "react"
-import { Card, CardContent } from "@/components/ui/card"
+
+import { Card, CardContent } from '@/components/ui/card'
 import {
   Carousel,
+  type CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-  type CarouselApi,
-} from "@/components/ui/carousel"
+} from '@/components/ui/carousel'
 
 function DemoExample() {
   return (
@@ -39,7 +41,7 @@ function SizeExample() {
   return (
     <Carousel
       opts={{
-        align: "start",
+        align: 'start',
       }}
       className="cuoio:w-full cuoio:max-w-[12rem] cuoio:sm:max-w-xs cuoio:md:max-w-sm"
     >
@@ -88,7 +90,7 @@ function OrientationExample() {
   return (
     <Carousel
       opts={{
-        align: "start",
+        align: 'start',
       }}
       orientation="vertical"
       className="cuoio:w-full cuoio:max-w-xs"
@@ -125,7 +127,7 @@ function ApiExample() {
     setCount(api.scrollSnapList().length)
     setCurrent(api.selectedScrollSnap() + 1)
 
-    api.on("select", () => {
+    api.on('select', () => {
       setCurrent(api.selectedScrollSnap() + 1)
     })
   }, [api])

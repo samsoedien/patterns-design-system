@@ -1,17 +1,18 @@
 // @ts-nocheck
-"use client"
+'use client'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Button } from "@/components/ui/button"
-import { toast } from "@/components/ui/toast"
+
+import { Button } from '@/components/ui/button'
+import { toast } from '@/components/ui/toast'
 
 function DemoExample() {
   function showToast() {
     const id = toast.add({
-      title: "Event created",
-      description: "Sunday, December 3 at 9:00 AM",
+      title: 'Event created',
+      description: 'Sunday, December 3 at 9:00 AM',
       actionProps: {
-        children: "Undo",
+        children: 'Undo',
         onClick() {
           toast.close(id)
         },
@@ -31,7 +32,7 @@ function TypesExample() {
     <div className="cuoio:flex cuoio:flex-wrap cuoio:gap-2">
       <Button
         variant="outline"
-        onClick={() => toast.add({ description: "Event has been created." })}
+        onClick={() => toast.add({ description: 'Event has been created.' })}
       >
         Default
       </Button>
@@ -39,8 +40,8 @@ function TypesExample() {
         variant="outline"
         onClick={() =>
           toast.add({
-            type: "success",
-            description: "Event has been created.",
+            type: 'success',
+            description: 'Event has been created.',
           })
         }
       >
@@ -50,8 +51,8 @@ function TypesExample() {
         variant="outline"
         onClick={() =>
           toast.add({
-            type: "info",
-            description: "Arrive 10 minutes before the event.",
+            type: 'info',
+            description: 'Arrive 10 minutes before the event.',
           })
         }
       >
@@ -61,8 +62,8 @@ function TypesExample() {
         variant="outline"
         onClick={() =>
           toast.add({
-            type: "warning",
-            description: "The event cannot start before 8:00 AM.",
+            type: 'warning',
+            description: 'The event cannot start before 8:00 AM.',
           })
         }
       >
@@ -72,9 +73,9 @@ function TypesExample() {
         variant="outline"
         onClick={() =>
           toast.add({
-            type: "error",
-            description: "The event could not be created.",
-            priority: "high",
+            type: 'error',
+            description: 'The event could not be created.',
+            priority: 'high',
           })
         }
       >
@@ -88,13 +89,13 @@ function PromiseExample() {
   function showToast() {
     toast.promise(
       new Promise<{ name: string }>((resolve) => {
-        window.setTimeout(() => resolve({ name: "Event" }), 2000)
+        window.setTimeout(() => resolve({ name: 'Event' }), 2000)
       }),
       {
-        loading: "Creating event…",
+        loading: 'Creating event…',
         success: (data) => `${data.name} created.`,
-        error: "Could not create event.",
-      }
+        error: 'Could not create event.',
+      },
     )
   }
 

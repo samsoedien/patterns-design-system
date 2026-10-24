@@ -1,8 +1,9 @@
 // @ts-nocheck
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { BookOpenCheck, FileTextIcon, GitBranchIcon, SearchIcon } from "lucide-react"
-import { Marker, MarkerContent, MarkerIcon } from "@/components/ui/marker"
-import { Spinner } from "@/components/ui/spinner"
+import { BookOpenCheck, FileTextIcon, GitBranchIcon, SearchIcon } from 'lucide-react'
+
+import { Marker, MarkerContent, MarkerIcon } from '@/components/ui/marker'
+import { Spinner } from '@/components/ui/spinner'
 
 function DemoExample() {
   return (

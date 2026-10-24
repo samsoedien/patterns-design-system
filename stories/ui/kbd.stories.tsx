@@ -1,11 +1,12 @@
 // @ts-nocheck
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { SearchIcon } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { ButtonGroup } from "@/components/ui/button-group"
-import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/input-group"
-import { Kbd, KbdGroup } from "@/components/ui/kbd"
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
+import { SearchIcon } from 'lucide-react'
+
+import { Button } from '@/components/ui/button'
+import { ButtonGroup } from '@/components/ui/button-group'
+import { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'
+import { Kbd, KbdGroup } from '@/components/ui/kbd'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 
 function DemoExample() {
   return (
@@ -29,11 +30,11 @@ function GroupExample() {
   return (
     <div className="cuoio:flex cuoio:flex-col cuoio:items-center cuoio:gap-4">
       <p className="cuoio:text-sm cuoio:text-muted-foreground">
-        Use{" "}
+        Use{' '}
         <KbdGroup>
           <Kbd>Ctrl + B</Kbd>
           <Kbd>Ctrl + K</Kbd>
-        </KbdGroup>{" "}
+        </KbdGroup>{' '}
         to open the command palette
       </p>
     </div>
@@ -43,7 +44,7 @@ function GroupExample() {
 function ButtonExample() {
   return (
     <Button variant="outline">
-      Accept{" "}
+      Accept{' '}
       <Kbd data-icon="inline-end" className="cuoio:translate-x-0.5">
         ⏎
       </Kbd>
@@ -56,19 +57,15 @@ function TooltipExample() {
     <div className="cuoio:flex cuoio:flex-wrap cuoio:gap-4">
       <ButtonGroup>
         <Tooltip>
-          <TooltipTrigger render={<Button variant="outline" />}>
-            Save
-          </TooltipTrigger>
+          <TooltipTrigger render={<Button variant="outline" />}>Save</TooltipTrigger>
           <TooltipContent>
             Save Changes <Kbd>S</Kbd>
           </TooltipContent>
         </Tooltip>
         <Tooltip>
-          <TooltipTrigger render={<Button variant="outline" />}>
-            Print
-          </TooltipTrigger>
+          <TooltipTrigger render={<Button variant="outline" />}>Print</TooltipTrigger>
           <TooltipContent>
-            Print Document{" "}
+            Print Document{' '}
             <KbdGroup>
               <Kbd>Ctrl</Kbd>
               <Kbd>P</Kbd>

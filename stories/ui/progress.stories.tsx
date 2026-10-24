@@ -1,10 +1,12 @@
 // @ts-nocheck
-"use client"
+'use client'
+
+import * as React from 'react'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import * as React from "react"
-import { Progress, ProgressLabel, ProgressValue } from "@/components/ui/progress"
-import { Slider } from "@/components/ui/slider"
+
+import { Progress, ProgressLabel, ProgressValue } from '@/components/ui/progress'
+import { Slider } from '@/components/ui/slider'
 
 function DemoExample() {
   const [progress, setProgress] = React.useState(13)

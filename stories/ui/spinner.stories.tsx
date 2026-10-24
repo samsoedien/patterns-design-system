@@ -1,8 +1,10 @@
 // @ts-nocheck
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { ArrowUpIcon, LoaderIcon } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { cn } from 'cn'
+import { ArrowUpIcon, LoaderIcon } from 'lucide-react'
+
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 import {
   Empty,
   EmptyContent,
@@ -10,21 +12,20 @@ import {
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
-} from "@/components/ui/empty"
+} from '@/components/ui/empty'
 import {
   InputGroup,
   InputGroupAddon,
   InputGroupButton,
   InputGroupInput,
   InputGroupTextarea,
-} from "@/components/ui/input-group"
-import { Item, ItemContent, ItemMedia, ItemTitle } from "@/components/ui/item"
-import { Spinner } from "@/components/ui/spinner"
-import { cn } from "cn"
+} from '@/components/ui/input-group'
+import { Item, ItemContent, ItemMedia, ItemTitle } from '@/components/ui/item'
+import { Spinner } from '@/components/ui/spinner'
 
 function DemoExample() {
   return (
-    <div className="cuoio:flex cuoio:w-full cuoio:max-w-xs cuoio:flex-col cuoio:gap-4 [--radius:1rem]">
+    <div className="[--radius:1rem] cuoio:flex cuoio:w-full cuoio:max-w-xs cuoio:flex-col cuoio:gap-4">
       <Item variant="muted">
         <ItemMedia>
           <Spinner />
@@ -40,12 +41,12 @@ function DemoExample() {
   )
 }
 
-function Custom_Spinner({ className, ...props }: React.ComponentProps<"svg">) {
+function Custom_Spinner({ className, ...props }: React.ComponentProps<'svg'>) {
   return (
     <LoaderIcon
       role="status"
       aria-label="Loading"
-      className={cn("size-4 animate-spin", className)}
+      className={cn('size-4 animate-spin', className)}
       {...props}
     />
   )
@@ -91,7 +92,7 @@ function ButtonExample() {
 
 function BadgeExample() {
   return (
-    <div className="cuoio:flex cuoio:items-center cuoio:gap-4 [--radius:1.2rem]">
+    <div className="[--radius:1.2rem] cuoio:flex cuoio:items-center cuoio:gap-4">
       <Badge>
         <Spinner data-icon="inline-start" />
         Syncing

@@ -1,5 +1,7 @@
 // @ts-nocheck
-"use client"
+'use client'
+
+import * as React from 'react'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import {
@@ -10,8 +12,8 @@ import {
   ScissorsIcon,
   ShareIcon,
   TrashIcon,
-} from "lucide-react"
-import * as React from "react"
+} from 'lucide-react'
+
 import {
   ContextMenu,
   ContextMenuCheckboxItem,
@@ -27,18 +29,14 @@ import {
   ContextMenuSubContent,
   ContextMenuSubTrigger,
   ContextMenuTrigger,
-} from "@/components/ui/context-menu"
+} from '@/components/ui/context-menu'
 
 function DemoExample() {
   return (
     <ContextMenu>
       <ContextMenuTrigger className="cuoio:flex cuoio:aspect-video cuoio:w-full cuoio:max-w-xs cuoio:items-center cuoio:justify-center cuoio:rounded-xl cuoio:border cuoio:border-dashed cuoio:text-sm">
-        <span className="cuoio:hidden cuoio:pointer-fine:inline-block">
-          Right click here
-        </span>
-        <span className="cuoio:hidden cuoio:pointer-coarse:inline-block">
-          Long press here
-        </span>
+        <span className="cuoio:hidden cuoio:pointer-fine:inline-block">Right click here</span>
+        <span className="cuoio:hidden cuoio:pointer-coarse:inline-block">Long press here</span>
       </ContextMenuTrigger>
       <ContextMenuContent className="cuoio:w-48">
         <ContextMenuGroup>
@@ -75,18 +73,14 @@ function DemoExample() {
         </ContextMenuGroup>
         <ContextMenuSeparator />
         <ContextMenuGroup>
-          <ContextMenuCheckboxItem checked>
-            Show Bookmarks
-          </ContextMenuCheckboxItem>
+          <ContextMenuCheckboxItem checked>Show Bookmarks</ContextMenuCheckboxItem>
           <ContextMenuCheckboxItem>Show Full URLs</ContextMenuCheckboxItem>
         </ContextMenuGroup>
         <ContextMenuSeparator />
         <ContextMenuGroup>
           <ContextMenuRadioGroup value="pedro">
             <ContextMenuLabel>People</ContextMenuLabel>
-            <ContextMenuRadioItem value="pedro">
-              Pedro Duarte
-            </ContextMenuRadioItem>
+            <ContextMenuRadioItem value="pedro">Pedro Duarte</ContextMenuRadioItem>
             <ContextMenuRadioItem value="colm">Colm Tuite</ContextMenuRadioItem>
           </ContextMenuRadioGroup>
         </ContextMenuGroup>
@@ -99,12 +93,8 @@ function BasicExample() {
   return (
     <ContextMenu>
       <ContextMenuTrigger className="cuoio:flex cuoio:aspect-video cuoio:w-full cuoio:max-w-xs cuoio:items-center cuoio:justify-center cuoio:rounded-xl cuoio:border cuoio:border-dashed cuoio:text-sm">
-        <span className="cuoio:hidden cuoio:pointer-fine:inline-block">
-          Right click here
-        </span>
-        <span className="cuoio:hidden cuoio:pointer-coarse:inline-block">
-          Long press here
-        </span>
+        <span className="cuoio:hidden cuoio:pointer-fine:inline-block">Right click here</span>
+        <span className="cuoio:hidden cuoio:pointer-coarse:inline-block">Long press here</span>
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuGroup>
@@ -121,12 +111,8 @@ function SubmenuExample() {
   return (
     <ContextMenu>
       <ContextMenuTrigger className="cuoio:flex cuoio:aspect-video cuoio:w-full cuoio:max-w-xs cuoio:items-center cuoio:justify-center cuoio:rounded-xl cuoio:border cuoio:border-dashed cuoio:text-sm">
-        <span className="cuoio:hidden cuoio:pointer-fine:inline-block">
-          Right click here
-        </span>
-        <span className="cuoio:hidden cuoio:pointer-coarse:inline-block">
-          Long press here
-        </span>
+        <span className="cuoio:hidden cuoio:pointer-fine:inline-block">Right click here</span>
+        <span className="cuoio:hidden cuoio:pointer-coarse:inline-block">Long press here</span>
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuGroup>
@@ -166,12 +152,8 @@ function ShortcutsExample() {
   return (
     <ContextMenu>
       <ContextMenuTrigger className="cuoio:flex cuoio:aspect-video cuoio:w-full cuoio:max-w-xs cuoio:items-center cuoio:justify-center cuoio:rounded-xl cuoio:border cuoio:border-dashed cuoio:text-sm">
-        <span className="cuoio:hidden cuoio:pointer-fine:inline-block">
-          Right click here
-        </span>
-        <span className="cuoio:hidden cuoio:pointer-coarse:inline-block">
-          Long press here
-        </span>
+        <span className="cuoio:hidden cuoio:pointer-fine:inline-block">Right click here</span>
+        <span className="cuoio:hidden cuoio:pointer-coarse:inline-block">Long press here</span>
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuGroup>
@@ -208,12 +190,8 @@ function GroupsExample() {
   return (
     <ContextMenu>
       <ContextMenuTrigger className="cuoio:flex cuoio:aspect-video cuoio:w-full cuoio:max-w-xs cuoio:items-center cuoio:justify-center cuoio:rounded-xl cuoio:border cuoio:border-dashed cuoio:text-sm">
-        <span className="cuoio:hidden cuoio:pointer-fine:inline-block">
-          Right click here
-        </span>
-        <span className="cuoio:hidden cuoio:pointer-coarse:inline-block">
-          Long press here
-        </span>
+        <span className="cuoio:hidden cuoio:pointer-fine:inline-block">Right click here</span>
+        <span className="cuoio:hidden cuoio:pointer-coarse:inline-block">Long press here</span>
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuGroup>
@@ -274,12 +252,8 @@ function IconsExample() {
   return (
     <ContextMenu>
       <ContextMenuTrigger className="cuoio:flex cuoio:aspect-video cuoio:w-full cuoio:max-w-xs cuoio:items-center cuoio:justify-center cuoio:rounded-xl cuoio:border cuoio:border-dashed cuoio:text-sm">
-        <span className="cuoio:hidden cuoio:pointer-fine:inline-block">
-          Right click here
-        </span>
-        <span className="cuoio:hidden cuoio:pointer-coarse:inline-block">
-          Long press here
-        </span>
+        <span className="cuoio:hidden cuoio:pointer-fine:inline-block">Right click here</span>
+        <span className="cuoio:hidden cuoio:pointer-coarse:inline-block">Long press here</span>
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuGroup>
@@ -312,22 +286,14 @@ function CheckboxesExample() {
   return (
     <ContextMenu>
       <ContextMenuTrigger className="cuoio:flex cuoio:aspect-video cuoio:w-full cuoio:max-w-xs cuoio:items-center cuoio:justify-center cuoio:rounded-xl cuoio:border cuoio:border-dashed cuoio:text-sm">
-        <span className="cuoio:hidden cuoio:pointer-fine:inline-block">
-          Right click here
-        </span>
-        <span className="cuoio:hidden cuoio:pointer-coarse:inline-block">
-          Long press here
-        </span>
+        <span className="cuoio:hidden cuoio:pointer-fine:inline-block">Right click here</span>
+        <span className="cuoio:hidden cuoio:pointer-coarse:inline-block">Long press here</span>
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuGroup>
-          <ContextMenuCheckboxItem defaultChecked>
-            Show Bookmarks Bar
-          </ContextMenuCheckboxItem>
+          <ContextMenuCheckboxItem defaultChecked>Show Bookmarks Bar</ContextMenuCheckboxItem>
           <ContextMenuCheckboxItem>Show Full URLs</ContextMenuCheckboxItem>
-          <ContextMenuCheckboxItem defaultChecked>
-            Show Developer Tools
-          </ContextMenuCheckboxItem>
+          <ContextMenuCheckboxItem defaultChecked>Show Developer Tools</ContextMenuCheckboxItem>
         </ContextMenuGroup>
       </ContextMenuContent>
     </ContextMenu>
@@ -335,26 +301,20 @@ function CheckboxesExample() {
 }
 
 function RadioExample() {
-  const [user, setUser] = React.useState("pedro")
-  const [theme, setTheme] = React.useState("light")
+  const [user, setUser] = React.useState('pedro')
+  const [theme, setTheme] = React.useState('light')
 
   return (
     <ContextMenu>
       <ContextMenuTrigger className="cuoio:flex cuoio:aspect-video cuoio:w-full cuoio:max-w-xs cuoio:items-center cuoio:justify-center cuoio:rounded-xl cuoio:border cuoio:border-dashed cuoio:text-sm">
-        <span className="cuoio:hidden cuoio:pointer-fine:inline-block">
-          Right click here
-        </span>
-        <span className="cuoio:hidden cuoio:pointer-coarse:inline-block">
-          Long press here
-        </span>
+        <span className="cuoio:hidden cuoio:pointer-fine:inline-block">Right click here</span>
+        <span className="cuoio:hidden cuoio:pointer-coarse:inline-block">Long press here</span>
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuGroup>
           <ContextMenuLabel>People</ContextMenuLabel>
           <ContextMenuRadioGroup value={user} onValueChange={setUser}>
-            <ContextMenuRadioItem value="pedro">
-              Pedro Duarte
-            </ContextMenuRadioItem>
+            <ContextMenuRadioItem value="pedro">Pedro Duarte</ContextMenuRadioItem>
             <ContextMenuRadioItem value="colm">Colm Tuite</ContextMenuRadioItem>
           </ContextMenuRadioGroup>
         </ContextMenuGroup>
@@ -376,12 +336,8 @@ function DestructiveExample() {
   return (
     <ContextMenu>
       <ContextMenuTrigger className="cuoio:flex cuoio:aspect-video cuoio:w-full cuoio:max-w-xs cuoio:items-center cuoio:justify-center cuoio:rounded-xl cuoio:border cuoio:border-dashed cuoio:text-sm">
-        <span className="cuoio:hidden cuoio:pointer-fine:inline-block">
-          Right click here
-        </span>
-        <span className="cuoio:hidden cuoio:pointer-coarse:inline-block">
-          Long press here
-        </span>
+        <span className="cuoio:hidden cuoio:pointer-fine:inline-block">Right click here</span>
+        <span className="cuoio:hidden cuoio:pointer-coarse:inline-block">Long press here</span>
       </ContextMenuTrigger>
       <ContextMenuContent>
         <ContextMenuGroup>
@@ -411,12 +367,8 @@ function SidesExample() {
     <div className="cuoio:grid cuoio:w-full cuoio:max-w-sm cuoio:grid-cols-2 cuoio:gap-4">
       <ContextMenu>
         <ContextMenuTrigger className="cuoio:flex cuoio:aspect-video cuoio:w-full cuoio:max-w-xs cuoio:items-center cuoio:justify-center cuoio:rounded-xl cuoio:border cuoio:border-dashed cuoio:text-sm">
-          <span className="cuoio:hidden cuoio:pointer-fine:inline-block">
-            Right click (top)
-          </span>
-          <span className="cuoio:hidden cuoio:pointer-coarse:inline-block">
-            Long press (top)
-          </span>
+          <span className="cuoio:hidden cuoio:pointer-fine:inline-block">Right click (top)</span>
+          <span className="cuoio:hidden cuoio:pointer-coarse:inline-block">Long press (top)</span>
         </ContextMenuTrigger>
         <ContextMenuContent side="top">
           <ContextMenuGroup>
@@ -428,12 +380,8 @@ function SidesExample() {
       </ContextMenu>
       <ContextMenu>
         <ContextMenuTrigger className="cuoio:flex cuoio:aspect-video cuoio:w-full cuoio:max-w-xs cuoio:items-center cuoio:justify-center cuoio:rounded-xl cuoio:border cuoio:border-dashed cuoio:text-sm">
-          <span className="cuoio:hidden cuoio:pointer-fine:inline-block">
-            Right click (right)
-          </span>
-          <span className="cuoio:hidden cuoio:pointer-coarse:inline-block">
-            Long press (right)
-          </span>
+          <span className="cuoio:hidden cuoio:pointer-fine:inline-block">Right click (right)</span>
+          <span className="cuoio:hidden cuoio:pointer-coarse:inline-block">Long press (right)</span>
         </ContextMenuTrigger>
         <ContextMenuContent side="right">
           <ContextMenuGroup>
@@ -445,9 +393,7 @@ function SidesExample() {
       </ContextMenu>
       <ContextMenu>
         <ContextMenuTrigger className="cuoio:flex cuoio:aspect-video cuoio:w-full cuoio:max-w-xs cuoio:items-center cuoio:justify-center cuoio:rounded-xl cuoio:border cuoio:border-dashed cuoio:text-sm">
-          <span className="cuoio:hidden cuoio:pointer-fine:inline-block">
-            Right click (bottom)
-          </span>
+          <span className="cuoio:hidden cuoio:pointer-fine:inline-block">Right click (bottom)</span>
           <span className="cuoio:hidden cuoio:pointer-coarse:inline-block">
             Long press (bottom)
           </span>
@@ -462,12 +408,8 @@ function SidesExample() {
       </ContextMenu>
       <ContextMenu>
         <ContextMenuTrigger className="cuoio:flex cuoio:aspect-video cuoio:w-full cuoio:max-w-xs cuoio:items-center cuoio:justify-center cuoio:rounded-xl cuoio:border cuoio:border-dashed cuoio:text-sm">
-          <span className="cuoio:hidden cuoio:pointer-fine:inline-block">
-            Right click (left)
-          </span>
-          <span className="cuoio:hidden cuoio:pointer-coarse:inline-block">
-            Long press (left)
-          </span>
+          <span className="cuoio:hidden cuoio:pointer-fine:inline-block">Right click (left)</span>
+          <span className="cuoio:hidden cuoio:pointer-coarse:inline-block">Long press (left)</span>
         </ContextMenuTrigger>
         <ContextMenuContent side="left">
           <ContextMenuGroup>

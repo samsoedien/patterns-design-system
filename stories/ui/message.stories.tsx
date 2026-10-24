@@ -1,5 +1,5 @@
 // @ts-nocheck
-"use client"
+'use client'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import {
@@ -9,7 +9,8 @@ import {
   RefreshCcwIcon,
   ThumbsDownIcon,
   ThumbsUpIcon,
-} from "lucide-react"
+} from 'lucide-react'
+
 import {
   Attachment,
   AttachmentAction,
@@ -18,11 +19,11 @@ import {
   AttachmentDescription,
   AttachmentMedia,
   AttachmentTitle,
-} from "@/components/ui/attachment"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Bubble, BubbleContent, BubbleGroup, BubbleReactions } from "@/components/ui/bubble"
-import { Button } from "@/components/ui/button"
-import { Marker, MarkerContent } from "@/components/ui/marker"
+} from '@/components/ui/attachment'
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Bubble, BubbleContent, BubbleGroup, BubbleReactions } from '@/components/ui/bubble'
+import { Button } from '@/components/ui/button'
+import { Marker, MarkerContent } from '@/components/ui/marker'
 import {
   Message,
   MessageAvatar,
@@ -30,7 +31,7 @@ import {
   MessageFooter,
   MessageGroup,
   MessageHeader,
-} from "@/components/ui/message"
+} from '@/components/ui/message'
 
 function DemoExample() {
   return (
@@ -85,9 +86,7 @@ function DemoExample() {
         <MessageContent>
           <BubbleGroup>
             <Bubble variant="muted">
-              <BubbleContent>
-                It&apos;s always a one-line change 😭.
-              </BubbleContent>
+              <BubbleContent>It&apos;s always a one-line change 😭.</BubbleContent>
             </Bubble>
             <Bubble variant="muted">
               <BubbleContent>Alright, let me take a look.</BubbleContent>
@@ -119,9 +118,7 @@ function AvatarExample() {
         </MessageAvatar>
         <MessageContent>
           <Bubble variant="muted">
-            <BubbleContent>
-              The build failed during dependency installation.
-            </BubbleContent>
+            <BubbleContent>The build failed during dependency installation.</BubbleContent>
           </Bubble>
         </MessageContent>
       </Message>
@@ -152,8 +149,8 @@ function AvatarExample() {
             </Bubble>
             <Bubble variant="muted">
               <BubbleContent>
-                Something went wrong with the build. The libraries are not
-                installed correctly. Try running the build again.
+                Something went wrong with the build. The libraries are not installed correctly. Try
+                running the build again.
               </BubbleContent>
             </Bubble>
           </BubbleGroup>
@@ -230,9 +227,7 @@ function ActionsExample() {
       <Message>
         <MessageContent>
           <Bubble variant="muted">
-            <BubbleContent>
-              The install failure is coming from the workspace package.
-            </BubbleContent>
+            <BubbleContent>The install failure is coming from the workspace package.</BubbleContent>
           </Bubble>
           <MessageFooter>
             <Button variant="ghost" size="icon" aria-label="Copy" title="Copy">
@@ -241,12 +236,7 @@ function ActionsExample() {
             <Button variant="ghost" size="icon" aria-label="Like" title="Like">
               <ThumbsUpIcon />
             </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              aria-label="Dislike"
-              title="Dislike"
-            >
+            <Button variant="ghost" size="icon" aria-label="Dislike" title="Dislike">
               <ThumbsDownIcon />
             </Button>
           </MessageFooter>
@@ -259,12 +249,7 @@ function ActionsExample() {
           </Bubble>
           <MessageFooter className="cuoio:gap-2">
             <span className="cuoio:font-normal cuoio:text-destructive">Failed to send</span>
-            <Button
-              variant="ghost"
-              size="icon-xs"
-              title="Retry"
-              aria-label="Retry"
-            >
+            <Button variant="ghost" size="icon-xs" title="Retry" aria-label="Retry">
               <RefreshCcwIcon />
             </Button>
           </MessageFooter>
@@ -289,8 +274,7 @@ function AttachmentExample() {
           </Attachment>
           <Bubble>
             <BubbleContent>
-              Here&apos;s the image. Can you add it to the PDF? Use it for the
-              cover page.
+              Here&apos;s the image. Can you add it to the PDF? Use it for the cover page.
             </BubbleContent>
           </Bubble>
         </MessageContent>

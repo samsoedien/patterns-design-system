@@ -1,11 +1,16 @@
 // @ts-nocheck
+import Image from 'next/image'
+
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { AspectRatio } from "@/components/ui/aspect-ratio"
-import Image from "next/image"
+
+import { AspectRatio } from '@/components/ui/aspect-ratio'
 
 function DemoExample() {
   return (
-    <AspectRatio ratio={16 / 9} className="cuoio:w-full cuoio:max-w-sm cuoio:rounded-lg cuoio:bg-muted">
+    <AspectRatio
+      ratio={16 / 9}
+      className="cuoio:w-full cuoio:max-w-sm cuoio:rounded-lg cuoio:bg-muted"
+    >
       <Image
         src="https://avatar.vercel.sh/shadcn1"
         alt="Photo"

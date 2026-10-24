@@ -8,11 +8,12 @@ import {
   FileSearchIcon,
   FileTextIcon,
   FileWarningIcon,
+  type LucideIcon,
   RefreshCwIcon,
   TableIcon,
   XIcon,
-  type LucideIcon,
-} from "lucide-react"
+} from 'lucide-react'
+
 import {
   Attachment,
   AttachmentAction,
@@ -23,7 +24,7 @@ import {
   AttachmentMedia,
   AttachmentTitle,
   AttachmentTrigger,
-} from "@/components/ui/attachment"
+} from '@/components/ui/attachment'
 import {
   Dialog,
   DialogContent,
@@ -31,27 +32,27 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Spinner } from "@/components/ui/spinner"
+} from '@/components/ui/dialog'
+import { Spinner } from '@/components/ui/spinner'
 
 const Demo_images = [
   {
-    name: "workspace.png",
-    meta: "PNG · 820 KB",
-    src: "https://Demo_images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&auto=format&fit=crop&q=80",
-    alt: "Workspace",
+    name: 'workspace.png',
+    meta: 'PNG · 820 KB',
+    src: 'https://Demo_images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&auto=format&fit=crop&q=80',
+    alt: 'Workspace',
   },
   {
-    name: "desk-reference.jpg",
-    meta: "JPG · 1.1 MB",
-    src: "https://Demo_images.unsplash.com/photo-1497215728101-856f4ea42174?w=900&auto=format&fit=crop&q=80",
-    alt: "Desk",
+    name: 'desk-reference.jpg',
+    meta: 'JPG · 1.1 MB',
+    src: 'https://Demo_images.unsplash.com/photo-1497215728101-856f4ea42174?w=900&auto=format&fit=crop&q=80',
+    alt: 'Desk',
   },
   {
-    name: "office-reference.jpg",
-    meta: "JPG · 940 KB",
-    src: "https://Demo_images.unsplash.com/photo-1497366811353-6870744d04b2?w=900&auto=format&fit=crop&q=80",
-    alt: "Office",
+    name: 'office-reference.jpg',
+    meta: 'JPG · 940 KB',
+    src: 'https://Demo_images.unsplash.com/photo-1497366811353-6870744d04b2?w=900&auto=format&fit=crop&q=80',
+    alt: 'Office',
   },
 ]
 
@@ -105,22 +106,22 @@ function DemoExample() {
 
 const Image_images = [
   {
-    name: "workspace.png",
-    meta: "PNG · 820 KB",
-    src: "https://Image_images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&auto=format&fit=crop&q=80",
-    alt: "Workspace",
+    name: 'workspace.png',
+    meta: 'PNG · 820 KB',
+    src: 'https://Image_images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&auto=format&fit=crop&q=80',
+    alt: 'Workspace',
   },
   {
-    name: "desk-reference.jpg",
-    meta: "JPG · 1.1 MB",
-    src: "https://Image_images.unsplash.com/photo-1497215728101-856f4ea42174?w=900&auto=format&fit=crop&q=80",
-    alt: "Desk",
+    name: 'desk-reference.jpg',
+    meta: 'JPG · 1.1 MB',
+    src: 'https://Image_images.unsplash.com/photo-1497215728101-856f4ea42174?w=900&auto=format&fit=crop&q=80',
+    alt: 'Desk',
   },
   {
-    name: "office-reference.jpg",
-    meta: "JPG · 940 KB",
-    src: "https://Image_images.unsplash.com/photo-1497366811353-6870744d04b2?w=900&auto=format&fit=crop&q=80",
-    alt: "Office",
+    name: 'office-reference.jpg',
+    meta: 'JPG · 940 KB',
+    src: 'https://Image_images.unsplash.com/photo-1497366811353-6870744d04b2?w=900&auto=format&fit=crop&q=80',
+    alt: 'Office',
   },
 ]
 
@@ -210,9 +211,7 @@ function StatesExample() {
         </AttachmentMedia>
         <AttachmentContent>
           <AttachmentTitle>financial-model.xlsx</AttachmentTitle>
-          <AttachmentDescription>
-            Upload failed. Try again.
-          </AttachmentDescription>
+          <AttachmentDescription>Upload failed. Try again.</AttachmentDescription>
         </AttachmentContent>
         <AttachmentActions>
           <AttachmentAction aria-label="Retry upload">
@@ -282,14 +281,14 @@ type Item = {
 }
 
 const Group_items: Item[] = [
-  { name: "briefing-notes.pdf", meta: "PDF · 1.4 MB", icon: FileTextIcon },
+  { name: 'briefing-notes.pdf', meta: 'PDF · 1.4 MB', icon: FileTextIcon },
   {
-    name: "workspace.png",
-    meta: "PNG · 820 KB",
-    src: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&auto=format&fit=crop&q=80",
+    name: 'workspace.png',
+    meta: 'PNG · 820 KB',
+    src: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&auto=format&fit=crop&q=80',
   },
-  { name: "customers.csv", meta: "CSV · 18 KB", icon: TableIcon },
-  { name: "renderer.tsx", meta: "TSX · 12 KB", icon: FileCodeIcon },
+  { name: 'customers.csv', meta: 'CSV · 18 KB', icon: TableIcon },
+  { name: 'renderer.tsx', meta: 'TSX · 12 KB', icon: FileCodeIcon },
 ]
 
 function GroupExample() {
@@ -347,18 +346,14 @@ function TriggerExample() {
               <XIcon />
             </AttachmentAction>
           </AttachmentActions>
-          <DialogTrigger
-            render={
-              <AttachmentTrigger aria-label="Preview research-summary.pdf" />
-            }
-          />
+          <DialogTrigger render={<AttachmentTrigger aria-label="Preview research-summary.pdf" />} />
         </Attachment>
         <DialogContent className="cuoio:sm:max-w-md">
           <DialogHeader>
             <DialogTitle>research-summary.pdf</DialogTitle>
             <DialogDescription>
-              The attachment trigger fills the card and opens the dialog, while
-              the actions stay independently clickable above it.
+              The attachment trigger fills the card and opens the dialog, while the actions stay
+              independently clickable above it.
             </DialogDescription>
           </DialogHeader>
         </DialogContent>

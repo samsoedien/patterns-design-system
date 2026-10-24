@@ -1,85 +1,80 @@
 // @ts-nocheck
-"use client"
+'use client'
+
+import * as React from 'react'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import * as React from "react"
+import { cn } from 'cn'
+import { Bar, BarChart, CartesianGrid, XAxis } from 'recharts'
+
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import {
+  type ChartConfig,
   ChartContainer,
   ChartLegend,
   ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
-  type ChartConfig,
-} from "@/components/ui/chart"
-import { cn } from "cn"
-import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
+} from '@/components/ui/chart'
 
-export const description = "An interactive bar chart"
+export const description = 'An interactive bar chart'
 
 const Demo_chartData = [
-  { date: "2024-04-01", desktop: 222, mobile: 150 },
-  { date: "2024-04-02", desktop: 97, mobile: 180 },
-  { date: "2024-04-03", desktop: 167, mobile: 120 },
-  { date: "2024-04-04", desktop: 242, mobile: 260 },
-  { date: "2024-04-05", desktop: 373, mobile: 290 },
-  { date: "2024-04-06", desktop: 301, mobile: 340 },
-  { date: "2024-04-07", desktop: 245, mobile: 180 },
-  { date: "2024-04-08", desktop: 409, mobile: 320 },
-  { date: "2024-04-09", desktop: 59, mobile: 110 },
-  { date: "2024-04-10", desktop: 261, mobile: 190 },
-  { date: "2024-04-11", desktop: 327, mobile: 350 },
-  { date: "2024-04-12", desktop: 292, mobile: 210 },
-  { date: "2024-04-13", desktop: 342, mobile: 380 },
-  { date: "2024-04-14", desktop: 137, mobile: 220 },
-  { date: "2024-04-15", desktop: 120, mobile: 170 },
-  { date: "2024-04-16", desktop: 138, mobile: 190 },
-  { date: "2024-04-17", desktop: 446, mobile: 360 },
-  { date: "2024-04-18", desktop: 364, mobile: 410 },
-  { date: "2024-04-19", desktop: 243, mobile: 180 },
-  { date: "2024-04-20", desktop: 89, mobile: 150 },
-  { date: "2024-04-21", desktop: 137, mobile: 200 },
-  { date: "2024-04-22", desktop: 224, mobile: 170 },
-  { date: "2024-04-23", desktop: 138, mobile: 230 },
-  { date: "2024-04-24", desktop: 387, mobile: 290 },
-  { date: "2024-04-25", desktop: 215, mobile: 250 },
-  { date: "2024-04-26", desktop: 75, mobile: 130 },
-  { date: "2024-04-27", desktop: 383, mobile: 420 },
-  { date: "2024-04-28", desktop: 122, mobile: 180 },
-  { date: "2024-04-29", desktop: 315, mobile: 240 },
-  { date: "2024-04-30", desktop: 454, mobile: 380 },
+  { date: '2024-04-01', desktop: 222, mobile: 150 },
+  { date: '2024-04-02', desktop: 97, mobile: 180 },
+  { date: '2024-04-03', desktop: 167, mobile: 120 },
+  { date: '2024-04-04', desktop: 242, mobile: 260 },
+  { date: '2024-04-05', desktop: 373, mobile: 290 },
+  { date: '2024-04-06', desktop: 301, mobile: 340 },
+  { date: '2024-04-07', desktop: 245, mobile: 180 },
+  { date: '2024-04-08', desktop: 409, mobile: 320 },
+  { date: '2024-04-09', desktop: 59, mobile: 110 },
+  { date: '2024-04-10', desktop: 261, mobile: 190 },
+  { date: '2024-04-11', desktop: 327, mobile: 350 },
+  { date: '2024-04-12', desktop: 292, mobile: 210 },
+  { date: '2024-04-13', desktop: 342, mobile: 380 },
+  { date: '2024-04-14', desktop: 137, mobile: 220 },
+  { date: '2024-04-15', desktop: 120, mobile: 170 },
+  { date: '2024-04-16', desktop: 138, mobile: 190 },
+  { date: '2024-04-17', desktop: 446, mobile: 360 },
+  { date: '2024-04-18', desktop: 364, mobile: 410 },
+  { date: '2024-04-19', desktop: 243, mobile: 180 },
+  { date: '2024-04-20', desktop: 89, mobile: 150 },
+  { date: '2024-04-21', desktop: 137, mobile: 200 },
+  { date: '2024-04-22', desktop: 224, mobile: 170 },
+  { date: '2024-04-23', desktop: 138, mobile: 230 },
+  { date: '2024-04-24', desktop: 387, mobile: 290 },
+  { date: '2024-04-25', desktop: 215, mobile: 250 },
+  { date: '2024-04-26', desktop: 75, mobile: 130 },
+  { date: '2024-04-27', desktop: 383, mobile: 420 },
+  { date: '2024-04-28', desktop: 122, mobile: 180 },
+  { date: '2024-04-29', desktop: 315, mobile: 240 },
+  { date: '2024-04-30', desktop: 454, mobile: 380 },
 ]
 
 const Demo_chartConfig = {
   views: {
-    label: "Page Views",
+    label: 'Page Views',
   },
   desktop: {
-    label: "Desktop",
-    color: "var(--chart-2)",
+    label: 'Desktop',
+    color: 'var(--chart-2)',
   },
   mobile: {
-    label: "Mobile",
-    color: "var(--chart-1)",
+    label: 'Mobile',
+    color: 'var(--chart-1)',
   },
 } satisfies ChartConfig
 
 function DemoExample() {
-  const [activeChart, setActiveChart] =
-    React.useState<keyof typeof Demo_chartConfig>("desktop")
+  const [activeChart, setActiveChart] = React.useState<keyof typeof Demo_chartConfig>('desktop')
 
   const total = React.useMemo(
     () => ({
       desktop: Demo_chartData.reduce((acc, curr) => acc + curr.desktop, 0),
       mobile: Demo_chartData.reduce((acc, curr) => acc + curr.mobile, 0),
     }),
-    []
+    [],
   )
 
   return (
@@ -87,12 +82,10 @@ function DemoExample() {
       <CardHeader className="cuoio:flex cuoio:flex-col cuoio:items-stretch cuoio:border-b cuoio:p-0! cuoio:sm:flex-row">
         <div className="cuoio:flex cuoio:flex-1 cuoio:flex-col cuoio:justify-center cuoio:gap-1 cuoio:px-6 cuoio:pt-4 cuoio:pb-3 cuoio:sm:py-0!">
           <CardTitle>Bar Chart - Interactive</CardTitle>
-          <CardDescription>
-            Showing total visitors for the last 3 months
-          </CardDescription>
+          <CardDescription>Showing total visitors for the last 3 months</CardDescription>
         </div>
         <div className="cuoio:flex">
-          {["desktop", "mobile"].map((key) => {
+          {['desktop', 'mobile'].map((key) => {
             const chart = key as keyof typeof Demo_chartConfig
             return (
               <button
@@ -134,9 +127,9 @@ function DemoExample() {
               minTickGap={32}
               tickFormatter={(value) => {
                 const date = new Date(value)
-                return date.toLocaleDateString("en-US", {
-                  month: "short",
-                  day: "numeric",
+                return date.toLocaleDateString('en-US', {
+                  month: 'short',
+                  day: 'numeric',
                 })
               }}
             />
@@ -146,10 +139,10 @@ function DemoExample() {
                   className="cuoio:w-[150px]"
                   nameKey="views"
                   labelFormatter={(value) => {
-                    return new Date(value).toLocaleDateString("en-US", {
-                      month: "short",
-                      day: "numeric",
-                      year: "numeric",
+                    return new Date(value).toLocaleDateString('en-US', {
+                      month: 'short',
+                      day: 'numeric',
+                      year: 'numeric',
                     })
                   }}
                 />
@@ -164,22 +157,22 @@ function DemoExample() {
 }
 
 const Example_chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
+  { month: 'January', desktop: 186, mobile: 80 },
+  { month: 'February', desktop: 305, mobile: 200 },
+  { month: 'March', desktop: 237, mobile: 120 },
+  { month: 'April', desktop: 73, mobile: 190 },
+  { month: 'May', desktop: 209, mobile: 130 },
+  { month: 'June', desktop: 214, mobile: 140 },
 ]
 
 const Example_chartConfig = {
   desktop: {
-    label: "Desktop",
-    color: "#2563eb",
+    label: 'Desktop',
+    color: '#2563eb',
   },
   mobile: {
-    label: "Mobile",
-    color: "#60a5fa",
+    label: 'Mobile',
+    color: '#60a5fa',
   },
 } satisfies ChartConfig
 
@@ -195,22 +188,22 @@ function ExampleExample() {
 }
 
 const ExampleGrid_chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
+  { month: 'January', desktop: 186, mobile: 80 },
+  { month: 'February', desktop: 305, mobile: 200 },
+  { month: 'March', desktop: 237, mobile: 120 },
+  { month: 'April', desktop: 73, mobile: 190 },
+  { month: 'May', desktop: 209, mobile: 130 },
+  { month: 'June', desktop: 214, mobile: 140 },
 ]
 
 const ExampleGrid_chartConfig = {
   desktop: {
-    label: "Desktop",
-    color: "#2563eb",
+    label: 'Desktop',
+    color: '#2563eb',
   },
   mobile: {
-    label: "Mobile",
-    color: "#60a5fa",
+    label: 'Mobile',
+    color: '#60a5fa',
   },
 } satisfies ChartConfig
 
@@ -227,22 +220,22 @@ function ExampleGridExample() {
 }
 
 const ExampleAxis_chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
+  { month: 'January', desktop: 186, mobile: 80 },
+  { month: 'February', desktop: 305, mobile: 200 },
+  { month: 'March', desktop: 237, mobile: 120 },
+  { month: 'April', desktop: 73, mobile: 190 },
+  { month: 'May', desktop: 209, mobile: 130 },
+  { month: 'June', desktop: 214, mobile: 140 },
 ]
 
 const ExampleAxis_chartConfig = {
   desktop: {
-    label: "Desktop",
-    color: "#2563eb",
+    label: 'Desktop',
+    color: '#2563eb',
   },
   mobile: {
-    label: "Mobile",
-    color: "#60a5fa",
+    label: 'Mobile',
+    color: '#60a5fa',
   },
 } satisfies ChartConfig
 
@@ -266,28 +259,31 @@ function ExampleAxisExample() {
 }
 
 const ExampleTooltip_chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
+  { month: 'January', desktop: 186, mobile: 80 },
+  { month: 'February', desktop: 305, mobile: 200 },
+  { month: 'March', desktop: 237, mobile: 120 },
+  { month: 'April', desktop: 73, mobile: 190 },
+  { month: 'May', desktop: 209, mobile: 130 },
+  { month: 'June', desktop: 214, mobile: 140 },
 ]
 
 const ExampleTooltip_chartConfig = {
   desktop: {
-    label: "Desktop",
-    color: "#2563eb",
+    label: 'Desktop',
+    color: '#2563eb',
   },
   mobile: {
-    label: "Mobile",
-    color: "#60a5fa",
+    label: 'Mobile',
+    color: '#60a5fa',
   },
 } satisfies ChartConfig
 
 function ExampleTooltipExample() {
   return (
-    <ChartContainer config={ExampleTooltip_chartConfig} className="cuoio:min-h-[200px] cuoio:w-full">
+    <ChartContainer
+      config={ExampleTooltip_chartConfig}
+      className="cuoio:min-h-[200px] cuoio:w-full"
+    >
       <BarChart accessibilityLayer data={ExampleTooltip_chartData}>
         <CartesianGrid vertical={false} />
         <XAxis
@@ -306,22 +302,22 @@ function ExampleTooltipExample() {
 }
 
 const ExampleLegend_chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
+  { month: 'January', desktop: 186, mobile: 80 },
+  { month: 'February', desktop: 305, mobile: 200 },
+  { month: 'March', desktop: 237, mobile: 120 },
+  { month: 'April', desktop: 73, mobile: 190 },
+  { month: 'May', desktop: 209, mobile: 130 },
+  { month: 'June', desktop: 214, mobile: 140 },
 ]
 
 const ExampleLegend_chartConfig = {
   desktop: {
-    label: "Desktop",
-    color: "#2563eb",
+    label: 'Desktop',
+    color: '#2563eb',
   },
   mobile: {
-    label: "Mobile",
-    color: "#60a5fa",
+    label: 'Mobile',
+    color: '#60a5fa',
   },
 } satisfies ChartConfig
 
@@ -348,7 +344,7 @@ function ExampleLegendExample() {
 
 function Tooltip_TooltipExampleDemo() {
   return (
-    <div className="cuoio:grid cuoio:aspect-video cuoio:w-full cuoio:max-w-md cuoio:justify-center cuoio:text-foreground cuoio:md:grid-cols-2 [&>div]:relative [&>div]:flex [&>div]:h-[137px] [&>div]:w-[224px] [&>div]:items-center [&>div]:justify-center [&>div]:p-4">
+    <div className="[&>div]:relative [&>div]:flex [&>div]:h-[137px] [&>div]:w-[224px] [&>div]:items-center [&>div]:justify-center [&>div]:p-4 cuoio:grid cuoio:aspect-video cuoio:w-full cuoio:max-w-md cuoio:justify-center cuoio:text-foreground cuoio:md:grid-cols-2">
       <div>
         <div className="cuoio:absolute cuoio:top-[45px] cuoio:left-[-35px] cuoio:z-10 cuoio:text-sm cuoio:font-medium">
           Label
@@ -376,8 +372,8 @@ function Tooltip_TooltipExampleDemo() {
         <TooltipDemo
           label="Page Views"
           payload={[
-            { name: "Desktop", value: 186, fill: "var(--chart-1)" },
-            { name: "Mobile", value: 80, fill: "var(--chart-2)" },
+            { name: 'Desktop', value: 186, fill: 'var(--chart-1)' },
+            { name: 'Mobile', value: 80, fill: 'var(--chart-2)' },
           ]}
           className="cuoio:w-[8rem]"
         />
@@ -410,8 +406,8 @@ function Tooltip_TooltipExampleDemo() {
           label="Browser"
           hideLabel
           payload={[
-            { name: "Chrome", value: 1286, fill: "var(--chart-3)" },
-            { name: "Firefox", value: 1000, fill: "var(--chart-4)" },
+            { name: 'Chrome', value: 1286, fill: 'var(--chart-3)' },
+            { name: 'Firefox', value: 1000, fill: 'var(--chart-4)' },
           ]}
           indicator="dashed"
           className="cuoio:w-[8rem]"
@@ -420,7 +416,7 @@ function Tooltip_TooltipExampleDemo() {
       <div className="cuoio:hidden! cuoio:md:flex!">
         <TooltipDemo
           label="Page Views"
-          payload={[{ name: "Desktop", value: 12486, fill: "var(--chart-3)" }]}
+          payload={[{ name: 'Desktop', value: 12486, fill: 'var(--chart-3)' }]}
           className="cuoio:w-[9rem]"
           indicator="line"
         />
@@ -432,7 +428,7 @@ function Tooltip_TooltipExampleDemo() {
         <TooltipDemo
           label="Browser"
           hideLabel
-          payload={[{ name: "Chrome", value: 1286, fill: "var(--chart-1)" }]}
+          payload={[{ name: 'Chrome', value: 1286, fill: 'var(--chart-1)' }]}
           indicator="dot"
           className="cuoio:w-[8rem]"
         />
@@ -462,7 +458,7 @@ function Tooltip_TooltipExampleDemo() {
 }
 
 function TooltipExample({
-  indicator = "dot",
+  indicator = 'dot',
   label,
   payload,
   hideLabel,
@@ -472,7 +468,7 @@ function TooltipExample({
   label: string
   hideLabel?: boolean
   hideIndicator?: boolean
-  indicator?: "line" | "dot" | "dashed"
+  indicator?: 'line' | 'dot' | 'dashed'
   payload: {
     name: string
     value: number
@@ -480,22 +476,20 @@ function TooltipExample({
   }[]
   nameKey?: string
   labelKey?: string
-} & React.ComponentProps<"div">) {
-  const tooltipLabel = hideLabel ? null : (
-    <div className="cuoio:font-medium">{label}</div>
-  )
+} & React.ComponentProps<'div'>) {
+  const tooltipLabel = hideLabel ? null : <div className="cuoio:font-medium">{label}</div>
 
   if (!payload?.length) {
     return null
   }
 
-  const nestLabel = payload.length === 1 && indicator !== "dot"
+  const nestLabel = payload.length === 1 && indicator !== 'dot'
 
   return (
     <div
       className={cn(
-        "grid min-w-[8rem] items-start gap-1.5 rounded-lg border border-border/50 bg-background px-2.5 py-1.5 text-xs shadow-xl transition-all ease-in-out hover:-translate-y-0.5",
-        className
+        'grid min-w-[8rem] items-start gap-1.5 rounded-lg border border-border/50 bg-background px-2.5 py-1.5 text-xs shadow-xl transition-all ease-in-out hover:-translate-y-0.5',
+        className,
       )}
     >
       {!nestLabel ? tooltipLabel : null}
@@ -507,35 +501,34 @@ function TooltipExample({
             <div
               key={index}
               className={cn(
-                "flex w-full items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5 [&>svg]:text-muted-foreground",
-                indicator === "dot" && "items-center"
+                'flex w-full items-stretch gap-2 [&>svg]:h-2.5 [&>svg]:w-2.5 [&>svg]:text-muted-foreground',
+                indicator === 'dot' && 'items-center',
               )}
             >
               <>
                 {!hideIndicator && (
                   <div
                     className={cn(
-                      "shrink-0 rounded-[2px] border-(--color-border) bg-(--color-bg)",
+                      'shrink-0 rounded-[2px] border-(--color-border) bg-(--color-bg)',
                       {
-                        "h-2.5 w-2.5": indicator === "dot",
-                        "w-1": indicator === "line",
-                        "w-0 border-[1.5px] border-dashed bg-transparent":
-                          indicator === "dashed",
-                        "my-0.5": nestLabel && indicator === "dashed",
-                      }
+                        'h-2.5 w-2.5': indicator === 'dot',
+                        'w-1': indicator === 'line',
+                        'w-0 border-[1.5px] border-dashed bg-transparent': indicator === 'dashed',
+                        'my-0.5': nestLabel && indicator === 'dashed',
+                      },
                     )}
                     style={
                       {
-                        "--color-bg": indicatorColor,
-                        "--color-border": indicatorColor,
+                        '--color-bg': indicatorColor,
+                        '--color-border': indicatorColor,
                       } as React.CSSProperties
                     }
                   />
                 )}
                 <div
                   className={cn(
-                    "flex flex-1 justify-between leading-none",
-                    nestLabel ? "items-end" : "items-center"
+                    'flex flex-1 justify-between leading-none',
+                    nestLabel ? 'items-end' : 'items-center',
                   )}
                 >
                   <div className="cuoio:grid cuoio:gap-1.5">

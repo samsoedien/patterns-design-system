@@ -1,15 +1,16 @@
-"use client"
+'use client'
+
+import type * as React from 'react'
 
 import {
   type EmojiPickerListCategoryHeaderProps,
   type EmojiPickerListEmojiProps,
   type EmojiPickerListRowProps,
   EmojiPicker as EmojiPickerPrimitive,
-} from "frimousse"
-import { LoaderIcon, SearchIcon } from "lucide-react"
-import type * as React from "react"
+} from 'frimousse'
+import { LoaderIcon, SearchIcon } from 'lucide-react'
 
-import { cn } from "@/lib/utils"
+import { cn } from '@/lib/utils'
 
 function EmojiPicker({
   className,
@@ -18,8 +19,8 @@ function EmojiPicker({
   return (
     <EmojiPickerPrimitive.Root
       className={cn(
-        "cuoio:isolate cuoio:flex cuoio:h-full cuoio:w-fit cuoio:flex-col cuoio:overflow-hidden cuoio:rounded-md cuoio:bg-popover cuoio:text-popover-foreground",
-        className
+        'cuoio:isolate cuoio:flex cuoio:h-full cuoio:w-fit cuoio:flex-col cuoio:overflow-hidden cuoio:rounded-md cuoio:bg-popover cuoio:text-popover-foreground',
+        className,
       )}
       data-slot="emoji-picker"
       {...props}
@@ -34,8 +35,8 @@ function EmojiPickerSearch({
   return (
     <div
       className={cn(
-        "cuoio:flex cuoio:h-9 cuoio:items-center cuoio:gap-2 cuoio:border-b cuoio:px-3",
-        className
+        'cuoio:flex cuoio:h-9 cuoio:items-center cuoio:gap-2 cuoio:border-b cuoio:px-3',
+        className,
       )}
       data-slot="emoji-picker-search-wrapper"
     >
@@ -51,27 +52,19 @@ function EmojiPickerSearch({
 
 function EmojiPickerRow({ children, ...props }: EmojiPickerListRowProps) {
   return (
-    <div
-      {...props}
-      className="cuoio:scroll-my-1 cuoio:px-1"
-      data-slot="emoji-picker-row"
-    >
+    <div {...props} className="cuoio:scroll-my-1 cuoio:px-1" data-slot="emoji-picker-row">
       {children}
     </div>
   )
 }
 
-function EmojiPickerEmoji({
-  emoji,
-  className,
-  ...props
-}: EmojiPickerListEmojiProps) {
+function EmojiPickerEmoji({ emoji, className, ...props }: EmojiPickerListEmojiProps) {
   return (
     <button
       {...props}
       className={cn(
-        "cuoio:flex cuoio:size-7 cuoio:items-center cuoio:justify-center cuoio:rounded-sm cuoio:text-base cuoio:data-[active]:bg-accent",
-        className
+        'cuoio:flex cuoio:size-7 cuoio:items-center cuoio:justify-center cuoio:rounded-sm cuoio:text-base cuoio:data-[active]:bg-accent',
+        className,
       )}
       data-slot="emoji-picker-emoji"
     >
@@ -80,10 +73,7 @@ function EmojiPickerEmoji({
   )
 }
 
-function EmojiPickerCategoryHeader({
-  category,
-  ...props
-}: EmojiPickerListCategoryHeaderProps) {
+function EmojiPickerCategoryHeader({ category, ...props }: EmojiPickerListCategoryHeaderProps) {
   return (
     <div
       {...props}
@@ -101,10 +91,7 @@ function EmojiPickerContent({
 }: React.ComponentProps<typeof EmojiPickerPrimitive.Viewport>) {
   return (
     <EmojiPickerPrimitive.Viewport
-      className={cn(
-        "cuoio:relative cuoio:flex-1 cuoio:outline-hidden",
-        className
-      )}
+      className={cn('cuoio:relative cuoio:flex-1 cuoio:outline-hidden', className)}
       data-slot="emoji-picker-viewport"
       {...props}
     >
@@ -133,15 +120,12 @@ function EmojiPickerContent({
   )
 }
 
-function EmojiPickerFooter({
-  className,
-  ...props
-}: React.ComponentProps<"div">) {
+function EmojiPickerFooter({ className, ...props }: React.ComponentProps<'div'>) {
   return (
     <div
       className={cn(
-        "cuoio:flex cuoio:w-full cuoio:max-w-(--frimousse-viewport-width) cuoio:min-w-0 cuoio:items-center cuoio:gap-1 cuoio:border-t cuoio:p-2",
-        className
+        'cuoio:flex cuoio:w-full cuoio:max-w-(--frimousse-viewport-width) cuoio:min-w-0 cuoio:items-center cuoio:gap-1 cuoio:border-t cuoio:p-2',
+        className,
       )}
       data-slot="emoji-picker-footer"
       {...props}

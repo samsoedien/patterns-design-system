@@ -1,5 +1,7 @@
 // @ts-nocheck
-"use client"
+'use client'
+
+import * as React from 'react'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import {
@@ -19,11 +21,11 @@ import {
   LoaderCircleIcon,
   SearchIcon,
   TerminalIcon,
-} from "lucide-react"
-import * as React from "react"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { CodeBlock, CodeBlockContent, CodeBlockLine } from "@/components/ui/code-block"
+} from 'lucide-react'
+
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { CodeBlock, CodeBlockContent, CodeBlockLine } from '@/components/ui/code-block'
 import {
   Dialog,
   DialogContent,
@@ -31,7 +33,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
+} from '@/components/ui/dialog'
 import {
   Sheet,
   SheetContent,
@@ -39,7 +41,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet"
+} from '@/components/ui/sheet'
 import {
   Trace,
   TraceCollapsible,
@@ -49,7 +51,7 @@ import {
   TraceIcon,
   TraceLine,
   TraceTitle,
-} from "@/components/ui/trace"
+} from '@/components/ui/trace'
 
 function StaticExample() {
   return (
@@ -102,9 +104,7 @@ function DescriptionExample() {
         <TraceIcon>
           <FilePenIcon />
         </TraceIcon>
-        <TraceTitle>
-          Edited components/settings/notification-preferences-form.tsx
-        </TraceTitle>
+        <TraceTitle>Edited components/settings/notification-preferences-form.tsx</TraceTitle>
         <TraceDescription className="cuoio:font-mono">+48 −12</TraceDescription>
       </TraceLine>
       <TraceLine>
@@ -140,7 +140,7 @@ function CollapsibleExample() {
         <TraceCollapsibleContent>
           <CodeBlock size="sm">
             <CodeBlockContent wrap className="cuoio:max-h-64">
-              {"$ node --version\nv24.18.0"}
+              {'$ node --version\nv24.18.0'}
             </CodeBlockContent>
           </CodeBlock>
         </TraceCollapsibleContent>
@@ -166,7 +166,7 @@ function OpenExample() {
         <TraceCollapsibleContent>
           <CodeBlock size="sm">
             <CodeBlockContent wrap className="cuoio:max-h-64">
-              {"$ node --version\nv24.18.0"}
+              {'$ node --version\nv24.18.0'}
             </CodeBlockContent>
           </CodeBlock>
         </TraceCollapsibleContent>
@@ -183,13 +183,13 @@ function OpenExample() {
         <TraceCollapsibleContent>
           <CodeBlock size="sm">
             <CodeBlockContent wrap className="cuoio:max-h-64">
-              {"$ pnpm --version\n10.33.4"}
+              {'$ pnpm --version\n10.33.4'}
             </CodeBlockContent>
           </CodeBlock>
         </TraceCollapsibleContent>
       </TraceCollapsible>
       <Button variant="outline" size="sm" onClick={() => setOpen(!open)}>
-        {open ? "Hide" : "Show"} the pnpm output
+        {open ? 'Hide' : 'Show'} the pnpm output
       </Button>
     </div>
   )
@@ -209,11 +209,7 @@ function LinkExample() {
           </TraceIcon>
         </TraceLine>
       </a>
-      <a
-        href="https://docs.astro.build/en/install-and-setup/"
-        target="_blank"
-        rel="noreferrer"
-      >
+      <a href="https://docs.astro.build/en/install-and-setup/" target="_blank" rel="noreferrer">
         <TraceLine>
           <TraceIcon>
             <GlobeIcon />
@@ -233,16 +229,16 @@ function LinkExample() {
 
 const Dialog_results = [
   {
-    title: "Caching build outputs",
-    url: "https://nextjs.org/docs/app/guides/caching",
+    title: 'Caching build outputs',
+    url: 'https://nextjs.org/docs/app/guides/caching',
   },
   {
-    title: "Image optimization reference",
-    url: "https://nextjs.org/docs/app/api-reference/components/image",
+    title: 'Image optimization reference',
+    url: 'https://nextjs.org/docs/app/api-reference/components/image',
   },
   {
-    title: "Deploy hooks and cache keys",
-    url: "https://vercel.com/docs/deploy-hooks",
+    title: 'Deploy hooks and cache keys',
+    url: 'https://vercel.com/docs/deploy-hooks',
   },
 ]
 
@@ -264,18 +260,11 @@ function DialogExample() {
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Searched the web for cache keys</DialogTitle>
-            <DialogDescription>
-              Three Dialog_results were used in the response.
-            </DialogDescription>
+            <DialogDescription>Three Dialog_results were used in the response.</DialogDescription>
           </DialogHeader>
           <Trace>
             {Dialog_results.map((result) => (
-              <a
-                key={result.url}
-                href={result.url}
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a key={result.url} href={result.url} target="_blank" rel="noreferrer">
                 <TraceLine>
                   <TraceIcon>
                     <GlobeIcon />
@@ -315,9 +304,7 @@ function SheetExample() {
         <SheetContent>
           <SheetHeader>
             <SheetTitle>Explored 4 files</SheetTitle>
-            <SheetDescription>
-              Files read while preparing the response.
-            </SheetDescription>
+            <SheetDescription>Files read while preparing the response.</SheetDescription>
           </SheetHeader>
           <ul className="cuoio:flex cuoio:flex-col cuoio:gap-2 cuoio:px-6 cuoio:font-mono cuoio:text-xs">
             <li>apps/v4/lib/docs.ts</li>
@@ -358,16 +345,16 @@ function GroupExample() {
 
 const Sources_sources = [
   {
-    title: "Install Astro | docs.astro.build",
-    href: "https://docs.astro.build/en/install-and-setup/",
+    title: 'Install Astro | docs.astro.build',
+    href: 'https://docs.astro.build/en/install-and-setup/',
   },
   {
-    title: "create-astro | npmjs.com",
-    href: "https://www.npmjs.com/package/create-astro",
+    title: 'create-astro | npmjs.com',
+    href: 'https://www.npmjs.com/package/create-astro',
   },
   {
-    title: "Settings: minimumReleaseAge | pnpm.io",
-    href: "https://pnpm.io/settings#minimumreleaseage",
+    title: 'Settings: minimumReleaseAge | pnpm.io',
+    href: 'https://pnpm.io/settings#minimumreleaseage',
   },
 ]
 
@@ -386,12 +373,7 @@ function SourcesExample() {
         <TraceCollapsibleContent>
           <Trace>
             {Sources_sources.map((source) => (
-              <a
-                key={source.href}
-                href={source.href}
-                target="_blank"
-                rel="noreferrer"
-              >
+              <a key={source.href} href={source.href} target="_blank" rel="noreferrer">
                 <TraceLine>
                   <TraceIcon>
                     <GlobeIcon />
@@ -475,7 +457,7 @@ function StepsExample() {
 
 const Commit_files = [
   {
-    path: "app/login/page.tsx",
+    path: 'app/login/page.tsx',
     added: false,
     additions: 2,
     deletions: 2,
@@ -491,7 +473,7 @@ const Commit_files = [
  }`,
   },
   {
-    path: "lib/auth/redirect.ts",
+    path: 'lib/auth/redirect.ts',
     added: true,
     additions: 7,
     deletions: 0,
@@ -507,8 +489,8 @@ const Commit_files = [
 ]
 
 function Commit_DiffLines({ diff }: { diff: string }) {
-  return diff.split("\n").map((line, index) => {
-    if (line.startsWith("@@")) {
+  return diff.split('\n').map((line, index) => {
+    if (line.startsWith('@@')) {
       return (
         <CodeBlockLine key={index} className="cuoio:text-muted-foreground">
           {line}
@@ -519,13 +501,7 @@ function Commit_DiffLines({ diff }: { diff: string }) {
     return (
       <CodeBlockLine
         key={index}
-        variant={
-          line.startsWith("+")
-            ? "added"
-            : line.startsWith("-")
-              ? "removed"
-              : "default"
-        }
+        variant={line.startsWith('+') ? 'added' : line.startsWith('-') ? 'removed' : 'default'}
       >
         {line.slice(1)}
       </CodeBlockLine>
@@ -551,11 +527,9 @@ function CommitExample() {
               <Sheet key={file.path}>
                 <SheetTrigger>
                   <TraceLine>
-                    <TraceIcon>
-                      {file.added ? <FilePlusIcon /> : <FilePenIcon />}
-                    </TraceIcon>
+                    <TraceIcon>{file.added ? <FilePlusIcon /> : <FilePenIcon />}</TraceIcon>
                     <TraceTitle>
-                      {file.added ? "Added" : "Edited"} {file.path}
+                      {file.added ? 'Added' : 'Edited'} {file.path}
                     </TraceTitle>
                     <TraceDescription className="cuoio:font-mono">
                       +{file.additions} −{file.deletions}
@@ -609,8 +583,7 @@ function TurnExample() {
                 </TraceLine>
               </TraceCollapsibleTrigger>
               <TraceCollapsibleContent className="cuoio:whitespace-pre-wrap">
-                I should check which package managers are installed before I
-                scaffold anything.
+                I should check which package managers are installed before I scaffold anything.
               </TraceCollapsibleContent>
             </TraceCollapsible>
             <TraceCollapsible defaultOpen>

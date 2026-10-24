@@ -1,10 +1,12 @@
 // @ts-nocheck
-"use client"
+'use client'
+
+import * as React from 'react'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import * as React from "react"
-import { Label } from "@/components/ui/label"
-import { Slider } from "@/components/ui/slider"
+
+import { Label } from '@/components/ui/label'
+import { Slider } from '@/components/ui/slider'
 
 function DemoExample() {
   return (
@@ -67,9 +69,7 @@ function ControlledExample() {
     <div className="cuoio:mx-auto cuoio:grid cuoio:w-full cuoio:max-w-xs cuoio:gap-3">
       <div className="cuoio:flex cuoio:items-center cuoio:justify-between cuoio:gap-2">
         <Label htmlFor="slider-demo-temperature">Temperature</Label>
-        <span className="cuoio:text-sm cuoio:text-muted-foreground">
-          {value.join(", ")}
-        </span>
+        <span className="cuoio:text-sm cuoio:text-muted-foreground">{value.join(', ')}</span>
       </div>
       <Slider
         id="slider-demo-temperature"

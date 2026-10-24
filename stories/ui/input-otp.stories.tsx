@@ -1,10 +1,13 @@
 // @ts-nocheck
-"use client"
+'use client'
+
+import * as React from 'react'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { RefreshCwIcon } from "lucide-react"
-import * as React from "react"
-import { Button } from "@/components/ui/button"
+import { REGEXP_ONLY_DIGITS, REGEXP_ONLY_DIGITS_AND_CHARS } from 'input-otp'
+import { RefreshCwIcon } from 'lucide-react'
+
+import { Button } from '@/components/ui/button'
 import {
   Card,
   CardContent,
@@ -12,10 +15,9 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Field, FieldDescription, FieldLabel } from "@/components/ui/field"
-import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from "@/components/ui/input-otp"
-import { REGEXP_ONLY_DIGITS, REGEXP_ONLY_DIGITS_AND_CHARS } from "input-otp"
+} from '@/components/ui/card'
+import { Field, FieldDescription, FieldLabel } from '@/components/ui/field'
+import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from '@/components/ui/input-otp'
 
 function DemoExample() {
   return (
@@ -90,15 +92,11 @@ function DisabledExample() {
 }
 
 function ControlledExample() {
-  const [value, setValue] = React.useState("")
+  const [value, setValue] = React.useState('')
 
   return (
     <div className="cuoio:space-y-2">
-      <InputOTP
-        maxLength={6}
-        value={value}
-        onChange={(value) => setValue(value)}
-      >
+      <InputOTP maxLength={6} value={value} onChange={(value) => setValue(value)}>
         <InputOTPGroup>
           <InputOTPSlot index={0} />
           <InputOTPSlot index={1} />
@@ -109,18 +107,14 @@ function ControlledExample() {
         </InputOTPGroup>
       </InputOTP>
       <div className="cuoio:text-center cuoio:text-sm">
-        {value === "" ? (
-          <>Enter your one-time password.</>
-        ) : (
-          <>You entered: {value}</>
-        )}
+        {value === '' ? <>Enter your one-time password.</> : <>You entered: {value}</>}
       </div>
     </div>
   )
 }
 
 function InvalidExample() {
-  const [value, setValue] = React.useState("000000")
+  const [value, setValue] = React.useState('000000')
 
   return (
     <InputOTP maxLength={6} value={value} onChange={setValue}>
@@ -179,16 +173,14 @@ function FormExample() {
       <CardHeader>
         <CardTitle>Verify your login</CardTitle>
         <CardDescription>
-          Enter the verification code we sent to your email address:{" "}
+          Enter the verification code we sent to your email address:{' '}
           <span className="cuoio:font-medium">m@example.com</span>.
         </CardDescription>
       </CardHeader>
       <CardContent>
         <Field>
           <div className="cuoio:flex cuoio:items-center cuoio:justify-between">
-            <FieldLabel htmlFor="otp-verification">
-              Verification code
-            </FieldLabel>
+            <FieldLabel htmlFor="otp-verification">Verification code</FieldLabel>
             <Button variant="outline" size="xs">
               <RefreshCwIcon />
               Resend Code
@@ -218,7 +210,7 @@ function FormExample() {
             Verify
           </Button>
           <div className="cuoio:text-sm cuoio:text-muted-foreground">
-            Having trouble signing in?{" "}
+            Having trouble signing in?{' '}
             <a
               href="#"
               className="cuoio:underline cuoio:underline-offset-4 cuoio:transition-colors cuoio:hover:text-primary"

@@ -1,7 +1,8 @@
 // @ts-nocheck
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
+
+import { Button } from '@/components/ui/button'
+import { Checkbox } from '@/components/ui/checkbox'
 import {
   Field,
   FieldDescription,
@@ -10,9 +11,9 @@ import {
   FieldLegend,
   FieldSeparator,
   FieldSet,
-} from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+} from '@/components/ui/field'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
 import {
   Select,
   SelectContent,
@@ -20,8 +21,8 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { Textarea } from "@/components/ui/textarea"
+} from '@/components/ui/select'
+import { Textarea } from '@/components/ui/textarea'
 
 function DemoExample() {
   return (
@@ -33,29 +34,29 @@ function DemoExample() {
 }
 
 const FieldDemo_months = [
-  { label: "MM", value: null },
-  { label: "01", value: "01" },
-  { label: "02", value: "02" },
-  { label: "03", value: "03" },
-  { label: "04", value: "04" },
-  { label: "05", value: "05" },
-  { label: "06", value: "06" },
-  { label: "07", value: "07" },
-  { label: "08", value: "08" },
-  { label: "09", value: "09" },
-  { label: "10", value: "10" },
-  { label: "11", value: "11" },
-  { label: "12", value: "12" },
+  { label: 'MM', value: null },
+  { label: '01', value: '01' },
+  { label: '02', value: '02' },
+  { label: '03', value: '03' },
+  { label: '04', value: '04' },
+  { label: '05', value: '05' },
+  { label: '06', value: '06' },
+  { label: '07', value: '07' },
+  { label: '08', value: '08' },
+  { label: '09', value: '09' },
+  { label: '10', value: '10' },
+  { label: '11', value: '11' },
+  { label: '12', value: '12' },
 ]
 
 const FieldDemo_years = [
-  { label: "YYYY", value: null },
-  { label: "2024", value: "2024" },
-  { label: "2025", value: "2025" },
-  { label: "2026", value: "2026" },
-  { label: "2027", value: "2027" },
-  { label: "2028", value: "2028" },
-  { label: "2029", value: "2029" },
+  { label: 'YYYY', value: null },
+  { label: '2024', value: '2024' },
+  { label: '2025', value: '2025' },
+  { label: '2026', value: '2026' },
+  { label: '2027', value: '2027' },
+  { label: '2028', value: '2028' },
+  { label: '2029', value: '2029' },
 ]
 
 function FieldDemoExample() {
@@ -65,38 +66,24 @@ function FieldDemoExample() {
         <FieldGroup>
           <FieldSet>
             <FieldLegend>Payment Method</FieldLegend>
-            <FieldDescription>
-              All transactions are secure and encrypted
-            </FieldDescription>
+            <FieldDescription>All transactions are secure and encrypted</FieldDescription>
             <FieldGroup>
               <Field>
-                <FieldLabel htmlFor="checkout-7j9-card-name-43j">
-                  Name on Card
-                </FieldLabel>
-                <Input
-                  id="checkout-7j9-card-name-43j"
-                  placeholder="Evil Rabbit"
-                  required
-                />
+                <FieldLabel htmlFor="checkout-7j9-card-name-43j">Name on Card</FieldLabel>
+                <Input id="checkout-7j9-card-name-43j" placeholder="Evil Rabbit" required />
               </Field>
               <Field>
-                <FieldLabel htmlFor="checkout-7j9-card-number-uw1">
-                  Card Number
-                </FieldLabel>
+                <FieldLabel htmlFor="checkout-7j9-card-number-uw1">Card Number</FieldLabel>
                 <Input
                   id="checkout-7j9-card-number-uw1"
                   placeholder="1234 5678 9012 3456"
                   required
                 />
-                <FieldDescription>
-                  Enter your 16-digit card number
-                </FieldDescription>
+                <FieldDescription>Enter your 16-digit card number</FieldDescription>
               </Field>
               <div className="cuoio:grid cuoio:grid-cols-3 cuoio:gap-4">
                 <Field>
-                  <FieldLabel htmlFor="checkout-exp-month-ts6">
-                    Month
-                  </FieldLabel>
+                  <FieldLabel htmlFor="checkout-exp-month-ts6">Month</FieldLabel>
                   <Select items={FieldDemo_months}>
                     <SelectTrigger id="checkout-exp-month-ts6">
                       <SelectValue />
@@ -113,9 +100,7 @@ function FieldDemoExample() {
                   </Select>
                 </Field>
                 <Field>
-                  <FieldLabel htmlFor="checkout-7j9-exp-year-f59">
-                    Year
-                  </FieldLabel>
+                  <FieldLabel htmlFor="checkout-7j9-exp-year-f59">Year</FieldLabel>
                   <Select items={FieldDemo_years}>
                     <SelectTrigger id="checkout-7j9-exp-year-f59">
                       <SelectValue />
@@ -146,10 +131,7 @@ function FieldDemoExample() {
             </FieldDescription>
             <FieldGroup>
               <Field orientation="horizontal">
-                <Checkbox
-                  id="checkout-7j9-same-as-shipping-wgm"
-                  defaultChecked
-                />
+                <Checkbox id="checkout-7j9-same-as-shipping-wgm" defaultChecked />
                 <FieldLabel
                   htmlFor="checkout-7j9-same-as-shipping-wgm"
                   className="cuoio:font-normal"
@@ -162,9 +144,7 @@ function FieldDemoExample() {
           <FieldSet>
             <FieldGroup>
               <Field>
-                <FieldLabel htmlFor="checkout-7j9-optional-comments">
-                  Comments
-                </FieldLabel>
+                <FieldLabel htmlFor="checkout-7j9-optional-comments">Comments</FieldLabel>
                 <Textarea
                   id="checkout-7j9-optional-comments"
                   placeholder="Add any additional comments"

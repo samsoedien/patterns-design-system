@@ -1,5 +1,6 @@
 // @ts-nocheck
 import type { Meta, StoryObj } from '@storybook/react-vite'
+
 import {
   Field,
   FieldContent,
@@ -7,9 +8,9 @@ import {
   FieldGroup,
   FieldLabel,
   FieldTitle,
-} from "@/components/ui/field"
-import { Label } from "@/components/ui/label"
-import { Switch } from "@/components/ui/switch"
+} from '@/components/ui/field'
+import { Label } from '@/components/ui/label'
+import { Switch } from '@/components/ui/switch'
 
 function DemoExample() {
   return (
@@ -24,9 +25,7 @@ function DescriptionExample() {
   return (
     <Field orientation="horizontal" className="cuoio:max-w-sm">
       <FieldContent>
-        <FieldLabel htmlFor="switch-focus-mode">
-          Share across devices
-        </FieldLabel>
+        <FieldLabel htmlFor="switch-focus-mode">Share across devices</FieldLabel>
         <FieldDescription>
           Focus is shared across devices, and turns off when you leave the app.
         </FieldDescription>
@@ -44,8 +43,7 @@ function ChoiceCardExample() {
           <FieldContent>
             <FieldTitle>Share across devices</FieldTitle>
             <FieldDescription>
-              Focus is shared across devices, and turns off when you leave the
-              app.
+              Focus is shared across devices, and turns off when you leave the app.
             </FieldDescription>
           </FieldContent>
           <Switch id="switch-share" />
@@ -79,12 +77,8 @@ function InvalidExample() {
   return (
     <Field orientation="horizontal" className="cuoio:max-w-sm" data-invalid>
       <FieldContent>
-        <FieldLabel htmlFor="switch-terms">
-          Accept terms and conditions
-        </FieldLabel>
-        <FieldDescription>
-          You must accept the terms and conditions to continue.
-        </FieldDescription>
+        <FieldLabel htmlFor="switch-terms">Accept terms and conditions</FieldLabel>
+        <FieldDescription>You must accept the terms and conditions to continue.</FieldDescription>
       </FieldContent>
       <Switch id="switch-terms" aria-invalid />
     </Field>

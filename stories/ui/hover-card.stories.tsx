@@ -1,17 +1,14 @@
 // @ts-nocheck
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
-import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card"
+
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
+import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/hover-card'
 
 function DemoExample() {
   return (
     <HoverCard>
-      <HoverCardTrigger
-        delay={10}
-        closeDelay={100}
-        render={<Button variant="link" />}
-      >
+      <HoverCardTrigger delay={10} closeDelay={100} render={<Button variant="link" />}>
         Hover Here
       </HoverCardTrigger>
       <HoverCardContent className="cuoio:flex cuoio:w-64 cuoio:flex-col cuoio:gap-0.5">
@@ -25,7 +22,7 @@ function DemoExample() {
   )
 }
 
-const Sides_HOVER_CARD_SIDES = ["left", "top", "bottom", "right"] as const
+const Sides_HOVER_CARD_SIDES = ['left', 'top', 'bottom', 'right'] as const
 
 function SidesExample() {
   return (
