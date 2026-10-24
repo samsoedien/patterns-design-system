@@ -1,4 +1,5 @@
 import type { Preview } from "@storybook/react-vite"
+import { withThemeByClassName } from "@storybook/addon-themes"
 
 import { Toaster } from "@/components/ui/toast"
 
@@ -6,6 +7,13 @@ import "../src/styles/globals.css"
 
 const preview: Preview = {
   decorators: [
+    withThemeByClassName({
+      themes: {
+        light: "",
+        dark: "dark",
+      },
+      defaultTheme: "light",
+    }),
     (Story) => (
       <>
         <Story />

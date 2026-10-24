@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react-vite'
+import type { Meta, StoryObj } from "@storybook/react-vite"
 import {
   ArchiveIcon,
   ArrowLeftIcon,
@@ -16,12 +16,12 @@ import {
   PlusIcon,
   TagIcon,
   Trash2Icon,
-} from 'lucide-react'
-import { useState } from 'react'
-import { fn } from 'storybook/test'
+} from "lucide-react"
+import { useState } from "react"
+import { fn } from "storybook/test"
 
-import { Button, buttonVariants } from '@/components/ui/button'
-import { ButtonGroup } from '@/components/ui/button-group'
+import { Button, buttonVariants } from "@/components/ui/button"
+import { ButtonGroup } from "@/components/ui/button-group"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -34,57 +34,57 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-import { Spinner as SpinnerIndicator } from '@/components/ui/spinner'
+} from "@/components/ui/dropdown-menu"
+import { Spinner as SpinnerIndicator } from "@/components/ui/spinner"
 
 const variants = [
-  'default',
-  'outline',
-  'secondary',
-  'ghost',
-  'destructive',
-  'link',
+  "default",
+  "outline",
+  "secondary",
+  "ghost",
+  "destructive",
+  "link",
 ] as const
 
 const meta = {
-  title: 'UI/Button',
+  title: "UI/Button",
   component: Button,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
     controls: {
-      include: ['variant', 'size', 'disabled', 'children'],
+      include: ["variant", "size", "disabled", "children"],
     },
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
     variant: {
-      control: 'select',
+      control: "select",
       options: variants,
     },
     size: {
-      control: 'select',
+      control: "select",
       options: [
-        'default',
-        'xs',
-        'sm',
-        'lg',
-        'icon',
-        'icon-xs',
-        'icon-sm',
-        'icon-lg',
+        "default",
+        "xs",
+        "sm",
+        "lg",
+        "icon",
+        "icon-xs",
+        "icon-sm",
+        "icon-lg",
       ],
     },
     disabled: {
-      control: 'boolean',
+      control: "boolean",
     },
     children: {
-      control: 'text',
+      control: "text",
     },
   },
   args: {
-    children: 'Button',
-    variant: 'default',
-    size: 'default',
+    children: "Button",
+    variant: "default",
+    size: "default",
     onClick: fn(),
   },
 } satisfies Meta<typeof Button>
@@ -145,44 +145,44 @@ export const Default: Story = {}
 
 export const Outline: Story = {
   args: {
-    variant: 'outline',
-    children: 'Outline',
+    variant: "outline",
+    children: "Outline",
   },
 }
 
 export const Secondary: Story = {
   args: {
-    variant: 'secondary',
-    children: 'Secondary',
+    variant: "secondary",
+    children: "Secondary",
   },
 }
 
 export const Ghost: Story = {
   args: {
-    variant: 'ghost',
-    children: 'Ghost',
+    variant: "ghost",
+    children: "Ghost",
   },
 }
 
 export const Destructive: Story = {
   args: {
-    variant: 'destructive',
-    children: 'Destructive',
+    variant: "destructive",
+    children: "Destructive",
   },
 }
 
 export const Link: Story = {
   args: {
-    variant: 'link',
-    children: 'Link',
+    variant: "link",
+    children: "Link",
   },
 }
 
 export const Icon: Story = {
   args: {
-    variant: 'outline',
-    size: 'icon',
-    'aria-label': 'Submit',
+    variant: "outline",
+    size: "icon",
+    "aria-label": "Submit",
     children: <CircleFadingArrowUpIcon />,
   },
 }
@@ -233,7 +233,7 @@ export const Spinner: Story = {
 }
 
 function ButtonGroupExample() {
-  const [label, setLabel] = useState('personal')
+  const [label, setLabel] = useState("personal")
 
   return (
     <ButtonGroup>
@@ -251,11 +251,7 @@ function ButtonGroupExample() {
         <DropdownMenu>
           <DropdownMenuTrigger
             render={
-              <Button
-                variant="outline"
-                size="icon"
-                aria-label="More Options"
-              />
+              <Button variant="outline" size="icon" aria-label="More Options" />
             }
           >
             <MoreHorizontalIcon />
@@ -291,7 +287,10 @@ function ButtonGroupExample() {
                   Label As...
                 </DropdownMenuSubTrigger>
                 <DropdownMenuSubContent>
-                  <DropdownMenuRadioGroup value={label} onValueChange={setLabel}>
+                  <DropdownMenuRadioGroup
+                    value={label}
+                    onValueChange={setLabel}
+                  >
                     <DropdownMenuRadioItem value="personal">
                       Personal
                     </DropdownMenuRadioItem>
@@ -320,16 +319,16 @@ function ButtonGroupExample() {
 }
 
 export const Group: Story = {
-  name: 'Button Group',
+  name: "Button Group",
   render: () => <ButtonGroupExample />,
 }
 
 export const AsLink: Story = {
-  name: 'As Link',
+  name: "As Link",
   render: () => (
     <a
       href="#login"
-      className={buttonVariants({ variant: 'secondary', size: 'sm' })}
+      className={buttonVariants({ variant: "secondary", size: "sm" })}
     >
       Login
     </a>
@@ -337,7 +336,7 @@ export const AsLink: Story = {
 }
 
 export const Rtl: Story = {
-  name: 'RTL',
+  name: "RTL",
   render: () => (
     <div
       className="cuoio:flex cuoio:flex-wrap cuoio:items-center cuoio:gap-2 cuoio:md:flex-row"
@@ -346,7 +345,11 @@ export const Rtl: Story = {
       <Button variant="outline">زر</Button>
       <Button variant="destructive">حذف</Button>
       <Button variant="outline">
-        إرسال <ArrowRightIcon className="cuoio:rtl:rotate-180" data-icon="inline-end" />
+        إرسال{" "}
+        <ArrowRightIcon
+          className="cuoio:rtl:rotate-180"
+          data-icon="inline-end"
+        />
       </Button>
       <Button variant="outline" size="icon" aria-label="Add">
         <PlusIcon />
