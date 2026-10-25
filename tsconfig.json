@@ -7,7 +7,8 @@
   ],
   "compilerOptions": {
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@project-cuoio/core": ["./src/index.ts"]
     }
   }
 }
