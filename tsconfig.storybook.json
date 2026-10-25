@@ -5,8 +5,11 @@
     "noUnusedParameters": false,
     "skipLibCheck": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@project-cuoio/core": ["./src/index.ts"],
+      "@project-cuoio/icons": ["../icons/src/index.ts"]
     }
   },
-  "include": ["stories", ".storybook"]
+  "include": ["stories", ".storybook", "src/registry"],
+  "exclude": []
 }
