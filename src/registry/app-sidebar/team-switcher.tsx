@@ -40,36 +40,36 @@ export function TeamSwitcher({
             render={
               <SidebarMenuButton
                 size="lg"
-                className="cuoio:data-open:bg-sidebar-accent cuoio:data-open:text-sidebar-accent-foreground"
+                className="data-open:bg-sidebar-accent data-open:text-sidebar-accent-foreground"
               />
             }
           >
-            <div className="cuoio:flex cuoio:aspect-square cuoio:size-8 cuoio:items-center cuoio:justify-center cuoio:rounded-lg cuoio:bg-sidebar-primary cuoio:text-sidebar-primary-foreground">
+            <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
               {activeTeam.logo}
             </div>
-            <div className="cuoio:grid cuoio:flex-1 cuoio:text-start cuoio:text-sm cuoio:leading-tight">
-              <span className="cuoio:truncate cuoio:font-medium">{activeTeam.name}</span>
-              <span className="cuoio:truncate cuoio:text-xs">{activeTeam.plan}</span>
+            <div className="grid flex-1 text-start text-sm leading-tight">
+              <span className="truncate font-medium">{activeTeam.name}</span>
+              <span className="truncate text-xs">{activeTeam.plan}</span>
             </div>
-            <ChevronsUpDownIcon className="cuoio:ms-auto" />
+            <ChevronsUpDownIcon className="ms-auto" />
           </DropdownMenuTrigger>
           <DropdownMenuContent
-            className="cuoio:w-fit"
+            className="w-fit"
             align="start"
             side={isMobile ? 'bottom' : 'right'}
             sideOffset={4}
           >
             <DropdownMenuGroup>
-              <DropdownMenuLabel className="cuoio:text-xs cuoio:text-muted-foreground">
+              <DropdownMenuLabel className="text-xs text-muted-foreground">
                 Teams
               </DropdownMenuLabel>
               {teams.map((team, index) => (
                 <DropdownMenuItem
                   key={team.name}
                   onClick={() => setActiveTeam(team)}
-                  className="cuoio:gap-2 cuoio:p-2"
+                  className="gap-2 p-2"
                 >
-                  <div className="cuoio:flex cuoio:size-6 cuoio:items-center cuoio:justify-center cuoio:rounded-md cuoio:border">
+                  <div className="flex size-6 items-center justify-center rounded-md border">
                     {team.logo}
                   </div>
                   {team.name}
@@ -79,11 +79,11 @@ export function TeamSwitcher({
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem className="cuoio:gap-2 cuoio:p-2">
-                <div className="cuoio:flex cuoio:size-6 cuoio:items-center cuoio:justify-center cuoio:rounded-md cuoio:border cuoio:bg-transparent">
-                  <PlusIcon className="cuoio:size-4" />
+              <DropdownMenuItem className="gap-2 p-2">
+                <div className="flex size-6 items-center justify-center rounded-md border bg-transparent">
+                  <PlusIcon className="size-4" />
                 </div>
-                <div className="cuoio:font-medium cuoio:text-muted-foreground">Add team</div>
+                <div className="font-medium text-muted-foreground">Add team</div>
               </DropdownMenuItem>
             </DropdownMenuGroup>
           </DropdownMenuContent>

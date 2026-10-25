@@ -27,7 +27,7 @@ export function NavProjects({
 }) {
   const { isMobile } = useSidebar()
   return (
-    <SidebarGroup className="cuoio:group-data-[collapsible=icon]:hidden">
+    <SidebarGroup className="group-data-[collapsible=icon]:hidden">
       <SidebarGroupLabel>Projects</SidebarGroupLabel>
       <SidebarMenu>
         {projects.map((item) => (
@@ -38,13 +38,13 @@ export function NavProjects({
             </SidebarMenuButton>
             <DropdownMenu>
               <DropdownMenuTrigger
-                render={<SidebarMenuAction showOnHover className="cuoio:aria-expanded:bg-muted" />}
+                render={<SidebarMenuAction showOnHover className="aria-expanded:bg-muted" />}
               >
                 <MoreHorizontalIcon />
-                <span className="cuoio:sr-only">More</span>
+                <span className="sr-only">More</span>
               </DropdownMenuTrigger>
               <DropdownMenuContent
-                className="cuoio:w-fit"
+                className="w-fit"
                 side={isMobile ? 'bottom' : 'right'}
                 align={isMobile ? 'end' : 'start'}
               >
@@ -66,8 +66,8 @@ export function NavProjects({
           </SidebarMenuItem>
         ))}
         <SidebarMenuItem>
-          <SidebarMenuButton className="cuoio:text-sidebar-foreground/70">
-            <MoreHorizontalIcon className="cuoio:text-sidebar-foreground/70" />
+          <SidebarMenuButton className="text-sidebar-foreground/70">
+            <MoreHorizontalIcon className="text-sidebar-foreground/70" />
             <span>More</span>
           </SidebarMenuButton>
         </SidebarMenuItem>

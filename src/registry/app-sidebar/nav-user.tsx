@@ -40,34 +40,34 @@ export function NavUser({
       <SidebarMenuItem>
         <DropdownMenu>
           <DropdownMenuTrigger
-            render={<SidebarMenuButton size="lg" className="cuoio:aria-expanded:bg-muted" />}
+            render={<SidebarMenuButton size="lg" className="aria-expanded:bg-muted" />}
           >
             <Avatar>
               <AvatarImage src={user.avatar} alt={user.name} />
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
-            <div className="cuoio:grid cuoio:flex-1 cuoio:text-start cuoio:text-sm cuoio:leading-tight">
-              <span className="cuoio:truncate cuoio:font-medium">{user.name}</span>
-              <span className="cuoio:truncate cuoio:text-xs">{user.email}</span>
+            <div className="grid flex-1 text-start text-sm leading-tight">
+              <span className="truncate font-medium">{user.name}</span>
+              <span className="truncate text-xs">{user.email}</span>
             </div>
-            <ChevronsUpDownIcon className="cuoio:ms-auto cuoio:size-4" />
+            <ChevronsUpDownIcon className="ms-auto size-4" />
           </DropdownMenuTrigger>
           <DropdownMenuContent
-            className="cuoio:w-fit"
+            className="w-fit"
             side={isMobile ? 'bottom' : 'right'}
             align="end"
             sideOffset={4}
           >
             <DropdownMenuGroup>
-              <DropdownMenuLabel className="cuoio:p-0 cuoio:font-normal">
-                <div className="cuoio:flex cuoio:items-center cuoio:gap-2 cuoio:px-1 cuoio:py-1.5 cuoio:text-start cuoio:text-sm">
+              <DropdownMenuLabel className="p-0 font-normal">
+                <div className="flex items-center gap-2 px-1 py-1.5 text-start text-sm">
                   <Avatar>
                     <AvatarImage src={user.avatar} alt={user.name} />
                     <AvatarFallback>CN</AvatarFallback>
                   </Avatar>
-                  <div className="cuoio:grid cuoio:flex-1 cuoio:text-start cuoio:text-sm cuoio:leading-tight">
-                    <span className="cuoio:truncate cuoio:font-medium">{user.name}</span>
-                    <span className="cuoio:truncate cuoio:text-xs">{user.email}</span>
+                  <div className="grid flex-1 text-start text-sm leading-tight">
+                    <span className="truncate font-medium">{user.name}</span>
+                    <span className="truncate text-xs">{user.email}</span>
                   </div>
                 </div>
               </DropdownMenuLabel>

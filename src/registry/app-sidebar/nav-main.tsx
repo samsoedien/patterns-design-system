@@ -37,13 +37,13 @@ export function NavMain({
           <Collapsible
             key={item.title}
             defaultOpen={item.isActive}
-            className="cuoio:group/collapsible"
+            className="group/collapsible"
             render={<SidebarMenuItem />}
           >
             <CollapsibleTrigger render={<SidebarMenuButton tooltip={item.title} />}>
               {item.icon}
               <span>{item.title}</span>
-              <ChevronRightIcon className="cuoio:ms-auto cuoio:transition-transform cuoio:duration-200 cuoio:group-data-open/collapsible:rotate-90" />
+              <ChevronRightIcon className="ms-auto transition-transform duration-200 group-data-open/collapsible:rotate-90" />
             </CollapsibleTrigger>
             <CollapsibleContent>
               <SidebarMenuSub>
