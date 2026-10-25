@@ -1,8 +1,8 @@
 @import 'tailwindcss' prefix(cuoio);
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
-@import '@fontsource-variable/figtree';
-@import '@fontsource-variable/raleway';
+/* @import '@fontsource-variable/figtree';
+@import '@fontsource-variable/raleway'; */
 
 @custom-variant dark (&:is(.dark *));
 
