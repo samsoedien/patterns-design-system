@@ -2,8 +2,6 @@
 
 import * as React from 'react'
 
-import { ChevronsUpDownIcon, PlusIcon } from 'lucide-react'
-
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -13,13 +11,12 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
-import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from '@/components/ui/sidebar'
+} from '@project-cuoio/core'
+import { ChevronsUpDownIcon, PlusIcon } from '@project-cuoio/icons'
 
 export function TeamSwitcher({
   teams,
