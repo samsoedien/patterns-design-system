@@ -13,7 +13,7 @@ function Trace({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="trace"
       className={cn(
-        "cuoio:flex cuoio:w-full cuoio:min-w-0 cuoio:flex-col cuoio:gap-1.5 cuoio:*:has-[>[data-slot=trace-line]]:flex cuoio:*:has-[>[data-slot=trace-line]]:w-fit cuoio:*:has-[>[data-slot=trace-line]]:max-w-full cuoio:*:has-[>[data-slot=trace-line]]:min-w-0 cuoio:*:has-[>[data-slot=trace-line]]:rounded-sm cuoio:*:has-[>[data-slot=trace-line]]:text-start cuoio:*:has-[>[data-slot=trace-line]]:outline-none cuoio:*:has-[>[data-slot=trace-line]]:focus-visible:ring-2 cuoio:*:has-[>[data-slot=trace-line]]:focus-visible:ring-ring/30",
+        "cuoio:flex cuoio:w-full cuoio:min-w-0 cuoio:flex-col cuoio:gap-2 cuoio:*:has-[>[data-slot=trace-line]]:flex cuoio:*:has-[>[data-slot=trace-line]]:w-fit cuoio:*:has-[>[data-slot=trace-line]]:max-w-full cuoio:*:has-[>[data-slot=trace-line]]:min-w-0 cuoio:*:has-[>[data-slot=trace-line]]:rounded-md cuoio:*:has-[>[data-slot=trace-line]]:text-start cuoio:*:has-[>[data-slot=trace-line]]:outline-none cuoio:*:has-[>[data-slot=trace-line]]:focus-visible:ring-3 cuoio:*:has-[>[data-slot=trace-line]]:focus-visible:ring-ring/50",
         className
       )}
       {...props}
@@ -33,7 +33,7 @@ function TraceLine({
       data-slot="trace-line"
       data-status={status}
       className={cn(
-        "cuoio:flex cuoio:w-fit cuoio:max-w-full cuoio:min-w-0 cuoio:items-center cuoio:gap-2 cuoio:text-xs/relaxed cuoio:text-muted-foreground cuoio:transition-colors cuoio:in-[a,button]:cursor-pointer cuoio:in-[a:hover,button:hover]:text-foreground cuoio:data-[status=error]:text-destructive cuoio:data-[status=error]:in-[a:hover,button:hover]:text-destructive cuoio:data-[status=pending]:opacity-60 cuoio:data-[status=running]:*:data-[slot=trace-title]:shimmer",
+        "cuoio:flex cuoio:w-fit cuoio:max-w-full cuoio:min-w-0 cuoio:items-center cuoio:gap-2 cuoio:text-sm cuoio:text-muted-foreground cuoio:transition-colors cuoio:in-[a,button]:cursor-pointer cuoio:in-[a:hover,button:hover]:text-foreground cuoio:data-[status=error]:text-destructive cuoio:data-[status=error]:in-[a:hover,button:hover]:text-destructive cuoio:data-[status=pending]:opacity-60 cuoio:data-[status=running]:*:data-[slot=trace-title]:shimmer",
         className
       )}
       {...props}
@@ -47,7 +47,7 @@ function TraceIcon({ className, ...props }: React.ComponentProps<"span">) {
       data-slot="trace-icon"
       aria-hidden="true"
       className={cn(
-        "cuoio:flex cuoio:size-3.5 cuoio:shrink-0 cuoio:items-center cuoio:justify-center cuoio:[&_svg]:pointer-events-none cuoio:[&_svg:not([class*=size-])]:size-3.5 cuoio:[[data-slot=trace-title]~&]:-ms-1",
+        "cuoio:flex cuoio:size-4 cuoio:shrink-0 cuoio:items-center cuoio:justify-center cuoio:[&_svg]:pointer-events-none cuoio:[&_svg:not([class*=size-])]:size-4 cuoio:[[data-slot=trace-title]~&]:-ms-1",
         className
       )}
       {...props}
@@ -112,7 +112,7 @@ function TraceCollapsibleTrigger({
     <CollapsibleTrigger
       data-slot="trace-collapsible-trigger"
       className={cn(
-        "cuoio:group/trace-collapsible-trigger cuoio:flex cuoio:w-fit cuoio:max-w-full cuoio:min-w-0 cuoio:cursor-pointer cuoio:items-center cuoio:gap-1 cuoio:rounded-sm cuoio:text-start cuoio:text-muted-foreground cuoio:transition-colors cuoio:outline-none cuoio:hover:text-foreground cuoio:focus-visible:ring-2 cuoio:focus-visible:ring-ring/30 cuoio:has-[[data-status=error]]:text-destructive",
+        "cuoio:group/trace-collapsible-trigger cuoio:flex cuoio:w-fit cuoio:max-w-full cuoio:min-w-0 cuoio:cursor-pointer cuoio:items-center cuoio:gap-1 cuoio:rounded-md cuoio:text-start cuoio:text-muted-foreground cuoio:transition-colors cuoio:outline-none cuoio:hover:text-foreground cuoio:focus-visible:ring-3 cuoio:focus-visible:ring-ring/50 cuoio:has-[[data-status=error]]:text-destructive",
         className
       )}
       {...props}
@@ -140,7 +140,7 @@ function TraceCollapsibleContent({
       <div
         data-slot="trace-collapsible-content-inner"
         className={cn(
-          "cuoio:mt-1.5 cuoio:mb-1 cuoio:ms-[calc(--spacing(1.75)-1px)] cuoio:min-w-0 cuoio:border-s cuoio:pe-1 cuoio:ps-3.75 cuoio:wrap-break-word cuoio:text-muted-foreground",
+          "cuoio:mt-2 cuoio:mb-1 cuoio:ms-[calc(--spacing(2)-1px)] cuoio:min-w-0 cuoio:border-s cuoio:pe-1 cuoio:ps-4 cuoio:leading-relaxed cuoio:wrap-break-word cuoio:text-muted-foreground",
           className
         )}
       >

@@ -11,7 +11,7 @@ function Table({ className, ...props }: React.ComponentProps<"table">) {
     >
       <table
         data-slot="table"
-        className={cn("cuoio:w-full cuoio:caption-bottom cuoio:text-xs", className)}
+        className={cn("cuoio:w-full cuoio:caption-bottom cuoio:text-sm", className)}
         {...props}
       />
     </div>
@@ -97,7 +97,7 @@ function TableCaption({
   return (
     <caption
       data-slot="table-caption"
-      className={cn("cuoio:mt-4 cuoio:text-xs cuoio:text-muted-foreground", className)}
+      className={cn("cuoio:mt-4 cuoio:text-sm cuoio:text-muted-foreground", className)}
       {...props}
     />
   )

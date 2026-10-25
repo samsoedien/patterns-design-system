@@ -30,7 +30,7 @@ function FieldLegend({
       data-slot="field-legend"
       data-variant={variant}
       className={cn(
-        "cuoio:mb-2 cuoio:font-medium cuoio:data-[variant=label]:text-xs/relaxed cuoio:data-[variant=legend]:text-sm",
+        "cuoio:mb-1.5 cuoio:font-medium cuoio:data-[variant=label]:text-sm cuoio:data-[variant=legend]:text-base",
         className
       )}
       {...props}
@@ -43,7 +43,7 @@ function FieldGroup({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="field-group"
       className={cn(
-        "cuoio:group/field-group cuoio:@container/field-group cuoio:flex cuoio:w-full cuoio:flex-col cuoio:gap-4 cuoio:data-[slot=checkbox-group]:gap-3 cuoio:*:data-[slot=field-group]:gap-4",
+        "cuoio:group/field-group cuoio:@container/field-group cuoio:flex cuoio:w-full cuoio:flex-col cuoio:gap-5 cuoio:data-[slot=checkbox-group]:gap-3 cuoio:*:data-[slot=field-group]:gap-4",
         className
       )}
       {...props}
@@ -106,7 +106,7 @@ function FieldLabel({
     <Label
       data-slot="field-label"
       className={cn(
-        "cuoio:group/field-label cuoio:peer/field-label cuoio:flex cuoio:w-fit cuoio:gap-2 cuoio:leading-snug cuoio:group-data-[disabled=true]/field:opacity-50 cuoio:has-data-checked:bg-primary/5 cuoio:has-[>[data-slot=field]]:rounded-md cuoio:has-[>[data-slot=field]]:border cuoio:has-[>[data-slot=field]]:not-has-[:disabled,[data-disabled]]:hover:bg-input/40 cuoio:has-[>[data-slot=field]]:has-[:focus-visible]:border-ring cuoio:has-[>[data-slot=field]]:has-[:focus-visible]:ring-2 cuoio:has-[>[data-slot=field]]:has-[:focus-visible]:ring-ring/30 cuoio:*:data-[slot=field]:p-2 cuoio:dark:has-data-checked:bg-primary/10",
+        "cuoio:group/field-label cuoio:peer/field-label cuoio:flex cuoio:w-fit cuoio:gap-2 cuoio:leading-snug cuoio:group-data-[disabled=true]/field:opacity-50 cuoio:has-data-checked:border-primary/30 cuoio:has-data-checked:bg-primary/5 cuoio:has-[>[data-slot=field]]:rounded-lg cuoio:has-[>[data-slot=field]]:border cuoio:has-[>[data-slot=field]]:not-has-[:disabled,[data-disabled]]:hover:bg-muted/50 cuoio:has-[>[data-slot=field]]:has-[:focus-visible]:border-ring cuoio:has-[>[data-slot=field]]:has-[:focus-visible]:ring-3 cuoio:has-[>[data-slot=field]]:has-[:focus-visible]:ring-ring/50 cuoio:*:data-[slot=field]:p-2.5 cuoio:dark:has-data-checked:border-primary/20 cuoio:dark:has-data-checked:bg-primary/10",
         "cuoio:has-[>[data-slot=field]]:w-full cuoio:has-[>[data-slot=field]]:flex-col",
         className
       )}
@@ -120,7 +120,7 @@ function FieldTitle({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="field-label"
       className={cn(
-        "cuoio:flex cuoio:w-fit cuoio:items-center cuoio:gap-2 cuoio:text-xs/relaxed cuoio:font-medium cuoio:group-data-[disabled=true]/field:opacity-50",
+        "cuoio:flex cuoio:w-fit cuoio:items-center cuoio:gap-2 cuoio:text-sm cuoio:font-medium cuoio:group-data-[disabled=true]/field:opacity-50",
         className
       )}
       {...props}
@@ -133,7 +133,7 @@ function FieldDescription({ className, ...props }: React.ComponentProps<"p">) {
     <p
       data-slot="field-description"
       className={cn(
-        "cuoio:text-start cuoio:text-xs/relaxed cuoio:leading-normal cuoio:font-normal cuoio:text-muted-foreground cuoio:group-has-data-horizontal/field:text-balance cuoio:[[data-variant=legend]+&]:-mt-1.5",
+        "cuoio:text-start cuoio:text-sm cuoio:leading-normal cuoio:font-normal cuoio:text-muted-foreground cuoio:group-has-data-horizontal/field:text-balance cuoio:[[data-variant=legend]+&]:-mt-1.5",
         "cuoio:last:mt-0 cuoio:nth-last-2:-mt-1",
         "cuoio:[&>a]:underline cuoio:[&>a]:underline-offset-4 cuoio:[&>a:hover]:text-primary",
         className
@@ -155,7 +155,7 @@ function FieldSeparator({
       data-slot="field-separator"
       data-content={!!children}
       className={cn(
-        "cuoio:relative cuoio:-my-2 cuoio:h-5 cuoio:text-xs/relaxed cuoio:group-data-[variant=outline]/field-group:-mb-2",
+        "cuoio:relative cuoio:-my-2 cuoio:h-5 cuoio:text-sm cuoio:group-data-[variant=outline]/field-group:-mb-2",
         className
       )}
       {...props}
@@ -216,7 +216,7 @@ function FieldError({
     <div
       role="alert"
       data-slot="field-error"
-      className={cn("cuoio:text-xs/relaxed cuoio:font-normal cuoio:text-destructive", className)}
+      className={cn("cuoio:text-sm cuoio:font-normal cuoio:text-destructive", className)}
       {...props}
     >
       {content}

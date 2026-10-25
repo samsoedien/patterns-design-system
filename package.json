@@ -32,7 +32,7 @@
     "ui:build": "yarn dlx shadcn@latest build",
     "ui:diff": "yarn dlx shadcn@latest diff",
     "registry:build": "shadcn build",
-    "publish": "yarn registry:build && yarn compile",
+    "registry:publish": "yarn registry:build && yarn compile",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

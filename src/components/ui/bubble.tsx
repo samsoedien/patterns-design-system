@@ -71,7 +71,7 @@ function BubbleContent({
     props: mergeProps<"div">(
       {
         className: cn(
-          "w-fit max-w-full min-w-0 overflow-hidden rounded-lg border border-transparent px-2.5 py-1.5 text-xs/relaxed wrap-break-word group-data-[align=end]/bubble:self-end [button]:text-start [button,a]:transition-colors [button,a]:outline-none [button,a]:focus-visible:border-ring [button,a]:focus-visible:ring-2 [button,a]:focus-visible:ring-ring/30",
+          "w-fit max-w-full min-w-0 overflow-hidden rounded-xl border border-transparent px-3 py-2 text-sm leading-relaxed wrap-break-word group-data-[align=end]/bubble:self-end [button]:text-start [button,a]:transition-colors [button,a]:outline-none [button,a]:focus-visible:border-ring [button,a]:focus-visible:ring-3 [button,a]:focus-visible:ring-ring/50",
           className
         ),
       },
@@ -85,7 +85,7 @@ function BubbleContent({
 }
 
 const bubbleReactionsVariants = cva(
-  "cuoio:absolute cuoio:z-10 cuoio:flex cuoio:w-fit cuoio:shrink-0 cuoio:items-center cuoio:justify-center cuoio:gap-1 cuoio:rounded-full cuoio:bg-muted cuoio:px-1.5 cuoio:py-0.5 cuoio:text-xs cuoio:ring-2 cuoio:ring-card cuoio:has-[button]:p-0",
+  "cuoio:absolute cuoio:z-10 cuoio:flex cuoio:w-fit cuoio:shrink-0 cuoio:items-center cuoio:justify-center cuoio:gap-1 cuoio:rounded-full cuoio:bg-muted cuoio:px-1.5 cuoio:py-0.5 cuoio:text-sm cuoio:ring-3 cuoio:ring-card cuoio:has-[button]:p-0",
   {
     variants: {
       side: {

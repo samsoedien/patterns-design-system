@@ -31,7 +31,7 @@ function Calendar({
     <DayPicker
       showOutsideDays={showOutsideDays}
       className={cn(
-        "cuoio:group/calendar cuoio:bg-background cuoio:p-3 cuoio:[--cell-radius:var(--radius-md)] cuoio:[--cell-size:--spacing(6)] cuoio:in-data-[slot=card-content]:bg-transparent cuoio:in-data-[slot=popover-content]:bg-transparent",
+        "cuoio:group/calendar cuoio:bg-background cuoio:p-2 cuoio:[--cell-radius:var(--radius-md)] cuoio:[--cell-size:--spacing(7)] cuoio:in-data-[slot=card-content]:bg-transparent cuoio:in-data-[slot=popover-content]:bg-transparent",
         String.raw`rtl:**:[.rdp-button\_next>svg]:rotate-180`,
         String.raw`rtl:**:[.rdp-button\_previous>svg]:rotate-180`,
         className

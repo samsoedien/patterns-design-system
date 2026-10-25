@@ -71,7 +71,7 @@ function DrawerOverlay({
     <DrawerPrimitive.Backdrop
       data-slot="drawer-overlay"
       className={cn(
-        "cuoio:fixed cuoio:inset-0 cuoio:z-50 cuoio:min-h-dvh cuoio:bg-black/80 cuoio:opacity-[max(var(--drawer-overlay-min-opacity,0),calc(1-var(--drawer-swipe-progress)))] cuoio:transition-opacity cuoio:duration-450 cuoio:ease-[cubic-bezier(0.32,0.72,0,1)] cuoio:select-none cuoio:data-ending-style:pointer-events-none cuoio:data-ending-style:opacity-0 cuoio:data-ending-style:duration-[calc(var(--drawer-swipe-strength)*400ms)] cuoio:data-snap-points:[--drawer-overlay-min-opacity:0.5] cuoio:data-starting-style:opacity-0 cuoio:data-swiping:duration-0 cuoio:supports-backdrop-filter:backdrop-blur-xs cuoio:supports-[-webkit-touch-callout:none]:absolute",
+        "cuoio:fixed cuoio:inset-0 cuoio:z-50 cuoio:min-h-dvh cuoio:bg-black/10 cuoio:opacity-[max(var(--drawer-overlay-min-opacity,0),calc(1-var(--drawer-swipe-progress)))] cuoio:transition-opacity cuoio:duration-450 cuoio:ease-[cubic-bezier(0.32,0.72,0,1)] cuoio:select-none cuoio:data-ending-style:pointer-events-none cuoio:data-ending-style:opacity-0 cuoio:data-ending-style:duration-[calc(var(--drawer-swipe-strength)*400ms)] cuoio:data-snap-points:[--drawer-overlay-min-opacity:0.5] cuoio:data-starting-style:opacity-0 cuoio:data-swiping:duration-0 cuoio:supports-backdrop-filter:backdrop-blur-xs cuoio:supports-[-webkit-touch-callout:none]:absolute",
         className
       )}
       {...props}
@@ -88,7 +88,7 @@ function DrawerSwipeHandle({
       data-slot="drawer-swipe-handle"
       aria-hidden="true"
       className={cn(
-        "cuoio:relative cuoio:z-10 cuoio:flex cuoio:shrink-0 cuoio:cursor-grab cuoio:transition-opacity cuoio:duration-200 cuoio:group-data-nested-drawer-open/drawer-popup:opacity-0 cuoio:group-data-nested-drawer-swiping/drawer-popup:opacity-100 cuoio:group-data-[swipe-axis=x]/drawer-popup:h-full cuoio:group-data-[swipe-axis=x]/drawer-popup:w-3 cuoio:group-data-[swipe-axis=x]/drawer-popup:items-center cuoio:group-data-[swipe-axis=y]/drawer-popup:h-3 cuoio:group-data-[swipe-axis=y]/drawer-popup:w-full cuoio:group-data-[swipe-axis=y]/drawer-popup:justify-center cuoio:group-data-[swipe-direction=down]/drawer-popup:items-end cuoio:group-data-[swipe-direction=left]/drawer-popup:order-last cuoio:group-data-[swipe-direction=left]/drawer-popup:justify-start cuoio:group-data-[swipe-direction=right]/drawer-popup:justify-end cuoio:group-data-[swipe-direction=up]/drawer-popup:order-last cuoio:group-data-[swipe-direction=up]/drawer-popup:items-start cuoio:after:block cuoio:after:shrink-0 cuoio:after:rounded-full cuoio:after:bg-muted cuoio:group-data-[swipe-axis=x]/drawer-popup:after:h-12 cuoio:group-data-[swipe-axis=x]/drawer-popup:after:w-1 cuoio:group-data-[swipe-axis=y]/drawer-popup:after:h-1 cuoio:group-data-[swipe-axis=y]/drawer-popup:after:w-12 cuoio:active:cursor-grabbing",
+        "cuoio:relative cuoio:z-10 cuoio:flex cuoio:shrink-0 cuoio:cursor-grab cuoio:transition-opacity cuoio:duration-200 cuoio:group-data-nested-drawer-open/drawer-popup:opacity-0 cuoio:group-data-nested-drawer-swiping/drawer-popup:opacity-100 cuoio:group-data-[swipe-axis=x]/drawer-popup:h-full cuoio:group-data-[swipe-axis=x]/drawer-popup:w-3 cuoio:group-data-[swipe-axis=x]/drawer-popup:items-center cuoio:group-data-[swipe-axis=y]/drawer-popup:h-3 cuoio:group-data-[swipe-axis=y]/drawer-popup:w-full cuoio:group-data-[swipe-axis=y]/drawer-popup:justify-center cuoio:group-data-[swipe-direction=down]/drawer-popup:items-end cuoio:group-data-[swipe-direction=left]/drawer-popup:order-last cuoio:group-data-[swipe-direction=left]/drawer-popup:justify-start cuoio:group-data-[swipe-direction=right]/drawer-popup:justify-end cuoio:group-data-[swipe-direction=up]/drawer-popup:order-last cuoio:group-data-[swipe-direction=up]/drawer-popup:items-start cuoio:after:block cuoio:after:shrink-0 cuoio:after:rounded-full cuoio:after:bg-muted cuoio:group-data-[swipe-axis=x]/drawer-popup:after:h-24 cuoio:group-data-[swipe-axis=x]/drawer-popup:after:w-1 cuoio:group-data-[swipe-axis=y]/drawer-popup:after:h-1 cuoio:group-data-[swipe-axis=y]/drawer-popup:after:w-24 cuoio:active:cursor-grabbing",
         className
       )}
       {...props}
@@ -121,7 +121,7 @@ function DrawerContent({
           data-snap-points={hasSnapPoints ? "" : undefined}
           className={cn(
             // Base.
-            "cuoio:group/drawer-popup cuoio:pointer-events-auto cuoio:fixed cuoio:z-50 cuoio:m-(--drawer-inset,0px) cuoio:flex cuoio:h-(--drawer-content-height) cuoio:max-h-(--drawer-content-max-height,none) cuoio:min-h-0 cuoio:w-(--drawer-content-width,auto) cuoio:transform-[translate3d(var(--translate-x,0px),var(--translate-y,0px),0)_scale(var(--stack-scale))] cuoio:flex-col cuoio:rounded-xl cuoio:border cuoio:border-popover cuoio:bg-popover cuoio:text-xs/relaxed cuoio:text-popover-foreground cuoio:transition-[transform,height,opacity,filter] cuoio:duration-450 cuoio:ease-[cubic-bezier(0.22,1,0.36,1)] cuoio:will-change-transform cuoio:outline-none cuoio:select-none cuoio:[--drawer-bleed-background:transparent] cuoio:[--drawer-inset:--spacing(2)] cuoio:[interpolate-size:allow-keywords] cuoio:dark:border-border",
+            "cuoio:group/drawer-popup cuoio:pointer-events-auto cuoio:fixed cuoio:z-50 cuoio:m-(--drawer-inset,0px) cuoio:flex cuoio:h-(--drawer-content-height) cuoio:max-h-(--drawer-content-max-height,none) cuoio:min-h-0 cuoio:w-(--drawer-content-width,auto) cuoio:transform-[translate3d(var(--translate-x,0px),var(--translate-y,0px),0)_scale(var(--stack-scale))] cuoio:flex-col cuoio:bg-popover cuoio:text-sm cuoio:text-popover-foreground cuoio:transition-[transform,height,opacity,filter] cuoio:duration-450 cuoio:ease-[cubic-bezier(0.22,1,0.36,1)] cuoio:will-change-transform cuoio:outline-none cuoio:select-none cuoio:[interpolate-size:allow-keywords] cuoio:data-[swipe-direction=down]:rounded-t-xl cuoio:data-[swipe-direction=down]:border-t cuoio:data-[swipe-direction=left]:rounded-e-xl cuoio:data-[swipe-direction=left]:border-e cuoio:data-[swipe-direction=right]:rounded-s-xl cuoio:data-[swipe-direction=right]:border-s cuoio:data-[swipe-direction=up]:rounded-b-xl cuoio:data-[swipe-direction=up]:border-b",
             // Nested.
             "cuoio:data-nested-drawer-open:overflow-hidden cuoio:data-nested-drawer-open:brightness-95",
             // Bleed.
@@ -168,7 +168,7 @@ function DrawerHeader({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="drawer-header"
       className={cn(
-        "cuoio:flex cuoio:shrink-0 cuoio:flex-col cuoio:gap-1 cuoio:p-4 cuoio:pb-0 cuoio:group-data-[swipe-axis=y]/drawer-popup:text-center cuoio:md:text-start",
+        "cuoio:flex cuoio:shrink-0 cuoio:flex-col cuoio:gap-0.5 cuoio:p-4 cuoio:pb-0 cuoio:group-data-[swipe-axis=y]/drawer-popup:text-center cuoio:md:gap-0.5 cuoio:md:text-start",
         className
       )}
       {...props}
@@ -191,7 +191,7 @@ function DrawerTitle({ className, ...props }: DrawerPrimitive.Title.Props) {
     <DrawerPrimitive.Title
       data-slot="drawer-title"
       className={cn(
-        "cuoio:font-heading cuoio:text-sm cuoio:font-medium cuoio:text-foreground",
+        "cuoio:font-heading cuoio:text-base cuoio:font-medium cuoio:text-foreground",
         className
       )}
       {...props}
@@ -206,10 +206,7 @@ function DrawerDescription({
   return (
     <DrawerPrimitive.Description
       data-slot="drawer-description"
-      className={cn(
-        "cuoio:text-xs/relaxed cuoio:text-balance cuoio:text-muted-foreground",
-        className
-      )}
+      className={cn("cuoio:text-sm cuoio:text-balance cuoio:text-muted-foreground", className)}
       {...props}
     />
   )

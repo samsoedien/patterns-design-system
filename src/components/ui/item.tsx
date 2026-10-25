@@ -35,7 +35,7 @@ function ItemSeparator({
 }
 
 const itemVariants = cva(
-  "cuoio:group/item cuoio:flex cuoio:w-full cuoio:flex-wrap cuoio:items-center cuoio:rounded-md cuoio:border cuoio:text-xs/relaxed cuoio:transition-colors cuoio:duration-100 cuoio:outline-none cuoio:focus-visible:border-ring cuoio:focus-visible:ring-[3px] cuoio:focus-visible:ring-ring/50 cuoio:[a]:transition-colors cuoio:[a]:hover:bg-muted",
+  "cuoio:group/item cuoio:flex cuoio:w-full cuoio:flex-wrap cuoio:items-center cuoio:rounded-lg cuoio:border cuoio:text-sm cuoio:transition-colors cuoio:duration-100 cuoio:outline-none cuoio:focus-visible:border-ring cuoio:focus-visible:ring-[3px] cuoio:focus-visible:ring-ring/50 cuoio:[a]:transition-colors cuoio:[a]:hover:bg-muted",
   {
     variants: {
       variant: {
@@ -46,7 +46,7 @@ const itemVariants = cva(
       size: {
         default: "cuoio:gap-2.5 cuoio:px-3 cuoio:py-2.5",
         sm: "cuoio:gap-2.5 cuoio:px-3 cuoio:py-2.5",
-        xs: "cuoio:gap-2.5 cuoio:px-2.5 cuoio:py-2 cuoio:in-data-[slot=dropdown-menu-content]:p-0",
+        xs: "cuoio:gap-2 cuoio:px-2.5 cuoio:py-2 cuoio:in-data-[slot=dropdown-menu-content]:p-0",
       },
     },
     defaultVariants: {
@@ -88,7 +88,7 @@ const itemMediaVariants = cva(
         default: "cuoio:bg-transparent",
         icon: "cuoio:[&_svg:not([class*=size-])]:size-4",
         image:
-          "cuoio:size-8 cuoio:overflow-hidden cuoio:rounded-sm cuoio:group-data-[size=sm]/item:size-8 cuoio:group-data-[size=xs]/item:size-6 cuoio:[&_img]:size-full cuoio:[&_img]:object-cover",
+          "cuoio:size-10 cuoio:overflow-hidden cuoio:rounded-sm cuoio:group-data-[size=sm]/item:size-8 cuoio:group-data-[size=xs]/item:size-6 cuoio:[&_img]:size-full cuoio:[&_img]:object-cover",
       },
     },
     defaultVariants: {
@@ -117,7 +117,7 @@ function ItemContent({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="item-content"
       className={cn(
-        "cuoio:flex cuoio:flex-1 cuoio:flex-col cuoio:gap-1 cuoio:group-data-[size=xs]/item:gap-0.5 cuoio:[&+[data-slot=item-content]]:flex-none",
+        "cuoio:flex cuoio:flex-1 cuoio:flex-col cuoio:gap-1 cuoio:group-data-[size=xs]/item:gap-0 cuoio:[&+[data-slot=item-content]]:flex-none",
         className
       )}
       {...props}
@@ -130,7 +130,7 @@ function ItemTitle({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="item-title"
       className={cn(
-        "cuoio:line-clamp-1 cuoio:flex cuoio:w-fit cuoio:items-center cuoio:gap-2 cuoio:text-xs/relaxed cuoio:leading-snug cuoio:font-medium cuoio:underline-offset-4",
+        "cuoio:line-clamp-1 cuoio:flex cuoio:w-fit cuoio:items-center cuoio:gap-2 cuoio:text-sm cuoio:leading-snug cuoio:font-medium cuoio:underline-offset-4",
         className
       )}
       {...props}
@@ -143,7 +143,7 @@ function ItemDescription({ className, ...props }: React.ComponentProps<"p">) {
     <p
       data-slot="item-description"
       className={cn(
-        "cuoio:line-clamp-2 cuoio:text-start cuoio:text-xs/relaxed cuoio:font-normal cuoio:text-muted-foreground cuoio:[&>a]:underline cuoio:[&>a]:underline-offset-4 cuoio:[&>a:hover]:text-primary",
+        "cuoio:line-clamp-2 cuoio:text-start cuoio:text-sm cuoio:leading-normal cuoio:font-normal cuoio:text-muted-foreground cuoio:group-data-[size=xs]/item:text-xs cuoio:[&>a]:underline cuoio:[&>a]:underline-offset-4 cuoio:[&>a:hover]:text-primary",
         className
       )}
       {...props}

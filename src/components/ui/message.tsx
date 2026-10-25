@@ -5,7 +5,7 @@ function MessageGroup({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="message-group"
-      className={cn("cuoio:flex cuoio:min-w-0 cuoio:flex-col cuoio:gap-1.5", className)}
+      className={cn("cuoio:flex cuoio:min-w-0 cuoio:flex-col cuoio:gap-2", className)}
       {...props}
     />
   )
@@ -21,7 +21,7 @@ function Message({
       data-slot="message"
       data-align={align}
       className={cn(
-        "cuoio:group/message cuoio:relative cuoio:flex cuoio:w-full cuoio:min-w-0 cuoio:gap-1.5 cuoio:text-xs/relaxed cuoio:data-[align=end]:flex-row-reverse",
+        "cuoio:group/message cuoio:relative cuoio:flex cuoio:w-full cuoio:min-w-0 cuoio:gap-2 cuoio:text-sm cuoio:data-[align=end]:flex-row-reverse",
         className
       )}
       {...props}
@@ -47,7 +47,7 @@ function MessageContent({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="message-content"
       className={cn(
-        "cuoio:flex cuoio:w-full cuoio:min-w-0 cuoio:flex-col cuoio:gap-2 cuoio:wrap-break-word cuoio:group-data-[align=end]/message:*:data-slot:self-end",
+        "cuoio:flex cuoio:w-full cuoio:min-w-0 cuoio:flex-col cuoio:gap-2.5 cuoio:wrap-break-word cuoio:group-data-[align=end]/message:*:data-slot:self-end",
         className
       )}
       {...props}
@@ -60,7 +60,7 @@ function MessageHeader({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="message-header"
       className={cn(
-        "cuoio:flex cuoio:max-w-full cuoio:min-w-0 cuoio:items-center cuoio:px-2.5 cuoio:text-[0.625rem] cuoio:font-medium cuoio:text-muted-foreground cuoio:group-has-data-[variant=ghost]/message:px-0",
+        "cuoio:flex cuoio:max-w-full cuoio:min-w-0 cuoio:items-center cuoio:px-3 cuoio:text-xs cuoio:font-medium cuoio:text-muted-foreground cuoio:group-has-data-[variant=ghost]/message:px-0",
         className
       )}
       {...props}
@@ -73,7 +73,7 @@ function MessageFooter({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="message-footer"
       className={cn(
-        "cuoio:flex cuoio:max-w-full cuoio:min-w-0 cuoio:items-center cuoio:px-2.5 cuoio:text-[0.625rem] cuoio:font-medium cuoio:text-muted-foreground cuoio:group-has-data-[variant=ghost]/message:px-0 cuoio:group-data-[align=end]/message:justify-end",
+        "cuoio:flex cuoio:max-w-full cuoio:min-w-0 cuoio:items-center cuoio:px-3 cuoio:text-xs cuoio:font-medium cuoio:text-muted-foreground cuoio:group-has-data-[variant=ghost]/message:px-0 cuoio:group-data-[align=end]/message:justify-end",
         className
       )}
       {...props}
