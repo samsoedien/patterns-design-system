@@ -8,6 +8,7 @@ import {
   SidebarFooter,
   SidebarHeader,
   SidebarRail,
+  SidebarSeparator,
 } from '@project-cuoio/core'
 import {
   AudioLinesIcon,
@@ -15,8 +16,10 @@ import {
   BotIcon,
   FrameIcon,
   GalleryVerticalEndIcon,
+  LifeBuoyIcon,
   MapIcon,
   PieChartIcon,
+  SendIcon,
   Settings2Icon,
   TerminalIcon,
   TerminalSquareIcon,
@@ -24,6 +27,7 @@ import {
 
 import { NavMain } from './nav-main'
 import { NavProjects } from './nav-projects'
+import { NavSecondary } from './nav-secondary'
 import { NavUser } from './nav-user'
 import { TeamSwitcher } from './team-switcher'
 
@@ -138,6 +142,18 @@ const data = {
       ],
     },
   ],
+  navSecondary: [
+    {
+      title: 'Support',
+      url: '#',
+      icon: <LifeBuoyIcon />,
+    },
+    {
+      title: 'Feedback',
+      url: '#',
+      icon: <SendIcon />,
+    },
+  ],
   projects: [
     {
       name: 'Design Engineering',
@@ -159,13 +175,16 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar collapsible="icon" {...props}>
+    <Sidebar collapsible="icon" variant="inset" {...props}>
       <SidebarHeader>
         <TeamSwitcher teams={data.teams} />
       </SidebarHeader>
+      <SidebarSeparator />
+
       <SidebarContent>
         <NavMain items={data.navMain} />
         <NavProjects projects={data.projects} />
+        <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />

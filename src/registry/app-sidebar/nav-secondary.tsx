@@ -1,6 +1,6 @@
-'use client'
+"use client"
 
-import * as React from 'react'
+import * as React from "react"
 
 import {
   SidebarGroup,
@@ -8,7 +8,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from '@project-cuoio/core'
+} from "@project-cuoio/core"
 
 export function NavSecondary({
   items,

@@ -2,6 +2,8 @@
 
 import * as React from 'react'
 
+import { ChevronsUpDownIcon, PlusIcon } from '@project-cuoio/icons'
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -16,7 +18,6 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from '@project-cuoio/core'
-import { ChevronsUpDownIcon, PlusIcon } from '@project-cuoio/icons'
 
 export function TeamSwitcher({
   teams,
