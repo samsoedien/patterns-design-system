@@ -1,5 +1,7 @@
 // @ts-nocheck
-"use client"
+'use client'
+
+import * as React from 'react'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import {
@@ -35,10 +37,10 @@ import {
   TrashIcon,
   UserIcon,
   WalletIcon,
-} from "lucide-react"
-import * as React from "react"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
+} from 'lucide-react'
+
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuCheckboxItem,
@@ -55,15 +57,13 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from '@/components/ui/dropdown-menu'
 
 function DemoExample() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger render={<Button variant="outline" />}>
-        Open
-      </DropdownMenuTrigger>
-      <DropdownMenuContent className="cuoio:w-40" align="start">
+      <DropdownMenuTrigger render={<Button variant="outline" />}>Open</DropdownMenuTrigger>
+      <DropdownMenuContent side={args.side} align={args.align} className="cuoio:w-40">
         <DropdownMenuGroup>
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
           <DropdownMenuItem>
@@ -119,9 +119,7 @@ function DemoExample() {
 function BasicExample() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger render={<Button variant="outline" />}>
-        Open
-      </DropdownMenuTrigger>
+      <DropdownMenuTrigger render={<Button variant="outline" />}>Open</DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuGroup>
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
@@ -141,9 +139,7 @@ function BasicExample() {
 function SubmenuExample() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger render={<Button variant="outline" />}>
-        Open
-      </DropdownMenuTrigger>
+      <DropdownMenuTrigger render={<Button variant="outline" />}>Open</DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuGroup>
           <DropdownMenuItem>Team</DropdownMenuItem>
@@ -182,9 +178,7 @@ function SubmenuExample() {
 function ShortcutsExample() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger render={<Button variant="outline" />}>
-        Open
-      </DropdownMenuTrigger>
+      <DropdownMenuTrigger render={<Button variant="outline" />}>Open</DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuGroup>
           <DropdownMenuLabel>My Account</DropdownMenuLabel>
@@ -214,9 +208,7 @@ function ShortcutsExample() {
 function IconsExample() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger render={<Button variant="outline" />}>
-        Open
-      </DropdownMenuTrigger>
+      <DropdownMenuTrigger render={<Button variant="outline" />}>Open</DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuItem>
           <UserIcon />
@@ -247,9 +239,7 @@ function CheckboxesExample() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger render={<Button variant="outline" />}>
-        Open
-      </DropdownMenuTrigger>
+      <DropdownMenuTrigger render={<Button variant="outline" />}>Open</DropdownMenuTrigger>
       <DropdownMenuContent className="cuoio:w-40">
         <DropdownMenuGroup>
           <DropdownMenuLabel>Appearance</DropdownMenuLabel>
@@ -266,10 +256,7 @@ function CheckboxesExample() {
           >
             Activity Bar
           </DropdownMenuCheckboxItem>
-          <DropdownMenuCheckboxItem
-            checked={showPanel}
-            onCheckedChange={setShowPanel}
-          >
+          <DropdownMenuCheckboxItem checked={showPanel} onCheckedChange={setShowPanel}>
             Panel
           </DropdownMenuCheckboxItem>
         </DropdownMenuGroup>
@@ -287,9 +274,7 @@ function CheckboxesIconsExample() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger render={<Button variant="outline" />}>
-        Notifications
-      </DropdownMenuTrigger>
+      <DropdownMenuTrigger render={<Button variant="outline" />}>Notifications</DropdownMenuTrigger>
       <DropdownMenuContent className="cuoio:w-48">
         <DropdownMenuGroup>
           <DropdownMenuLabel>Notification Preferences</DropdownMenuLabel>
@@ -327,13 +312,11 @@ function CheckboxesIconsExample() {
 }
 
 function RadioGroupExample() {
-  const [position, setPosition] = React.useState("bottom")
+  const [position, setPosition] = React.useState('bottom')
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger render={<Button variant="outline" />}>
-        Open
-      </DropdownMenuTrigger>
+      <DropdownMenuTrigger render={<Button variant="outline" />}>Open</DropdownMenuTrigger>
       <DropdownMenuContent className="cuoio:w-32">
         <DropdownMenuGroup>
           <DropdownMenuLabel>Panel Position</DropdownMenuLabel>
@@ -349,7 +332,7 @@ function RadioGroupExample() {
 }
 
 function RadioIconsExample() {
-  const [paymentMethod, setPaymentMethod] = React.useState("card")
+  const [paymentMethod, setPaymentMethod] = React.useState('card')
 
   return (
     <DropdownMenu>
@@ -359,10 +342,7 @@ function RadioIconsExample() {
       <DropdownMenuContent className="cuoio:min-w-56">
         <DropdownMenuGroup>
           <DropdownMenuLabel>Select Payment Method</DropdownMenuLabel>
-          <DropdownMenuRadioGroup
-            value={paymentMethod}
-            onValueChange={setPaymentMethod}
-          >
+          <DropdownMenuRadioGroup value={paymentMethod} onValueChange={setPaymentMethod}>
             <DropdownMenuRadioItem value="card">
               <CreditCardIcon />
               Credit Card
@@ -385,9 +365,7 @@ function RadioIconsExample() {
 function DestructiveExample() {
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger render={<Button variant="outline" />}>
-        Actions
-      </DropdownMenuTrigger>
+      <DropdownMenuTrigger render={<Button variant="outline" />}>Actions</DropdownMenuTrigger>
       <DropdownMenuContent>
         <DropdownMenuGroup>
           <DropdownMenuItem>
@@ -453,13 +431,11 @@ function ComplexExample() {
     sms: false,
     push: true,
   })
-  const [theme, setTheme] = React.useState("light")
+  const [theme, setTheme] = React.useState('light')
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger render={<Button variant="outline" />}>
-        Complex Menu
-      </DropdownMenuTrigger>
+      <DropdownMenuTrigger render={<Button variant="outline" />}>Complex Menu</DropdownMenuTrigger>
       <DropdownMenuContent className="cuoio:w-44">
         <DropdownMenuGroup>
           <DropdownMenuLabel>File</DropdownMenuLabel>
@@ -561,10 +537,7 @@ function ComplexExample() {
               <DropdownMenuSubContent>
                 <DropdownMenuGroup>
                   <DropdownMenuLabel>Appearance</DropdownMenuLabel>
-                  <DropdownMenuRadioGroup
-                    value={theme}
-                    onValueChange={setTheme}
-                  >
+                  <DropdownMenuRadioGroup value={theme} onValueChange={setTheme}>
                     <DropdownMenuRadioItem value="light">
                       <SunIcon />
                       Light
@@ -620,9 +593,7 @@ function ComplexExample() {
                     <DropdownMenuPortal>
                       <DropdownMenuSubContent>
                         <DropdownMenuGroup>
-                          <DropdownMenuLabel>
-                            Notification Types
-                          </DropdownMenuLabel>
+                          <DropdownMenuLabel>Notification Types</DropdownMenuLabel>
                           <DropdownMenuCheckboxItem
                             checked={notifications.push}
                             onCheckedChange={(checked) =>
@@ -689,15 +660,46 @@ function ComplexExample() {
 
 const meta = {
   title: 'UI/Dropdown Menu',
+  component: DropdownMenu,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['side', 'align'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    side: {
+      control: 'select',
+      options: ['top', 'right', 'bottom', 'left'],
+    },
+    align: {
+      control: 'select',
+      options: ['start', 'center', 'end'],
+    },
+  },
+  args: {
+    side: 'bottom',
+    align: 'start',
+  },
+} satisfies Meta<typeof DropdownMenu>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <DropdownMenu>
+      <DropdownMenuTrigger render={<Button variant="outline" />}>Open</DropdownMenuTrigger>
+      <DropdownMenuContent side={args.side} align={args.align} className="cuoio:w-40">
+        <DropdownMenuItem>Profile</DropdownMenuItem>
+        <DropdownMenuItem>Settings</DropdownMenuItem>
+        <DropdownMenuItem>Log out</DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

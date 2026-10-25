@@ -1,12 +1,14 @@
 // @ts-nocheck
-"use client"
+'use client'
+
+import * as React from 'react'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { CheckIcon, ChevronDownIcon, InfoIcon } from "lucide-react"
-import * as React from "react"
-import { Bubble, BubbleContent, BubbleGroup, BubbleReactions } from "@/components/ui/bubble"
-import { Button } from "@/components/ui/button"
-import { Collapsible, CollapsibleTrigger } from "@/components/ui/collapsible"
+import { CheckIcon, ChevronDownIcon, InfoIcon } from 'lucide-react'
+
+import { Bubble, BubbleContent, BubbleGroup, BubbleReactions } from '@/components/ui/bubble'
+import { Button } from '@/components/ui/button'
+import { Collapsible, CollapsibleTrigger } from '@/components/ui/collapsible'
 import {
   Popover,
   PopoverContent,
@@ -14,8 +16,8 @@ import {
   PopoverHeader,
   PopoverTitle,
   PopoverTrigger,
-} from "@/components/ui/popover"
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
+} from '@/components/ui/popover'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 
 function DemoExample() {
   return (
@@ -29,8 +31,7 @@ function DemoExample() {
         </Bubble>
         <Bubble variant="muted">
           <BubbleContent>
-            I can group messages, switch sides, and keep the whole thread easy
-            to scan.
+            I can group messages, switch sides, and keep the whole thread easy to scan.
           </BubbleContent>
           <BubbleReactions role="img" aria-label="Reaction: thumbs up">
             <span>👍</span>
@@ -42,13 +43,9 @@ function DemoExample() {
       </Bubble>
       <Bubble variant="muted">
         <BubbleContent>
-          Yes. You are reading a demo that is demoing itself. Very meta. Very
-          on-brand.
+          Yes. You are reading a demo that is demoing itself. Very meta. Very on-brand.
         </BubbleContent>
-        <BubbleReactions
-          role="img"
-          aria-label="Reactions: thumbs up, fire, eyes, and 2 more"
-        >
+        <BubbleReactions role="img" aria-label="Reactions: thumbs up, fire, eyes, and 2 more">
           <span>👍</span>
           <span>🔥</span>
           <span>👀</span>
@@ -98,8 +95,8 @@ function GroupDemoExample() {
       </BubbleGroup>
       <Bubble variant="muted">
         <BubbleContent>
-          Want me to diff yesterday&apos;s you against today&apos;s you?
-          It&apos;s a bit embarrassing.
+          Want me to diff yesterday&apos;s you against today&apos;s you? It&apos;s a bit
+          embarrassing.
         </BubbleContent>
       </Bubble>
     </div>
@@ -136,11 +133,11 @@ function CollapsibleExample() {
                 render={
                   <Button
                     variant="link"
-                    className="cuoio:gap-1 cuoio:p-0 cuoio:Collapsible_text-muted-foreground"
+                    className="cuoio:Collapsible_text-muted-foreground cuoio:gap-1 cuoio:p-0"
                   />
                 }
               >
-                {open ? "Show less" : "Show more"}
+                {open ? 'Show less' : 'Show more'}
                 <ChevronDownIcon
                   data-icon="inline-end"
                   className="cuoio:group-data-panel-open/button:rotate-180"
@@ -216,15 +213,45 @@ function PopoverExample() {
 
 const meta = {
   title: 'UI/Bubble',
+  component: Bubble,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['variant', 'align', 'children'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['default', 'secondary', 'muted', 'tinted', 'outline', 'ghost', 'destructive'],
+    },
+    align: {
+      control: 'inline-radio',
+      options: ['start', 'end'],
+    },
+    children: {
+      control: 'text',
+    },
+  },
+  args: {
+    variant: 'default',
+    align: 'start',
+    children: "Hey there! what's up?",
+  },
+} satisfies Meta<typeof Bubble>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Bubble variant={args.variant} align={args.align}>
+      <BubbleContent>{args.children}</BubbleContent>
+    </Bubble>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

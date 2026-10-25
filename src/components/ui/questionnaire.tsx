@@ -28,7 +28,7 @@ function QuestionnaireProgress({
     <QuestionnairePrimitive.Progress
       data-slot="questionnaire-progress"
       className={cn(
-        "cuoio:min-h-[1lh] cuoio:w-fit cuoio:min-w-[14ch] cuoio:text-[0.625rem] cuoio:font-medium cuoio:text-muted-foreground cuoio:tabular-nums",
+        "cuoio:min-h-[1lh] cuoio:w-fit cuoio:min-w-[14ch] cuoio:text-xs cuoio:font-medium cuoio:text-muted-foreground cuoio:tabular-nums",
         className
       )}
       {...props}
@@ -44,7 +44,7 @@ function QuestionnaireItem({
     <QuestionnairePrimitive.Item
       data-slot="questionnaire-item"
       className={cn(
-        "cuoio:flex cuoio:min-w-0 cuoio:flex-col cuoio:gap-3 cuoio:border-0 cuoio:p-0 cuoio:outline-none",
+        "cuoio:flex cuoio:min-w-0 cuoio:flex-col cuoio:gap-4 cuoio:border-0 cuoio:p-0 cuoio:outline-none",
         className
       )}
       {...props}
@@ -60,7 +60,7 @@ function QuestionnaireTitle({
     <QuestionnairePrimitive.Title
       data-slot="questionnaire-title"
       className={cn(
-        "cuoio:font-heading cuoio:text-sm cuoio:font-semibold cuoio:text-pretty cuoio:[&:not(:has(~[data-slot=questionnaire-description]))]:mb-3",
+        "cuoio:font-heading cuoio:text-base cuoio:leading-snug cuoio:font-medium cuoio:text-pretty cuoio:[&:not(:has(~[data-slot=questionnaire-description]))]:mb-4",
         className
       )}
       {...props}
@@ -75,10 +75,7 @@ function QuestionnaireDescription({
   return (
     <QuestionnairePrimitive.Description
       data-slot="questionnaire-description"
-      className={cn(
-        "cuoio:text-xs/relaxed cuoio:text-pretty cuoio:text-muted-foreground",
-        className
-      )}
+      className={cn("cuoio:text-sm cuoio:text-pretty cuoio:text-muted-foreground", className)}
       {...props}
     />
   )
@@ -92,7 +89,7 @@ function QuestionnaireChoices({
     <QuestionnairePrimitive.Choices
       data-slot="questionnaire-choices"
       className={cn(
-        "cuoio:group/questionnaire-choices cuoio:grid cuoio:min-w-0 cuoio:gap-1.5",
+        "cuoio:group/questionnaire-choices cuoio:grid cuoio:min-w-0 cuoio:gap-2",
         className
       )}
       {...props}
@@ -109,7 +106,7 @@ function QuestionnaireChoice({
     <QuestionnairePrimitive.Choice
       data-slot="questionnaire-choice"
       className={cn(
-        "cuoio:group/questionnaire-choice cuoio:relative cuoio:flex cuoio:min-h-11 cuoio:cursor-pointer cuoio:items-start cuoio:gap-2.5 cuoio:rounded-xl cuoio:border cuoio:border-input cuoio:px-3 cuoio:py-2.5 cuoio:text-start cuoio:text-xs/relaxed cuoio:transition-colors cuoio:outline-none cuoio:select-none cuoio:hover:bg-input/40 cuoio:has-[>input:focus-visible]:border-ring cuoio:has-[>input:focus-visible]:ring-2 cuoio:has-[>input:focus-visible]:ring-ring/30 cuoio:data-invalid:border-destructive cuoio:data-checked:border-primary/40 cuoio:data-checked:bg-primary/10",
+        "cuoio:group/questionnaire-choice cuoio:relative cuoio:flex cuoio:min-h-11 cuoio:cursor-pointer cuoio:items-start cuoio:gap-2.5 cuoio:rounded-lg cuoio:border cuoio:border-input cuoio:bg-transparent cuoio:px-3 cuoio:py-2.5 cuoio:text-start cuoio:text-sm cuoio:transition-colors cuoio:outline-none cuoio:select-none cuoio:hover:bg-muted/50 cuoio:has-[>input:focus-visible]:border-ring cuoio:has-[>input:focus-visible]:ring-3 cuoio:has-[>input:focus-visible]:ring-ring/50 cuoio:data-invalid:border-destructive cuoio:dark:bg-input/20 cuoio:data-checked:border-primary/40 cuoio:data-checked:bg-muted cuoio:dark:data-checked:bg-muted",
         "cuoio:data-disabled:pointer-events-none cuoio:data-disabled:cursor-not-allowed cuoio:data-disabled:opacity-50",
         className
       )}
@@ -138,7 +135,7 @@ function QuestionnaireChoice({
       </QuestionnairePrimitive.ChoiceLabel>
       <QuestionnairePrimitive.ChoiceShortcut
         data-slot="questionnaire-choice-shortcut"
-        className="cuoio:pointer-events-none cuoio:ms-auto cuoio:hidden cuoio:size-4 cuoio:shrink-0 cuoio:translate-y-[--spacing(0.45)] cuoio:items-center cuoio:justify-center cuoio:rounded-sm cuoio:border cuoio:border-input cuoio:bg-background/80 cuoio:font-mono cuoio:text-[0.5625rem] cuoio:leading-none cuoio:font-medium cuoio:text-muted-foreground cuoio:group-has-data-[slot=questionnaire-choice-description]/questionnaire-choice:translate-y-0.5 cuoio:group-data-[shortcut]/questionnaire-choice:inline-flex"
+        className="cuoio:pointer-events-none cuoio:ms-auto cuoio:hidden cuoio:size-5 cuoio:shrink-0 cuoio:translate-y-[--spacing(0.45)] cuoio:items-center cuoio:justify-center cuoio:rounded-md cuoio:border cuoio:border-input cuoio:bg-background cuoio:font-mono cuoio:text-[0.625rem] cuoio:leading-none cuoio:font-medium cuoio:text-muted-foreground cuoio:group-has-data-[slot=questionnaire-choice-description]/questionnaire-choice:translate-y-0.5 cuoio:group-data-[shortcut]/questionnaire-choice:inline-flex"
       />
     </QuestionnairePrimitive.Choice>
   )
@@ -169,7 +166,7 @@ function QuestionnaireInput({
       <QuestionnairePrimitive.Input
         data-slot="questionnaire-input"
         className={cn(
-          "cuoio:h-7 cuoio:min-h-11 cuoio:w-full cuoio:min-w-0 cuoio:rounded-md cuoio:border cuoio:border-input cuoio:bg-input/20 cuoio:px-2 cuoio:py-0.5 cuoio:text-sm cuoio:transition-[color,box-shadow,background-color] cuoio:outline-none cuoio:focus-visible:border-ring cuoio:focus-visible:ring-2 cuoio:focus-visible:ring-ring/30 cuoio:disabled:pointer-events-none cuoio:disabled:cursor-not-allowed cuoio:disabled:opacity-50 cuoio:aria-invalid:border-destructive cuoio:aria-invalid:ring-2 cuoio:aria-invalid:ring-destructive/20 cuoio:sm:min-h-0 cuoio:md:text-xs/relaxed cuoio:dark:bg-input/30 cuoio:dark:aria-invalid:border-destructive/50 cuoio:dark:aria-invalid:ring-destructive/40",
+          "cuoio:h-8 cuoio:min-h-11 cuoio:w-full cuoio:min-w-0 cuoio:rounded-lg cuoio:border cuoio:border-input cuoio:bg-transparent cuoio:px-2.5 cuoio:py-1 cuoio:text-base cuoio:transition-[color,box-shadow,background-color] cuoio:outline-none cuoio:focus-visible:border-ring cuoio:focus-visible:ring-3 cuoio:focus-visible:ring-ring/50 cuoio:disabled:pointer-events-none cuoio:disabled:cursor-not-allowed cuoio:disabled:bg-input/50 cuoio:disabled:opacity-50 cuoio:aria-invalid:border-destructive cuoio:aria-invalid:ring-3 cuoio:aria-invalid:ring-destructive/20 cuoio:sm:min-h-0 cuoio:md:text-sm cuoio:dark:bg-input/30 cuoio:dark:disabled:bg-input/80 cuoio:dark:aria-invalid:border-destructive/50 cuoio:dark:aria-invalid:ring-destructive/40",
           "cuoio:selection:bg-primary cuoio:selection:text-primary-foreground cuoio:placeholder:text-muted-foreground",
           className
         )}
@@ -186,7 +183,7 @@ function QuestionnaireError({
   return (
     <QuestionnairePrimitive.Error
       data-slot="questionnaire-error"
-      className={cn("cuoio:mt-2 cuoio:text-xs/relaxed cuoio:text-destructive", className)}
+      className={cn("cuoio:mt-2 cuoio:text-sm cuoio:text-destructive", className)}
       {...props}
     />
   )
@@ -200,7 +197,7 @@ function QuestionnaireActions({
     <div
       data-slot="questionnaire-actions"
       className={cn(
-        "cuoio:grid cuoio:min-h-11 cuoio:w-full cuoio:grid-cols-[minmax(0,1fr)_auto_auto] cuoio:items-center cuoio:gap-1.5 cuoio:sm:min-h-7",
+        "cuoio:grid cuoio:min-h-11 cuoio:w-full cuoio:grid-cols-[minmax(0,1fr)_auto_auto] cuoio:items-center cuoio:gap-2 cuoio:sm:min-h-8",
         className
       )}
       {...props}

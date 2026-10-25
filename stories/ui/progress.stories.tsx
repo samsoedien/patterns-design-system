@@ -1,10 +1,12 @@
 // @ts-nocheck
-"use client"
+'use client'
+
+import * as React from 'react'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import * as React from "react"
-import { Progress, ProgressLabel, ProgressValue } from "@/components/ui/progress"
-import { Slider } from "@/components/ui/slider"
+
+import { Progress, ProgressLabel, ProgressValue } from '@/components/ui/progress'
+import { Slider } from '@/components/ui/slider'
 
 function DemoExample() {
   const [progress, setProgress] = React.useState(13)
@@ -45,15 +47,36 @@ function ControlledExample() {
 
 const meta = {
   title: 'UI/Progress',
+  component: Progress,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['value'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    value: {
+      control: { type: 'range', min: 0, max: 100, step: 1 },
+    },
+  },
+  args: {
+    value: 56,
+  },
+} satisfies Meta<typeof Progress>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Progress value={args.value} className="cuoio:w-64">
+      <ProgressLabel>Upload progress</ProgressLabel>
+      <ProgressValue />
+    </Progress>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

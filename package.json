@@ -32,14 +32,16 @@
     "ui:build": "yarn dlx shadcn@latest build",
     "ui:diff": "yarn dlx shadcn@latest diff",
     "registry:build": "shadcn build",
-    "publish": "yarn registry:build && yarn compile",
+    "registry:publish": "yarn registry:build && yarn compile",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "clean": "yarn run -T rimraf node_modules lib"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
     "@fontsource-variable/figtree": "^5.3.0",
     "@fontsource-variable/raleway": "^5.3.0",
+    "@project-cuoio/icons": "workspace:*",
     "@shadcn/react": "^0.3.1",
     "@tailwindcss/vite": "^4.3.3",
     "class-variance-authority": "^0.7.1",
@@ -83,8 +85,6 @@
     "eslint-plugin-storybook": "^10.6.3",
     "globals": "^17.13.0",
     "playwright": "latest",
-    "prettier": "^3.9.10",
-    "prettier-plugin-tailwindcss": "^0.8.1",
     "storybook": "^10.6.3",
     "typescript": "^7.0.2",
     "typescript-eslint": "^8.71.2",

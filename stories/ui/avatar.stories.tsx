@@ -1,8 +1,9 @@
 // @ts-nocheck
-"use client"
+'use client'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { PlusIcon } from "lucide-react"
+import { PlusIcon } from 'lucide-react'
+
 import {
   Avatar,
   AvatarBadge,
@@ -10,8 +11,8 @@ import {
   AvatarGroup,
   AvatarGroupCount,
   AvatarImage,
-} from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
+} from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -19,7 +20,7 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from '@/components/ui/dropdown-menu'
 
 function DemoExample() {
   return (
@@ -33,10 +34,7 @@ function DemoExample() {
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
       <Avatar>
-        <AvatarImage
-          src="https://github.com/evilrabbit.png"
-          alt="@evilrabbit"
-        />
+        <AvatarImage src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
         <AvatarFallback>ER</AvatarFallback>
         <AvatarBadge className="cuoio:bg-green-600 cuoio:dark:bg-green-800" />
       </Avatar>
@@ -46,17 +44,11 @@ function DemoExample() {
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
         <Avatar>
-          <AvatarImage
-            src="https://github.com/maxleiter.png"
-            alt="@maxleiter"
-          />
+          <AvatarImage src="https://github.com/maxleiter.png" alt="@maxleiter" />
           <AvatarFallback>LR</AvatarFallback>
         </Avatar>
         <Avatar>
-          <AvatarImage
-            src="https://github.com/evilrabbit.png"
-            alt="@evilrabbit"
-          />
+          <AvatarImage src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
           <AvatarFallback>ER</AvatarFallback>
         </Avatar>
         <AvatarGroupCount>+3</AvatarGroupCount>
@@ -68,11 +60,7 @@ function DemoExample() {
 function BasicExample() {
   return (
     <Avatar>
-      <AvatarImage
-        src="https://github.com/shadcn.png"
-        alt="@shadcn"
-        className="cuoio:grayscale"
-      />
+      <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" className="cuoio:grayscale" />
       <AvatarFallback>CN</AvatarFallback>
     </Avatar>
   )
@@ -112,10 +100,7 @@ function GroupExample() {
         <AvatarFallback>LR</AvatarFallback>
       </Avatar>
       <Avatar>
-        <AvatarImage
-          src="https://github.com/evilrabbit.png"
-          alt="@evilrabbit"
-        />
+        <AvatarImage src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
         <AvatarFallback>ER</AvatarFallback>
       </Avatar>
     </AvatarGroup>
@@ -134,10 +119,7 @@ function GroupCountExample() {
         <AvatarFallback>LR</AvatarFallback>
       </Avatar>
       <Avatar>
-        <AvatarImage
-          src="https://github.com/evilrabbit.png"
-          alt="@evilrabbit"
-        />
+        <AvatarImage src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
         <AvatarFallback>ER</AvatarFallback>
       </Avatar>
       <AvatarGroupCount>+3</AvatarGroupCount>
@@ -157,10 +139,7 @@ function GroupCountIconExample() {
         <AvatarFallback>LR</AvatarFallback>
       </Avatar>
       <Avatar>
-        <AvatarImage
-          src="https://github.com/evilrabbit.png"
-          alt="@evilrabbit"
-        />
+        <AvatarImage src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
         <AvatarFallback>ER</AvatarFallback>
       </Avatar>
       <AvatarGroupCount>
@@ -217,15 +196,37 @@ function DropdownExample() {
 
 const meta = {
   title: 'UI/Avatar',
+  component: Avatar,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['size'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    size: {
+      control: 'select',
+      options: ['sm', 'default', 'lg'],
+    },
+  },
+  args: {
+    size: 'default',
+  },
+} satisfies Meta<typeof Avatar>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Avatar size={args.size}>
+      <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+      <AvatarFallback>CN</AvatarFallback>
+    </Avatar>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

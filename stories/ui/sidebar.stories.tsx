@@ -1,5 +1,7 @@
 // @ts-nocheck
-"use client"
+'use client'
+
+import * as React from 'react'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import {
@@ -25,10 +27,10 @@ import {
   Sparkles,
   SquareTerminal,
   Trash2,
-} from "lucide-react"
-import * as React from "react"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
+} from 'lucide-react'
+
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -38,7 +40,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from '@/components/ui/dropdown-menu'
 import {
   Sidebar,
   SidebarContent,
@@ -58,133 +60,133 @@ import {
   SidebarRail,
   SidebarTrigger,
   useSidebar,
-} from "@/components/ui/sidebar"
+} from '@/components/ui/sidebar'
 
-// This is sample Demo_data.
-const Demo_data = {
+// This is sample demo data.
+const demoData = {
   user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    name: 'shadcn',
+    email: 'm@example.com',
+    avatar: '/avatars/shadcn.jpg',
   },
   teams: [
     {
-      name: "Acme Inc",
+      name: 'Acme Inc',
       logo: GalleryVerticalEnd,
-      plan: "Enterprise",
+      plan: 'Enterprise',
     },
     {
-      name: "Acme Corp.",
+      name: 'Acme Corp.',
       logo: AudioWaveform,
-      plan: "Startup",
+      plan: 'Startup',
     },
     {
-      name: "Evil Corp.",
+      name: 'Evil Corp.',
       logo: Command,
-      plan: "Free",
+      plan: 'Free',
     },
   ],
   navMain: [
     {
-      title: "Playground",
-      url: "#",
+      title: 'Playground',
+      url: '#',
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
-          title: "History",
-          url: "#",
+          title: 'History',
+          url: '#',
         },
         {
-          title: "Starred",
-          url: "#",
+          title: 'Starred',
+          url: '#',
         },
         {
-          title: "Settings",
-          url: "#",
+          title: 'Settings',
+          url: '#',
         },
       ],
     },
     {
-      title: "Models",
-      url: "#",
+      title: 'Models',
+      url: '#',
       icon: Bot,
       items: [
         {
-          title: "Genesis",
-          url: "#",
+          title: 'Genesis',
+          url: '#',
         },
         {
-          title: "Explorer",
-          url: "#",
+          title: 'Explorer',
+          url: '#',
         },
         {
-          title: "Quantum",
-          url: "#",
+          title: 'Quantum',
+          url: '#',
         },
       ],
     },
     {
-      title: "Documentation",
-      url: "#",
+      title: 'Documentation',
+      url: '#',
       icon: BookOpen,
       items: [
         {
-          title: "Introduction",
-          url: "#",
+          title: 'Introduction',
+          url: '#',
         },
         {
-          title: "Get Started",
-          url: "#",
+          title: 'Get Started',
+          url: '#',
         },
         {
-          title: "Tutorials",
-          url: "#",
+          title: 'Tutorials',
+          url: '#',
         },
         {
-          title: "Changelog",
-          url: "#",
+          title: 'Changelog',
+          url: '#',
         },
       ],
     },
     {
-      title: "Settings",
-      url: "#",
+      title: 'Settings',
+      url: '#',
       icon: Settings2,
       items: [
         {
-          title: "General",
-          url: "#",
+          title: 'General',
+          url: '#',
         },
         {
-          title: "Team",
-          url: "#",
+          title: 'Team',
+          url: '#',
         },
         {
-          title: "Billing",
-          url: "#",
+          title: 'Billing',
+          url: '#',
         },
         {
-          title: "Limits",
-          url: "#",
+          title: 'Limits',
+          url: '#',
         },
       ],
     },
   ],
   projects: [
     {
-      name: "Design Engineering",
-      url: "#",
+      name: 'Design Engineering',
+      url: '#',
       icon: Frame,
     },
     {
-      name: "Sales & Marketing",
-      url: "#",
+      name: 'Sales & Marketing',
+      url: '#',
       icon: PieChart,
     },
     {
-      name: "Travel",
-      url: "#",
+      name: 'Travel',
+      url: '#',
       icon: Map,
     },
   ],
@@ -214,7 +216,7 @@ function Demo_TeamSwitcher({
             render={
               <SidebarMenuButton
                 size="lg"
-                className="cuoio:Demo_data-[state=open]:bg-sidebar-accent cuoio:Demo_data-[state=open]:text-sidebar-accent-foreground"
+                className="cuoio:data-[state=open]:bg-sidebar-accent cuoio:data-[state=open]:text-sidebar-accent-foreground"
               />
             }
           >
@@ -230,7 +232,7 @@ function Demo_TeamSwitcher({
           <DropdownMenuContent
             className="cuoio:w-(--radix-dropdown-menu-trigger-width) cuoio:min-w-56 cuoio:rounded-lg"
             align="start"
-            side={isMobile ? "bottom" : "right"}
+            side={isMobile ? 'bottom' : 'right'}
             sideOffset={4}
           >
             <DropdownMenuGroup>
@@ -257,9 +259,7 @@ function Demo_TeamSwitcher({
                 <div className="cuoio:flex cuoio:size-6 cuoio:items-center cuoio:justify-center cuoio:rounded-md cuoio:border cuoio:bg-transparent">
                   <Plus className="cuoio:size-4" />
                 </div>
-                <div className="cuoio:font-medium cuoio:text-muted-foreground">
-                  Add team
-                </div>
+                <div className="cuoio:font-medium cuoio:text-muted-foreground">Add team</div>
               </DropdownMenuItem>
             </DropdownMenuGroup>
           </DropdownMenuContent>
@@ -294,12 +294,10 @@ function Demo_NavMain({
             className="cuoio:group/collapsible"
           >
             <SidebarMenuItem>
-              <CollapsibleTrigger
-                render={<SidebarMenuButton tooltip={item.title} />}
-              >
+              <CollapsibleTrigger render={<SidebarMenuButton tooltip={item.title} />}>
                 {item.icon && <item.icon />}
                 <span>{item.title}</span>
-                <ChevronRight className="cuoio:ml-auto cuoio:transition-transform cuoio:duration-200 cuoio:group-Demo_data-[state=open]/collapsible:rotate-90" />
+                <ChevronRight className="cuoio:ml-auto cuoio:transition-transform cuoio:duration-200 cuoio:group-data-[state=open]/collapsible:rotate-90" />
               </CollapsibleTrigger>
               <CollapsibleContent>
                 <SidebarMenuSub>
@@ -332,7 +330,7 @@ function Demo_NavProjects({
   const { isMobile } = useSidebar()
 
   return (
-    <SidebarGroup className="cuoio:group-Demo_data-[collapsible=icon]:hidden">
+    <SidebarGroup className="cuoio:group-data-[collapsible=icon]:hidden">
       <SidebarGroupLabel>Projects</SidebarGroupLabel>
       <SidebarMenu>
         {projects.map((item) => (
@@ -348,8 +346,8 @@ function Demo_NavProjects({
               </DropdownMenuTrigger>
               <DropdownMenuContent
                 className="cuoio:w-48 cuoio:rounded-lg"
-                side={isMobile ? "bottom" : "right"}
-                align={isMobile ? "end" : "start"}
+                side={isMobile ? 'bottom' : 'right'}
+                align={isMobile ? 'end' : 'start'}
               >
                 <DropdownMenuItem>
                   <Folder className="cuoio:text-muted-foreground" />
@@ -398,7 +396,7 @@ function Demo_NavUser({
             render={
               <SidebarMenuButton
                 size="lg"
-                className="cuoio:Demo_data-[state=open]:bg-sidebar-accent cuoio:Demo_data-[state=open]:text-sidebar-accent-foreground"
+                className="cuoio:data-[state=open]:bg-sidebar-accent cuoio:data-[state=open]:text-sidebar-accent-foreground"
               />
             }
           >
@@ -414,7 +412,7 @@ function Demo_NavUser({
           </DropdownMenuTrigger>
           <DropdownMenuContent
             className="cuoio:w-(--radix-dropdown-menu-trigger-width) cuoio:min-w-56 cuoio:rounded-lg"
-            side={isMobile ? "bottom" : "right"}
+            side={isMobile ? 'bottom' : 'right'}
             align="end"
             sideOffset={4}
           >
@@ -468,26 +466,24 @@ function Demo_NavUser({
   )
 }
 
-function DemoExample({
-  ...props
-}: React.ComponentProps<typeof Sidebar>) {
+function DemoExample({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
     <SidebarProvider>
       <Sidebar collapsible="icon" {...props}>
         <SidebarHeader>
-          <Demo_TeamSwitcher teams={Demo_data.teams} />
+          <Demo_TeamSwitcher teams={demoData.teams} />
         </SidebarHeader>
         <SidebarContent>
-          <Demo_NavMain items={Demo_data.navMain} />
-          <Demo_NavProjects projects={Demo_data.projects} />
+          <Demo_NavMain items={demoData.navMain} />
+          <Demo_NavProjects projects={demoData.projects} />
         </SidebarContent>
         <SidebarFooter>
-          <Demo_NavUser user={Demo_data.user} />
+          <Demo_NavUser user={demoData.user} />
         </SidebarFooter>
         <SidebarRail />
       </Sidebar>
       <SidebarInset>
-        <header className="cuoio:flex cuoio:h-16 cuoio:shrink-0 cuoio:items-center cuoio:gap-2 cuoio:transition-[width,height] cuoio:ease-linear cuoio:group-has-Demo_data-[collapsible=icon]/sidebar-wrapper:h-12">
+        <header className="cuoio:flex cuoio:h-16 cuoio:shrink-0 cuoio:items-center cuoio:gap-2 cuoio:transition-[width,height] cuoio:ease-linear cuoio:group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
           <div className="cuoio:flex cuoio:items-center cuoio:gap-2 cuoio:px-4">
             <SidebarTrigger className="cuoio:-ml-1" />
           </div>
@@ -499,15 +495,42 @@ function DemoExample({
 
 const meta = {
   title: 'UI/Sidebar',
+  component: Sidebar,
   parameters: {
     layout: 'fullscreen',
+    controls: {
+      include: ['side', 'variant', 'collapsible'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    side: {
+      control: 'inline-radio',
+      options: ['left', 'right'],
+    },
+    variant: {
+      control: 'select',
+      options: ['sidebar', 'floating', 'inset'],
+    },
+    collapsible: {
+      control: 'select',
+      options: ['offcanvas', 'icon', 'none'],
+    },
+  },
+  args: {
+    side: 'left',
+    variant: 'sidebar',
+    collapsible: 'icon',
+  },
+} satisfies Meta<typeof Sidebar>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => <DemoExample {...args} />,
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

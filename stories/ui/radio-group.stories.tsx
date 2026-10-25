@@ -1,5 +1,6 @@
 // @ts-nocheck
 import type { Meta, StoryObj } from '@storybook/react-vite'
+
 import {
   Field,
   FieldContent,
@@ -8,9 +9,9 @@ import {
   FieldLegend,
   FieldSet,
   FieldTitle,
-} from "@/components/ui/field"
-import { Label } from "@/components/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+} from '@/components/ui/field'
+import { Label } from '@/components/ui/label'
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 
 function DemoExample() {
   return (
@@ -38,9 +39,7 @@ function DescriptionExample() {
         <RadioGroupItem value="default" id="desc-r1" />
         <FieldContent>
           <FieldLabel htmlFor="desc-r1">Default</FieldLabel>
-          <FieldDescription>
-            Standard spacing for most use cases.
-          </FieldDescription>
+          <FieldDescription>Standard spacing for most use cases.</FieldDescription>
         </FieldContent>
       </Field>
       <Field orientation="horizontal">
@@ -54,9 +53,7 @@ function DescriptionExample() {
         <RadioGroupItem value="compact" id="desc-r3" />
         <FieldContent>
           <FieldLabel htmlFor="desc-r3">Compact</FieldLabel>
-          <FieldDescription>
-            Minimal spacing for dense layouts.
-          </FieldDescription>
+          <FieldDescription>Minimal spacing for dense layouts.</FieldDescription>
         </FieldContent>
       </Field>
     </RadioGroup>
@@ -70,9 +67,7 @@ function ChoiceCardExample() {
         <Field orientation="horizontal">
           <FieldContent>
             <FieldTitle>Plus</FieldTitle>
-            <FieldDescription>
-              For individuals and small teams.
-            </FieldDescription>
+            <FieldDescription>For individuals and small teams.</FieldDescription>
           </FieldContent>
           <RadioGroupItem value="plus" id="plus-plan" />
         </Field>
@@ -90,9 +85,7 @@ function ChoiceCardExample() {
         <Field orientation="horizontal">
           <FieldContent>
             <FieldTitle>Enterprise</FieldTitle>
-            <FieldDescription>
-              For large teams and enterprises.
-            </FieldDescription>
+            <FieldDescription>For large teams and enterprises.</FieldDescription>
           </FieldContent>
           <RadioGroupItem value="enterprise" id="enterprise-plan" />
         </Field>
@@ -105,9 +98,7 @@ function FieldsetExample() {
   return (
     <FieldSet className="cuoio:w-full cuoio:max-w-xs">
       <FieldLegend variant="label">Subscription Plan</FieldLegend>
-      <FieldDescription>
-        Yearly and lifetime plans offer significant savings.
-      </FieldDescription>
+      <FieldDescription>Yearly and lifetime plans offer significant savings.</FieldDescription>
       <RadioGroup defaultValue="monthly">
         <Field orientation="horizontal">
           <RadioGroupItem value="monthly" id="plan-monthly" />
@@ -161,9 +152,7 @@ function InvalidExample() {
   return (
     <FieldSet className="cuoio:w-full cuoio:max-w-xs">
       <FieldLegend variant="label">Notification Preferences</FieldLegend>
-      <FieldDescription>
-        Choose how you want to receive notifications.
-      </FieldDescription>
+      <FieldDescription>Choose how you want to receive notifications.</FieldDescription>
       <RadioGroup defaultValue="email">
         <Field orientation="horizontal" data-invalid>
           <RadioGroupItem value="email" id="invalid-email" aria-invalid />
@@ -190,15 +179,46 @@ function InvalidExample() {
 
 const meta = {
   title: 'UI/Radio Group',
+  component: RadioGroup,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['disabled'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    disabled: {
+      control: 'boolean',
+    },
+  },
+  args: {
+    disabled: false,
+  },
+} satisfies Meta<typeof RadioGroup>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <RadioGroup defaultValue="comfortable" disabled={args.disabled} className="cuoio:w-fit">
+      <div className="cuoio:flex cuoio:items-center cuoio:gap-3">
+        <RadioGroupItem value="default" id="playground-r1" />
+        <Label htmlFor="playground-r1">Default</Label>
+      </div>
+      <div className="cuoio:flex cuoio:items-center cuoio:gap-3">
+        <RadioGroupItem value="comfortable" id="playground-r2" />
+        <Label htmlFor="playground-r2">Comfortable</Label>
+      </div>
+      <div className="cuoio:flex cuoio:items-center cuoio:gap-3">
+        <RadioGroupItem value="compact" id="playground-r3" />
+        <Label htmlFor="playground-r3">Compact</Label>
+      </div>
+    </RadioGroup>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

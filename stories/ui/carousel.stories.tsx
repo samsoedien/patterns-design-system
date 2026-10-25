@@ -1,17 +1,19 @@
 // @ts-nocheck
-"use client"
+'use client'
+
+import * as React from 'react'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import * as React from "react"
-import { Card, CardContent } from "@/components/ui/card"
+
+import { Card, CardContent } from '@/components/ui/card'
 import {
   Carousel,
+  type CarouselApi,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-  type CarouselApi,
-} from "@/components/ui/carousel"
+} from '@/components/ui/carousel'
 
 function DemoExample() {
   return (
@@ -39,7 +41,7 @@ function SizeExample() {
   return (
     <Carousel
       opts={{
-        align: "start",
+        align: 'start',
       }}
       className="cuoio:w-full cuoio:max-w-[12rem] cuoio:sm:max-w-xs cuoio:md:max-w-sm"
     >
@@ -88,7 +90,7 @@ function OrientationExample() {
   return (
     <Carousel
       opts={{
-        align: "start",
+        align: 'start',
       }}
       orientation="vertical"
       className="cuoio:w-full cuoio:max-w-xs"
@@ -125,7 +127,7 @@ function ApiExample() {
     setCount(api.scrollSnapList().length)
     setCurrent(api.selectedScrollSnap() + 1)
 
-    api.on("select", () => {
+    api.on('select', () => {
       setCurrent(api.selectedScrollSnap() + 1)
     })
   }, [api])
@@ -156,15 +158,50 @@ function ApiExample() {
 
 const meta = {
   title: 'UI/Carousel',
+  component: Carousel,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['orientation'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    orientation: {
+      control: 'inline-radio',
+      options: ['horizontal', 'vertical'],
+    },
+  },
+  args: {
+    orientation: 'horizontal',
+  },
+} satisfies Meta<typeof Carousel>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Carousel orientation={args.orientation} className="cuoio:w-full cuoio:max-w-xs">
+      <CarouselContent className={args.orientation === 'vertical' ? 'cuoio:h-48' : undefined}>
+        {Array.from({ length: 5 }).map((_, index) => (
+          <CarouselItem key={index}>
+            <div className="cuoio:p-1">
+              <Card>
+                <CardContent className="cuoio:flex cuoio:aspect-square cuoio:items-center cuoio:justify-center cuoio:p-6">
+                  <span className="cuoio:text-4xl cuoio:font-semibold">{index + 1}</span>
+                </CardContent>
+              </Card>
+            </div>
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+      <CarouselPrevious />
+      <CarouselNext />
+    </Carousel>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

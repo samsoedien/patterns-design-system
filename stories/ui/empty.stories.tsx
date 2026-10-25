@@ -8,9 +8,10 @@ import {
   PlusIcon,
   RefreshCcwIcon,
   SearchIcon,
-} from "lucide-react"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
+} from 'lucide-react'
+
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
 import {
   Empty,
   EmptyContent,
@@ -18,9 +19,9 @@ import {
   EmptyHeader,
   EmptyMedia,
   EmptyTitle,
-} from "@/components/ui/empty"
-import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/input-group"
-import { Kbd } from "@/components/ui/kbd"
+} from '@/components/ui/empty'
+import { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'
+import { Kbd } from '@/components/ui/kbd'
 
 function DemoExample() {
   return (
@@ -31,8 +32,7 @@ function DemoExample() {
         </EmptyMedia>
         <EmptyTitle>No Projects Yet</EmptyTitle>
         <EmptyDescription>
-          You haven&apos;t created any projects yet. Get started by creating
-          your first project.
+          You haven&apos;t created any projects yet. Get started by creating your first project.
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent className="cuoio:flex-row cuoio:justify-center cuoio:gap-2">
@@ -101,17 +101,13 @@ function AvatarExample() {
       <EmptyHeader>
         <EmptyMedia variant="default">
           <Avatar className="cuoio:size-12">
-            <AvatarImage
-              src="https://github.com/shadcn.png"
-              className="cuoio:grayscale"
-            />
+            <AvatarImage src="https://github.com/shadcn.png" className="cuoio:grayscale" />
             <AvatarFallback>LR</AvatarFallback>
           </Avatar>
         </EmptyMedia>
         <EmptyTitle>User Offline</EmptyTitle>
         <EmptyDescription>
-          This user is currently offline. You can leave a message to notify them
-          or try again later.
+          This user is currently offline. You can leave a message to notify them or try again later.
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent>
@@ -132,25 +128,17 @@ function AvatarGroupExample() {
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
             <Avatar>
-              <AvatarImage
-                src="https://github.com/maxleiter.png"
-                alt="@maxleiter"
-              />
+              <AvatarImage src="https://github.com/maxleiter.png" alt="@maxleiter" />
               <AvatarFallback>LR</AvatarFallback>
             </Avatar>
             <Avatar>
-              <AvatarImage
-                src="https://github.com/evilrabbit.png"
-                alt="@evilrabbit"
-              />
+              <AvatarImage src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
               <AvatarFallback>ER</AvatarFallback>
             </Avatar>
           </div>
         </EmptyMedia>
         <EmptyTitle>No Team Members</EmptyTitle>
-        <EmptyDescription>
-          Invite your team to collaborate on this project.
-        </EmptyDescription>
+        <EmptyDescription>Invite your team to collaborate on this project.</EmptyDescription>
       </EmptyHeader>
       <EmptyContent>
         <Button size="sm">
@@ -168,8 +156,8 @@ function InputGroupExample() {
       <EmptyHeader>
         <EmptyTitle>404 - Not Found</EmptyTitle>
         <EmptyDescription>
-          The page you&apos;re looking for doesn&apos;t exist. Try searching for
-          what you need below.
+          The page you&apos;re looking for doesn&apos;t exist. Try searching for what you need
+          below.
         </EmptyDescription>
       </EmptyHeader>
       <EmptyContent>
@@ -192,15 +180,50 @@ function InputGroupExample() {
 
 const meta = {
   title: 'UI/Empty',
+  component: Empty,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['mediaVariant', 'title', 'description'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    mediaVariant: {
+      control: 'inline-radio',
+      options: ['default', 'icon'],
+    },
+    title: {
+      control: 'text',
+    },
+    description: {
+      control: 'text',
+    },
+  },
+  args: {
+    mediaVariant: 'icon',
+    title: 'No projects yet',
+    description: 'Create a project to get started.',
+  },
+} satisfies Meta<typeof Empty>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Empty className="cuoio:border">
+      <EmptyHeader>
+        <EmptyMedia variant={args.mediaVariant}>
+          <FolderCodeIcon />
+        </EmptyMedia>
+        <EmptyTitle>{args.title}</EmptyTitle>
+        <EmptyDescription>{args.description}</EmptyDescription>
+      </EmptyHeader>
+    </Empty>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

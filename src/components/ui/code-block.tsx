@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button"
 import { CheckIcon, CopyIcon } from "lucide-react"
 
 const codeBlockVariants = cva(
-  "cuoio:group/code-block cuoio:relative cuoio:flex cuoio:w-full cuoio:min-w-0 cuoio:flex-col cuoio:overflow-hidden cuoio:rounded-md cuoio:text-sm cuoio:has-[>[data-slot=code-block-content]:focus-visible]:ring-2 cuoio:has-[>[data-slot=code-block-content]:focus-visible]:ring-ring/30 cuoio:data-[size=sm]:text-xs",
+  "cuoio:group/code-block cuoio:relative cuoio:flex cuoio:w-full cuoio:min-w-0 cuoio:flex-col cuoio:overflow-hidden cuoio:rounded-lg cuoio:text-sm cuoio:has-[>[data-slot=code-block-content]:focus-visible]:ring-3 cuoio:has-[>[data-slot=code-block-content]:focus-visible]:ring-ring/50 cuoio:data-[size=sm]:text-xs",
   {
     variants: {
       variant: {
@@ -47,7 +47,7 @@ function CodeBlockHeader({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="code-block-header"
       className={cn(
-        "cuoio:flex cuoio:min-w-0 cuoio:shrink-0 cuoio:items-center cuoio:gap-2 cuoio:px-3 cuoio:pt-3 cuoio:text-muted-foreground cuoio:group-data-[size=sm]/code-block:px-2 cuoio:group-data-[size=sm]/code-block:pt-2 cuoio:group-data-[variant=destructive]/code-block:text-destructive cuoio:*:has-[>[data-slot=code-block-title]]:min-w-0",
+        "cuoio:flex cuoio:min-w-0 cuoio:shrink-0 cuoio:items-center cuoio:gap-2 cuoio:px-3 cuoio:pt-3 cuoio:text-muted-foreground cuoio:group-data-[size=sm]/code-block:px-2.5 cuoio:group-data-[size=sm]/code-block:pt-2.5 cuoio:group-data-[variant=destructive]/code-block:text-destructive cuoio:*:has-[>[data-slot=code-block-title]]:min-w-0",
         className
       )}
       {...props}
@@ -60,7 +60,7 @@ function CodeBlockTitle({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="code-block-title"
       className={cn(
-        "cuoio:min-w-0 cuoio:truncate cuoio:font-sans cuoio:text-xs cuoio:font-medium cuoio:text-foreground cuoio:group-data-[variant=destructive]/code-block:text-destructive cuoio:[&_svg]:pointer-events-none cuoio:[&_svg]:inline-block cuoio:[&_svg]:align-middle cuoio:[&_svg:not([class*=size-])]:size-3.5 cuoio:*:[svg]:me-1.5",
+        "cuoio:min-w-0 cuoio:truncate cuoio:font-sans cuoio:text-sm cuoio:font-medium cuoio:text-foreground cuoio:group-data-[size=sm]/code-block:text-xs cuoio:group-data-[variant=destructive]/code-block:text-destructive cuoio:[&_svg]:pointer-events-none cuoio:[&_svg]:inline-block cuoio:[&_svg]:align-middle cuoio:[&_svg:not([class*=size-])]:size-3.5 cuoio:*:[svg]:me-1.5",
         className
       )}
       {...props}
@@ -158,7 +158,7 @@ function CodeBlockContent({
       tabIndex={0}
       style={{ counterReset: `line ${startLine - 1}`, ...style }}
       className={cn(
-        "cuoio:min-h-0 cuoio:min-w-0 cuoio:scroll-fade-x cuoio:scrollbar-thin cuoio:overflow-auto cuoio:px-3 cuoio:py-3 cuoio:text-start cuoio:font-mono cuoio:leading-relaxed cuoio:outline-none cuoio:group-has-data-[slot=code-block-footer]/code-block:pb-2 cuoio:group-has-data-[slot=code-block-header]/code-block:pt-2 cuoio:group-data-[size=sm]/code-block:px-2 cuoio:group-data-[size=sm]/code-block:py-2 cuoio:group-data-[size=sm]/code-block:group-has-data-[slot=code-block-header]/code-block:pt-1.5 cuoio:data-wrap:scroll-fade-y cuoio:data-wrap:wrap-break-word cuoio:data-wrap:whitespace-pre-wrap",
+        "cuoio:min-h-0 cuoio:min-w-0 cuoio:scroll-fade-x cuoio:scrollbar-thin cuoio:overflow-auto cuoio:px-3 cuoio:py-3 cuoio:text-start cuoio:font-mono cuoio:leading-relaxed cuoio:outline-none cuoio:group-has-data-[slot=code-block-footer]/code-block:pb-2 cuoio:group-has-data-[slot=code-block-header]/code-block:pt-2 cuoio:group-data-[size=sm]/code-block:px-2.5 cuoio:group-data-[size=sm]/code-block:py-2.5 cuoio:group-data-[size=sm]/code-block:group-has-data-[slot=code-block-header]/code-block:pt-1.5 cuoio:data-wrap:scroll-fade-y cuoio:data-wrap:wrap-break-word cuoio:data-wrap:whitespace-pre-wrap",
         className
       )}
       {...props}
@@ -181,7 +181,7 @@ function CodeBlockContent({
 }
 
 const codeBlockLineVariants = cva(
-  "cuoio:relative cuoio:-mx-3 cuoio:block cuoio:min-h-lh cuoio:px-3 cuoio:group-data-[size=sm]/code-block:-mx-2 cuoio:group-data-[size=sm]/code-block:px-2 cuoio:before:min-w-6 cuoio:before:text-end cuoio:before:text-muted-foreground cuoio:after:absolute cuoio:after:start-1 cuoio:after:top-0 cuoio:after:text-muted-foreground cuoio:after:select-none cuoio:in-data-numbered:col-span-2 cuoio:in-data-numbered:grid cuoio:in-data-numbered:grid-cols-subgrid cuoio:in-data-numbered:gap-x-3 cuoio:in-data-numbered:[counter-increment:line] cuoio:in-data-numbered:before:content-[counter(line)] cuoio:in-data-numbered:before:select-none cuoio:in-data-numbered:supports-[content:counter(line)_/_]:before:content-[counter(line)_/_]",
+  "cuoio:relative cuoio:-mx-3 cuoio:block cuoio:min-h-lh cuoio:px-3 cuoio:group-data-[size=sm]/code-block:-mx-2.5 cuoio:group-data-[size=sm]/code-block:px-2.5 cuoio:before:min-w-6 cuoio:before:text-end cuoio:before:text-muted-foreground cuoio:after:absolute cuoio:after:start-1 cuoio:after:top-0 cuoio:after:text-muted-foreground cuoio:after:select-none cuoio:in-data-numbered:col-span-2 cuoio:in-data-numbered:grid cuoio:in-data-numbered:grid-cols-subgrid cuoio:in-data-numbered:gap-x-3 cuoio:in-data-numbered:[counter-increment:line] cuoio:in-data-numbered:before:content-[counter(line)] cuoio:in-data-numbered:before:select-none cuoio:in-data-numbered:supports-[content:counter(line)_/_]:before:content-[counter(line)_/_]",
   {
     variants: {
       variant: {
@@ -229,7 +229,7 @@ function CodeBlockFooter({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="code-block-footer"
       className={cn(
-        "cuoio:flex cuoio:min-w-0 cuoio:shrink-0 cuoio:items-center cuoio:gap-2 cuoio:px-3 cuoio:pb-3 cuoio:text-muted-foreground cuoio:group-data-[size=sm]/code-block:px-2 cuoio:group-data-[size=sm]/code-block:pb-2",
+        "cuoio:flex cuoio:min-w-0 cuoio:shrink-0 cuoio:items-center cuoio:gap-2 cuoio:px-3 cuoio:pb-3 cuoio:text-muted-foreground cuoio:group-data-[size=sm]/code-block:px-2.5 cuoio:group-data-[size=sm]/code-block:pb-2.5",
         className
       )}
       {...props}

@@ -1,8 +1,9 @@
 // @ts-nocheck
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Button } from "@/components/ui/button"
-import { Field, FieldDescription, FieldLabel } from "@/components/ui/field"
-import { Textarea } from "@/components/ui/textarea"
+
+import { Button } from '@/components/ui/button'
+import { Field, FieldDescription, FieldLabel } from '@/components/ui/field'
+import { Textarea } from '@/components/ui/textarea'
 
 function DemoExample() {
   return <Textarea placeholder="Type your message here." />
@@ -22,11 +23,7 @@ function DisabledExample() {
   return (
     <Field data-disabled>
       <FieldLabel htmlFor="textarea-disabled">Message</FieldLabel>
-      <Textarea
-        id="textarea-disabled"
-        placeholder="Type your message here."
-        disabled
-      />
+      <Textarea id="textarea-disabled" placeholder="Type your message here." disabled />
     </Field>
   )
 }
@@ -35,11 +32,7 @@ function InvalidExample() {
   return (
     <Field data-invalid>
       <FieldLabel htmlFor="textarea-invalid">Message</FieldLabel>
-      <Textarea
-        id="textarea-invalid"
-        placeholder="Type your message here."
-        aria-invalid
-      />
+      <Textarea id="textarea-invalid" placeholder="Type your message here." aria-invalid />
       <FieldDescription>Please enter a valid message.</FieldDescription>
     </Field>
   )
@@ -56,15 +49,46 @@ function ButtonExample() {
 
 const meta = {
   title: 'UI/Textarea',
+  component: Textarea,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['placeholder', 'disabled', 'rows'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    placeholder: {
+      control: 'text',
+    },
+    disabled: {
+      control: 'boolean',
+    },
+    rows: {
+      control: { type: 'number', min: 2, max: 12 },
+    },
+  },
+  args: {
+    placeholder: 'Type your message here.',
+    disabled: false,
+    rows: 4,
+  },
+} satisfies Meta<typeof Textarea>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Textarea
+      placeholder={args.placeholder}
+      disabled={args.disabled}
+      rows={args.rows}
+      className="cuoio:w-80"
+    />
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

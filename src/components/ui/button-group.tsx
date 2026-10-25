@@ -6,14 +6,14 @@ import { cn } from "cn"
 import { Separator } from "@/components/ui/separator"
 
 const buttonGroupVariants = cva(
-  "cuoio:flex cuoio:w-fit cuoio:items-stretch cuoio:*:focus-visible:relative cuoio:*:focus-visible:z-10 cuoio:has-[>[data-slot=button-group]]:gap-2 cuoio:has-[select[aria-hidden=true]:last-child]:[&>[data-slot=select-trigger]:last-of-type]:rounded-e-md cuoio:[&>[data-slot=select-trigger]:not([class*=w-])]:w-fit cuoio:[&>input]:flex-1",
+  "cuoio:flex cuoio:w-fit cuoio:items-stretch cuoio:*:focus-visible:relative cuoio:*:focus-visible:z-10 cuoio:has-[>[data-slot=button-group]]:gap-2 cuoio:has-[select[aria-hidden=true]:last-child]:[&>[data-slot=select-trigger]:last-of-type]:rounded-e-lg cuoio:[&>[data-slot=select-trigger]:not([class*=w-])]:w-fit cuoio:[&>input]:flex-1",
   {
     variants: {
       orientation: {
         horizontal:
-          "cuoio:*:data-slot:rounded-e-none cuoio:[&>[data-slot]:not(:has(~[data-slot]))]:rounded-e-md! cuoio:[&>[data-slot]~[data-slot]]:rounded-s-none cuoio:[&>[data-slot]~[data-slot]]:border-s-0",
+          "cuoio:*:data-slot:rounded-e-none cuoio:[&>[data-slot]:not(:has(~[data-slot]))]:rounded-e-lg! cuoio:[&>[data-slot]~[data-slot]]:rounded-s-none cuoio:[&>[data-slot]~[data-slot]]:border-s-0",
         vertical:
-          "cuoio:flex-col cuoio:*:data-slot:rounded-b-none cuoio:[&>[data-slot]:not(:has(~[data-slot]))]:rounded-b-md! cuoio:[&>[data-slot]~[data-slot]]:rounded-t-none cuoio:[&>[data-slot]~[data-slot]]:border-t-0",
+          "cuoio:flex-col cuoio:*:data-slot:rounded-b-none cuoio:[&>[data-slot]:not(:has(~[data-slot]))]:rounded-b-lg! cuoio:[&>[data-slot]~[data-slot]]:rounded-t-none cuoio:[&>[data-slot]~[data-slot]]:border-t-0",
       },
     },
     defaultVariants: {
@@ -48,7 +48,7 @@ function ButtonGroupText({
     props: mergeProps<"div">(
       {
         className: cn(
-          "flex items-center gap-2 rounded-md border bg-muted px-2.5 text-xs/relaxed font-medium [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4",
+          "flex items-center gap-2 rounded-lg border bg-muted px-2.5 text-sm font-medium [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4",
           className
         ),
       },

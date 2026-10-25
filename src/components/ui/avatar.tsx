@@ -90,7 +90,7 @@ function AvatarGroupCount({
     <div
       data-slot="avatar-group-count"
       className={cn(
-        "cuoio:relative cuoio:flex cuoio:size-8 cuoio:shrink-0 cuoio:items-center cuoio:justify-center cuoio:rounded-full cuoio:bg-muted cuoio:text-xs/relaxed cuoio:text-muted-foreground cuoio:ring-2 cuoio:ring-background cuoio:group-has-data-[size=lg]/avatar-group:size-10 cuoio:group-has-data-[size=sm]/avatar-group:size-6 cuoio:[&>svg]:size-4 cuoio:group-has-data-[size=lg]/avatar-group:[&>svg]:size-5 cuoio:group-has-data-[size=sm]/avatar-group:[&>svg]:size-3",
+        "cuoio:relative cuoio:flex cuoio:size-8 cuoio:shrink-0 cuoio:items-center cuoio:justify-center cuoio:rounded-full cuoio:bg-muted cuoio:text-sm cuoio:text-muted-foreground cuoio:ring-2 cuoio:ring-background cuoio:group-has-data-[size=lg]/avatar-group:size-10 cuoio:group-has-data-[size=sm]/avatar-group:size-6 cuoio:[&>svg]:size-4 cuoio:group-has-data-[size=lg]/avatar-group:[&>svg]:size-5 cuoio:group-has-data-[size=sm]/avatar-group:[&>svg]:size-3",
         className
       )}
       {...props}

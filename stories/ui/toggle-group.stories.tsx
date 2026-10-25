@@ -1,18 +1,13 @@
 // @ts-nocheck
-"use client"
+'use client'
+
+import * as React from 'react'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import {
-  Bold,
-  BoldIcon,
-  Italic,
-  ItalicIcon,
-  Underline,
-  UnderlineIcon,
-} from "lucide-react"
-import * as React from "react"
-import { Field, FieldDescription, FieldLabel } from "@/components/ui/field"
-import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+import { Bold, BoldIcon, Italic, ItalicIcon, Underline, UnderlineIcon } from 'lucide-react'
+
+import { Field, FieldDescription, FieldLabel } from '@/components/ui/field'
+import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group'
 
 function DemoExample() {
   return (
@@ -32,7 +27,7 @@ function DemoExample() {
 
 function OutlineExample() {
   return (
-    <ToggleGroup variant="outline" defaultValue={["all"]}>
+    <ToggleGroup variant="outline" defaultValue={['all']}>
       <ToggleGroupItem value="all" aria-label="Toggle all">
         All
       </ToggleGroupItem>
@@ -46,7 +41,7 @@ function OutlineExample() {
 function SizesExample() {
   return (
     <div className="cuoio:flex cuoio:flex-col cuoio:gap-4">
-      <ToggleGroup size="sm" defaultValue={["top"]} variant="outline">
+      <ToggleGroup size="sm" defaultValue={['top']} variant="outline">
         <ToggleGroupItem value="top" aria-label="Toggle top">
           Top
         </ToggleGroupItem>
@@ -60,7 +55,7 @@ function SizesExample() {
           Right
         </ToggleGroupItem>
       </ToggleGroup>
-      <ToggleGroup defaultValue={["top"]} variant="outline">
+      <ToggleGroup defaultValue={['top']} variant="outline">
         <ToggleGroupItem value="top" aria-label="Toggle top">
           Top
         </ToggleGroupItem>
@@ -80,7 +75,7 @@ function SizesExample() {
 
 function SpacingExample() {
   return (
-    <ToggleGroup size="sm" defaultValue={["top"]} variant="outline" spacing={2}>
+    <ToggleGroup size="sm" defaultValue={['top']} variant="outline" spacing={2}>
       <ToggleGroupItem value="top" aria-label="Toggle top">
         Top
       </ToggleGroupItem>
@@ -99,12 +94,7 @@ function SpacingExample() {
 
 function VerticalExample() {
   return (
-    <ToggleGroup
-      multiple
-      orientation="vertical"
-      spacing={1}
-      defaultValue={["bold", "italic"]}
-    >
+    <ToggleGroup multiple orientation="vertical" spacing={1} defaultValue={['bold', 'italic']}>
       <ToggleGroupItem value="bold" aria-label="Toggle bold">
         <BoldIcon />
       </ToggleGroupItem>
@@ -135,7 +125,7 @@ function DisabledExample() {
 }
 
 function FontWeightSelectorExample() {
-  const [fontWeight, setFontWeight] = React.useState("normal")
+  const [fontWeight, setFontWeight] = React.useState('normal')
   return (
     <Field>
       <FieldLabel>Font Weight</FieldLabel>
@@ -180,10 +170,10 @@ function FontWeightSelectorExample() {
         </ToggleGroupItem>
       </ToggleGroup>
       <FieldDescription>
-        Use{" "}
+        Use{' '}
         <code className="cuoio:rounded-md cuoio:bg-muted cuoio:px-1 cuoio:py-0.5 cuoio:font-mono">
           font-{fontWeight}
-        </code>{" "}
+        </code>{' '}
         to set the font weight.
       </FieldDescription>
     </Field>
@@ -192,15 +182,70 @@ function FontWeightSelectorExample() {
 
 const meta = {
   title: 'UI/Toggle Group',
+  component: ToggleGroup,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['variant', 'size', 'orientation', 'spacing', 'multiple'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    variant: {
+      control: 'inline-radio',
+      options: ['default', 'outline'],
+    },
+    size: {
+      control: 'select',
+      options: ['default', 'sm', 'lg'],
+    },
+    orientation: {
+      control: 'inline-radio',
+      options: ['horizontal', 'vertical'],
+    },
+    spacing: {
+      control: { type: 'range', min: 0, max: 8, step: 1 },
+    },
+    multiple: {
+      control: 'boolean',
+    },
+  },
+  args: {
+    variant: 'outline',
+    size: 'default',
+    orientation: 'horizontal',
+    spacing: 2,
+    multiple: false,
+  },
+} satisfies Meta<typeof ToggleGroup>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <ToggleGroup
+      variant={args.variant}
+      size={args.size}
+      orientation={args.orientation}
+      spacing={args.spacing}
+      multiple={args.multiple}
+      defaultValue={['bold']}
+      key={`${args.multiple}-${args.spacing}`}
+    >
+      <ToggleGroupItem value="bold" aria-label="Toggle bold">
+        <BoldIcon />
+      </ToggleGroupItem>
+      <ToggleGroupItem value="italic" aria-label="Toggle italic">
+        <ItalicIcon />
+      </ToggleGroupItem>
+      <ToggleGroupItem value="underline" aria-label="Toggle underline">
+        <UnderlineIcon />
+      </ToggleGroupItem>
+    </ToggleGroup>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

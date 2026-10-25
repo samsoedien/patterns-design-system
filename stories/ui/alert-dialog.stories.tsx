@@ -1,6 +1,7 @@
 // @ts-nocheck
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { BluetoothIcon, CircleFadingPlusIcon, Trash2Icon } from "lucide-react"
+import { BluetoothIcon, CircleFadingPlusIcon, Trash2Icon } from 'lucide-react'
+
 import {
   AlertDialog,
   AlertDialogAction,
@@ -12,21 +13,19 @@ import {
   AlertDialogMedia,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
-import { Button } from "@/components/ui/button"
+} from '@/components/ui/alert-dialog'
+import { Button } from '@/components/ui/button'
 
 function DemoExample() {
   return (
     <AlertDialog>
-      <AlertDialogTrigger render={<Button variant="outline" />}>
-        Show Dialog
-      </AlertDialogTrigger>
+      <AlertDialogTrigger render={<Button variant="outline" />}>Show Dialog</AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account from our servers.
+            This action cannot be undone. This will permanently delete your account from our
+            servers.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
@@ -41,15 +40,13 @@ function DemoExample() {
 function BasicExample() {
   return (
     <AlertDialog>
-      <AlertDialogTrigger
-        render={<Button variant="outline">Show Dialog</Button>}
-      />
+      <AlertDialogTrigger render={<Button variant="outline">Show Dialog</Button>} />
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
           <AlertDialogDescription>
-            This action cannot be undone. This will permanently delete your
-            account and remove your data from our servers.
+            This action cannot be undone. This will permanently delete your account and remove your
+            data from our servers.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
@@ -64,9 +61,7 @@ function BasicExample() {
 function SmallExample() {
   return (
     <AlertDialog>
-      <AlertDialogTrigger
-        render={<Button variant="outline">Show Dialog</Button>}
-      />
+      <AlertDialogTrigger render={<Button variant="outline">Show Dialog</Button>} />
       <AlertDialogContent size="sm">
         <AlertDialogHeader>
           <AlertDialogTitle>Allow accessory to connect?</AlertDialogTitle>
@@ -86,9 +81,7 @@ function SmallExample() {
 function MediaExample() {
   return (
     <AlertDialog>
-      <AlertDialogTrigger
-        render={<Button variant="outline">Share Project</Button>}
-      />
+      <AlertDialogTrigger render={<Button variant="outline">Share Project</Button>} />
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogMedia>
@@ -111,9 +104,7 @@ function MediaExample() {
 function SmallMediaExample() {
   return (
     <AlertDialog>
-      <AlertDialogTrigger
-        render={<Button variant="outline">Show Dialog</Button>}
-      />
+      <AlertDialogTrigger render={<Button variant="outline">Show Dialog</Button>} />
 
       <AlertDialogContent size="sm">
         <AlertDialogHeader>
@@ -137,9 +128,7 @@ function SmallMediaExample() {
 function DestructiveExample() {
   return (
     <AlertDialog>
-      <AlertDialogTrigger
-        render={<Button variant="destructive">Delete Chat</Button>}
-      />
+      <AlertDialogTrigger render={<Button variant="destructive">Delete Chat</Button>} />
       <AlertDialogContent size="sm">
         <AlertDialogHeader>
           <AlertDialogMedia className="cuoio:bg-destructive/10 cuoio:text-destructive cuoio:dark:bg-destructive/20 cuoio:dark:text-destructive">
@@ -147,8 +136,8 @@ function DestructiveExample() {
           </AlertDialogMedia>
           <AlertDialogTitle>Delete chat?</AlertDialogTitle>
           <AlertDialogDescription>
-            This will permanently delete this chat conversation. View{" "}
-            <a href="#">Settings</a> delete any memories saved during this chat.
+            This will permanently delete this chat conversation. View <a href="#">Settings</a>{' '}
+            delete any memories saved during this chat.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
@@ -162,15 +151,49 @@ function DestructiveExample() {
 
 const meta = {
   title: 'UI/Alert Dialog',
+  component: AlertDialog,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['size'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    size: {
+      control: 'select',
+      options: ['default', 'sm'],
+    },
+  },
+  args: {
+    size: 'default',
+  },
+} satisfies Meta<typeof AlertDialog>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <AlertDialog>
+      <AlertDialogTrigger render={<Button variant="outline" />}>Show Dialog</AlertDialogTrigger>
+      <AlertDialogContent size={args.size}>
+        <AlertDialogHeader>
+          <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+          <AlertDialogDescription>
+            This action cannot be undone. This will permanently delete your account from our
+            servers.
+          </AlertDialogDescription>
+        </AlertDialogHeader>
+        <AlertDialogFooter>
+          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogAction>Continue</AlertDialogAction>
+        </AlertDialogFooter>
+      </AlertDialogContent>
+    </AlertDialog>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

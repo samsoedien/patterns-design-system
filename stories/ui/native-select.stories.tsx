@@ -1,6 +1,11 @@
 // @ts-nocheck
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { NativeSelect, NativeSelectOptGroup, NativeSelectOption } from "@/components/ui/native-select"
+
+import {
+  NativeSelect,
+  NativeSelectOptGroup,
+  NativeSelectOption,
+} from '@/components/ui/native-select'
 
 function DemoExample() {
   return (
@@ -14,9 +19,9 @@ function DemoExample() {
   )
 }
 
-function GroupsExample() {
+function GroupsExample(args) {
   return (
-    <NativeSelect>
+    <NativeSelect size={args.size} disabled={args.disabled}>
       <NativeSelectOption value="">Select department</NativeSelectOption>
       <NativeSelectOptGroup label="Engineering">
         <NativeSelectOption value="frontend">Frontend</NativeSelectOption>
@@ -25,31 +30,21 @@ function GroupsExample() {
       </NativeSelectOptGroup>
       <NativeSelectOptGroup label="Sales">
         <NativeSelectOption value="sales-rep">Sales Rep</NativeSelectOption>
-        <NativeSelectOption value="account-manager">
-          Account Manager
-        </NativeSelectOption>
-        <NativeSelectOption value="sales-director">
-          Sales Director
-        </NativeSelectOption>
+        <NativeSelectOption value="account-manager">Account Manager</NativeSelectOption>
+        <NativeSelectOption value="sales-director">Sales Director</NativeSelectOption>
       </NativeSelectOptGroup>
       <NativeSelectOptGroup label="Operations">
-        <NativeSelectOption value="support">
-          Customer Support
-        </NativeSelectOption>
-        <NativeSelectOption value="product-manager">
-          Product Manager
-        </NativeSelectOption>
-        <NativeSelectOption value="ops-manager">
-          Operations Manager
-        </NativeSelectOption>
+        <NativeSelectOption value="support">Customer Support</NativeSelectOption>
+        <NativeSelectOption value="product-manager">Product Manager</NativeSelectOption>
+        <NativeSelectOption value="ops-manager">Operations Manager</NativeSelectOption>
       </NativeSelectOptGroup>
     </NativeSelect>
   )
 }
 
-function DisabledExample() {
+function DisabledExample(args) {
   return (
-    <NativeSelect disabled>
+    <NativeSelect size={args.size} disabled={args.disabled}>
       <NativeSelectOption value="">Disabled</NativeSelectOption>
       <NativeSelectOption value="apple">Apple</NativeSelectOption>
       <NativeSelectOption value="banana">Banana</NativeSelectOption>
@@ -71,15 +66,43 @@ function InvalidExample() {
 
 const meta = {
   title: 'UI/Native Select',
+  component: NativeSelect,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['size', 'disabled'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    size: {
+      control: 'inline-radio',
+      options: ['default', 'sm'],
+    },
+    disabled: {
+      control: 'boolean',
+    },
+  },
+  args: {
+    size: 'default',
+    disabled: false,
+  },
+} satisfies Meta<typeof NativeSelect>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <NativeSelect size={args.size} disabled={args.disabled} defaultValue="todo">
+      <NativeSelectOption value="">Select status</NativeSelectOption>
+      <NativeSelectOption value="todo">Todo</NativeSelectOption>
+      <NativeSelectOption value="in-progress">In Progress</NativeSelectOption>
+      <NativeSelectOption value="done">Done</NativeSelectOption>
+    </NativeSelect>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

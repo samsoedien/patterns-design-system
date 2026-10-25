@@ -1,7 +1,8 @@
 // @ts-nocheck
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
-import { Skeleton } from "@/components/ui/skeleton"
+
+import { Card, CardContent, CardHeader } from '@/components/ui/card'
+import { Skeleton } from '@/components/ui/skeleton'
 
 function DemoExample() {
   return (
@@ -83,15 +84,46 @@ function TableExample() {
 
 const meta = {
   title: 'UI/Skeleton',
+  component: Skeleton,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['size', 'rounded'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    size: {
+      control: 'select',
+      options: ['sm', 'default', 'lg'],
+    },
+    rounded: {
+      control: 'boolean',
+    },
+  },
+  args: {
+    size: 'default',
+    rounded: false,
+  },
+} satisfies Meta<typeof Skeleton>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Skeleton
+      className={`${
+        {
+          sm: 'cuoio:h-4 cuoio:w-24',
+          default: 'cuoio:h-8 cuoio:w-48',
+          lg: 'cuoio:h-12 cuoio:w-64',
+        }[args.size]
+      } ${args.rounded ? 'cuoio:rounded-full' : ''}`}
+    />
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

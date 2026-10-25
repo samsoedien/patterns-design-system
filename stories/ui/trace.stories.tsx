@@ -1,5 +1,7 @@
 // @ts-nocheck
-"use client"
+'use client'
+
+import * as React from 'react'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import {
@@ -19,11 +21,11 @@ import {
   LoaderCircleIcon,
   SearchIcon,
   TerminalIcon,
-} from "lucide-react"
-import * as React from "react"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { CodeBlock, CodeBlockContent, CodeBlockLine } from "@/components/ui/code-block"
+} from 'lucide-react'
+
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
+import { CodeBlock, CodeBlockContent, CodeBlockLine } from '@/components/ui/code-block'
 import {
   Dialog,
   DialogContent,
@@ -31,7 +33,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
+} from '@/components/ui/dialog'
 import {
   Sheet,
   SheetContent,
@@ -39,7 +41,7 @@ import {
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-} from "@/components/ui/sheet"
+} from '@/components/ui/sheet'
 import {
   Trace,
   TraceCollapsible,
@@ -49,98 +51,106 @@ import {
   TraceIcon,
   TraceLine,
   TraceTitle,
-} from "@/components/ui/trace"
+} from '@/components/ui/trace'
 
-function StaticExample() {
+function traceStatus(args, fallback) {
+  return args.status === 'none' ? fallback : args.status
+}
+
+function traceTitle(args, fallback) {
+  return args.title === 'Created branch fix/frozen-lockfile' ? fallback : args.title
+}
+
+function StaticExample(args) {
   return (
     <Trace className="cuoio:max-w-sm">
-      <TraceLine>
+      <TraceLine status={traceStatus(args, undefined)}>
         <TraceIcon>
           <GitBranchIcon />
         </TraceIcon>
-        <TraceTitle>Created branch fix/frozen-lockfile</TraceTitle>
+        <TraceTitle>{traceTitle(args, 'Created branch fix/frozen-lockfile')}</TraceTitle>
       </TraceLine>
     </Trace>
   )
 }
 
-function StatusExample() {
+function StatusExample(args) {
   return (
     <Trace className="cuoio:max-w-sm">
-      <TraceLine>
+      <TraceLine status={traceStatus(args, undefined)}>
         <TraceIcon>
           <CircleCheckIcon />
         </TraceIcon>
-        <TraceTitle>Ran pnpm install</TraceTitle>
+        <TraceTitle>{traceTitle(args, 'Ran pnpm install')}</TraceTitle>
       </TraceLine>
-      <TraceLine status="error">
+      <TraceLine status={traceStatus(args, 'error')}>
         <TraceIcon>
           <CircleAlertIcon />
         </TraceIcon>
-        <TraceTitle>Failed to run pnpm lint</TraceTitle>
+        <TraceTitle>{traceTitle(args, 'Failed to run pnpm lint')}</TraceTitle>
       </TraceLine>
-      <TraceLine status="running">
+      <TraceLine status={traceStatus(args, 'running')}>
         <TraceIcon>
           <LoaderCircleIcon className="cuoio:animate-spin" />
         </TraceIcon>
-        <TraceTitle>Running pnpm build</TraceTitle>
+        <TraceTitle>{traceTitle(args, 'Running pnpm build')}</TraceTitle>
       </TraceLine>
-      <TraceLine status="pending">
+      <TraceLine status={traceStatus(args, 'pending')}>
         <TraceIcon>
           <CircleIcon />
         </TraceIcon>
-        <TraceTitle>Run pnpm test</TraceTitle>
+        <TraceTitle>{traceTitle(args, 'Run pnpm test')}</TraceTitle>
       </TraceLine>
     </Trace>
   )
 }
 
-function DescriptionExample() {
+function DescriptionExample(args) {
   return (
     <Trace className="cuoio:max-w-sm">
-      <TraceLine>
+      <TraceLine status={traceStatus(args, undefined)}>
         <TraceIcon>
           <FilePenIcon />
         </TraceIcon>
         <TraceTitle>
-          Edited components/settings/notification-preferences-form.tsx
+          {traceTitle(args, 'Edited components/settings/notification-preferences-form.tsx')}
         </TraceTitle>
         <TraceDescription className="cuoio:font-mono">+48 −12</TraceDescription>
       </TraceLine>
-      <TraceLine>
+      <TraceLine status={traceStatus(args, undefined)}>
         <TraceIcon>
           <TerminalIcon />
         </TraceIcon>
-        <TraceTitle>Ran pnpm test</TraceTitle>
+        <TraceTitle>{traceTitle(args, 'Ran pnpm test')}</TraceTitle>
         <TraceDescription>14s</TraceDescription>
       </TraceLine>
-      <TraceLine>
+      <TraceLine status={traceStatus(args, undefined)}>
         <TraceIcon>
           <SearchIcon />
         </TraceIcon>
-        <TraceTitle>Searched for useChat</TraceTitle>
+        <TraceTitle>{traceTitle(args, 'Searched for useChat')}</TraceTitle>
         <TraceDescription>8 results</TraceDescription>
       </TraceLine>
     </Trace>
   )
 }
 
-function CollapsibleExample() {
+function CollapsibleExample(args) {
   return (
     <div className="cuoio:w-full cuoio:max-w-sm">
       <TraceCollapsible>
         <TraceCollapsibleTrigger>
-          <TraceLine>
+          <TraceLine status={traceStatus(args, undefined)}>
             <TraceIcon>
               <TerminalIcon />
             </TraceIcon>
-            <TraceTitle>Ran node --version</TraceTitle>
+            <TraceTitle>{traceTitle(args, 'Ran node --version')}</TraceTitle>
           </TraceLine>
         </TraceCollapsibleTrigger>
         <TraceCollapsibleContent>
           <CodeBlock size="sm">
             <CodeBlockContent wrap className="cuoio:max-h-64">
-              {"$ node --version\nv24.18.0"}
+              {'$ node --version\nv24.18.0'}
             </CodeBlockContent>
           </CodeBlock>
         </TraceCollapsibleContent>
@@ -149,72 +159,68 @@ function CollapsibleExample() {
   )
 }
 
-function OpenExample() {
+function OpenExample(args) {
   const [open, setOpen] = React.useState(false)
 
   return (
     <div className="cuoio:flex cuoio:w-full cuoio:max-w-sm cuoio:flex-col cuoio:items-start cuoio:gap-4">
       <TraceCollapsible defaultOpen>
         <TraceCollapsibleTrigger>
-          <TraceLine>
+          <TraceLine status={traceStatus(args, undefined)}>
             <TraceIcon>
               <TerminalIcon />
             </TraceIcon>
-            <TraceTitle>Ran node --version</TraceTitle>
+            <TraceTitle>{traceTitle(args, 'Ran node --version')}</TraceTitle>
           </TraceLine>
         </TraceCollapsibleTrigger>
         <TraceCollapsibleContent>
           <CodeBlock size="sm">
             <CodeBlockContent wrap className="cuoio:max-h-64">
-              {"$ node --version\nv24.18.0"}
+              {'$ node --version\nv24.18.0'}
             </CodeBlockContent>
           </CodeBlock>
         </TraceCollapsibleContent>
       </TraceCollapsible>
       <TraceCollapsible open={open} onOpenChange={setOpen}>
         <TraceCollapsibleTrigger>
-          <TraceLine>
+          <TraceLine status={traceStatus(args, undefined)}>
             <TraceIcon>
               <TerminalIcon />
             </TraceIcon>
-            <TraceTitle>Ran pnpm --version</TraceTitle>
+            <TraceTitle>{traceTitle(args, 'Ran pnpm --version')}</TraceTitle>
           </TraceLine>
         </TraceCollapsibleTrigger>
         <TraceCollapsibleContent>
           <CodeBlock size="sm">
             <CodeBlockContent wrap className="cuoio:max-h-64">
-              {"$ pnpm --version\n10.33.4"}
+              {'$ pnpm --version\n10.33.4'}
             </CodeBlockContent>
           </CodeBlock>
         </TraceCollapsibleContent>
       </TraceCollapsible>
       <Button variant="outline" size="sm" onClick={() => setOpen(!open)}>
-        {open ? "Hide" : "Show"} the pnpm output
+        {open ? 'Hide' : 'Show'} the pnpm output
       </Button>
     </div>
   )
 }
 
-function LinkExample() {
+function LinkExample(args) {
   return (
     <Trace className="cuoio:max-w-sm">
       <a href="#link">
-        <TraceLine>
+        <TraceLine status={traceStatus(args, undefined)}>
           <TraceIcon>
             <FileTextIcon />
           </TraceIcon>
-          <TraceTitle>Read apps/v4/lib/docs.ts</TraceTitle>
+          <TraceTitle>{traceTitle(args, 'Read apps/v4/lib/docs.ts')}</TraceTitle>
           <TraceIcon>
             <ChevronRightIcon />
           </TraceIcon>
         </TraceLine>
       </a>
-      <a
-        href="https://docs.astro.build/en/install-and-setup/"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <TraceLine>
+      <a href="https://docs.astro.build/en/install-and-setup/" target="_blank" rel="noreferrer">
+        <TraceLine status={traceStatus(args, undefined)}>
           <TraceIcon>
             <GlobeIcon />
           </TraceIcon>
@@ -233,29 +239,29 @@ function LinkExample() {
 
 const Dialog_results = [
   {
-    title: "Caching build outputs",
-    url: "https://nextjs.org/docs/app/guides/caching",
+    title: 'Caching build outputs',
+    url: 'https://nextjs.org/docs/app/guides/caching',
   },
   {
-    title: "Image optimization reference",
-    url: "https://nextjs.org/docs/app/api-reference/components/image",
+    title: 'Image optimization reference',
+    url: 'https://nextjs.org/docs/app/api-reference/components/image',
   },
   {
-    title: "Deploy hooks and cache keys",
-    url: "https://vercel.com/docs/deploy-hooks",
+    title: 'Deploy hooks and cache keys',
+    url: 'https://vercel.com/docs/deploy-hooks',
   },
 ]
 
-function DialogExample() {
+function DialogExample(args) {
   return (
     <Trace className="cuoio:max-w-sm">
       <Dialog>
         <DialogTrigger>
-          <TraceLine>
+          <TraceLine status={traceStatus(args, undefined)}>
             <TraceIcon>
               <GlobeIcon />
             </TraceIcon>
-            <TraceTitle>Searched the web for cache keys</TraceTitle>
+            <TraceTitle>{traceTitle(args, 'Searched the web for cache keys')}</TraceTitle>
             <TraceIcon>
               <ChevronRightIcon />
             </TraceIcon>
@@ -264,19 +270,12 @@ function DialogExample() {
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Searched the web for cache keys</DialogTitle>
-            <DialogDescription>
-              Three Dialog_results were used in the response.
-            </DialogDescription>
+            <DialogDescription>Three Dialog_results were used in the response.</DialogDescription>
           </DialogHeader>
           <Trace>
             {Dialog_results.map((result) => (
-              <a
-                key={result.url}
-                href={result.url}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <TraceLine>
+              <a key={result.url} href={result.url} target="_blank" rel="noreferrer">
+                <TraceLine status={traceStatus(args, undefined)}>
                   <TraceIcon>
                     <GlobeIcon />
                   </TraceIcon>
@@ -297,16 +296,16 @@ function DialogExample() {
   )
 }
 
-function SheetExample() {
+function SheetExample(args) {
   return (
     <Trace className="cuoio:max-w-sm">
       <Sheet>
         <SheetTrigger>
-          <TraceLine>
+          <TraceLine status={traceStatus(args, undefined)}>
             <TraceIcon>
               <FolderSearchIcon />
             </TraceIcon>
-            <TraceTitle>Explored 4 files</TraceTitle>
+            <TraceTitle>{traceTitle(args, 'Explored 4 files')}</TraceTitle>
             <TraceIcon>
               <ChevronRightIcon />
             </TraceIcon>
@@ -315,9 +314,7 @@ function SheetExample() {
         <SheetContent>
           <SheetHeader>
             <SheetTitle>Explored 4 files</SheetTitle>
-            <SheetDescription>
-              Files read while preparing the response.
-            </SheetDescription>
+            <SheetDescription>Files read while preparing the response.</SheetDescription>
           </SheetHeader>
           <ul className="cuoio:flex cuoio:flex-col cuoio:gap-2 cuoio:px-6 cuoio:font-mono cuoio:text-xs">
             <li>apps/v4/lib/docs.ts</li>
@@ -331,26 +328,26 @@ function SheetExample() {
   )
 }
 
-function GroupExample() {
+function GroupExample(args) {
   return (
     <Trace className="cuoio:max-w-sm">
-      <TraceLine>
+      <TraceLine status={traceStatus(args, undefined)}>
         <TraceIcon>
           <SearchIcon />
         </TraceIcon>
-        <TraceTitle>Searched for minimumReleaseAge</TraceTitle>
+        <TraceTitle>{traceTitle(args, 'Searched for minimumReleaseAge')}</TraceTitle>
       </TraceLine>
-      <TraceLine>
+      <TraceLine status={traceStatus(args, undefined)}>
         <TraceIcon>
           <FileTextIcon />
         </TraceIcon>
-        <TraceTitle>Read pnpm-workspace.yaml</TraceTitle>
+        <TraceTitle>{traceTitle(args, 'Read pnpm-workspace.yaml')}</TraceTitle>
       </TraceLine>
-      <TraceLine>
+      <TraceLine status={traceStatus(args, undefined)}>
         <TraceIcon>
           <TerminalIcon />
         </TraceIcon>
-        <TraceTitle>Ran pnpm install</TraceTitle>
+        <TraceTitle>{traceTitle(args, 'Ran pnpm install')}</TraceTitle>
       </TraceLine>
     </Trace>
   )
@@ -358,25 +355,25 @@ function GroupExample() {
 
 const Sources_sources = [
   {
-    title: "Install Astro | docs.astro.build",
-    href: "https://docs.astro.build/en/install-and-setup/",
+    title: 'Install Astro | docs.astro.build',
+    href: 'https://docs.astro.build/en/install-and-setup/',
   },
   {
-    title: "create-astro | npmjs.com",
-    href: "https://www.npmjs.com/package/create-astro",
+    title: 'create-astro | npmjs.com',
+    href: 'https://www.npmjs.com/package/create-astro',
   },
   {
-    title: "Settings: minimumReleaseAge | pnpm.io",
-    href: "https://pnpm.io/settings#minimumreleaseage",
+    title: 'Settings: minimumReleaseAge | pnpm.io',
+    href: 'https://pnpm.io/settings#minimumreleaseage',
   },
 ]
 
-function SourcesExample() {
+function SourcesExample(args) {
   return (
     <div className="cuoio:w-full cuoio:max-w-sm">
       <TraceCollapsible defaultOpen>
         <TraceCollapsibleTrigger>
-          <TraceLine>
+          <TraceLine status={traceStatus(args, undefined)}>
             <TraceIcon>
               <GlobeIcon />
             </TraceIcon>
@@ -386,13 +383,8 @@ function SourcesExample() {
         <TraceCollapsibleContent>
           <Trace>
             {Sources_sources.map((source) => (
-              <a
-                key={source.href}
-                href={source.href}
-                target="_blank"
-                rel="noreferrer"
-              >
-                <TraceLine>
+              <a key={source.href} href={source.href} target="_blank" rel="noreferrer">
+                <TraceLine status={traceStatus(args, undefined)}>
                   <TraceIcon>
                     <GlobeIcon />
                   </TraceIcon>
@@ -413,24 +405,24 @@ function SourcesExample() {
   )
 }
 
-function StepsExample() {
+function StepsExample(args) {
   return (
     <div className="cuoio:w-full cuoio:max-w-sm">
       <TraceCollapsible defaultOpen>
         <TraceCollapsibleTrigger>
-          <TraceLine status="running">
-            <TraceTitle>Looking into the slow deploy</TraceTitle>
+          <TraceLine status={traceStatus(args, 'running')}>
+            <TraceTitle>{traceTitle(args, 'Looking into the slow deploy')}</TraceTitle>
           </TraceLine>
         </TraceCollapsibleTrigger>
         <TraceCollapsibleContent keepMounted>
           <Trace>
             <TraceCollapsible>
               <TraceCollapsibleTrigger>
-                <TraceLine>
+                <TraceLine status={traceStatus(args, undefined)}>
                   <TraceIcon>
                     <SearchIcon />
                   </TraceIcon>
-                  <TraceTitle>Searched for the checkout build log</TraceTitle>
+                  <TraceTitle>{traceTitle(args, 'Searched for the checkout build log')}</TraceTitle>
                 </TraceLine>
               </TraceCollapsibleTrigger>
               <TraceCollapsibleContent className="cuoio:flex cuoio:flex-wrap cuoio:gap-1.5">
@@ -439,11 +431,11 @@ function StepsExample() {
               </TraceCollapsibleContent>
             </TraceCollapsible>
             <a href="#steps">
-              <TraceLine>
+              <TraceLine status={traceStatus(args, undefined)}>
                 <TraceIcon>
                   <FileTextIcon />
                 </TraceIcon>
-                <TraceTitle>Read the last twelve deploys</TraceTitle>
+                <TraceTitle>{traceTitle(args, 'Read the last twelve deploys')}</TraceTitle>
                 <TraceIcon>
                   <ChevronRightIcon />
                 </TraceIcon>
@@ -451,11 +443,11 @@ function StepsExample() {
             </a>
             <TraceCollapsible>
               <TraceCollapsibleTrigger>
-                <TraceLine status="running">
+                <TraceLine status={traceStatus(args, 'running')}>
                   <TraceIcon>
                     <SearchIcon />
                   </TraceIcon>
-                  <TraceTitle>Searching for the cache key</TraceTitle>
+                  <TraceTitle>{traceTitle(args, 'Searching for the cache key')}</TraceTitle>
                 </TraceLine>
               </TraceCollapsibleTrigger>
               <TraceCollapsibleContent>
@@ -475,7 +467,7 @@ function StepsExample() {
 
 const Commit_files = [
   {
-    path: "app/login/page.tsx",
+    path: 'app/login/page.tsx',
     added: false,
     additions: 2,
     deletions: 2,
@@ -491,7 +483,7 @@ const Commit_files = [
  }`,
   },
   {
-    path: "lib/auth/redirect.ts",
+    path: 'lib/auth/redirect.ts',
     added: true,
     additions: 7,
     deletions: 0,
@@ -507,8 +499,8 @@ const Commit_files = [
 ]
 
 function Commit_DiffLines({ diff }: { diff: string }) {
-  return diff.split("\n").map((line, index) => {
-    if (line.startsWith("@@")) {
+  return diff.split('\n').map((line, index) => {
+    if (line.startsWith('@@')) {
       return (
         <CodeBlockLine key={index} className="cuoio:text-muted-foreground">
           {line}
@@ -519,13 +511,7 @@ function Commit_DiffLines({ diff }: { diff: string }) {
     return (
       <CodeBlockLine
         key={index}
-        variant={
-          line.startsWith("+")
-            ? "added"
-            : line.startsWith("-")
-              ? "removed"
-              : "default"
-        }
+        variant={line.startsWith('+') ? 'added' : line.startsWith('-') ? 'removed' : 'default'}
       >
         {line.slice(1)}
       </CodeBlockLine>
@@ -533,16 +519,16 @@ function Commit_DiffLines({ diff }: { diff: string }) {
   })
 }
 
-function CommitExample() {
+function CommitExample(args) {
   return (
     <Trace className="cuoio:max-w-sm">
       <TraceCollapsible defaultOpen>
         <TraceCollapsibleTrigger>
-          <TraceLine>
+          <TraceLine status={traceStatus(args, undefined)}>
             <TraceIcon>
               <GitCommitHorizontalIcon />
             </TraceIcon>
-            <TraceTitle>Committed a1b2c3: Fix the login redirect</TraceTitle>
+            <TraceTitle>{traceTitle(args, 'Committed a1b2c3: Fix the login redirect')}</TraceTitle>
           </TraceLine>
         </TraceCollapsibleTrigger>
         <TraceCollapsibleContent>
@@ -550,12 +536,10 @@ function CommitExample() {
             {Commit_files.map((file) => (
               <Sheet key={file.path}>
                 <SheetTrigger>
-                  <TraceLine>
-                    <TraceIcon>
-                      {file.added ? <FilePlusIcon /> : <FilePenIcon />}
-                    </TraceIcon>
+                  <TraceLine status={traceStatus(args, undefined)}>
+                    <TraceIcon>{file.added ? <FilePlusIcon /> : <FilePenIcon />}</TraceIcon>
                     <TraceTitle>
-                      {file.added ? "Added" : "Edited"} {file.path}
+                      {file.added ? 'Added' : 'Edited'} {file.path}
                     </TraceTitle>
                     <TraceDescription className="cuoio:font-mono">
                       +{file.additions} −{file.deletions}
@@ -587,56 +571,55 @@ function CommitExample() {
   )
 }
 
-function TurnExample() {
+function TurnExample(args) {
   return (
     <div className="cuoio:w-full cuoio:max-w-sm">
       <TraceCollapsible defaultOpen>
         <TraceCollapsibleTrigger>
-          <TraceLine status="error">
-            <TraceTitle>Worked for 2m 4s, 1 command failed</TraceTitle>
+          <TraceLine status={traceStatus(args, 'error')}>
+            <TraceTitle>{traceTitle(args, 'Worked for 2m 4s, 1 command failed')}</TraceTitle>
           </TraceLine>
         </TraceCollapsibleTrigger>
         <TraceCollapsibleContent keepMounted className="cuoio:flex cuoio:flex-col cuoio:gap-2">
           <Trace>
             <TraceCollapsible>
               <TraceCollapsibleTrigger>
-                <TraceLine>
+                <TraceLine status={traceStatus(args, undefined)}>
                   <TraceIcon>
                     <BrainIcon />
                   </TraceIcon>
-                  <TraceTitle>Thought</TraceTitle>
+                  <TraceTitle>{traceTitle(args, 'Thought')}</TraceTitle>
                   <TraceDescription>12s</TraceDescription>
                 </TraceLine>
               </TraceCollapsibleTrigger>
               <TraceCollapsibleContent className="cuoio:whitespace-pre-wrap">
-                I should check which package managers are installed before I
-                scaffold anything.
+                I should check which package managers are installed before I scaffold anything.
               </TraceCollapsibleContent>
             </TraceCollapsible>
             <TraceCollapsible defaultOpen>
               <TraceCollapsibleTrigger>
-                <TraceLine status="error">
+                <TraceLine status={traceStatus(args, 'error')}>
                   <TraceIcon>
                     <TerminalIcon />
                   </TraceIcon>
-                  <TraceTitle>Ran 2 commands, 1 failed</TraceTitle>
+                  <TraceTitle>{traceTitle(args, 'Ran 2 commands, 1 failed')}</TraceTitle>
                 </TraceLine>
               </TraceCollapsibleTrigger>
               <TraceCollapsibleContent keepMounted>
                 <Trace>
-                  <TraceLine>
+                  <TraceLine status={traceStatus(args, undefined)}>
                     <TraceIcon>
                       <TerminalIcon />
                     </TraceIcon>
-                    <TraceTitle>Ran node --version</TraceTitle>
+                    <TraceTitle>{traceTitle(args, 'Ran node --version')}</TraceTitle>
                   </TraceLine>
                   <TraceCollapsible>
                     <TraceCollapsibleTrigger>
-                      <TraceLine status="error">
+                      <TraceLine status={traceStatus(args, 'error')}>
                         <TraceIcon>
                           <TerminalIcon />
                         </TraceIcon>
-                        <TraceTitle>Failed to run pnpm --version</TraceTitle>
+                        <TraceTitle>{traceTitle(args, 'Failed to run pnpm --version')}</TraceTitle>
                       </TraceLine>
                     </TraceCollapsibleTrigger>
                     <TraceCollapsibleContent>
@@ -654,11 +637,11 @@ function TurnExample() {
           <p>Node is installed and pnpm is not. Reading the docs config.</p>
           <Trace>
             <a href="#turn">
-              <TraceLine>
+              <TraceLine status={traceStatus(args, undefined)}>
                 <TraceIcon>
                   <FileTextIcon />
                 </TraceIcon>
-                <TraceTitle>Read apps/v4/lib/docs.ts</TraceTitle>
+                <TraceTitle>{traceTitle(args, 'Read apps/v4/lib/docs.ts')}</TraceTitle>
                 <TraceIcon>
                   <ChevronRightIcon />
                 </TraceIcon>
@@ -673,77 +656,107 @@ function TurnExample() {
 
 const meta = {
   title: 'UI/Trace',
+  component: Trace,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['status', 'title'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    status: {
+      control: 'select',
+      options: ['none', 'running', 'error', 'pending'],
+    },
+    title: {
+      control: 'text',
+    },
+  },
+  args: {
+    status: 'none',
+    title: 'Created branch fix/frozen-lockfile',
+  },
+} satisfies Meta<typeof Trace>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
 
+export const Playground: Story = {
+  render: (args) => (
+    <Trace className="cuoio:max-w-sm">
+      <TraceLine status={args.status === 'none' ? undefined : args.status}>
+        <TraceIcon>
+          <GitBranchIcon />
+        </TraceIcon>
+        <TraceTitle>{args.title}</TraceTitle>
+      </TraceLine>
+    </Trace>
+  ),
+}
+
 export const StaticStory: Story = {
   name: 'Static',
-  render: () => <StaticExample />,
+  render: (args) => <StaticExample {...args} />,
 }
 
 export const StatusStory: Story = {
   name: 'Status',
-  render: () => <StatusExample />,
+  render: (args) => <StatusExample {...args} />,
 }
 
 export const DescriptionStory: Story = {
   name: 'Description',
-  render: () => <DescriptionExample />,
+  render: (args) => <DescriptionExample {...args} />,
 }
 
 export const CollapsibleStory: Story = {
   name: 'Collapsible',
-  render: () => <CollapsibleExample />,
+  render: (args) => <CollapsibleExample {...args} />,
 }
 
 export const OpenStory: Story = {
   name: 'Open',
-  render: () => <OpenExample />,
+  render: (args) => <OpenExample {...args} />,
 }
 
 export const LinkStory: Story = {
   name: 'Link',
-  render: () => <LinkExample />,
+  render: (args) => <LinkExample {...args} />,
 }
 
 export const DialogStory: Story = {
   name: 'Dialog',
-  render: () => <DialogExample />,
+  render: (args) => <DialogExample {...args} />,
 }
 
 export const SheetStory: Story = {
   name: 'Sheet',
-  render: () => <SheetExample />,
+  render: (args) => <SheetExample {...args} />,
 }
 
 export const GroupStory: Story = {
   name: 'Group',
-  render: () => <GroupExample />,
+  render: (args) => <GroupExample {...args} />,
 }
 
 export const SourcesStory: Story = {
   name: 'Sources',
-  render: () => <SourcesExample />,
+  render: (args) => <SourcesExample {...args} />,
 }
 
 export const StepsStory: Story = {
   name: 'Steps',
-  render: () => <StepsExample />,
+  render: (args) => <StepsExample {...args} />,
 }
 
 export const CommitStory: Story = {
   name: 'Commit',
-  render: () => <CommitExample />,
+  render: (args) => <CommitExample {...args} />,
 }
 
 export const TurnStory: Story = {
   name: 'Turn',
-  render: () => <TurnExample />,
+  render: (args) => <TurnExample {...args} />,
 }

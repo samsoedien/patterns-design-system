@@ -1,6 +1,7 @@
 // @ts-nocheck
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Field, FieldLabel } from "@/components/ui/field"
+
+import { Field, FieldLabel } from '@/components/ui/field'
 import {
   Pagination,
   PaginationContent,
@@ -9,7 +10,7 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "@/components/ui/pagination"
+} from '@/components/ui/pagination'
 import {
   Select,
   SelectContent,
@@ -17,7 +18,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from '@/components/ui/select'
 
 function DemoExample() {
   return (
@@ -109,15 +110,58 @@ function IconsOnlyExample() {
 
 const meta = {
   title: 'UI/Pagination',
+  component: Pagination,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['size'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    size: {
+      control: 'select',
+      options: ['default', 'xs', 'sm', 'lg', 'icon'],
+    },
+  },
+  args: {
+    size: 'default',
+  },
+} satisfies Meta<typeof Pagination>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Pagination>
+      <PaginationContent>
+        <PaginationItem>
+          <PaginationPrevious href="#" size={args.size} />
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationLink href="#" size={args.size}>
+            1
+          </PaginationLink>
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationLink href="#" isActive size={args.size}>
+            2
+          </PaginationLink>
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationLink href="#" size={args.size}>
+            3
+          </PaginationLink>
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationNext href="#" size={args.size} />
+        </PaginationItem>
+      </PaginationContent>
+    </Pagination>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

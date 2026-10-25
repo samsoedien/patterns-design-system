@@ -71,7 +71,7 @@ function PaginationPrevious({
     <PaginationLink
       aria-label="Go to previous page"
       size="default"
-      className={cn("cuoio:ps-2!", className)}
+      className={cn("cuoio:ps-1.5!", className)}
       {...props}
     >
       <ChevronLeftIcon data-icon="inline-start" />
@@ -89,7 +89,7 @@ function PaginationNext({
     <PaginationLink
       aria-label="Go to next page"
       size="default"
-      className={cn("cuoio:pe-2!", className)}
+      className={cn("cuoio:pe-1.5!", className)}
       {...props}
     >
       <span className="cuoio:hidden cuoio:sm:block">{text}</span>
@@ -107,7 +107,7 @@ function PaginationEllipsis({
       aria-hidden
       data-slot="pagination-ellipsis"
       className={cn(
-        "cuoio:flex cuoio:size-7 cuoio:items-center cuoio:justify-center cuoio:[&_svg:not([class*=size-])]:size-3.5",
+        "cuoio:flex cuoio:size-8 cuoio:items-center cuoio:justify-center cuoio:[&_svg:not([class*=size-])]:size-4",
         className
       )}
       {...props}

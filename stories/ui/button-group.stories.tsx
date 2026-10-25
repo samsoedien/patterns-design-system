@@ -1,5 +1,7 @@
 // @ts-nocheck
-"use client"
+'use client'
+
+import * as React from 'react'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import {
@@ -26,10 +28,10 @@ import {
   TrashIcon,
   UserRoundXIcon,
   VolumeOffIcon,
-} from "lucide-react"
-import * as React from "react"
-import { Button } from "@/components/ui/button"
-import { ButtonGroup, ButtonGroupSeparator } from "@/components/ui/button-group"
+} from 'lucide-react'
+
+import { Button } from '@/components/ui/button'
+import { ButtonGroup, ButtonGroupSeparator } from '@/components/ui/button-group'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -42,10 +44,15 @@ import {
   DropdownMenuSubContent,
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Field, FieldDescription, FieldLabel } from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
-import { InputGroup, InputGroupAddon, InputGroupButton, InputGroupInput } from "@/components/ui/input-group"
+} from '@/components/ui/dropdown-menu'
+import { Field, FieldDescription, FieldLabel } from '@/components/ui/field'
+import { Input } from '@/components/ui/input'
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupButton,
+  InputGroupInput,
+} from '@/components/ui/input-group'
 import {
   Popover,
   PopoverContent,
@@ -53,19 +60,19 @@ import {
   PopoverHeader,
   PopoverTitle,
   PopoverTrigger,
-} from "@/components/ui/popover"
+} from '@/components/ui/popover'
 import {
   Select,
   SelectContent,
   SelectGroup,
   SelectItem,
   SelectTrigger,
-} from "@/components/ui/select"
-import { Textarea } from "@/components/ui/textarea"
-import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip"
+} from '@/components/ui/select'
+import { Textarea } from '@/components/ui/textarea'
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip'
 
 function DemoExample() {
-  const [label, setLabel] = React.useState("personal")
+  const [label, setLabel] = React.useState('personal')
 
   return (
     <ButtonGroup>
@@ -82,9 +89,7 @@ function DemoExample() {
         <Button variant="outline">Snooze</Button>
         <DropdownMenu>
           <DropdownMenuTrigger
-            render={
-              <Button variant="outline" size="icon" aria-label="More Options" />
-            }
+            render={<Button variant="outline" size="icon" aria-label="More Options" />}
           >
             <MoreHorizontalIcon />
           </DropdownMenuTrigger>
@@ -119,19 +124,10 @@ function DemoExample() {
                   Label As...
                 </DropdownMenuSubTrigger>
                 <DropdownMenuSubContent>
-                  <DropdownMenuRadioGroup
-                    value={label}
-                    onValueChange={setLabel}
-                  >
-                    <DropdownMenuRadioItem value="personal">
-                      Personal
-                    </DropdownMenuRadioItem>
-                    <DropdownMenuRadioItem value="work">
-                      Work
-                    </DropdownMenuRadioItem>
-                    <DropdownMenuRadioItem value="other">
-                      Other
-                    </DropdownMenuRadioItem>
+                  <DropdownMenuRadioGroup value={label} onValueChange={setLabel}>
+                    <DropdownMenuRadioItem value="personal">Personal</DropdownMenuRadioItem>
+                    <DropdownMenuRadioItem value="work">Work</DropdownMenuRadioItem>
+                    <DropdownMenuRadioItem value="other">Other</DropdownMenuRadioItem>
                   </DropdownMenuRadioGroup>
                 </DropdownMenuSubContent>
               </DropdownMenuSub>
@@ -152,11 +148,7 @@ function DemoExample() {
 
 function OrientationExample() {
   return (
-    <ButtonGroup
-      orientation="vertical"
-      aria-label="Media controls"
-      className="cuoio:h-fit"
-    >
+    <ButtonGroup orientation="vertical" aria-label="Media controls" className="cuoio:h-fit">
       <Button variant="outline" size="icon">
         <PlusIcon />
       </Button>
@@ -283,9 +275,7 @@ function InputGroupExample() {
       <ButtonGroup>
         <InputGroup>
           <InputGroupInput
-            placeholder={
-              voiceEnabled ? "Record and send audio..." : "Send a message..."
-            }
+            placeholder={voiceEnabled ? 'Record and send audio...' : 'Send a message...'}
             disabled={voiceEnabled}
           />
           <InputGroupAddon align="inline-end">
@@ -317,9 +307,7 @@ function DropdownExample() {
     <ButtonGroup>
       <Button variant="outline">Follow</Button>
       <DropdownMenu>
-        <DropdownMenuTrigger
-          render={<Button variant="outline" className="cuoio:pl-2!" />}
-        >
+        <DropdownMenuTrigger render={<Button variant="outline" className="cuoio:pl-2!" />}>
           <ChevronDownIcon />
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="cuoio:w-44">
@@ -363,13 +351,13 @@ function DropdownExample() {
 }
 
 const Select_CURRENCIES = [
-  { label: "US Dollar", value: "$" },
-  { label: "Euro", value: "€" },
-  { label: "British Pound", value: "£" },
+  { label: 'US Dollar', value: '$' },
+  { label: 'Euro', value: '€' },
+  { label: 'British Pound', value: '£' },
 ]
 
 function SelectExample() {
-  const [currency, setCurrency] = React.useState("$")
+  const [currency, setCurrency] = React.useState('$')
 
   return (
     <ButtonGroup>
@@ -384,8 +372,7 @@ function SelectExample() {
             <SelectGroup>
               {Select_CURRENCIES.map((item) => (
                 <SelectItem key={item.value} value={item.value}>
-                  {item.value}{" "}
-                  <span className="cuoio:text-muted-foreground">{item.label}</span>
+                  {item.value} <span className="cuoio:text-muted-foreground">{item.label}</span>
                 </SelectItem>
               ))}
             </SelectGroup>
@@ -409,32 +396,20 @@ function PopoverExample() {
         <BotIcon /> Copilot
       </Button>
       <Popover>
-        <PopoverTrigger
-          render={
-            <Button variant="outline" size="icon" aria-label="Open Popover" />
-          }
-        >
+        <PopoverTrigger render={<Button variant="outline" size="icon" aria-label="Open Popover" />}>
           <ChevronDownIcon />
         </PopoverTrigger>
         <PopoverContent align="end" className="cuoio:rounded-xl cuoio:text-sm">
           <PopoverHeader>
             <PopoverTitle>Start a new task with Copilot</PopoverTitle>
-            <PopoverDescription>
-              Describe your task in natural language.
-            </PopoverDescription>
+            <PopoverDescription>Describe your task in natural language.</PopoverDescription>
           </PopoverHeader>
           <Field>
             <FieldLabel htmlFor="task" className="cuoio:sr-only">
               Task Description
             </FieldLabel>
-            <Textarea
-              id="task"
-              placeholder="I need to..."
-              className="cuoio:resize-none"
-            />
-            <FieldDescription>
-              Copilot will open a pull request for review.
-            </FieldDescription>
+            <Textarea id="task" placeholder="I need to..." className="cuoio:resize-none" />
+            <FieldDescription>Copilot will open a pull request for review.</FieldDescription>
           </Field>
         </PopoverContent>
       </Popover>
@@ -444,15 +419,38 @@ function PopoverExample() {
 
 const meta = {
   title: 'UI/Button Group',
+  component: ButtonGroup,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['orientation'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    orientation: {
+      control: 'inline-radio',
+      options: ['horizontal', 'vertical'],
+    },
+  },
+  args: {
+    orientation: 'horizontal',
+  },
+} satisfies Meta<typeof ButtonGroup>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <ButtonGroup orientation={args.orientation}>
+      <Button variant="outline">Archive</Button>
+      <Button variant="outline">Report</Button>
+      <Button variant="outline">Snooze</Button>
+    </ButtonGroup>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

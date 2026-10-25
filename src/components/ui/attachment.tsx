@@ -7,14 +7,14 @@ import { cn } from "cn"
 import { Button } from "@/components/ui/button"
 
 const attachmentVariants = cva(
-  "cuoio:group/attachment cuoio:relative cuoio:flex cuoio:w-fit cuoio:max-w-full cuoio:min-w-0 cuoio:shrink-0 cuoio:flex-wrap cuoio:rounded-lg cuoio:border cuoio:bg-card cuoio:text-card-foreground cuoio:transition-colors cuoio:focus-within:ring-1 cuoio:focus-within:ring-ring/30 cuoio:has-[>a,>button]:hover:bg-muted/50 cuoio:data-[state=error]:border-destructive/30 cuoio:data-[state=idle]:border-dashed",
+  "cuoio:group/attachment cuoio:relative cuoio:flex cuoio:w-fit cuoio:max-w-full cuoio:min-w-0 cuoio:shrink-0 cuoio:flex-wrap cuoio:rounded-xl cuoio:border cuoio:bg-card cuoio:text-card-foreground cuoio:transition-colors cuoio:focus-within:ring-1 cuoio:focus-within:ring-ring/50 cuoio:has-[>a,>button]:hover:bg-muted/50 cuoio:data-[state=error]:border-destructive/30 cuoio:data-[state=idle]:border-dashed",
   {
     variants: {
       size: {
         default:
-          "cuoio:gap-2 cuoio:text-xs cuoio:has-data-[slot=attachment-content]:px-2 cuoio:has-data-[slot=attachment-content]:py-1.5 cuoio:has-data-[slot=attachment-media]:p-1.5",
-        sm: "cuoio:gap-2.5 cuoio:text-xs cuoio:has-data-[slot=attachment-content]:px-1.5 cuoio:has-data-[slot=attachment-content]:py-1 cuoio:has-data-[slot=attachment-media]:p-1",
-        xs: "cuoio:gap-1.5 cuoio:rounded-md cuoio:text-xs cuoio:has-data-[slot=attachment-content]:px-1.5 cuoio:has-data-[slot=attachment-content]:py-1 cuoio:has-data-[slot=attachment-media]:p-1",
+          "cuoio:gap-2 cuoio:text-sm cuoio:has-data-[slot=attachment-content]:px-2.5 cuoio:has-data-[slot=attachment-content]:py-2 cuoio:has-data-[slot=attachment-media]:p-2",
+        sm: "cuoio:gap-2.5 cuoio:text-xs cuoio:has-data-[slot=attachment-content]:px-2 cuoio:has-data-[slot=attachment-content]:py-1.5 cuoio:has-data-[slot=attachment-media]:p-1.5",
+        xs: "cuoio:gap-1.5 cuoio:rounded-lg cuoio:text-xs cuoio:has-data-[slot=attachment-content]:px-1.5 cuoio:has-data-[slot=attachment-content]:py-1 cuoio:has-data-[slot=attachment-media]:p-1",
       },
       orientation: {
         horizontal: "cuoio:min-w-40 cuoio:items-center",
@@ -47,7 +47,7 @@ function Attachment({
 }
 
 const attachmentMediaVariants = cva(
-  "cuoio:relative cuoio:flex cuoio:aspect-square cuoio:w-10 cuoio:shrink-0 cuoio:items-center cuoio:justify-center cuoio:overflow-hidden cuoio:rounded-md cuoio:bg-muted cuoio:text-foreground cuoio:group-data-[orientation=vertical]/attachment:w-full cuoio:group-data-[size=sm]/attachment:w-8 cuoio:group-data-[size=xs]/attachment:w-7 cuoio:group-data-[size=xs]/attachment:rounded-sm cuoio:group-data-[state=error]/attachment:bg-destructive/10 cuoio:group-data-[state=error]/attachment:text-destructive cuoio:group-data-[orientation=vertical]/attachment:*:data-[slot=spinner]:size-6! cuoio:[&_svg]:pointer-events-none cuoio:[&_svg:not([class*=size-])]:size-4 cuoio:group-data-[orientation=vertical]/attachment:[&_svg:not([class*=size-])]:size-6 cuoio:group-data-[size=xs]/attachment:[&_svg:not([class*=size-])]:size-3.5",
+  "cuoio:relative cuoio:flex cuoio:aspect-square cuoio:w-10 cuoio:shrink-0 cuoio:items-center cuoio:justify-center cuoio:overflow-hidden cuoio:rounded-lg cuoio:bg-muted cuoio:text-foreground cuoio:group-data-[orientation=vertical]/attachment:w-full cuoio:group-data-[size=sm]/attachment:w-8 cuoio:group-data-[size=xs]/attachment:w-7 cuoio:group-data-[size=xs]/attachment:rounded-md cuoio:group-data-[state=error]/attachment:bg-destructive/10 cuoio:group-data-[state=error]/attachment:text-destructive cuoio:group-data-[orientation=vertical]/attachment:*:data-[slot=spinner]:size-6! cuoio:[&_svg]:pointer-events-none cuoio:[&_svg:not([class*=size-])]:size-4 cuoio:group-data-[orientation=vertical]/attachment:[&_svg:not([class*=size-])]:size-6 cuoio:group-data-[size=xs]/attachment:[&_svg:not([class*=size-])]:size-3.5",
   {
     variants: {
       variant: {

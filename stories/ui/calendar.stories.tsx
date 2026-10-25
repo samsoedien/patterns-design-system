@@ -1,16 +1,18 @@
 // @ts-nocheck
-"use client"
+'use client'
+
+import * as React from 'react'
+import { type DateRange } from 'react-day-picker'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Clock2Icon } from "lucide-react"
-import * as React from "react"
-import { type DateRange } from "react-day-picker"
-import { Button } from "@/components/ui/button"
-import { Calendar, CalendarDayButton } from "@/components/ui/calendar"
-import { Card, CardContent, CardFooter } from "@/components/ui/card"
-import { Field, FieldGroup, FieldLabel } from "@/components/ui/field"
-import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/input-group"
-import { addDays } from "date-fns"
+import { addDays } from 'date-fns'
+import { Clock2Icon } from 'lucide-react'
+
+import { Button } from '@/components/ui/button'
+import { Calendar, CalendarDayButton } from '@/components/ui/calendar'
+import { Card, CardContent, CardFooter } from '@/components/ui/card'
+import { Field, FieldGroup, FieldLabel } from '@/components/ui/field'
+import { InputGroup, InputGroupAddon, InputGroupInput } from '@/components/ui/input-group'
 
 function DemoExample() {
   const [date, setDate] = React.useState<Date | undefined>(new Date())
@@ -50,20 +52,16 @@ function RangeExample() {
 
 function CaptionExample() {
   return (
-    <Calendar
-      mode="single"
-      captionLayout="dropdown"
-      className="cuoio:rounded-lg cuoio:border"
-    />
+    <Calendar mode="single" captionLayout="dropdown" className="cuoio:rounded-lg cuoio:border" />
   )
 }
 
 function PresetsExample() {
   const [date, setDate] = React.useState<Date | undefined>(
-    new Date(new Date().getFullYear(), 1, 12)
+    new Date(new Date().getFullYear(), 1, 12),
   )
   const [currentMonth, setCurrentMonth] = React.useState<Date>(
-    new Date(new Date().getFullYear(), new Date().getMonth(), 1)
+    new Date(new Date().getFullYear(), new Date().getMonth(), 1),
   )
 
   return (
@@ -76,16 +74,16 @@ function PresetsExample() {
           month={currentMonth}
           onMonthChange={setCurrentMonth}
           fixedWeeks
-          className="cuoio:p-0 [--cell-size:--spacing(9.5)]"
+          className="[--cell-size:--spacing(9.5)] cuoio:p-0"
         />
       </CardContent>
       <CardFooter className="cuoio:flex cuoio:flex-wrap cuoio:gap-2 cuoio:border-t">
         {[
-          { label: "Today", value: 0 },
-          { label: "Tomorrow", value: 1 },
-          { label: "In 3 days", value: 3 },
-          { label: "In a week", value: 7 },
-          { label: "In 2 weeks", value: 14 },
+          { label: 'Today', value: 0 },
+          { label: 'Tomorrow', value: 1 },
+          { label: 'In 3 days', value: 3 },
+          { label: 'In a week', value: 7 },
+          { label: 'In 2 weeks', value: 14 },
         ].map((preset) => (
           <Button
             key={preset.value}
@@ -95,9 +93,7 @@ function PresetsExample() {
             onClick={() => {
               const newDate = addDays(new Date(), preset.value)
               setDate(newDate)
-              setCurrentMonth(
-                new Date(newDate.getFullYear(), newDate.getMonth(), 1)
-              )
+              setCurrentMonth(new Date(newDate.getFullYear(), newDate.getMonth(), 1))
             }}
           >
             {preset.label}
@@ -110,18 +106,13 @@ function PresetsExample() {
 
 function TimeExample() {
   const [date, setDate] = React.useState<Date | undefined>(
-    new Date(new Date().getFullYear(), new Date().getMonth(), 12)
+    new Date(new Date().getFullYear(), new Date().getMonth(), 12),
   )
 
   return (
     <Card size="sm" className="cuoio:mx-auto cuoio:w-fit">
       <CardContent>
-        <Calendar
-          mode="single"
-          selected={date}
-          onSelect={setDate}
-          className="cuoio:p-0"
-        />
+        <Calendar mode="single" selected={date} onSelect={setDate} className="cuoio:p-0" />
       </CardContent>
       <CardFooter className="cuoio:border-t cuoio:bg-card">
         <FieldGroup>
@@ -133,7 +124,7 @@ function TimeExample() {
                 type="time"
                 step="1"
                 defaultValue="10:30:00"
-                className="cuoio:appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
+                className="[&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none cuoio:appearance-none"
               />
               <InputGroupAddon>
                 <Clock2Icon className="cuoio:text-muted-foreground" />
@@ -148,7 +139,7 @@ function TimeExample() {
                 type="time"
                 step="1"
                 defaultValue="12:30:00"
-                className="cuoio:appearance-none [&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none"
+                className="[&::-webkit-calendar-picker-indicator]:hidden [&::-webkit-calendar-picker-indicator]:appearance-none cuoio:appearance-none"
               />
               <InputGroupAddon>
                 <Clock2Icon className="cuoio:text-muted-foreground" />
@@ -162,12 +153,10 @@ function TimeExample() {
 }
 
 function BookedDatesExample() {
-  const [date, setDate] = React.useState<Date | undefined>(
-    new Date(new Date().getFullYear(), 0, 6)
-  )
+  const [date, setDate] = React.useState<Date | undefined>(new Date(new Date().getFullYear(), 0, 6))
   const bookedDates = Array.from(
     { length: 15 },
-    (_, i) => new Date(new Date().getFullYear(), 0, 12 + i)
+    (_, i) => new Date(new Date().getFullYear(), 0, 12 + i),
   )
 
   return (
@@ -183,7 +172,7 @@ function BookedDatesExample() {
             booked: bookedDates,
           }}
           modifiersClassNames={{
-            booked: "[&>button]:line-through opacity-100",
+            booked: '[&>button]:line-through opacity-100',
           }}
         />
       </CardContent>
@@ -210,20 +199,17 @@ function CustomDaysExample() {
           className="[--cell-size:--spacing(10)] cuoio:md:[--cell-size:--spacing(12)]"
           formatters={{
             formatMonthDropdown: (date) => {
-              return date.toLocaleString("default", { month: "long" })
+              return date.toLocaleString('default', { month: 'long' })
             },
           }}
           components={{
             DayButton: ({ children, modifiers, day, ...props }) => {
-              const isWeekend =
-                day.date.getDay() === 0 || day.date.getDay() === 6
+              const isWeekend = day.date.getDay() === 0 || day.date.getDay() === 6
 
               return (
                 <CalendarDayButton day={day} modifiers={modifiers} {...props}>
                   {children}
-                  {!modifiers.outside && (
-                    <span>{isWeekend ? "$120" : "$100"}</span>
-                  )}
+                  {!modifiers.outside && <span>{isWeekend ? '$120' : '$100'}</span>}
                 </CalendarDayButton>
               )
             },
@@ -236,7 +222,7 @@ function CustomDaysExample() {
 
 function WeekNumbersExample() {
   const [date, setDate] = React.useState<Date | undefined>(
-    new Date(new Date().getFullYear(), 0, 12)
+    new Date(new Date().getFullYear(), 0, 12),
   )
 
   return (
@@ -256,15 +242,48 @@ function WeekNumbersExample() {
 
 const meta = {
   title: 'UI/Calendar',
+  component: Calendar,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['showOutsideDays', 'captionLayout', 'buttonVariant'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    showOutsideDays: {
+      control: 'boolean',
+    },
+    captionLayout: {
+      control: 'select',
+      options: ['label', 'dropdown', 'dropdown-months', 'dropdown-years'],
+    },
+    buttonVariant: {
+      control: 'select',
+      options: ['default', 'outline', 'secondary', 'ghost', 'destructive', 'link'],
+    },
+  },
+  args: {
+    showOutsideDays: true,
+    captionLayout: 'label',
+    buttonVariant: 'ghost',
+  },
+} satisfies Meta<typeof Calendar>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Calendar
+      mode="single"
+      showOutsideDays={args.showOutsideDays}
+      captionLayout={args.captionLayout}
+      buttonVariant={args.buttonVariant}
+    />
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

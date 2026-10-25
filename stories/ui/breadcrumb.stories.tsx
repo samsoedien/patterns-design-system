@@ -1,6 +1,9 @@
 // @ts-nocheck
+import Link from 'next/link'
+
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { ChevronDownIcon, DotIcon } from "lucide-react"
+import { ChevronDownIcon, DotIcon } from 'lucide-react'
+
 import {
   Breadcrumb,
   BreadcrumbEllipsis,
@@ -9,16 +12,15 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { Button } from "@/components/ui/button"
+} from '@/components/ui/breadcrumb'
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import Link from "next/link"
+} from '@/components/ui/dropdown-menu'
 
 function DemoExample() {
   return (
@@ -30,9 +32,7 @@ function DemoExample() {
         <BreadcrumbSeparator />
         <BreadcrumbItem>
           <DropdownMenu>
-            <DropdownMenuTrigger
-              render={<Button size="icon-sm" variant="ghost" />}
-            >
+            <DropdownMenuTrigger render={<Button size="icon-sm" variant="ghost" />}>
               <BreadcrumbEllipsis />
               <span className="cuoio:sr-only">Toggle menu</span>
             </DropdownMenuTrigger>
@@ -89,9 +89,7 @@ function SeparatorExample() {
           <DotIcon />
         </BreadcrumbSeparator>
         <BreadcrumbItem>
-          <BreadcrumbLink render={<Link href="/components" />}>
-            Components
-          </BreadcrumbLink>
+          <BreadcrumbLink render={<Link href="/components" />}>Components</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator>
           <DotIcon />
@@ -155,9 +153,7 @@ function EllipsisExample() {
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink render={<Link href="/docs/components" />}>
-            Components
-          </BreadcrumbLink>
+          <BreadcrumbLink render={<Link href="/docs/components" />}>Components</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
@@ -173,15 +169,11 @@ function LinkExample() {
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
-          <BreadcrumbLink render={<Link href="#link-component" />}>
-            Home
-          </BreadcrumbLink>
+          <BreadcrumbLink render={<Link href="#link-component" />}>Home</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
-          <BreadcrumbLink render={<Link href="#link-component" />}>
-            Components
-          </BreadcrumbLink>
+          <BreadcrumbLink render={<Link href="#link-component" />}>Components</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator />
         <BreadcrumbItem>
@@ -194,15 +186,43 @@ function LinkExample() {
 
 const meta = {
   title: 'UI/Breadcrumb',
+  component: Breadcrumb,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['page'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    page: {
+      control: 'text',
+    },
+  },
+  args: {
+    page: 'Data Fetching',
+  },
+} satisfies Meta<typeof Breadcrumb>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Breadcrumb>
+      <BreadcrumbList>
+        <BreadcrumbItem>
+          <BreadcrumbLink href="#">Home</BreadcrumbLink>
+        </BreadcrumbItem>
+        <BreadcrumbSeparator />
+        <BreadcrumbItem>
+          <BreadcrumbPage>{args.page}</BreadcrumbPage>
+        </BreadcrumbItem>
+      </BreadcrumbList>
+    </Breadcrumb>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

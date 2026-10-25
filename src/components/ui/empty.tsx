@@ -18,7 +18,7 @@ function EmptyHeader({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="empty-header"
-      className={cn("cuoio:flex cuoio:max-w-sm cuoio:flex-col cuoio:items-center cuoio:gap-1", className)}
+      className={cn("cuoio:flex cuoio:max-w-sm cuoio:flex-col cuoio:items-center cuoio:gap-2", className)}
       {...props}
     />
   )
@@ -30,7 +30,7 @@ const emptyMediaVariants = cva(
     variants: {
       variant: {
         default: "cuoio:bg-transparent",
-        icon: "cuoio:flex cuoio:size-8 cuoio:shrink-0 cuoio:items-center cuoio:justify-center cuoio:rounded-md cuoio:bg-muted cuoio:text-foreground cuoio:[&_svg:not([class*=size-])]:size-4",
+        icon: "cuoio:flex cuoio:size-8 cuoio:shrink-0 cuoio:items-center cuoio:justify-center cuoio:rounded-lg cuoio:bg-muted cuoio:text-foreground cuoio:[&_svg:not([class*=size-])]:size-4",
       },
     },
     defaultVariants: {
@@ -72,7 +72,7 @@ function EmptyDescription({ className, ...props }: React.ComponentProps<"p">) {
     <div
       data-slot="empty-description"
       className={cn(
-        "cuoio:text-xs/relaxed cuoio:text-muted-foreground cuoio:[&>a]:underline cuoio:[&>a]:underline-offset-4 cuoio:[&>a:hover]:text-primary",
+        "cuoio:text-sm/relaxed cuoio:text-muted-foreground cuoio:[&>a]:underline cuoio:[&>a]:underline-offset-4 cuoio:[&>a:hover]:text-primary",
         className
       )}
       {...props}
@@ -85,7 +85,7 @@ function EmptyContent({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="empty-content"
       className={cn(
-        "cuoio:flex cuoio:w-full cuoio:max-w-sm cuoio:min-w-0 cuoio:flex-col cuoio:items-center cuoio:gap-2 cuoio:text-xs/relaxed cuoio:text-balance",
+        "cuoio:flex cuoio:w-full cuoio:max-w-sm cuoio:min-w-0 cuoio:flex-col cuoio:items-center cuoio:gap-2.5 cuoio:text-sm cuoio:text-balance",
         className
       )}
       {...props}

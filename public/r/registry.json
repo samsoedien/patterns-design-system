@@ -1,0 +1,57 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "CDS",
+  "homepage": "https://cuoio.io",
+  "items": [
+    {
+      "name": "hello-world",
+      "type": "registry:ui",
+      "title": "Hello World",
+      "description": "A simple hello world component.",
+      "files": [
+        {
+          "path": "src/registry/hello-world/hello-world.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "app-sidebar",
+      "type": "registry:block",
+      "title": "App Sidebar",
+      "description": "A sidebar component for the app.",
+      "files": [
+        {
+          "path": "src/registry/app-sidebar/app-sidebar.tsx",
+          "type": "registry:block",
+          "target": "src/components/app-sidebar/app-sidebar.tsx"
+        },
+        {
+          "path": "src/registry/app-sidebar/nav-main.tsx",
+          "type": "registry:block",
+          "target": "src/components/app-sidebar/nav-main.tsx"
+        },
+        {
+          "path": "src/registry/app-sidebar/nav-projects.tsx",
+          "type": "registry:block",
+          "target": "src/components/app-sidebar/nav-projects.tsx"
+        },
+        {
+          "path": "src/registry/app-sidebar/nav-user.tsx",
+          "type": "registry:block",
+          "target": "src/components/app-sidebar/nav-user.tsx"
+        },
+        {
+          "path": "src/registry/app-sidebar/team-switcher.tsx",
+          "type": "registry:block",
+          "target": "src/components/app-sidebar/team-switcher.tsx"
+        },
+        {
+          "path": "src/registry/app-sidebar/nav-secondary.tsx",
+          "type": "registry:block",
+          "target": "src/components/app-sidebar/nav-secondary.tsx"
+        }
+      ]
+    }
+  ]
+}

@@ -29,7 +29,7 @@ function Slider({
       <SliderPrimitive.Control className="cuoio:relative cuoio:flex cuoio:w-full cuoio:touch-none cuoio:items-center cuoio:select-none cuoio:data-disabled:opacity-50 cuoio:data-vertical:h-full cuoio:data-vertical:min-h-40 cuoio:data-vertical:w-auto cuoio:data-vertical:flex-col">
         <SliderPrimitive.Track
           data-slot="slider-track"
-          className="cuoio:relative cuoio:grow cuoio:overflow-hidden cuoio:rounded-md cuoio:bg-muted cuoio:select-none cuoio:data-horizontal:h-1 cuoio:data-horizontal:w-full cuoio:data-vertical:h-full cuoio:data-vertical:w-1"
+          className="cuoio:relative cuoio:grow cuoio:overflow-hidden cuoio:rounded-full cuoio:bg-muted cuoio:select-none cuoio:data-horizontal:h-1 cuoio:data-horizontal:w-full cuoio:data-vertical:h-full cuoio:data-vertical:w-1"
         >
           <SliderPrimitive.Indicator
             data-slot="slider-range"
@@ -40,7 +40,7 @@ function Slider({
           <SliderPrimitive.Thumb
             data-slot="slider-thumb"
             key={index}
-            className="cuoio:relative cuoio:block cuoio:size-3 cuoio:shrink-0 cuoio:rounded-md cuoio:border cuoio:border-ring cuoio:bg-white cuoio:ring-ring/30 cuoio:transition-[color,box-shadow] cuoio:select-none cuoio:after:absolute cuoio:after:-inset-2 cuoio:hover:ring-2 cuoio:focus-visible:ring-2 cuoio:focus-visible:outline-hidden cuoio:active:ring-2 cuoio:disabled:pointer-events-none cuoio:disabled:opacity-50"
+            className="cuoio:relative cuoio:block cuoio:size-3 cuoio:shrink-0 cuoio:rounded-full cuoio:border cuoio:border-ring cuoio:bg-white cuoio:ring-ring/50 cuoio:transition-[color,box-shadow] cuoio:select-none cuoio:after:absolute cuoio:after:-inset-2 cuoio:hover:ring-3 cuoio:focus-visible:ring-3 cuoio:focus-visible:outline-hidden cuoio:active:ring-3 cuoio:disabled:pointer-events-none cuoio:disabled:opacity-50"
           />
         ))}
       </SliderPrimitive.Control>

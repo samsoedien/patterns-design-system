@@ -31,7 +31,7 @@ function InputOTPGroup({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="input-otp-group"
       className={cn(
-        "cuoio:flex cuoio:items-center cuoio:rounded-md cuoio:has-aria-invalid:border-destructive cuoio:has-aria-invalid:ring-2 cuoio:has-aria-invalid:ring-destructive/20 cuoio:dark:has-aria-invalid:ring-destructive/40",
+        "cuoio:flex cuoio:items-center cuoio:rounded-lg cuoio:has-aria-invalid:border-destructive cuoio:has-aria-invalid:ring-3 cuoio:has-aria-invalid:ring-destructive/20 cuoio:dark:has-aria-invalid:ring-destructive/40",
         className
       )}
       {...props}
@@ -54,7 +54,7 @@ function InputOTPSlot({
       data-slot="input-otp-slot"
       data-active={isActive}
       className={cn(
-        "cuoio:relative cuoio:flex cuoio:size-7 cuoio:items-center cuoio:justify-center cuoio:border-y cuoio:border-e cuoio:border-input cuoio:bg-input/20 cuoio:text-xs/relaxed cuoio:transition-all cuoio:outline-none cuoio:first:rounded-s-md cuoio:first:border-s cuoio:last:rounded-e-md cuoio:aria-invalid:border-destructive cuoio:data-[active=true]:z-10 cuoio:data-[active=true]:border-ring cuoio:data-[active=true]:ring-2 cuoio:data-[active=true]:ring-ring/30 cuoio:data-[active=true]:aria-invalid:border-destructive cuoio:data-[active=true]:aria-invalid:ring-destructive/20 cuoio:dark:bg-input/30 cuoio:dark:data-[active=true]:aria-invalid:ring-destructive/40",
+        "cuoio:relative cuoio:flex cuoio:size-8 cuoio:items-center cuoio:justify-center cuoio:border-y cuoio:border-e cuoio:border-input cuoio:text-sm cuoio:transition-all cuoio:outline-none cuoio:first:rounded-s-lg cuoio:first:border-s cuoio:last:rounded-e-lg cuoio:aria-invalid:border-destructive cuoio:data-[active=true]:z-10 cuoio:data-[active=true]:border-ring cuoio:data-[active=true]:ring-3 cuoio:data-[active=true]:ring-ring/50 cuoio:data-[active=true]:aria-invalid:border-destructive cuoio:data-[active=true]:aria-invalid:ring-destructive/20 cuoio:dark:bg-input/30 cuoio:dark:data-[active=true]:aria-invalid:ring-destructive/40",
         className
       )}
       {...props}

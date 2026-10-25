@@ -1,7 +1,8 @@
 // @ts-nocheck
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { BoldIcon, BookmarkIcon, ItalicIcon } from "lucide-react"
-import { Toggle } from "@/components/ui/toggle"
+import { BoldIcon, BookmarkIcon, ItalicIcon } from 'lucide-react'
+
+import { Toggle } from '@/components/ui/toggle'
 
 function DemoExample() {
   return (

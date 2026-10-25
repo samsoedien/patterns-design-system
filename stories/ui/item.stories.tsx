@@ -1,5 +1,8 @@
 // @ts-nocheck
-"use client"
+'use client'
+
+import * as React from 'react'
+import Image from 'next/image'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import {
@@ -11,17 +14,17 @@ import {
   Plus,
   PlusIcon,
   ShieldAlertIcon,
-} from "lucide-react"
-import * as React from "react"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/button"
+} from 'lucide-react'
+
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from '@/components/ui/dropdown-menu'
 import {
   Item,
   ItemActions,
@@ -32,8 +35,7 @@ import {
   ItemMedia,
   ItemSeparator,
   ItemTitle,
-} from "@/components/ui/item"
-import Image from "next/image"
+} from '@/components/ui/item'
 
 function DemoExample() {
   return (
@@ -41,9 +43,7 @@ function DemoExample() {
       <Item variant="outline">
         <ItemContent>
           <ItemTitle>Basic Item</ItemTitle>
-          <ItemDescription>
-            A simple item with title and description.
-          </ItemDescription>
+          <ItemDescription>A simple item with title and description.</ItemDescription>
         </ItemContent>
         <ItemActions>
           <Button variant="outline" size="sm">
@@ -75,9 +75,7 @@ function VariantExample() {
         </ItemMedia>
         <ItemContent>
           <ItemTitle>Default Variant</ItemTitle>
-          <ItemDescription>
-            Transparent background with no border.
-          </ItemDescription>
+          <ItemDescription>Transparent background with no border.</ItemDescription>
         </ItemContent>
       </Item>
       <Item variant="outline">
@@ -86,9 +84,7 @@ function VariantExample() {
         </ItemMedia>
         <ItemContent>
           <ItemTitle>Outline Variant</ItemTitle>
-          <ItemDescription>
-            Outlined style with a visible border.
-          </ItemDescription>
+          <ItemDescription>Outlined style with a visible border.</ItemDescription>
         </ItemContent>
       </Item>
       <Item variant="muted">
@@ -97,9 +93,7 @@ function VariantExample() {
         </ItemMedia>
         <ItemContent>
           <ItemTitle>Muted Variant</ItemTitle>
-          <ItemDescription>
-            Muted background for secondary content.
-          </ItemDescription>
+          <ItemDescription>Muted background for secondary content.</ItemDescription>
         </ItemContent>
       </Item>
     </div>
@@ -115,9 +109,7 @@ function SizeExample() {
         </ItemMedia>
         <ItemContent>
           <ItemTitle>Default Size</ItemTitle>
-          <ItemDescription>
-            The standard size for most use cases.
-          </ItemDescription>
+          <ItemDescription>The standard size for most use cases.</ItemDescription>
         </ItemContent>
       </Item>
       <Item variant="outline" size="sm">
@@ -151,9 +143,7 @@ function IconExample() {
         </ItemMedia>
         <ItemContent>
           <ItemTitle>Security Alert</ItemTitle>
-          <ItemDescription>
-            New login detected from unknown device.
-          </ItemDescription>
+          <ItemDescription>New login detected from unknown device.</ItemDescription>
         </ItemContent>
         <ItemActions>
           <Button size="sm" variant="outline">
@@ -198,26 +188,18 @@ function AvatarExample() {
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
             <Avatar className="cuoio:hidden cuoio:sm:flex">
-              <AvatarImage
-                src="https://github.com/maxleiter.png"
-                alt="@maxleiter"
-              />
+              <AvatarImage src="https://github.com/maxleiter.png" alt="@maxleiter" />
               <AvatarFallback>LR</AvatarFallback>
             </Avatar>
             <Avatar>
-              <AvatarImage
-                src="https://github.com/evilrabbit.png"
-                alt="@evilrabbit"
-              />
+              <AvatarImage src="https://github.com/evilrabbit.png" alt="@evilrabbit" />
               <AvatarFallback>ER</AvatarFallback>
             </Avatar>
           </div>
         </ItemMedia>
         <ItemContent>
           <ItemTitle>No Team Members</ItemTitle>
-          <ItemDescription>
-            Invite your team to collaborate on this project.
-          </ItemDescription>
+          <ItemDescription>Invite your team to collaborate on this project.</ItemDescription>
         </ItemContent>
         <ItemActions>
           <Button size="sm" variant="outline">
@@ -231,22 +213,22 @@ function AvatarExample() {
 
 const Image_music = [
   {
-    title: "Midnight City Lights",
-    artist: "Neon Dreams",
-    album: "Electric Nights",
-    duration: "3:45",
+    title: 'Midnight City Lights',
+    artist: 'Neon Dreams',
+    album: 'Electric Nights',
+    duration: '3:45',
   },
   {
-    title: "Coffee Shop Conversations",
-    artist: "The Morning Brew",
-    album: "Urban Stories",
-    duration: "4:05",
+    title: 'Coffee Shop Conversations',
+    artist: 'The Morning Brew',
+    album: 'Urban Stories',
+    duration: '4:05',
   },
   {
-    title: "Digital Rain",
-    artist: "Cyber Symphony",
-    album: "Binary Beats",
-    duration: "3:30",
+    title: 'Digital Rain',
+    artist: 'Cyber Symphony',
+    album: 'Binary Beats',
+    duration: '3:30',
   },
 ]
 
@@ -255,12 +237,7 @@ function ImageExample() {
     <div className="cuoio:flex cuoio:w-full cuoio:max-w-md cuoio:flex-col cuoio:gap-6">
       <ItemGroup className="cuoio:gap-4">
         {Image_music.map((song) => (
-          <Item
-            key={song.title}
-            variant="outline"
-            render={<a href="#" />}
-            role="listitem"
-          >
+          <Item key={song.title} variant="outline" render={<a href="#" />} role="listitem">
             <ItemMedia variant="image">
               <Image
                 src={`https://avatar.vercel.sh/${song.title}`}
@@ -272,8 +249,7 @@ function ImageExample() {
             </ItemMedia>
             <ItemContent>
               <ItemTitle className="cuoio:line-clamp-1">
-                {song.title} -{" "}
-                <span className="cuoio:text-muted-foreground">{song.album}</span>
+                {song.title} - <span className="cuoio:text-muted-foreground">{song.album}</span>
               </ItemTitle>
               <ItemDescription>{song.artist}</ItemDescription>
             </ItemContent>
@@ -289,19 +265,19 @@ function ImageExample() {
 
 const Group_people = [
   {
-    username: "shadcn",
-    avatar: "https://github.com/shadcn.png",
-    email: "shadcn@vercel.com",
+    username: 'shadcn',
+    avatar: 'https://github.com/shadcn.png',
+    email: 'shadcn@vercel.com',
   },
   {
-    username: "maxleiter",
-    avatar: "https://github.com/maxleiter.png",
-    email: "maxleiter@vercel.com",
+    username: 'maxleiter',
+    avatar: 'https://github.com/maxleiter.png',
+    email: 'maxleiter@vercel.com',
   },
   {
-    username: "evilrabbit",
-    avatar: "https://github.com/evilrabbit.png",
-    email: "evilrabbit@vercel.com",
+    username: 'evilrabbit',
+    avatar: 'https://github.com/evilrabbit.png',
+    email: 'evilrabbit@vercel.com',
   },
 ]
 
@@ -333,25 +309,25 @@ function GroupExample() {
 
 const Header_models = [
   {
-    name: "v0-1.5-sm",
-    description: "Everyday tasks and UI generation.",
+    name: 'v0-1.5-sm',
+    description: 'Everyday tasks and UI generation.',
     image:
-      "https://images.unsplash.com/photo-1650804068570-7fb2e3dbf888?q=80&w=640&auto=format&fit=crop",
-    credit: "Valeria Reverdo on Unsplash",
+      'https://images.unsplash.com/photo-1650804068570-7fb2e3dbf888?q=80&w=640&auto=format&fit=crop',
+    credit: 'Valeria Reverdo on Unsplash',
   },
   {
-    name: "v0-1.5-lg",
-    description: "Advanced thinking or reasoning.",
+    name: 'v0-1.5-lg',
+    description: 'Advanced thinking or reasoning.',
     image:
-      "https://images.unsplash.com/photo-1610280777472-54133d004c8c?q=80&w=640&auto=format&fit=crop",
-    credit: "Michael Oeser on Unsplash",
+      'https://images.unsplash.com/photo-1610280777472-54133d004c8c?q=80&w=640&auto=format&fit=crop',
+    credit: 'Michael Oeser on Unsplash',
   },
   {
-    name: "v0-2.0-mini",
-    description: "Open Source model for everyone.",
+    name: 'v0-2.0-mini',
+    description: 'Open Source model for everyone.',
     image:
-      "https://images.unsplash.com/photo-1602146057681-08560aee8cde?q=80&w=640&auto=format&fit=crop",
-    credit: "Cherry Laithang on Unsplash",
+      'https://images.unsplash.com/photo-1602146057681-08560aee8cde?q=80&w=640&auto=format&fit=crop',
+    credit: 'Cherry Laithang on Unsplash',
   },
 ]
 
@@ -387,23 +363,16 @@ function LinkExample() {
       <Item render={<a href="#" />}>
         <ItemContent>
           <ItemTitle>Visit our documentation</ItemTitle>
-          <ItemDescription>
-            Learn how to get started with our components.
-          </ItemDescription>
+          <ItemDescription>Learn how to get started with our components.</ItemDescription>
         </ItemContent>
         <ItemActions>
           <ChevronRightIcon className="cuoio:size-4" />
         </ItemActions>
       </Item>
-      <Item
-        variant="outline"
-        render={<a href="#" target="_blank" rel="noopener noreferrer" />}
-      >
+      <Item variant="outline" render={<a href="#" target="_blank" rel="noopener noreferrer" />}>
         <ItemContent>
           <ItemTitle>External resource</ItemTitle>
-          <ItemDescription>
-            Opens in a new tab with security attributes.
-          </ItemDescription>
+          <ItemDescription>Opens in a new tab with security attributes.</ItemDescription>
         </ItemContent>
         <ItemActions>
           <ExternalLinkIcon className="cuoio:size-4" />
@@ -415,19 +384,19 @@ function LinkExample() {
 
 const Dropdown_people = [
   {
-    username: "shadcn",
-    avatar: "https://github.com/shadcn.png",
-    email: "shadcn@vercel.com",
+    username: 'shadcn',
+    avatar: 'https://github.com/shadcn.png',
+    email: 'shadcn@vercel.com',
   },
   {
-    username: "maxleiter",
-    avatar: "https://github.com/maxleiter.png",
-    email: "maxleiter@vercel.com",
+    username: 'maxleiter',
+    avatar: 'https://github.com/maxleiter.png',
+    email: 'maxleiter@vercel.com',
   },
   {
-    username: "evilrabbit",
-    avatar: "https://github.com/evilrabbit.png",
-    email: "evilrabbit@vercel.com",
+    username: 'evilrabbit',
+    avatar: 'https://github.com/evilrabbit.png',
+    email: 'evilrabbit@vercel.com',
   },
 ]
 
@@ -450,9 +419,7 @@ function DropdownExample() {
                 </ItemMedia>
                 <ItemContent className="cuoio:gap-0">
                   <ItemTitle>{person.username}</ItemTitle>
-                  <ItemDescription className="cuoio:leading-none">
-                    {person.email}
-                  </ItemDescription>
+                  <ItemDescription className="cuoio:leading-none">{person.email}</ItemDescription>
                 </ItemContent>
               </Item>
             </DropdownMenuItem>
@@ -465,15 +432,52 @@ function DropdownExample() {
 
 const meta = {
   title: 'UI/Item',
+  component: Item,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['variant', 'size', 'title', 'description'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    variant: {
+      control: 'select',
+      options: ['default', 'outline', 'muted'],
+    },
+    size: {
+      control: 'select',
+      options: ['default', 'sm', 'xs'],
+    },
+    title: {
+      control: 'text',
+    },
+    description: {
+      control: 'text',
+    },
+  },
+  args: {
+    variant: 'outline',
+    size: 'default',
+    title: 'Design System',
+    description: 'A collection of components.',
+  },
+} satisfies Meta<typeof Item>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Item variant={args.variant} size={args.size} className="cuoio:w-80">
+      <ItemContent>
+        <ItemTitle>{args.title}</ItemTitle>
+        <ItemDescription>{args.description}</ItemDescription>
+      </ItemContent>
+    </Item>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

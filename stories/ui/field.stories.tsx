@@ -1,10 +1,12 @@
 // @ts-nocheck
-"use client"
+'use client'
+
+import * as React from 'react'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import * as React from "react"
-import { Button } from "@/components/ui/button"
-import { Checkbox } from "@/components/ui/checkbox"
+
+import { Button } from '@/components/ui/button'
+import { Checkbox } from '@/components/ui/checkbox'
 import {
   Field,
   FieldContent,
@@ -15,9 +17,9 @@ import {
   FieldSeparator,
   FieldSet,
   FieldTitle,
-} from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+} from '@/components/ui/field'
+import { Input } from '@/components/ui/input'
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group'
 import {
   Select,
   SelectContent,
@@ -25,35 +27,35 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { Slider } from "@/components/ui/slider"
-import { Switch } from "@/components/ui/switch"
-import { Textarea } from "@/components/ui/textarea"
+} from '@/components/ui/select'
+import { Slider } from '@/components/ui/slider'
+import { Switch } from '@/components/ui/switch'
+import { Textarea } from '@/components/ui/textarea'
 
 const Demo_months = [
-  { label: "MM", value: null },
-  { label: "01", value: "01" },
-  { label: "02", value: "02" },
-  { label: "03", value: "03" },
-  { label: "04", value: "04" },
-  { label: "05", value: "05" },
-  { label: "06", value: "06" },
-  { label: "07", value: "07" },
-  { label: "08", value: "08" },
-  { label: "09", value: "09" },
-  { label: "10", value: "10" },
-  { label: "11", value: "11" },
-  { label: "12", value: "12" },
+  { label: 'MM', value: null },
+  { label: '01', value: '01' },
+  { label: '02', value: '02' },
+  { label: '03', value: '03' },
+  { label: '04', value: '04' },
+  { label: '05', value: '05' },
+  { label: '06', value: '06' },
+  { label: '07', value: '07' },
+  { label: '08', value: '08' },
+  { label: '09', value: '09' },
+  { label: '10', value: '10' },
+  { label: '11', value: '11' },
+  { label: '12', value: '12' },
 ]
 
 const Demo_years = [
-  { label: "YYYY", value: null },
-  { label: "2024", value: "2024" },
-  { label: "2025", value: "2025" },
-  { label: "2026", value: "2026" },
-  { label: "2027", value: "2027" },
-  { label: "2028", value: "2028" },
-  { label: "2029", value: "2029" },
+  { label: 'YYYY', value: null },
+  { label: '2024', value: '2024' },
+  { label: '2025', value: '2025' },
+  { label: '2026', value: '2026' },
+  { label: '2027', value: '2027' },
+  { label: '2028', value: '2028' },
+  { label: '2029', value: '2029' },
 ]
 
 function DemoExample() {
@@ -63,38 +65,24 @@ function DemoExample() {
         <FieldGroup>
           <FieldSet>
             <FieldLegend>Payment Method</FieldLegend>
-            <FieldDescription>
-              All transactions are secure and encrypted
-            </FieldDescription>
+            <FieldDescription>All transactions are secure and encrypted</FieldDescription>
             <FieldGroup>
               <Field>
-                <FieldLabel htmlFor="checkout-7j9-card-name-43j">
-                  Name on Card
-                </FieldLabel>
-                <Input
-                  id="checkout-7j9-card-name-43j"
-                  placeholder="Evil Rabbit"
-                  required
-                />
+                <FieldLabel htmlFor="checkout-7j9-card-name-43j">Name on Card</FieldLabel>
+                <Input id="checkout-7j9-card-name-43j" placeholder="Evil Rabbit" required />
               </Field>
               <Field>
-                <FieldLabel htmlFor="checkout-7j9-card-number-uw1">
-                  Card Number
-                </FieldLabel>
+                <FieldLabel htmlFor="checkout-7j9-card-number-uw1">Card Number</FieldLabel>
                 <Input
                   id="checkout-7j9-card-number-uw1"
                   placeholder="1234 5678 9012 3456"
                   required
                 />
-                <FieldDescription>
-                  Enter your 16-digit card number
-                </FieldDescription>
+                <FieldDescription>Enter your 16-digit card number</FieldDescription>
               </Field>
               <div className="cuoio:grid cuoio:grid-cols-3 cuoio:gap-4">
                 <Field>
-                  <FieldLabel htmlFor="checkout-exp-month-ts6">
-                    Month
-                  </FieldLabel>
+                  <FieldLabel htmlFor="checkout-exp-month-ts6">Month</FieldLabel>
                   <Select items={Demo_months}>
                     <SelectTrigger id="checkout-exp-month-ts6">
                       <SelectValue />
@@ -111,9 +99,7 @@ function DemoExample() {
                   </Select>
                 </Field>
                 <Field>
-                  <FieldLabel htmlFor="checkout-7j9-exp-year-f59">
-                    Year
-                  </FieldLabel>
+                  <FieldLabel htmlFor="checkout-7j9-exp-year-f59">Year</FieldLabel>
                   <Select items={Demo_years}>
                     <SelectTrigger id="checkout-7j9-exp-year-f59">
                       <SelectValue />
@@ -144,10 +130,7 @@ function DemoExample() {
             </FieldDescription>
             <FieldGroup>
               <Field orientation="horizontal">
-                <Checkbox
-                  id="checkout-7j9-same-as-shipping-wgm"
-                  defaultChecked
-                />
+                <Checkbox id="checkout-7j9-same-as-shipping-wgm" defaultChecked />
                 <FieldLabel
                   htmlFor="checkout-7j9-same-as-shipping-wgm"
                   className="cuoio:font-normal"
@@ -160,9 +143,7 @@ function DemoExample() {
           <FieldSet>
             <FieldGroup>
               <Field>
-                <FieldLabel htmlFor="checkout-7j9-optional-comments">
-                  Comments
-                </FieldLabel>
+                <FieldLabel htmlFor="checkout-7j9-optional-comments">Comments</FieldLabel>
                 <Textarea
                   id="checkout-7j9-optional-comments"
                   placeholder="Add any additional comments"
@@ -190,15 +171,11 @@ function InputExample() {
         <Field>
           <FieldLabel htmlFor="username">Username</FieldLabel>
           <Input id="username" type="text" placeholder="Max Leiter" />
-          <FieldDescription>
-            Choose a unique username for your account.
-          </FieldDescription>
+          <FieldDescription>Choose a unique username for your account.</FieldDescription>
         </Field>
         <Field>
           <FieldLabel htmlFor="password">Password</FieldLabel>
-          <FieldDescription>
-            Must be at least 8 characters long.
-          </FieldDescription>
+          <FieldDescription>Must be at least 8 characters long.</FieldDescription>
           <Input id="password" type="password" placeholder="••••••••" />
         </Field>
       </FieldGroup>
@@ -212,14 +189,8 @@ function TextareaExample() {
       <FieldGroup>
         <Field>
           <FieldLabel htmlFor="feedback">Feedback</FieldLabel>
-          <Textarea
-            id="feedback"
-            placeholder="Your feedback helps us improve..."
-            rows={4}
-          />
-          <FieldDescription>
-            Share your thoughts about our service.
-          </FieldDescription>
+          <Textarea id="feedback" placeholder="Your feedback helps us improve..." rows={4} />
+          <FieldDescription>Share your thoughts about our service.</FieldDescription>
         </Field>
       </FieldGroup>
     </FieldSet>
@@ -227,15 +198,15 @@ function TextareaExample() {
 }
 
 const Select_items = [
-  { label: "Choose department", value: null },
-  { label: "Engineering", value: "engineering" },
-  { label: "Design", value: "design" },
-  { label: "Marketing", value: "marketing" },
-  { label: "Sales", value: "sales" },
-  { label: "Customer Support", value: "support" },
-  { label: "Human Resources", value: "hr" },
-  { label: "Finance", value: "finance" },
-  { label: "Operations", value: "operations" },
+  { label: 'Choose department', value: null },
+  { label: 'Engineering', value: 'engineering' },
+  { label: 'Design', value: 'design' },
+  { label: 'Marketing', value: 'marketing' },
+  { label: 'Sales', value: 'sales' },
+  { label: 'Customer Support', value: 'support' },
+  { label: 'Human Resources', value: 'hr' },
+  { label: 'Finance', value: 'finance' },
+  { label: 'Operations', value: 'operations' },
 ]
 
 function SelectExample() {
@@ -256,9 +227,7 @@ function SelectExample() {
           </SelectGroup>
         </SelectContent>
       </Select>
-      <FieldDescription>
-        Select your department or area of work.
-      </FieldDescription>
+      <FieldDescription>Select your department or area of work.</FieldDescription>
     </Field>
   )
 }
@@ -271,8 +240,9 @@ function SliderExample() {
       <FieldTitle>Price Range</FieldTitle>
       <FieldDescription>
         Set your budget range ($
-        <span className="cuoio:font-medium cuoio:tabular-nums">{value[0]}</span> -{" "}
-        <span className="cuoio:font-medium cuoio:tabular-nums">{value[1]}</span>).
+        <span className="cuoio:font-medium cuoio:tabular-nums">{value[0]}</span> -{' '}
+        <span className="cuoio:font-medium cuoio:tabular-nums">{value[1]}</span>
+        ).
       </FieldDescription>
       <Slider
         value={value}
@@ -291,9 +261,7 @@ function FieldsetExample() {
   return (
     <FieldSet className="cuoio:w-full cuoio:max-w-sm">
       <FieldLegend>Address Information</FieldLegend>
-      <FieldDescription>
-        We need your address to deliver your order.
-      </FieldDescription>
+      <FieldDescription>We need your address to deliver your order.</FieldDescription>
       <FieldGroup>
         <Field>
           <FieldLabel htmlFor="street">Street Address</FieldLabel>
@@ -318,12 +286,8 @@ function CheckboxExample() {
   return (
     <FieldGroup className="cuoio:w-full cuoio:max-w-xs">
       <FieldSet>
-        <FieldLegend variant="label">
-          Show these items on the desktop
-        </FieldLegend>
-        <FieldDescription>
-          Select the items you want to show on the desktop.
-        </FieldDescription>
+        <FieldLegend variant="label">Show these items on the desktop</FieldLegend>
+        <FieldDescription>Select the items you want to show on the desktop.</FieldDescription>
         <FieldGroup className="cuoio:gap-3">
           <Field orientation="horizontal">
             <Checkbox id="finder-pref-9k2-hard-disks-ljj" />
@@ -337,19 +301,13 @@ function CheckboxExample() {
           </Field>
           <Field orientation="horizontal">
             <Checkbox id="finder-pref-9k2-external-disks-1yg" />
-            <FieldLabel
-              htmlFor="finder-pref-9k2-external-disks-1yg"
-              className="cuoio:font-normal"
-            >
+            <FieldLabel htmlFor="finder-pref-9k2-external-disks-1yg" className="cuoio:font-normal">
               External disks
             </FieldLabel>
           </Field>
           <Field orientation="horizontal">
             <Checkbox id="finder-pref-9k2-cds-dvds-fzt" />
-            <FieldLabel
-              htmlFor="finder-pref-9k2-cds-dvds-fzt"
-              className="cuoio:font-normal"
-            >
+            <FieldLabel htmlFor="finder-pref-9k2-cds-dvds-fzt" className="cuoio:font-normal">
               CDs, DVDs, and iPods
             </FieldLabel>
           </Field>
@@ -372,8 +330,8 @@ function CheckboxExample() {
             Sync Desktop & Documents folders
           </FieldLabel>
           <FieldDescription>
-            Your Desktop & Documents folders are being synced with iCloud Drive.
-            You can access them from other devices.
+            Your Desktop & Documents folders are being synced with iCloud Drive. You can access them
+            from other devices.
           </FieldDescription>
         </FieldContent>
       </Field>
@@ -385,9 +343,7 @@ function RadioExample() {
   return (
     <FieldSet className="cuoio:w-full cuoio:max-w-xs">
       <FieldLegend variant="label">Subscription Plan</FieldLegend>
-      <FieldDescription>
-        Yearly and lifetime plans offer significant savings.
-      </FieldDescription>
+      <FieldDescription>Yearly and lifetime plans offer significant savings.</FieldDescription>
       <RadioGroup defaultValue="monthly">
         <Field orientation="horizontal">
           <RadioGroupItem value="monthly" id="plan-monthly" />
@@ -426,17 +382,13 @@ function ChoiceCardExample() {
     <FieldGroup className="cuoio:w-full cuoio:max-w-xs">
       <FieldSet>
         <FieldLegend variant="label">Compute Environment</FieldLegend>
-        <FieldDescription>
-          Select the compute environment for your cluster.
-        </FieldDescription>
+        <FieldDescription>Select the compute environment for your cluster.</FieldDescription>
         <RadioGroup defaultValue="kubernetes">
           <FieldLabel htmlFor="kubernetes-r2h">
             <Field orientation="horizontal">
               <FieldContent>
                 <FieldTitle>Kubernetes</FieldTitle>
-                <FieldDescription>
-                  Run GPU workloads on a K8s cluster.
-                </FieldDescription>
+                <FieldDescription>Run GPU workloads on a K8s cluster.</FieldDescription>
               </FieldContent>
               <RadioGroupItem value="kubernetes" id="kubernetes-r2h" />
             </Field>
@@ -445,9 +397,7 @@ function ChoiceCardExample() {
             <Field orientation="horizontal">
               <FieldContent>
                 <FieldTitle>Virtual Machine</FieldTitle>
-                <FieldDescription>
-                  Access a cluster to run GPU workloads.
-                </FieldDescription>
+                <FieldDescription>Access a cluster to run GPU workloads.</FieldDescription>
               </FieldContent>
               <RadioGroupItem value="vm" id="vm-z4k" />
             </Field>
@@ -464,8 +414,8 @@ function GroupExample() {
       <FieldSet>
         <FieldLabel>Responses</FieldLabel>
         <FieldDescription>
-          Get notified when ChatGPT responds to requests that take time, like
-          research or image generation.
+          Get notified when ChatGPT responds to requests that take time, like research or image
+          generation.
         </FieldDescription>
         <FieldGroup data-slot="checkbox-group">
           <Field orientation="horizontal">
@@ -480,8 +430,7 @@ function GroupExample() {
       <FieldSet>
         <FieldLabel>Tasks</FieldLabel>
         <FieldDescription>
-          Get notified when tasks you&apos;ve created have updates.{" "}
-          <a href="#">Manage tasks</a>
+          Get notified when tasks you&apos;ve created have updates. <a href="#">Manage tasks</a>
         </FieldDescription>
         <FieldGroup data-slot="checkbox-group">
           <Field orientation="horizontal">
@@ -513,9 +462,7 @@ function ResponsiveExample() {
             <Field orientation="responsive">
               <FieldContent>
                 <FieldLabel htmlFor="name">Name</FieldLabel>
-                <FieldDescription>
-                  Provide your full name for identification
-                </FieldDescription>
+                <FieldDescription>Provide your full name for identification</FieldDescription>
               </FieldContent>
               <Input id="name" placeholder="Evil Rabbit" required />
             </Field>
@@ -534,15 +481,38 @@ function ResponsiveExample() {
 
 const meta = {
   title: 'UI/Field',
+  component: Field,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['orientation'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    orientation: {
+      control: 'select',
+      options: ['vertical', 'horizontal', 'responsive'],
+    },
+  },
+  args: {
+    orientation: 'vertical',
+  },
+} satisfies Meta<typeof Field>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Field orientation={args.orientation} className="cuoio:w-80">
+      <FieldLabel htmlFor="playground-field">Username</FieldLabel>
+      <Input id="playground-field" placeholder="Enter your username" />
+      <FieldDescription>Choose a unique username for your account.</FieldDescription>
+    </Field>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

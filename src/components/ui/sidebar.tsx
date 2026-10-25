@@ -323,10 +323,7 @@ function SidebarInput({
     <Input
       data-slot="sidebar-input"
       data-sidebar="input"
-      className={cn(
-        "cuoio:h-8 cuoio:w-full cuoio:border-input cuoio:bg-muted/20 cuoio:dark:bg-muted/30",
-        className
-      )}
+      className={cn("cuoio:h-8 cuoio:w-full cuoio:bg-background cuoio:shadow-none", className)}
       {...props}
     />
   )
@@ -387,10 +384,7 @@ function SidebarGroup({ className, ...props }: React.ComponentProps<"div">) {
     <div
       data-slot="sidebar-group"
       data-sidebar="group"
-      className={cn(
-        "cuoio:relative cuoio:flex cuoio:w-full cuoio:min-w-0 cuoio:flex-col cuoio:px-2 cuoio:py-1",
-        className
-      )}
+      className={cn("cuoio:relative cuoio:flex cuoio:w-full cuoio:min-w-0 cuoio:flex-col cuoio:p-2", className)}
       {...props}
     />
   )
@@ -406,7 +400,7 @@ function SidebarGroupLabel({
     props: mergeProps<"div">(
       {
         className: cn(
-          "flex h-8 shrink-0 items-center rounded-md px-2 text-xs text-sidebar-foreground/70 ring-sidebar-ring outline-hidden transition-[margin,opacity] duration-200 ease-linear group-data-[collapsible=icon]:-mt-8 group-data-[collapsible=icon]:opacity-0 focus-visible:ring-2 [&>svg]:size-4 [&>svg]:shrink-0",
+          "cuoio:flex cuoio:h-8 cuoio:shrink-0 cuoio:items-center cuoio:rounded-md cuoio:px-2 cuoio:text-xs cuoio:font-medium cuoio:text-sidebar-foreground/70 cuoio:ring-sidebar-ring cuoio:outline-hidden cuoio:transition-[margin,opacity] cuoio:duration-200 cuoio:ease-linear cuoio:group-data-[collapsible=icon]:-mt-8 cuoio:group-data-[collapsible=icon]:opacity-0 cuoio:focus-visible:ring-2 cuoio:[&>svg]:size-4 cuoio:[&>svg]:shrink-0",
           className
         ),
       },
@@ -430,7 +424,7 @@ function SidebarGroupAction({
     props: mergeProps<"button">(
       {
         className: cn(
-          "absolute top-3.5 end-3 flex aspect-square w-5 items-center justify-center rounded-md p-0 text-sidebar-foreground ring-sidebar-ring outline-hidden transition-transform group-data-[collapsible=icon]:hidden after:absolute after:-inset-2 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 md:after:hidden [&>svg]:size-4 [&>svg]:shrink-0",
+          "cuoio:absolute cuoio:top-3.5 cuoio:end-3 cuoio:flex cuoio:aspect-square cuoio:w-5 cuoio:items-center cuoio:justify-center cuoio:rounded-md cuoio:p-0 cuoio:text-sidebar-foreground cuoio:ring-sidebar-ring cuoio:outline-hidden cuoio:transition-transform cuoio:group-data-[collapsible=icon]:hidden cuoio:after:absolute cuoio:after:-inset-2 cuoio:hover:bg-sidebar-accent cuoio:hover:text-sidebar-accent-foreground cuoio:focus-visible:ring-2 cuoio:md:after:hidden cuoio:[&>svg]:size-4 cuoio:[&>svg]:shrink-0",
           className
         ),
       },
@@ -452,7 +446,7 @@ function SidebarGroupContent({
     <div
       data-slot="sidebar-group-content"
       data-sidebar="group-content"
-      className={cn("cuoio:w-full cuoio:text-xs", className)}
+      className={cn("cuoio:w-full cuoio:text-sm", className)}
       {...props}
     />
   )
@@ -463,7 +457,7 @@ function SidebarMenu({ className, ...props }: React.ComponentProps<"ul">) {
     <ul
       data-slot="sidebar-menu"
       data-sidebar="menu"
-      className={cn("cuoio:flex cuoio:w-full cuoio:min-w-0 cuoio:flex-col cuoio:gap-px", className)}
+      className={cn("cuoio:flex cuoio:w-full cuoio:min-w-0 cuoio:flex-col cuoio:gap-0", className)}
       {...props}
     />
   )
@@ -481,7 +475,7 @@ function SidebarMenuItem({ className, ...props }: React.ComponentProps<"li">) {
 }
 
 const sidebarMenuButtonVariants = cva(
-  "cuoio:peer/menu-button cuoio:group/menu-button cuoio:flex cuoio:w-full cuoio:items-center cuoio:gap-2 cuoio:overflow-hidden cuoio:rounded-[calc(var(--radius-sm)+2px)] cuoio:p-2 cuoio:text-start cuoio:text-xs cuoio:ring-sidebar-ring cuoio:outline-hidden cuoio:transition-[width,height,padding] cuoio:group-has-data-[sidebar=menu-action]/menu-item:pe-8 cuoio:group-data-[collapsible=icon]:size-8! cuoio:group-data-[collapsible=icon]:p-2! cuoio:hover:bg-sidebar-accent cuoio:hover:text-sidebar-accent-foreground cuoio:focus-visible:ring-2 cuoio:active:bg-sidebar-accent cuoio:active:text-sidebar-accent-foreground cuoio:disabled:pointer-events-none cuoio:disabled:opacity-50 cuoio:aria-disabled:pointer-events-none cuoio:aria-disabled:opacity-50 cuoio:data-open:hover:bg-sidebar-accent cuoio:data-open:hover:text-sidebar-accent-foreground cuoio:data-active:bg-sidebar-accent cuoio:data-active:font-medium cuoio:data-active:text-sidebar-accent-foreground cuoio:[&_svg]:size-4 cuoio:[&_svg]:shrink-0 cuoio:[&>span:last-child]:truncate",
+  "cuoio:peer/menu-button cuoio:group/menu-button cuoio:flex cuoio:w-full cuoio:items-center cuoio:gap-2 cuoio:overflow-hidden cuoio:rounded-md cuoio:p-2 cuoio:text-start cuoio:text-sm cuoio:ring-sidebar-ring cuoio:outline-hidden cuoio:transition-[width,height,padding] cuoio:group-has-data-[sidebar=menu-action]/menu-item:pe-8 cuoio:group-data-[collapsible=icon]:size-8! cuoio:group-data-[collapsible=icon]:p-2! cuoio:hover:bg-sidebar-accent cuoio:hover:text-sidebar-accent-foreground cuoio:focus-visible:ring-2 cuoio:active:bg-sidebar-accent cuoio:active:text-sidebar-accent-foreground cuoio:disabled:pointer-events-none cuoio:disabled:opacity-50 cuoio:aria-disabled:pointer-events-none cuoio:aria-disabled:opacity-50 cuoio:data-open:hover:bg-sidebar-accent cuoio:data-open:hover:text-sidebar-accent-foreground cuoio:data-active:bg-sidebar-accent cuoio:data-active:font-medium cuoio:data-active:text-sidebar-accent-foreground cuoio:[&_svg]:size-4 cuoio:[&_svg]:shrink-0 cuoio:[&>span:last-child]:truncate",
   {
     variants: {
       variant: {
@@ -490,9 +484,9 @@ const sidebarMenuButtonVariants = cva(
           "cuoio:bg-background cuoio:shadow-[0_0_0_1px_var(--sidebar-border)] cuoio:hover:bg-sidebar-accent cuoio:hover:text-sidebar-accent-foreground cuoio:hover:shadow-[0_0_0_1px_var(--sidebar-accent)]",
       },
       size: {
-        default: "cuoio:h-8 cuoio:text-xs",
+        default: "cuoio:h-8 cuoio:text-sm",
         sm: "cuoio:h-7 cuoio:text-xs",
-        lg: "cuoio:h-12 cuoio:text-xs cuoio:group-data-[collapsible=icon]:p-0!",
+        lg: "cuoio:h-12 cuoio:text-sm cuoio:group-data-[collapsible=icon]:p-0!",
       },
     },
     defaultVariants: {
@@ -570,9 +564,9 @@ function SidebarMenuAction({
     props: mergeProps<"button">(
       {
         className: cn(
-          "absolute top-1.5 end-1 flex aspect-square w-5 items-center justify-center rounded-[calc(var(--radius-sm)-2px)] p-0 text-sidebar-foreground ring-sidebar-ring outline-hidden transition-transform group-data-[collapsible=icon]:hidden peer-hover/menu-button:text-sidebar-accent-foreground peer-data-[size=default]/menu-button:top-1.5 peer-data-[size=lg]/menu-button:top-2.5 peer-data-[size=sm]/menu-button:top-1 after:absolute after:-inset-2 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 md:after:hidden [&>svg]:size-4 [&>svg]:shrink-0",
+          "cuoio:absolute cuoio:top-1.5 cuoio:end-1 cuoio:flex cuoio:aspect-square cuoio:w-5 cuoio:items-center cuoio:justify-center cuoio:rounded-md cuoio:p-0 cuoio:text-sidebar-foreground cuoio:ring-sidebar-ring cuoio:outline-hidden cuoio:transition-transform cuoio:group-data-[collapsible=icon]:hidden cuoio:peer-hover/menu-button:text-sidebar-accent-foreground cuoio:peer-data-[size=default]/menu-button:top-1.5 cuoio:peer-data-[size=lg]/menu-button:top-2.5 cuoio:peer-data-[size=sm]/menu-button:top-1 cuoio:after:absolute cuoio:after:-inset-2 cuoio:hover:bg-sidebar-accent cuoio:hover:text-sidebar-accent-foreground cuoio:focus-visible:ring-2 cuoio:md:after:hidden cuoio:[&>svg]:size-4 cuoio:[&>svg]:shrink-0",
           showOnHover &&
-            "group-focus-within/menu-item:opacity-100 group-hover/menu-item:opacity-100 peer-data-active/menu-button:text-sidebar-accent-foreground aria-expanded:opacity-100 md:opacity-0",
+            "cuoio:group-focus-within/menu-item:opacity-100 cuoio:group-hover/menu-item:opacity-100 cuoio:peer-data-active/menu-button:text-sidebar-accent-foreground cuoio:aria-expanded:opacity-100 cuoio:md:opacity-0",
           className
         ),
       },
@@ -595,7 +589,7 @@ function SidebarMenuBadge({
       data-slot="sidebar-menu-badge"
       data-sidebar="menu-badge"
       className={cn(
-        "cuoio:pointer-events-none cuoio:absolute cuoio:end-1 cuoio:flex cuoio:h-5 cuoio:min-w-5 cuoio:items-center cuoio:justify-center cuoio:rounded-[calc(var(--radius-sm)-2px)] cuoio:px-1 cuoio:text-xs cuoio:font-medium cuoio:text-sidebar-foreground cuoio:tabular-nums cuoio:select-none cuoio:group-data-[collapsible=icon]:hidden cuoio:peer-hover/menu-button:text-sidebar-accent-foreground cuoio:peer-data-[size=default]/menu-button:top-1.5 cuoio:peer-data-[size=lg]/menu-button:top-2.5 cuoio:peer-data-[size=sm]/menu-button:top-1 cuoio:peer-data-active/menu-button:text-sidebar-accent-foreground",
+        "cuoio:pointer-events-none cuoio:absolute cuoio:end-1 cuoio:flex cuoio:h-5 cuoio:min-w-5 cuoio:items-center cuoio:justify-center cuoio:rounded-md cuoio:px-1 cuoio:text-xs cuoio:font-medium cuoio:text-sidebar-foreground cuoio:tabular-nums cuoio:select-none cuoio:group-data-[collapsible=icon]:hidden cuoio:peer-hover/menu-button:text-sidebar-accent-foreground cuoio:peer-data-[size=default]/menu-button:top-1.5 cuoio:peer-data-[size=lg]/menu-button:top-2.5 cuoio:peer-data-[size=sm]/menu-button:top-1 cuoio:peer-data-active/menu-button:text-sidebar-accent-foreground",
         className
       )}
       {...props}
@@ -685,7 +679,7 @@ function SidebarMenuSubButton({
     props: mergeProps<"a">(
       {
         className: cn(
-          "flex h-7 min-w-0 -translate-x-px rtl:translate-x-px items-center gap-2 overflow-hidden rounded-md px-2 text-sidebar-foreground ring-sidebar-ring outline-hidden group-data-[collapsible=icon]:hidden hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[size=md]:text-xs data-[size=sm]:text-xs data-active:bg-sidebar-accent data-active:text-sidebar-accent-foreground [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0 [&>svg]:text-sidebar-accent-foreground",
+          "cuoio:flex cuoio:h-7 cuoio:min-w-0 cuoio:-translate-x-px rtl:cuoio:translate-x-px cuoio:items-center cuoio:gap-2 cuoio:overflow-hidden cuoio:rounded-md cuoio:px-2 cuoio:text-sidebar-foreground cuoio:ring-sidebar-ring cuoio:outline-hidden cuoio:group-data-[collapsible=icon]:hidden cuoio:hover:bg-sidebar-accent cuoio:hover:text-sidebar-accent-foreground cuoio:focus-visible:ring-2 cuoio:active:bg-sidebar-accent cuoio:active:text-sidebar-accent-foreground cuoio:disabled:pointer-events-none cuoio:disabled:opacity-50 cuoio:aria-disabled:pointer-events-none cuoio:aria-disabled:opacity-50 cuoio:data-[size=md]:text-sm cuoio:data-[size=sm]:text-xs cuoio:data-active:bg-sidebar-accent cuoio:data-active:text-sidebar-accent-foreground cuoio:[&>span:last-child]:truncate cuoio:[&>svg]:size-4 cuoio:[&>svg]:shrink-0 cuoio:[&>svg]:text-sidebar-accent-foreground",
           className
         ),
       },

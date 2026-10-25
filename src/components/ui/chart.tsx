@@ -190,7 +190,7 @@ function ChartTooltipContent({
   return (
     <div
       className={cn(
-        "cuoio:grid cuoio:min-w-32 cuoio:items-start cuoio:gap-1.5 cuoio:rounded-lg cuoio:border cuoio:border-border/50 cuoio:bg-background cuoio:px-2.5 cuoio:py-1.5 cuoio:text-xs/relaxed cuoio:shadow-xl",
+        "cuoio:grid cuoio:min-w-32 cuoio:items-start cuoio:gap-1.5 cuoio:rounded-lg cuoio:border cuoio:border-border/50 cuoio:bg-background cuoio:px-2.5 cuoio:py-1.5 cuoio:text-xs cuoio:shadow-xl",
         className
       )}
     >

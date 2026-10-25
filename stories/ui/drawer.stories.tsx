@@ -1,8 +1,9 @@
 // @ts-nocheck
-"use client"
+'use client'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Button } from "@/components/ui/button"
+
+import { Button } from '@/components/ui/button'
 import {
   Drawer,
   DrawerClose,
@@ -12,15 +13,13 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from "@/components/ui/drawer"
-import { useIsMobile } from "@/hooks/use-mobile"
+} from '@/components/ui/drawer'
+import { useIsMobile } from '@/hooks/use-mobile'
 
 function SidesExample() {
   return (
     <Drawer swipeDirection="left">
-      <DrawerTrigger render={<Button variant="secondary" />}>
-        Open Left Drawer
-      </DrawerTrigger>
+      <DrawerTrigger render={<Button variant="secondary" />}>Open Left Drawer</DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
           <DrawerTitle>Move Goal</DrawerTitle>
@@ -40,9 +39,7 @@ function SidesExample() {
 function SwipeHandleExample() {
   return (
     <Drawer showSwipeHandle>
-      <DrawerTrigger render={<Button variant="secondary" />}>
-        Open Drawer
-      </DrawerTrigger>
+      <DrawerTrigger render={<Button variant="secondary" />}>Open Drawer</DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
           <DrawerTitle>Drawer</DrawerTitle>
@@ -62,28 +59,22 @@ function SwipeHandleExample() {
 function NestedExample() {
   const isMobile = useIsMobile()
 
-  const swipeDirection = isMobile ? "down" : "right"
+  const swipeDirection = isMobile ? 'down' : 'right'
 
   return (
     <Drawer showSwipeHandle={isMobile} swipeDirection={swipeDirection}>
-      <DrawerTrigger render={<Button variant="secondary" />}>
-        Open Drawer
-      </DrawerTrigger>
+      <DrawerTrigger render={<Button variant="secondary" />}>Open Drawer</DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
           <DrawerTitle>Drawer</DrawerTitle>
-          <DrawerDescription>
-            Open another drawer from the same direction.
-          </DrawerDescription>
+          <DrawerDescription>Open another drawer from the same direction.</DrawerDescription>
         </DrawerHeader>
         <div className="cuoio:flex-1 cuoio:p-4">
           <div className="cuoio:bg-muted cuoio:group-data-[swipe-axis=x]/drawer-popup:size-full cuoio:group-data-[swipe-axis=y]/drawer-popup:aspect-video cuoio:group-data-[swipe-axis=y]/drawer-popup:w-full" />
         </div>
         <DrawerFooter>
           <Drawer showSwipeHandle={isMobile} swipeDirection={swipeDirection}>
-            <DrawerTrigger render={<Button variant="outline" />}>
-              Open Nested Drawer
-            </DrawerTrigger>
+            <DrawerTrigger render={<Button variant="outline" />}>Open Nested Drawer</DrawerTrigger>
             <DrawerContent>
               <DrawerHeader>
                 <DrawerTitle>Nested Drawer</DrawerTitle>
@@ -95,10 +86,7 @@ function NestedExample() {
                 <div className="cuoio:bg-muted cuoio:group-data-[swipe-axis=x]/drawer-popup:size-full cuoio:group-data-[swipe-axis=y]/drawer-popup:aspect-video cuoio:group-data-[swipe-axis=y]/drawer-popup:w-full" />
               </div>
               <DrawerFooter>
-                <Drawer
-                  showSwipeHandle={isMobile}
-                  swipeDirection={swipeDirection}
-                >
+                <Drawer showSwipeHandle={isMobile} swipeDirection={swipeDirection}>
                   <DrawerTrigger render={<Button variant="outline" />}>
                     Open Third Drawer
                   </DrawerTrigger>
@@ -113,10 +101,7 @@ function NestedExample() {
                       <div className="cuoio:bg-muted cuoio:group-data-[swipe-axis=x]/drawer-popup:size-full cuoio:group-data-[swipe-axis=y]/drawer-popup:aspect-video cuoio:group-data-[swipe-axis=y]/drawer-popup:w-full" />
                     </div>
                     <DrawerFooter>
-                      <Drawer
-                        showSwipeHandle={isMobile}
-                        swipeDirection={swipeDirection}
-                      >
+                      <Drawer showSwipeHandle={isMobile} swipeDirection={swipeDirection}>
                         <DrawerTrigger render={<Button variant="outline" />}>
                           Open Fourth Drawer
                         </DrawerTrigger>
@@ -131,21 +116,15 @@ function NestedExample() {
                             <div className="cuoio:bg-muted cuoio:group-data-[swipe-axis=x]/drawer-popup:size-full cuoio:group-data-[swipe-axis=y]/drawer-popup:aspect-video cuoio:group-data-[swipe-axis=y]/drawer-popup:w-full" />
                           </div>
                           <DrawerFooter>
-                            <DrawerClose render={<Button variant="outline" />}>
-                              Close
-                            </DrawerClose>
+                            <DrawerClose render={<Button variant="outline" />}>Close</DrawerClose>
                           </DrawerFooter>
                         </DrawerContent>
                       </Drawer>
-                      <DrawerClose render={<Button variant="outline" />}>
-                        Close
-                      </DrawerClose>
+                      <DrawerClose render={<Button variant="outline" />}>Close</DrawerClose>
                     </DrawerFooter>
                   </DrawerContent>
                 </Drawer>
-                <DrawerClose render={<Button variant="outline" />}>
-                  Close
-                </DrawerClose>
+                <DrawerClose render={<Button variant="outline" />}>Close</DrawerClose>
               </DrawerFooter>
             </DrawerContent>
           </Drawer>
@@ -159,9 +138,7 @@ function NestedExample() {
 function NonModalExample() {
   return (
     <Drawer modal={false} disablePointerDismissal swipeDirection="right">
-      <DrawerTrigger render={<Button variant="outline" />}>
-        Non Modal
-      </DrawerTrigger>
+      <DrawerTrigger render={<Button variant="outline" />}>Non Modal</DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
           <DrawerTitle>Non Modal Drawer</DrawerTitle>
@@ -177,20 +154,17 @@ function NonModalExample() {
   )
 }
 
-const SnapPoints_SNAP_POINTS = ["31rem", 1]
+const SnapPoints_SNAP_POINTS = ['31rem', 1]
 
 function SnapPointsExample() {
   return (
     <Drawer snapPoints={SnapPoints_SNAP_POINTS} showSwipeHandle>
-      <DrawerTrigger render={<Button variant="outline" />}>
-        Open Snap Drawer
-      </DrawerTrigger>
+      <DrawerTrigger render={<Button variant="outline" />}>Open Snap Drawer</DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
           <DrawerTitle>Snap points</DrawerTitle>
           <DrawerDescription>
-            Drag the drawer to snap between a compact peek and a near
-            full-height view.
+            Drag the drawer to snap between a compact peek and a near full-height view.
           </DrawerDescription>
         </DrawerHeader>
         <div className="cuoio:flex-1 cuoio:p-4">
@@ -206,15 +180,59 @@ function SnapPointsExample() {
 
 const meta = {
   title: 'UI/Drawer',
+  component: Drawer,
   parameters: {
     layout: 'fullscreen',
+    controls: {
+      include: ['swipeDirection', 'modal', 'showSwipeHandle'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    swipeDirection: {
+      control: 'select',
+      options: ['down', 'up', 'left', 'right'],
+    },
+    modal: {
+      control: 'boolean',
+    },
+    showSwipeHandle: {
+      control: 'boolean',
+    },
+  },
+  args: {
+    swipeDirection: 'down',
+    modal: true,
+    showSwipeHandle: false,
+  },
+} satisfies Meta<typeof Drawer>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Drawer
+      swipeDirection={args.swipeDirection}
+      modal={args.modal}
+      showSwipeHandle={args.showSwipeHandle}
+    >
+      <DrawerTrigger render={<Button variant="outline" />}>Open Drawer</DrawerTrigger>
+      <DrawerContent>
+        <DrawerHeader>
+          <DrawerTitle>Drawer</DrawerTitle>
+          <DrawerDescription>
+            Adjust the controls to change how this drawer behaves.
+          </DrawerDescription>
+        </DrawerHeader>
+        <DrawerFooter>
+          <DrawerClose render={<Button variant="outline" />}>Close</DrawerClose>
+        </DrawerFooter>
+      </DrawerContent>
+    </Drawer>
+  ),
+}
 
 export const SidesStory: Story = {
   name: 'Sides',

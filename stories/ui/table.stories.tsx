@@ -1,14 +1,15 @@
 // @ts-nocheck
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { MoreHorizontalIcon } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { MoreHorizontalIcon } from 'lucide-react'
+
+import { Button } from '@/components/ui/button'
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from '@/components/ui/dropdown-menu'
 import {
   Table,
   TableBody,
@@ -18,50 +19,50 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
+} from '@/components/ui/table'
 
 const Demo_invoices = [
   {
-    invoice: "INV001",
-    paymentStatus: "Paid",
-    totalAmount: "$250.00",
-    paymentMethod: "Credit Card",
+    invoice: 'INV001',
+    paymentStatus: 'Paid',
+    totalAmount: '$250.00',
+    paymentMethod: 'Credit Card',
   },
   {
-    invoice: "INV002",
-    paymentStatus: "Pending",
-    totalAmount: "$150.00",
-    paymentMethod: "PayPal",
+    invoice: 'INV002',
+    paymentStatus: 'Pending',
+    totalAmount: '$150.00',
+    paymentMethod: 'PayPal',
   },
   {
-    invoice: "INV003",
-    paymentStatus: "Unpaid",
-    totalAmount: "$350.00",
-    paymentMethod: "Bank Transfer",
+    invoice: 'INV003',
+    paymentStatus: 'Unpaid',
+    totalAmount: '$350.00',
+    paymentMethod: 'Bank Transfer',
   },
   {
-    invoice: "INV004",
-    paymentStatus: "Paid",
-    totalAmount: "$450.00",
-    paymentMethod: "Credit Card",
+    invoice: 'INV004',
+    paymentStatus: 'Paid',
+    totalAmount: '$450.00',
+    paymentMethod: 'Credit Card',
   },
   {
-    invoice: "INV005",
-    paymentStatus: "Paid",
-    totalAmount: "$550.00",
-    paymentMethod: "PayPal",
+    invoice: 'INV005',
+    paymentStatus: 'Paid',
+    totalAmount: '$550.00',
+    paymentMethod: 'PayPal',
   },
   {
-    invoice: "INV006",
-    paymentStatus: "Pending",
-    totalAmount: "$200.00",
-    paymentMethod: "Bank Transfer",
+    invoice: 'INV006',
+    paymentStatus: 'Pending',
+    totalAmount: '$200.00',
+    paymentMethod: 'Bank Transfer',
   },
   {
-    invoice: "INV007",
-    paymentStatus: "Unpaid",
-    totalAmount: "$300.00",
-    paymentMethod: "Credit Card",
+    invoice: 'INV007',
+    paymentStatus: 'Unpaid',
+    totalAmount: '$300.00',
+    paymentMethod: 'Credit Card',
   },
 ]
 
@@ -99,53 +100,53 @@ function DemoExample() {
 
 const Footer_invoices = [
   {
-    invoice: "INV001",
-    paymentStatus: "Paid",
-    totalAmount: "$250.00",
-    paymentMethod: "Credit Card",
+    invoice: 'INV001',
+    paymentStatus: 'Paid',
+    totalAmount: '$250.00',
+    paymentMethod: 'Credit Card',
   },
   {
-    invoice: "INV002",
-    paymentStatus: "Pending",
-    totalAmount: "$150.00",
-    paymentMethod: "PayPal",
+    invoice: 'INV002',
+    paymentStatus: 'Pending',
+    totalAmount: '$150.00',
+    paymentMethod: 'PayPal',
   },
   {
-    invoice: "INV003",
-    paymentStatus: "Unpaid",
-    totalAmount: "$350.00",
-    paymentMethod: "Bank Transfer",
+    invoice: 'INV003',
+    paymentStatus: 'Unpaid',
+    totalAmount: '$350.00',
+    paymentMethod: 'Bank Transfer',
   },
   {
-    invoice: "INV004",
-    paymentStatus: "Paid",
-    totalAmount: "$450.00",
-    paymentMethod: "Credit Card",
+    invoice: 'INV004',
+    paymentStatus: 'Paid',
+    totalAmount: '$450.00',
+    paymentMethod: 'Credit Card',
   },
   {
-    invoice: "INV005",
-    paymentStatus: "Paid",
-    totalAmount: "$550.00",
-    paymentMethod: "PayPal",
+    invoice: 'INV005',
+    paymentStatus: 'Paid',
+    totalAmount: '$550.00',
+    paymentMethod: 'PayPal',
   },
   {
-    invoice: "INV006",
-    paymentStatus: "Pending",
-    totalAmount: "$200.00",
-    paymentMethod: "Bank Transfer",
+    invoice: 'INV006',
+    paymentStatus: 'Pending',
+    totalAmount: '$200.00',
+    paymentMethod: 'Bank Transfer',
   },
   {
-    invoice: "INV007",
-    paymentStatus: "Unpaid",
-    totalAmount: "$300.00",
-    paymentMethod: "Credit Card",
+    invoice: 'INV007',
+    paymentStatus: 'Unpaid',
+    totalAmount: '$300.00',
+    paymentMethod: 'Credit Card',
   },
 ]
 
-function FooterExample() {
+function FooterExample(args) {
   return (
     <Table>
-      <TableCaption>A list of your recent Footer_invoices.</TableCaption>
+      <TableCaption>{args.caption}</TableCaption>
       <TableHeader>
         <TableRow>
           <TableHead className="cuoio:w-[100px]">Invoice</TableHead>
@@ -191,9 +192,7 @@ function ActionsExample() {
           <TableCell className="cuoio:text-right">
             <DropdownMenu>
               <DropdownMenuTrigger
-                render={
-                  <Button variant="ghost" size="icon" className="cuoio:size-8" />
-                }
+                render={<Button variant="ghost" size="icon" className="cuoio:size-8" />}
               >
                 <MoreHorizontalIcon />
                 <span className="cuoio:sr-only">Open menu</span>
@@ -202,9 +201,7 @@ function ActionsExample() {
                 <DropdownMenuItem>Edit</DropdownMenuItem>
                 <DropdownMenuItem>Duplicate</DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem variant="destructive">
-                  Delete
-                </DropdownMenuItem>
+                <DropdownMenuItem variant="destructive">Delete</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </TableCell>
@@ -215,9 +212,7 @@ function ActionsExample() {
           <TableCell className="cuoio:text-right">
             <DropdownMenu>
               <DropdownMenuTrigger
-                render={
-                  <Button variant="ghost" size="icon" className="cuoio:size-8" />
-                }
+                render={<Button variant="ghost" size="icon" className="cuoio:size-8" />}
               >
                 <MoreHorizontalIcon />
                 <span className="cuoio:sr-only">Open menu</span>
@@ -226,9 +221,7 @@ function ActionsExample() {
                 <DropdownMenuItem>Edit</DropdownMenuItem>
                 <DropdownMenuItem>Duplicate</DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem variant="destructive">
-                  Delete
-                </DropdownMenuItem>
+                <DropdownMenuItem variant="destructive">Delete</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </TableCell>
@@ -239,9 +232,7 @@ function ActionsExample() {
           <TableCell className="cuoio:text-right">
             <DropdownMenu>
               <DropdownMenuTrigger
-                render={
-                  <Button variant="ghost" size="icon" className="cuoio:size-8" />
-                }
+                render={<Button variant="ghost" size="icon" className="cuoio:size-8" />}
               >
                 <MoreHorizontalIcon />
                 <span className="cuoio:sr-only">Open menu</span>
@@ -250,9 +241,7 @@ function ActionsExample() {
                 <DropdownMenuItem>Edit</DropdownMenuItem>
                 <DropdownMenuItem>Duplicate</DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem variant="destructive">
-                  Delete
-                </DropdownMenuItem>
+                <DropdownMenuItem variant="destructive">Delete</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </TableCell>
@@ -264,15 +253,54 @@ function ActionsExample() {
 
 const meta = {
   title: 'UI/Table',
+  component: Table,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['caption'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    caption: {
+      control: 'text',
+    },
+  },
+  args: {
+    caption: 'A list of recent invoices.',
+  },
+} satisfies Meta<typeof Table>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Table>
+      <TableCaption>{args.caption}</TableCaption>
+      <TableHeader>
+        <TableRow>
+          <TableHead>Invoice</TableHead>
+          <TableHead>Status</TableHead>
+          <TableHead className="cuoio:text-right">Amount</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        <TableRow>
+          <TableCell>INV001</TableCell>
+          <TableCell>Paid</TableCell>
+          <TableCell className="cuoio:text-right">centered50.00</TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell>INV002</TableCell>
+          <TableCell>Pending</TableCell>
+          <TableCell className="cuoio:text-right">UI/Table50.00</TableCell>
+        </TableRow>
+      </TableBody>
+    </Table>
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',

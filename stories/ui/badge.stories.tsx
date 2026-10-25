@@ -1,8 +1,9 @@
 // @ts-nocheck
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { ArrowUpRightIcon, BadgeCheck, BookmarkIcon } from "lucide-react"
-import { Badge } from "@/components/ui/badge"
-import { Spinner } from "@/components/ui/spinner"
+import { ArrowUpRightIcon, BadgeCheck, BookmarkIcon } from 'lucide-react'
+
+import { Badge } from '@/components/ui/badge'
+import { Spinner } from '@/components/ui/spinner'
 
 function DemoExample() {
   return (

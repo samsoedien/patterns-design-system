@@ -1,10 +1,12 @@
 // @ts-nocheck
-"use client"
+'use client'
+
+import * as React from 'react'
 
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import * as React from "react"
-import { Label } from "@/components/ui/label"
-import { Slider } from "@/components/ui/slider"
+
+import { Label } from '@/components/ui/label'
+import { Slider } from '@/components/ui/slider'
 
 function DemoExample() {
   return (
@@ -67,9 +69,7 @@ function ControlledExample() {
     <div className="cuoio:mx-auto cuoio:grid cuoio:w-full cuoio:max-w-xs cuoio:gap-3">
       <div className="cuoio:flex cuoio:items-center cuoio:justify-between cuoio:gap-2">
         <Label htmlFor="slider-demo-temperature">Temperature</Label>
-        <span className="cuoio:text-sm cuoio:text-muted-foreground">
-          {value.join(", ")}
-        </span>
+        <span className="cuoio:text-sm cuoio:text-muted-foreground">{value.join(', ')}</span>
       </div>
       <Slider
         id="slider-demo-temperature"
@@ -97,15 +97,58 @@ function DisabledExample() {
 
 const meta = {
   title: 'UI/Slider',
+  component: Slider,
   parameters: {
     layout: 'centered',
+    controls: {
+      include: ['defaultValue', 'min', 'max', 'disabled', 'orientation'],
+    },
   },
   tags: ['autodocs'],
-} satisfies Meta
+  argTypes: {
+    defaultValue: {
+      control: { type: 'range', min: 0, max: 100, step: 1 },
+    },
+    min: {
+      control: { type: 'number', min: 0, max: 100 },
+    },
+    max: {
+      control: { type: 'number', min: 0, max: 100 },
+    },
+    disabled: {
+      control: 'boolean',
+    },
+    orientation: {
+      control: 'inline-radio',
+      options: ['horizontal', 'vertical'],
+    },
+  },
+  args: {
+    defaultValue: 50,
+    min: 0,
+    max: 100,
+    disabled: false,
+    orientation: 'horizontal',
+  },
+} satisfies Meta<typeof Slider>
 
 export default meta
 
 type Story = StoryObj<typeof meta>
+
+export const Playground: Story = {
+  render: (args) => (
+    <Slider
+      key={`${args.min}-${args.max}-${args.defaultValue}-${args.orientation}`}
+      className={args.orientation === 'vertical' ? 'cuoio:h-40' : 'cuoio:w-64'}
+      min={args.min}
+      max={args.max}
+      disabled={args.disabled}
+      orientation={args.orientation}
+      defaultValue={[args.defaultValue]}
+    />
+  ),
+}
 
 export const DemoStory: Story = {
   name: 'Demo',
