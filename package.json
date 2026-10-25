@@ -34,7 +34,8 @@
     "registry:build": "shadcn build",
     "registry:publish": "yarn registry:build && yarn compile",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "clean": "yarn run -T rimraf node_modules lib"
   },
   "dependencies": {
     "@base-ui/react": "^1.9.0",
