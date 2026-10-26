@@ -359,7 +359,8 @@ function SidebarSeparator({
     <Separator
       data-slot="sidebar-separator"
       data-sidebar="separator"
-      className={cn("cuoio:mx-2 cuoio:w-auto cuoio:bg-sidebar-border", className)}
+      // className={cn("cuoio:mx-2 cuoio:w-auto cuoio:bg-sidebar-border", className)}
+      className={cn("cuoio:mx-2 cuoio:w-auto cuoio:bg-sidebar-border cuoio:data-[orientation=horizontal]:w-auto", className)}
       {...props}
     />
   )
