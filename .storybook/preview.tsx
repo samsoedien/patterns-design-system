@@ -1,9 +1,11 @@
 import { withThemeByClassName } from '@storybook/addon-themes'
 import type { Preview } from '@storybook/react-vite'
+import 'tailwindcss'
 
 import { Toaster } from '@/components/ui/toast'
 
 import '../src/styles/globals.css'
+import '../src/styles/vendors/tailwind.css'
 
 const preview: Preview = {
   decorators: [
