@@ -37,6 +37,7 @@ export default defineConfig({
     lib: {
       entry: {
         index: resolve(__dirname, 'src/index.ts'),
+        compact: resolve(__dirname, 'src/compact.ts'),
       },
       name: 'core',
       fileName: (format, entryName) => `${entryName}.${format}.js`,

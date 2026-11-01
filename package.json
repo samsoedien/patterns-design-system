@@ -15,6 +15,11 @@
       "import": "./lib/esm/index.js",
       "require": "./lib/cjs/index.js"
     },
+    "./compact": {
+      "types": "./lib/types/compact.d.ts",
+      "import": "./lib/esm/compact.js",
+      "require": "./lib/cjs/compact.js"
+    },
     "./lib/globals.css": {
       "default": "./lib/globals.css"
     }
