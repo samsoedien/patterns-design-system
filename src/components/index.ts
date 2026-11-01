@@ -63,3 +63,6 @@ export * from './ui/tooltip'
 export * from './ui/trace'
 
 export * from './frimousse/emoji-picker'
+
+export * from './kibo-ui/avatar-stack'
+export * from './kibo-ui/cursor'
