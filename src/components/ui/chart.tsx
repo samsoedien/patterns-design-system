@@ -64,7 +64,7 @@ function ChartContainer({
         data-slot="chart"
         data-chart={chartId}
         className={cn(
-          "cuoio:flex cuoio:aspect-video cuoio:justify-center cuoio:text-xs cuoio:[&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground cuoio:[&_.recharts-cartesian-grid_line[stroke=#ccc]]:stroke-border/50 cuoio:[&_.recharts-curve.recharts-tooltip-cursor]:stroke-border cuoio:[&_.recharts-dot[stroke=#fff]]:stroke-transparent cuoio:[&_.recharts-layer]:outline-hidden cuoio:[&_.recharts-polar-grid_[stroke=#ccc]]:stroke-border cuoio:[&_.recharts-radial-bar-background-sector]:fill-muted cuoio:[&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted cuoio:[&_.recharts-reference-line_[stroke=#ccc]]:stroke-border cuoio:[&_.recharts-sector]:outline-hidden cuoio:[&_.recharts-sector[stroke=#fff]]:stroke-transparent cuoio:[&_.recharts-surface]:outline-hidden",
+          "cuoio:flex cuoio:aspect-video cuoio:justify-center cuoio:text-xs cuoio:[&_.recharts-cartesian-axis-tick_text]:fill-muted-foreground cuoio:[&_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-border/50 cuoio:[&_.recharts-curve.recharts-tooltip-cursor]:stroke-border cuoio:[&_.recharts-dot[stroke='#fff']]:stroke-transparent cuoio:[&_.recharts-layer]:outline-hidden cuoio:[&_.recharts-polar-grid_[stroke='#ccc']]:stroke-border cuoio:[&_.recharts-radial-bar-background-sector]:fill-muted cuoio:[&_.recharts-rectangle.recharts-tooltip-cursor]:fill-muted cuoio:[&_.recharts-reference-line_[stroke='#ccc']]:stroke-border cuoio:[&_.recharts-sector]:outline-hidden cuoio:[&_.recharts-sector[stroke='#fff']]:stroke-transparent cuoio:[&_.recharts-surface]:outline-hidden",
           className
         )}
         {...props}
