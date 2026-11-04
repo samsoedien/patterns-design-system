@@ -4,17 +4,12 @@ import tailwindcss from '@tailwindcss/vite'
 import react from '@vitejs/plugin-react'
 import { playwright } from '@vitest/browser-playwright'
 import { resolve } from 'node:path'
-// https://vite.dev/config/
-import path from 'node:path'
-import { fileURLToPath } from 'node:url'
 import { defineConfig } from 'vite'
 import dts from 'vite-plugin-dts'
 
 import pkg from './package.json' with { type: 'json' }
 
-const dirname =
-  typeof __dirname !== 'undefined' ? __dirname : path.dirname(fileURLToPath(import.meta.url))
-
+// https://vite.dev/config/
 // More info at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon
 export default defineConfig({
   plugins: [
@@ -36,8 +31,8 @@ export default defineConfig({
   build: {
     lib: {
       entry: {
-        index: resolve(__dirname, 'src/index.ts'),
-        compact: resolve(__dirname, 'src/compact.ts'),
+        index: resolve(import.meta.dirname, 'src/index.ts'),
+        compact: resolve(import.meta.dirname, 'src/compact.ts'),
       },
       name: 'core',
       fileName: (format, entryName) => `${entryName}.${format}.js`,
@@ -94,7 +89,7 @@ export default defineConfig({
           // The plugin will run tests for the stories defined in your Storybook config
           // See options at: https://storybook.js.org/docs/next/writing-tests/integrations/vitest-addon#storybooktest
           storybookTest({
-            configDir: path.join(dirname, '.storybook'),
+            configDir: resolve(import.meta.dirname, '.storybook'),
           }),
         ],
         test: {
