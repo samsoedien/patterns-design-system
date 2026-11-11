@@ -1,74 +1,74 @@
-"use client";
+'use client'
 
-import { ChevronRight, File, Folder, FolderOpen } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
 import {
   type ComponentProps,
-  createContext,
   type HTMLAttributes,
   type ReactNode,
+  createContext,
   useCallback,
   useContext,
   useId,
   useState,
-} from "react";
-import { cn } from "@/lib/utils";
+} from 'react'
+
+import { ChevronRight, File, Folder, FolderOpen } from 'lucide-react'
+import { AnimatePresence, motion } from 'motion/react'
+
+import { cn } from '@/lib/utils'
 
 type TreeContextType = {
-  expandedIds: Set<string>;
-  selectedIds: string[];
-  toggleExpanded: (nodeId: string) => void;
-  handleSelection: (nodeId: string, ctrlKey: boolean) => void;
-  showLines?: boolean;
-  showIcons?: boolean;
-  selectable?: boolean;
-  multiSelect?: boolean;
-  indent?: number;
-  animateExpand?: boolean;
-};
+  expandedIds: Set<string>
+  selectedIds: string[]
+  toggleExpanded: (nodeId: string) => void
+  handleSelection: (nodeId: string, ctrlKey: boolean) => void
+  showLines?: boolean
+  showIcons?: boolean
+  selectable?: boolean
+  multiSelect?: boolean
+  indent?: number
+  animateExpand?: boolean
+}
 
-const TreeContext = createContext<TreeContextType | undefined>(undefined);
+const TreeContext = createContext<TreeContextType | undefined>(undefined)
 
 const useTree = () => {
-  const context = useContext(TreeContext);
+  const context = useContext(TreeContext)
   if (!context) {
-    throw new Error("Tree components must be used within a TreeProvider");
+    throw new Error('Tree components must be used within a TreeProvider')
   }
-  return context;
-};
+  return context
+}
 
 type TreeNodeContextType = {
-  nodeId: string;
-  level: number;
-  isLast: boolean;
-  parentPath: boolean[];
-};
+  nodeId: string
+  level: number
+  isLast: boolean
+  parentPath: boolean[]
+}
 
-const TreeNodeContext = createContext<TreeNodeContextType | undefined>(
-  undefined
-);
+const TreeNodeContext = createContext<TreeNodeContextType | undefined>(undefined)
 
 const useTreeNode = () => {
-  const context = useContext(TreeNodeContext);
+  const context = useContext(TreeNodeContext)
   if (!context) {
-    throw new Error("TreeNode components must be used within a TreeNode");
+    throw new Error('TreeNode components must be used within a TreeNode')
   }
-  return context;
-};
+  return context
+}
 
 export type TreeProviderProps = {
-  children: ReactNode;
-  defaultExpandedIds?: string[];
-  showLines?: boolean;
-  showIcons?: boolean;
-  selectable?: boolean;
-  multiSelect?: boolean;
-  selectedIds?: string[];
-  onSelectionChange?: (selectedIds: string[]) => void;
-  indent?: number;
-  animateExpand?: boolean;
-  className?: string;
-};
+  children: ReactNode
+  defaultExpandedIds?: string[]
+  showLines?: boolean
+  showIcons?: boolean
+  selectable?: boolean
+  multiSelect?: boolean
+  selectedIds?: string[]
+  onSelectionChange?: (selectedIds: string[]) => void
+  indent?: number
+  animateExpand?: boolean
+  className?: string
+}
 
 export const TreeProvider = ({
   children,
@@ -83,59 +83,48 @@ export const TreeProvider = ({
   animateExpand = true,
   className,
 }: TreeProviderProps) => {
-  const [expandedIds, setExpandedIds] = useState<Set<string>>(
-    new Set(defaultExpandedIds)
-  );
-  const [internalSelectedIds, setInternalSelectedIds] = useState<string[]>(
-    selectedIds ?? []
-  );
+  const [expandedIds, setExpandedIds] = useState<Set<string>>(new Set(defaultExpandedIds))
+  const [internalSelectedIds, setInternalSelectedIds] = useState<string[]>(selectedIds ?? [])
 
-  const isControlled =
-    selectedIds !== undefined && onSelectionChange !== undefined;
-  const currentSelectedIds = isControlled ? selectedIds : internalSelectedIds;
+  const isControlled = selectedIds !== undefined && onSelectionChange !== undefined
+  const currentSelectedIds = isControlled ? selectedIds : internalSelectedIds
 
   const toggleExpanded = useCallback((nodeId: string) => {
     setExpandedIds((prev) => {
-      const newSet = new Set(prev);
+      const newSet = new Set(prev)
       if (newSet.has(nodeId)) {
-        newSet.delete(nodeId);
+        newSet.delete(nodeId)
       } else {
-        newSet.add(nodeId);
+        newSet.add(nodeId)
       }
-      return newSet;
-    });
-  }, []);
+      return newSet
+    })
+  }, [])
 
   const handleSelection = useCallback(
     (nodeId: string, ctrlKey = false) => {
       if (!selectable) {
-        return;
+        return
       }
 
-      let newSelection: string[];
+      let newSelection: string[]
 
       if (multiSelect && ctrlKey) {
         newSelection = currentSelectedIds.includes(nodeId)
           ? currentSelectedIds.filter((id) => id !== nodeId)
-          : [...currentSelectedIds, nodeId];
+          : [...currentSelectedIds, nodeId]
       } else {
-        newSelection = currentSelectedIds.includes(nodeId) ? [] : [nodeId];
+        newSelection = currentSelectedIds.includes(nodeId) ? [] : [nodeId]
       }
 
       if (isControlled) {
-        onSelectionChange?.(newSelection);
+        onSelectionChange?.(newSelection)
       } else {
-        setInternalSelectedIds(newSelection);
+        setInternalSelectedIds(newSelection)
       }
     },
-    [
-      selectable,
-      multiSelect,
-      currentSelectedIds,
-      isControlled,
-      onSelectionChange,
-    ]
-  );
+    [selectable, multiSelect, currentSelectedIds, isControlled, onSelectionChange],
+  )
 
   return (
     <TreeContext.Provider
@@ -154,31 +143,31 @@ export const TreeProvider = ({
     >
       <motion.div
         animate={{ opacity: 1, y: 0 }}
-        className={cn("cuoio:w-full", className)}
+        className={cn('cuoio:w-full', className)}
         initial={{ opacity: 0, y: 10 }}
-        transition={{ duration: 0.3, ease: "easeOut" }}
+        transition={{ duration: 0.3, ease: 'easeOut' }}
       >
         {children}
       </motion.div>
     </TreeContext.Provider>
-  );
-};
+  )
+}
 
-export type TreeViewProps = HTMLAttributes<HTMLDivElement>;
+export type TreeViewProps = HTMLAttributes<HTMLDivElement>
 
 export const TreeView = ({ className, children, ...props }: TreeViewProps) => (
-  <div className={cn("cuoio:p-2", className)} {...props}>
+  <div className={cn('cuoio:p-2', className)} {...props}>
     {children}
   </div>
-);
+)
 
 export type TreeNodeProps = HTMLAttributes<HTMLDivElement> & {
-  nodeId?: string;
-  level?: number;
-  isLast?: boolean;
-  parentPath?: boolean[];
-  children?: ReactNode;
-};
+  nodeId?: string
+  level?: number
+  isLast?: boolean
+  parentPath?: boolean[]
+  children?: ReactNode
+}
 
 export const TreeNode = ({
   nodeId: providedNodeId,
@@ -190,19 +179,19 @@ export const TreeNode = ({
   onClick,
   ...props
 }: TreeNodeProps) => {
-  const generatedId = useId();
-  const nodeId = providedNodeId ?? generatedId;
+  const generatedId = useId()
+  const nodeId = providedNodeId ?? generatedId
 
   // Build the parent path - mark positions where the parent was the last child
-  const currentPath = level === 0 ? [] : [...parentPath];
+  const currentPath = level === 0 ? [] : [...parentPath]
   if (level > 0 && parentPath.length < level - 1) {
     // Fill in missing levels with false (not last)
     while (currentPath.length < level - 1) {
-      currentPath.push(false);
+      currentPath.push(false)
     }
   }
   if (level > 0) {
-    currentPath[level - 1] = isLast;
+    currentPath[level - 1] = isLast
   }
 
   return (
@@ -214,14 +203,14 @@ export const TreeNode = ({
         parentPath: currentPath,
       }}
     >
-      <div className={cn("cuoio:select-none", className)} {...props}>
+      <div className={cn('cuoio:select-none', className)} {...props}>
         {children}
       </div>
     </TreeNodeContext.Provider>
-  );
-};
+  )
+}
 
-export type TreeNodeTriggerProps = ComponentProps<typeof motion.div>;
+export type TreeNodeTriggerProps = ComponentProps<typeof motion.div>
 
 export const TreeNodeTrigger = ({
   children,
@@ -229,22 +218,22 @@ export const TreeNodeTrigger = ({
   onClick,
   ...props
 }: TreeNodeTriggerProps) => {
-  const { selectedIds, toggleExpanded, handleSelection, indent } = useTree();
-  const { nodeId, level } = useTreeNode();
-  const isSelected = selectedIds.includes(nodeId);
+  const { selectedIds, toggleExpanded, handleSelection, indent } = useTree()
+  const { nodeId, level } = useTreeNode()
+  const isSelected = selectedIds.includes(nodeId)
 
   return (
     <motion.div
       className={cn(
-        "cuoio:group cuoio:relative cuoio:mx-1 cuoio:flex cuoio:cursor-pointer cuoio:items-center cuoio:rounded-md cuoio:px-3 cuoio:py-2 cuoio:transition-all cuoio:duration-200",
-        "cuoio:hover:bg-accent/50",
-        isSelected && "cuoio:bg-accent/80",
-        className
+        'cuoio:group cuoio:relative cuoio:mx-1 cuoio:flex cuoio:cursor-pointer cuoio:items-center cuoio:rounded-md cuoio:px-3 cuoio:py-2 cuoio:transition-all cuoio:duration-200',
+        'cuoio:hover:bg-accent/50',
+        isSelected && 'cuoio:bg-accent/80',
+        className,
       )}
       onClick={(e) => {
-        toggleExpanded(nodeId);
-        handleSelection(nodeId, e.ctrlKey || e.metaKey);
-        onClick?.(e);
+        toggleExpanded(nodeId)
+        handleSelection(nodeId, e.ctrlKey || e.metaKey)
+        onClick?.(e)
       }}
       style={{ paddingLeft: level * (indent ?? 0) + 8 }}
       whileTap={{ scale: 0.98, transition: { duration: 0.1 } }}
@@ -253,65 +242,65 @@ export const TreeNodeTrigger = ({
       <TreeLines />
       {children as ReactNode}
     </motion.div>
-  );
-};
+  )
+}
 
 export const TreeLines = () => {
-  const { showLines, indent } = useTree();
-  const { level, isLast, parentPath } = useTreeNode();
+  const { showLines, indent } = useTree()
+  const { level, isLast, parentPath } = useTreeNode()
 
   if (!showLines || level === 0) {
-    return null;
+    return null
   }
 
   return (
-    <div className="cuoio:pointer-events-none cuoio:absolute cuoio:top-0 cuoio:bottom-0 cuoio:start-0">
+    <div className="cuoio:pointer-events-none cuoio:absolute cuoio:start-0 cuoio:top-0 cuoio:bottom-0">
       {/* Render vertical lines for all parent levels */}
       {Array.from({ length: level }, (_, index) => {
-        const shouldHideLine = parentPath[index] === true;
+        const shouldHideLine = parentPath[index] === true
         if (shouldHideLine && index === level - 1) {
-          return null;
+          return null
         }
 
         return (
           <div
-            className="cuoio:absolute cuoio:top-0 cuoio:bottom-0 cuoio:border-border/40 cuoio:border-s"
+            className="cuoio:absolute cuoio:top-0 cuoio:bottom-0 cuoio:border-s cuoio:border-border/40"
             key={index.toString()}
             style={{
               left: index * (indent ?? 0) + 12,
-              display: shouldHideLine ? "none" : "block",
+              display: shouldHideLine ? 'none' : 'block',
             }}
           />
-        );
+        )
       })}
 
       {/* Horizontal connector line */}
       <div
-        className="cuoio:absolute cuoio:top-1/2 cuoio:border-border/40 cuoio:border-t"
+        className="cuoio:absolute cuoio:top-1/2 cuoio:border-t cuoio:border-border/40"
         style={{
           left: (level - 1) * (indent ?? 0) + 12,
           width: (indent ?? 0) - 4,
-          transform: "translateY(-1px)",
+          transform: 'translateY(-1px)',
         }}
       />
 
       {/* Vertical line to midpoint for last items */}
       {isLast && (
         <div
-          className="cuoio:absolute cuoio:top-0 cuoio:border-border/40 cuoio:border-s"
+          className="cuoio:absolute cuoio:top-0 cuoio:border-s cuoio:border-border/40"
           style={{
             left: (level - 1) * (indent ?? 0) + 12,
-            height: "50%",
+            height: '50%',
           }}
         />
       )}
     </div>
-  );
-};
+  )
+}
 
 export type TreeNodeContentProps = ComponentProps<typeof motion.div> & {
-  hasChildren?: boolean;
-};
+  hasChildren?: boolean
+}
 
 export const TreeNodeContent = ({
   children,
@@ -319,21 +308,21 @@ export const TreeNodeContent = ({
   className,
   ...props
 }: TreeNodeContentProps) => {
-  const { animateExpand, expandedIds } = useTree();
-  const { nodeId } = useTreeNode();
-  const isExpanded = expandedIds.has(nodeId);
+  const { animateExpand, expandedIds } = useTree()
+  const { nodeId } = useTreeNode()
+  const isExpanded = expandedIds.has(nodeId)
 
   return (
     <AnimatePresence>
       {hasChildren && isExpanded && (
         <motion.div
-          animate={{ height: "auto", opacity: 1 }}
+          animate={{ height: 'auto', opacity: 1 }}
           className="cuoio:overflow-hidden"
           exit={{ height: 0, opacity: 0 }}
           initial={{ height: 0, opacity: 0 }}
           transition={{
             duration: animateExpand ? 0.3 : 0,
-            ease: "easeInOut",
+            ease: 'easeInOut',
           }}
         >
           <motion.div
@@ -352,12 +341,12 @@ export const TreeNodeContent = ({
         </motion.div>
       )}
     </AnimatePresence>
-  );
-};
+  )
+}
 
 export type TreeExpanderProps = ComponentProps<typeof motion.div> & {
-  hasChildren?: boolean;
-};
+  hasChildren?: boolean
+}
 
 export const TreeExpander = ({
   hasChildren = false,
@@ -365,51 +354,46 @@ export const TreeExpander = ({
   onClick,
   ...props
 }: TreeExpanderProps) => {
-  const { expandedIds, toggleExpanded } = useTree();
-  const { nodeId } = useTreeNode();
-  const isExpanded = expandedIds.has(nodeId);
+  const { expandedIds, toggleExpanded } = useTree()
+  const { nodeId } = useTreeNode()
+  const isExpanded = expandedIds.has(nodeId)
 
   if (!hasChildren) {
-    return <div className="cuoio:me-1 cuoio:h-4 cuoio:w-4" />;
+    return <div className="cuoio:me-1 cuoio:h-4 cuoio:w-4" />
   }
 
   return (
     <motion.div
       animate={{ rotate: isExpanded ? 90 : 0 }}
       className={cn(
-        "cuoio:me-1 cuoio:flex cuoio:h-4 cuoio:w-4 cuoio:cursor-pointer cuoio:items-center cuoio:justify-center",
-        className
+        'cuoio:me-1 cuoio:flex cuoio:h-4 cuoio:w-4 cuoio:cursor-pointer cuoio:items-center cuoio:justify-center',
+        className,
       )}
       onClick={(e) => {
-        e.stopPropagation();
-        toggleExpanded(nodeId);
-        onClick?.(e);
+        e.stopPropagation()
+        toggleExpanded(nodeId)
+        onClick?.(e)
       }}
-      transition={{ duration: 0.2, ease: "easeInOut" }}
+      transition={{ duration: 0.2, ease: 'easeInOut' }}
       {...props}
     >
       <ChevronRight className="cuoio:h-3 cuoio:w-3 cuoio:text-muted-foreground" />
     </motion.div>
-  );
-};
+  )
+}
 
 export type TreeIconProps = ComponentProps<typeof motion.div> & {
-  icon?: ReactNode;
-  hasChildren?: boolean;
-};
+  icon?: ReactNode
+  hasChildren?: boolean
+}
 
-export const TreeIcon = ({
-  icon,
-  hasChildren = false,
-  className,
-  ...props
-}: TreeIconProps) => {
-  const { showIcons, expandedIds } = useTree();
-  const { nodeId } = useTreeNode();
-  const isExpanded = expandedIds.has(nodeId);
+export const TreeIcon = ({ icon, hasChildren = false, className, ...props }: TreeIconProps) => {
+  const { showIcons, expandedIds } = useTree()
+  const { nodeId } = useTreeNode()
+  const isExpanded = expandedIds.has(nodeId)
 
   if (!showIcons) {
-    return null;
+    return null
   }
 
   const getDefaultIcon = () =>
@@ -421,13 +405,13 @@ export const TreeIcon = ({
       )
     ) : (
       <File className="cuoio:h-4 cuoio:w-4" />
-    );
+    )
 
   return (
     <motion.div
       className={cn(
-        "cuoio:me-2 cuoio:flex cuoio:h-4 cuoio:w-4 cuoio:items-center cuoio:justify-center cuoio:text-muted-foreground",
-        className
+        'cuoio:me-2 cuoio:flex cuoio:h-4 cuoio:w-4 cuoio:items-center cuoio:justify-center cuoio:text-muted-foreground',
+        className,
       )}
       transition={{ duration: 0.15 }}
       whileHover={{ scale: 1.1 }}
@@ -435,11 +419,14 @@ export const TreeIcon = ({
     >
       {icon || getDefaultIcon()}
     </motion.div>
-  );
-};
+  )
+}
 
-export type TreeLabelProps = HTMLAttributes<HTMLSpanElement>;
+export type TreeLabelProps = HTMLAttributes<HTMLSpanElement>
 
 export const TreeLabel = ({ className, ...props }: TreeLabelProps) => (
-  <span className={cn("cuoio:font cuoio:flex-1 cuoio:truncate cuoio:text-sm", className)} {...props} />
-);
+  <span
+    className={cn('cuoio:font cuoio:flex-1 cuoio:truncate cuoio:text-sm', className)}
+    {...props}
+  />
+)
