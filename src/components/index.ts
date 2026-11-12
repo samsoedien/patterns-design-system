@@ -65,6 +65,7 @@ export * from './ui/trace'
 export * from './frimousse/emoji-picker'
 
 export * from './kibo-ui/avatar-stack'
-export * from './kibo-ui/cursor'
 export * from './kibo-ui/color-picker'
+export * from './kibo-ui/cursor'
+export * from './kibo-ui/editor'
 export * from './kibo-ui/tree'

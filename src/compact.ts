@@ -63,8 +63,9 @@ export * from './components/ui/mira/tooltip'
 export * from './components/ui/mira/trace'
 
 export * from './components/kibo-ui/avatar-stack'
-export * from './components/kibo-ui/cursor'
 export * from './components/kibo-ui/color-picker'
+export * from './components/kibo-ui/cursor'
+export * from './components/kibo-ui/editor'
 export * from './components/kibo-ui/tree'
 
 export * from './hooks'
