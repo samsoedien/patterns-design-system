@@ -68,6 +68,8 @@ export * from './components/kibo-ui/cursor'
 export * from './components/kibo-ui/editor'
 export * from './components/kibo-ui/tree'
 
+export * from './components/frimousse/emoji-picker'
+
 export * from './hooks'
 export * from './lib/utils'
 export * from './lib/highlighter'
