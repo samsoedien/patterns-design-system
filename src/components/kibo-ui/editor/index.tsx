@@ -1314,7 +1314,7 @@ export const EditorTableGlobalMenu = ({ children }: EditorTableGlobalMenuProps) 
     editor.on('selectionUpdate', () => {
       const selection = window.getSelection()
 
-      if (!selection) {
+      if (!selection || selection.rangeCount === 0) {
         return
       }
 
@@ -1374,7 +1374,7 @@ export const EditorTableColumnMenu = ({ children }: EditorTableColumnMenuProps) 
     editor.on('selectionUpdate', () => {
       const selection = window.getSelection()
 
-      if (!selection) {
+      if (!selection || selection.rangeCount === 0) {
         return
       }
 
@@ -1439,7 +1439,7 @@ export const EditorTableRowMenu = ({ children }: EditorTableRowMenuProps) => {
     editor.on('selectionUpdate', () => {
       const selection = window.getSelection()
 
-      if (!selection) {
+      if (!selection || selection.rangeCount === 0) {
         return
       }
 
